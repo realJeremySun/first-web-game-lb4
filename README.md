@@ -8,15 +8,15 @@
 5. change weapon
 
 
-## demoe:
+## demo:
 1. create a character with init config:
 ![create character](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/firstgame/demo/1.png)
 
 
 2. equip character with a sword:
 ![sword](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/firstgame/demo/2.png)
- 
- 
+
+
 3. Because the sword's attack is 2 and defence is 1, So character's attack is 20+2 and defence is 5+1;
 ![updatee](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/firstgame/demo/3.png)
 
