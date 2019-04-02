@@ -18,7 +18,7 @@
 
 
 3. Because the sword's attack is 2 and defence is 1, So character's attack is 20+2 and defence is 5+1;
-![updatee](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/firstgame/demo/3.png)
+![update](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/firstgame/demo/3.png)
 
 
 4. equip character with a long sword:

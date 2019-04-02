@@ -73,16 +73,23 @@ export class UpdateCharacterController {
     char.attack! += weapon.attack;
     char.defence! += weapon.defence;
     try{
+      console.log("0");
       let oldWeapon: Weapon = await this.characterRepository.weapon(id).get();
+      console.log("1");
       char.attack! -= oldWeapon.attack!;
+      console.log("2");
       char.defence! -= oldWeapon.defence!;
-      await this.weaponRepository.deleteById(oldWeapon.id!);
+      console.log("3");
+      await this.characterRepository.weapon(id).delete();
+      console.log("4");
     }
     catch(e){
-      console.log('no current weapon');
+      console.log(e);
+      //console.log('no current weapon');
     }
     finally{
       await this.characterRepository.updateById(id, char);
+      weapon.id = (await this.weaponRepository.count()).count+1;
       return await this.characterRepository.weapon(id).create(weapon);
     }
   }
