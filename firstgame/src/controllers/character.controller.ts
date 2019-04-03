@@ -25,6 +25,10 @@ export class CharacterController {
     public characterRepository : CharacterRepository,
   ) {}
 
+  /**
+   * create character
+   * @param character character
+   */
   @post('/characters', {
     responses: {
       '200': {
@@ -42,6 +46,10 @@ export class CharacterController {
     return await this.characterRepository.create(character);
   }
 
+  /**
+   * count character
+   * @param where filter
+   */
   @get('/characters/count', {
     responses: {
       '200': {
@@ -56,6 +64,10 @@ export class CharacterController {
     return await this.characterRepository.count(where);
   }
 
+  /**
+   * show all character
+   * @param where filter
+   */
   @get('/characters', {
     responses: {
       '200': {
@@ -74,6 +86,10 @@ export class CharacterController {
     return await this.characterRepository.find(filter);
   }
 
+  /**
+   * path all character
+   * @param where filter
+   */
   @patch('/characters', {
     responses: {
       '200': {
@@ -89,6 +105,10 @@ export class CharacterController {
     return await this.characterRepository.updateAll(character, where);
   }
 
+  /**
+   * show character by id
+   * @param id id
+   */
   @get('/characters/{id}', {
     responses: {
       '200': {
@@ -101,6 +121,10 @@ export class CharacterController {
     return await this.characterRepository.findById(id);
   }
 
+  /**
+   * patch character by id
+   * @param where filter
+   */
   @patch('/characters/{id}', {
     responses: {
       '204': {
@@ -115,20 +139,10 @@ export class CharacterController {
     await this.characterRepository.updateById(id, character);
   }
 
-  @put('/characters/{id}', {
-    responses: {
-      '204': {
-        description: 'Character PUT success',
-      },
-    },
-  })
-  async replaceById(
-    @param.path.number('id') id: number,
-    @requestBody() character: Character,
-  ): Promise<void> {
-    await this.characterRepository.replaceById(id, character);
-  }
-
+  /**
+   * delete character by id
+   * @param where filter
+   */
   @del('/characters/{id}', {
     responses: {
       '204': {
@@ -138,5 +152,8 @@ export class CharacterController {
   })
   async deleteById(@param.path.number('id') id: number): Promise<void> {
     await this.characterRepository.deleteById(id);
+    await this.characterRepository.weapon(id).delete();
+    await this.characterRepository.armor(id).delete();
+    await this.characterRepository.skill(id).delete();
   }
 }

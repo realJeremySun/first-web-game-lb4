@@ -63,6 +63,37 @@ export class UpdateCharacterController {
   }
 
   /**
+   * levelup for a given character
+   * @param id character id
+   */
+  @patch('/updatecharacter/{id}/levelup', {
+    responses: {
+      '200': {
+        description: 'level up',
+        content: {'application/json': {schema: Character}},
+      },
+    },
+  })
+  async levelUp(@param.path.number('id') id: number): Promise<Character> {
+      let char: Character = await this.characterRepository.findById(id);
+      let levels: number = 0;
+      while(char.currentExp! >= char.nextLevelExp!){
+        levels++;
+        char.currentExp! -= char.nextLevelExp!;
+        char.nextLevelExp! += 100;
+      }
+      char.level! += levels;
+      char.maxHealth! += 10 * levels;
+      char.currentHealth! = char.maxHealth!;
+      char.maxMana! += 5 * levels;
+      char.currentMana! = char.maxMana!;
+      char.attack! += 3 * levels;
+      char.defence! += levels;
+      await this.characterRepository!.updateById(id, char);
+      return char;
+  }
+
+  /**
    * update weapon for a given character
    * @param id character id
    * @param weapon weapon
