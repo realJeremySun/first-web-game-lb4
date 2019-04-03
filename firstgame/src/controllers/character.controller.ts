@@ -34,8 +34,11 @@ export class CharacterController {
     },
   })
   async create(@requestBody() character: Character): Promise<Character> {
-    //Auto incressment for id
-    character.id = (await this.characterRepository.count()).count+1;
+    let characterId = 1;
+    while(await this.characterRepository.exists(characterId)){
+      characterId++;
+    }
+    character.id = characterId;
     return await this.characterRepository.create(character);
   }
 

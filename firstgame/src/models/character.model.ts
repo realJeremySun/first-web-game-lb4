@@ -28,6 +28,18 @@ export class Character extends Entity {
     type: 'number',
     default: 100,
   })
+  nextLevelExp?: number;
+
+  @property({
+    type: 'number',
+    default: 0,
+  })
+  currentExp?: number;
+
+  @property({
+    type: 'number',
+    default: 100,
+  })
   maxHealth?: number;
 
   @property({
