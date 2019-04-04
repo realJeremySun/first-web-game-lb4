@@ -44,10 +44,11 @@
 
 ## Features:
 1. Create a character.
-2. Create a weapon.
-3. Equip character with that sword
+2. Create a weapon, armor, or skill.
+3. Equip character.
 4. Update attack and defence
-5. Change weapon
+5. Change weapon, armor and skill.
+6. Levelup character.
 
 
 ## Demo:
