@@ -42,20 +42,20 @@
 
 ![Models](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/models.png)
 
-## feature:
-1. create a character.
-2. create a weapon.
-3. equip character with that sword
-4. update attack and defence
-5. change weapon
+## Features:
+1. Create a character.
+2. Create a weapon.
+3. Equip character with that sword
+4. Update attack and defence
+5. Change weapon
 
 
-## demo:
-1. create a character with init config:
+## Demo:
+1. Create a character with init config:
 ![create character](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/1.png)
 
 
-2. equip character with a sword:
+2. Equip character with a sword:
 ![sword](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/2.png)
 
 
@@ -63,9 +63,8 @@
 ![update](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/3.png)
 
 
-4. equip character with a long sword:
+4. Equip character with a long sword:
 ![long sword](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/4.png)
-
 
 
 5. Now attack is 20+4 and defence is 5+2;
