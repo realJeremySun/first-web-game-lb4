@@ -1,4 +1,45 @@
-# update:
+## My first web game with LoopBack4
+
+* Model
+  * character
+    * id : number
+    * name : string
+    * level : number
+    * maxHealthPoint : number
+    * currentHealthPoint : number
+    * nextLevelExp : number
+    * currentExp
+    * maxMana : number
+    * currentMana : number
+    * attack : number
+    * defence : number
+    * armor : {armor}
+    * weapon : {weapon}
+    * skill : {skill}
+
+  * armor
+    * id : number
+    * name : string
+    * attack : number
+    * defence : number
+    * characterId : number
+
+
+  * weapon
+    * id : number
+    * name : string
+    * attack : number
+    * defence : number
+    * characterId : number
+    
+    
+  * skill
+    * id : number
+    * name : string
+    * attack : number
+    * cost : number
+    * characterId : number
+
 
 ## feature:
 1. create a character.
