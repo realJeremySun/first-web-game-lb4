@@ -20,8 +20,8 @@ I will implement following features:
 1. Create a character.
 2. Create a weapon, armor, or skill.
 3. Equip character.
-4. Update attack and defence
-5. Change weapon, armor and skill.
+4. Change weapon, armor and skill.
+5. Update character information.
 6. Levelup character.
 
 There are four important components in a LB4 project: Model, 
