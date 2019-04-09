@@ -50,4 +50,62 @@ In this game, we want to let user create their own characters and equip their ch
 
 Run `lb4 model` in your project folder.
 ```
+? Model class name: character
+? Please select the model base class Entity (A persisted model with an ID)
+? Allow additional (free-form) properties? No
+Let's add a property to Character
+Enter an empty property name when done
+
+? Enter the property name: id
+? Property type: number
+? Is id the ID property? Yes
+? Is it required?: No
+? Default value [leave blank for none]:
+
+Let's add another property to Character
+Enter an empty property name when done
+
+? Enter the property name: name
+? Property type: string
+? Is it required?: Yes
+? Default value [leave blank for none]:
+
+Let's add another property to Character
+Enter an empty property name when done
+
+? Enter the property name: level
+? Property type: number
+? Is it required?: No
+? Default value [leave blank for none]: 1
 ```
+* The first property is `id`. It's like the prime key in relational database. We don't need user to specify `id` and we will auto generate `id` for them.
+* The second property is `name`. That is the only thing we need user to specify.
+* All of other properties like `level`, `attack` and `defence` are default. We will not nee user to specify.
+We can create `weapon`, `armor`, and `skill` models in the same way.
+
+Then if you go to `/src/models`, you will see `character.model.ts`, `weapon.model.ts`, `armor.model.ts`, and `skill.model.ts`.
+Now open `character.model.ts` with your favourite editer, we are going handle the models relationship.
+
+The language we use in LB4 is Typescript. It's very similar to Javascript. Don't worry if you did't use it before. LB4 already generate the most of code for you. We only need to add or edit few lines of code as needed.
+
+If you take a look at `character.model.ts`, you will find it's very easy to understand.
+```
+  @property({
+    type: 'number',
+    id: true,
+  })
+  id?: number;
+```
+This means the type of `id` property is `number`, and it is a `id property`, like the prime key in relational database.
+
+```
+  @property({
+    type: 'string',
+    required: true,
+  })
+  name: string;
+```
+This means the type of `name` property is `string`, and it is required.
+You can easily add or edit properties.
+
+Now, we want to add relationships for `character` to indicate a `character` may has one `weapon`, `armor`, and `skill`.
