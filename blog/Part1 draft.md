@@ -108,4 +108,35 @@ This means the type of `id` property is `number`, and it is a `id property`, lik
 This means the type of `name` property is `string`, and it is required.
 You can easily add or edit properties.
 
-Now, we want to add relationships for `character` to indicate a `character` may has one `weapon`, `armor`, and `skill`.
+Now, we want to add relationships for `character` to indicate a `character` may has one `weapon`, `armor`, and `skill`. You can check [here](https://loopback.io/doc/en/lb4/Relations.html) for more details on model relationship. Or you can also take look at [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial-model.html) to see how does it handle relationship.
+
+We add following imports into the head of `character.model.ts`.
+```
+import {Armor} from './armor.model';
+import {Weapon} from './weapon.model';
+import {Skill} from './skill.model';
+```
+Then we add following code into `character.model.ts`.
+```
+  @hasOne(() => Armor)
+  armor?: Armor;
+
+  @hasOne(() => Weapon)
+  weapon?: Weapon;
+
+  @hasOne(() => Skill)
+  skill?: Skill;
+```
+That means each `character` may has one `weapon`, `armor`, and `skill`.
+
+
+Next, we need to add relationship for `weapon.model.ts` as well. Add import to the head.
+```
+import {Character} from './character.model';
+```
+Then
+```
+  @belongsTo(() => Character)
+    characterId: number;
+```
+This give `weapon` another property `characterId` means which character does this weapon belong to. It's similar to the foreign key it relational database. 
