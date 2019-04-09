@@ -10,7 +10,8 @@ I am sure most of you have better understanding than me on those fields. If I ca
 
 ### Before we start
 There are some prerequisite knowledge you may want to catch before we start.
-* Basic concept of "[Javascript](https://www.w3schools.com/js/)" and "[Node.js](https://www.w3schools.com/nodejs/nodejs_intro.asp)" 
+* Basic concept of [Javascript](https://www.w3schools.com/js/) and [Node.js](https://www.w3schools.com/nodejs/nodejs_intro.asp)
+* 
 
 ## Features:
 1. Create a character.
