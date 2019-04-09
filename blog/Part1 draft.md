@@ -233,7 +233,7 @@ Then change the constructor to this:
   }
 ```
 
-On the other hand, what we need to do for the `weapon.repository.ts` is kind or the same. Instead of `HasOneRepositoryFactory`, we add `BelongsToAccessor` before constructor.
+On the other hand, what we need to do for the `weapon.repository.ts` is kind of the same. Instead of `HasOneRepositoryFactory`, we add `BelongsToAccessor` before constructor.
 ```
   public readonly character: BelongsToAccessor<
     Character,
@@ -257,3 +257,5 @@ And change the constructor to this:
   You can check my repositories at [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/master/firstgame/src/repositories)
   
   ### Controller
+  
+  ### Test
