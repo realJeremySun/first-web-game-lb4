@@ -47,3 +47,7 @@ Then we need to create models. Model is like the class in Java or a table in rel
 In this game, we want to let user create their own characters and equip their characters with weapons, armors, and skills. So models will looks like this.
 
 ![Models](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/models.png)
+
+Run `lb4 model` in your project folder.
+```
+```
