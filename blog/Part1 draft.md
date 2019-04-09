@@ -15,7 +15,8 @@ There are some prerequisite knowledge you may want to catch before we start.
 * [Install LoopBack4](https://loopback.io/doc/en/lb4/Getting-started.html)
 * I highly recommend you to check those two examples: [Todo tutorial](https://loopback.io/doc/en/lb4/todo-tutorial.html) and [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial.html). This episode is base on thise examples. You don't have to understand how does that work. Just keep in mind what function we can achieve. We will dig deep into that later.
 
-## Features:
+### In this episode
+I will implement following features:
 1. Create a character.
 2. Create a weapon, armor, or skill.
 3. Equip character.
@@ -23,44 +24,8 @@ There are some prerequisite knowledge you may want to catch before we start.
 5. Change weapon, armor and skill.
 6. Levelup character.
 
-* Model
-  * character
-    * id : number
-    * name : string
-    * level : number
-    * maxHealthPoint : number
-    * currentHealthPoint : number
-    * nextLevelExp : number
-    * currentExp
-    * maxMana : number
-    * currentMana : number
-    * attack : number
-    * defence : number
-    * armor : {armor}
-    * weapon : {weapon}
-    * skill : {skill}
+There are four important components in a LB4 project: Model, 
 
-  * armor
-    * id : number
-    * name : string
-    * attack : number
-    * defence : number
-    * characterId : number
-
-
-  * weapon
-    * id : number
-    * name : string
-    * attack : number
-    * defence : number
-    * characterId : number
-    
-    
-  * skill
-    * id : number
-    * name : string
-    * attack : number
-    * cost : number
-    * characterId : number
+### Models
 
 ![Models](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/models.png)
