@@ -24,7 +24,21 @@ I will implement following features:
 5. Update character information.
 6. Levelup character.
 
-There are four important components in a LB4 project: Model, 
+There are four important components in a LB4 project: Model, Datasource, Repository, and Controller. Let's create them one by one.
+
+First, let's create a LB4 project.
+Run `lb4 app` in in a folder you want. This will create a new LB4 project.
+Disable "Docker" when it ask you to "Select features to enable in the project"
+```
+wenbo:firstgameDemo wenbo$ lb4 app
+? Project name: firstgame
+? Project description: firstgameDemo
+? Project root directory: firstgame
+? Application class name: FirstgameApplication
+? Select features to enable in the project Enable tslint, Enable prettier,
+Enable mocha, Enable loopbackBuild, Enable vscode, Enable repositories, Ena
+ble services
+```
 
 ### Models
 
