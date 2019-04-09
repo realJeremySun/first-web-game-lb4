@@ -160,3 +160,100 @@ me:port/database):
 ? database: mongo
 ```
 Fill `host` with `localhost` and `port` with `27017`.
+
+This will build a connection between your project and MongoDB.
+
+### Repository
+Repository is like a translator between databse and API operations. One of it's job is like database injecter and extracter, when you call some APIs, repository will help you inject data into database or extract data from databse.
+
+Run `lb4 repository` in your project root.
+```
+wenbo:firstgame wenbo$ lb4 repository
+? Please select the datasource MongoDatasource
+? Select the model(s) you want to generate a repository Character
+? Please select the repository base class DefaultCrudRepository (Legacy juggler bridge)
+   create src/repositories/character.repository.ts
+   update src/repositories/index.ts
+```
+Then create repository for `weapon`, `armor`, and `skill` in the same way.
+
+Let's take a look at the `character.repository.ts` that LB4 generated for you.
+```
+import {DefaultCrudRepository} from '@loopback/repository';
+import {Character} from '../models';
+import {MongoDataSource} from '../datasources';
+import {inject} from '@loopback/core';
+
+export class CharacterRepository extends DefaultCrudRepository<
+  Character,
+  typeof Character.prototype.id
+> {
+  constructor(
+    @inject('datasources.mongo') dataSource: MongoDataSource,
+  ) {
+    super(Character, dataSource);
+  }
+}
+```
+Add this before ther constructor:
+```
+  public armor: HasOneRepositoryFactory<
+    Armor,
+    typeof Character.prototype.id
+  >;
+
+  public weapon: HasOneRepositoryFactory<
+    Weapon,
+    typeof Character.prototype.id
+  >;
+
+  public skill: HasOneRepositoryFactory<
+    Skill,
+    typeof Character.prototype.id
+  >;
+```
+This means `character` may has one `weapon`, `armor`, and `skill`.
+
+Then change the constructor to this:
+```
+  constructor(
+    @inject('datasources.mongoDB') dataSource: MongoDbDataSource,
+    @repository.getter(ArmorRepository)
+    protected armorRepositoryGetter: Getter<ArmorRepository>,
+    @repository.getter(WeaponRepository)
+    protected weaponRepositoryGetter: Getter<WeaponRepository>,
+    @repository.getter(SkillRepository)
+    protected skillRepositoryGetter: Getter<SkillRepository>,
+  ) {
+    super(Character, dataSource);
+
+    this.armor = this.createHasOneRepositoryFactoryFor('armor', armorRepositoryGetter);
+    this.weapon = this.createHasOneRepositoryFactoryFor('weapon', weaponRepositoryGetter);
+    this.skill = this.createHasOneRepositoryFactoryFor('skill', skillRepositoryGetter);
+  }
+```
+
+On the other hand, what we need to do for the `weapon.repository.ts` is kind or the same. Instead of `HasOneRepositoryFactory`, we add `BelongsToAccessor` before constructor.
+```
+  public readonly character: BelongsToAccessor<
+    Character,
+    typeof Weapon.prototype.id
+  >;
+```
+And change the constructor to this:
+```
+  constructor(
+    @inject('datasources.mongoDB') dataSource: MongoDbDataSource,
+    @repository.getter('CharacterRepository')
+    protected characterRepositoryGetter: Getter<CharacterRepository>,
+  ) {
+    super(Weapon, dataSource);
+
+    this.character = this.createBelongsToAccessorFor('character',characterRepositoryGetter);
+  }
+  ```
+  Do the same thing for `armor.repository.ts` and `skill.repository.ts`.
+  
+  You can check my repositories at [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/master/firstgame/src/repositories)
+  
+  ### Controller
