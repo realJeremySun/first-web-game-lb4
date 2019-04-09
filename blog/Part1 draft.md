@@ -28,6 +28,7 @@ There are four important components in a LB4 project: Model, Datasource, Reposit
 
 First, let's create a LB4 project.
 Run `lb4 app` in in a folder you want. This will create a new LB4 project.
+
 Disable "Docker" when it ask you to "Select features to enable in the project"
 ```
 wenbo:firstgameDemo wenbo$ lb4 app
@@ -41,5 +42,8 @@ ble services
 ```
 
 ### Models
+Then we need to create models. Model is like the class in Java or a table in relational database. It is a entity with one or more properties. A model may also has relationship with other models. For example, a `student` model could has properties like `studentID`, `name`, and `GPA`. It may also has one or more entity of `course` model and belong to a `school` model.
+
+In this game, we want to let user create their own characters and equip their characters with weapons, armors, and skills. So models will looks like this.
 
 ![Models](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/models.png)
