@@ -139,4 +139,24 @@ Then
   @belongsTo(() => Character)
     characterId: number;
 ```
-This give `weapon` another property `characterId` means which character does this weapon belong to. It's similar to the foreign key it relational database. 
+This give `weapon` another property `characterId` means which character does this weapon belong to. It's similar to the foreign key in relational database. 
+
+Do the same thing for `armor.model.ts` and `skill.model.ts`. And our models are all set.
+
+### Datasource
+Datasource is how we connect to database in LB4. LB4 support alomst all of the popular databases. In this series I will use [MongoDB](https://www.mongodb.com/). You don't need to know how to use MongoDB. LB4 will take care everything for you. You only need to [install mongoDB](https://docs.mongodb.com/manual/administration/install-community) first.
+
+After installation, run `lb4 datasource` in you project root. 
+```
+wenbo:firstgame wenbo$ lb4 datasource
+? Datasource name: mongo
+? Select the connector for mongo: MongoDB (supported by StrongLoop)
+? Connection String url to override other settings (eg: mongodb://username:password@hostna
+me:port/database):
+? host: localhost
+? port: 27017
+? user:
+? password: [hidden]
+? database: mongo
+```
+Fill `host` with `localhost` and `port` with `27017`.
