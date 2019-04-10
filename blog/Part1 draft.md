@@ -98,7 +98,7 @@ If you take a look at `character.model.ts`, you will find it's very easy to unde
 ```
 This means the type of `id` property is `number`, and it is a `id property`, like the prime key in relational database.
 
-```
+```ts
   @property({
     type: 'string',
     required: true,
@@ -111,13 +111,13 @@ You can easily add or edit properties.
 Now, we want to add relationships for `character` to indicate a `character` may has one `weapon`, `armor`, and `skill`. You can check [here](https://loopback.io/doc/en/lb4/Relations.html) for more details on model relationship. Or you can also take look at [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial-model.html) to see how does it handle relationship.
 
 We add following imports into the head of `character.model.ts`.
-```
+```ts
 import {Armor} from './armor.model';
 import {Weapon} from './weapon.model';
 import {Skill} from './skill.model';
 ```
 Then we add following code into `character.model.ts`.
-```
+```ts
   @hasOne(() => Armor)
   armor?: Armor;
 
@@ -131,11 +131,11 @@ That means each `character` may has one `weapon`, `armor`, and `skill`.
 
 
 Next, we need to add relationship for `weapon.model.ts` as well. Add import to the head.
-```
+```ts
 import {Character} from './character.model';
 ```
 Then
-```
+```ts
   @belongsTo(() => Character)
     characterId: number;
 ```
@@ -178,7 +178,7 @@ wenbo:firstgame wenbo$ lb4 repository
 Then create repository for `weapon`, `armor`, and `skill` in the same way.
 
 Let's take a look at the `character.repository.ts` that LB4 generated for you.
-```
+```ts
 import {DefaultCrudRepository} from '@loopback/repository';
 import {Character} from '../models';
 import {MongoDataSource} from '../datasources';
@@ -196,7 +196,7 @@ export class CharacterRepository extends DefaultCrudRepository<
 }
 ```
 Add this before ther constructor:
-```
+```ts
   public armor: HasOneRepositoryFactory<
     Armor,
     typeof Character.prototype.id
@@ -215,7 +215,7 @@ Add this before ther constructor:
 This means `character` may has one `weapon`, `armor`, and `skill`.
 
 Then change the constructor to this:
-```
+```ts
   constructor(
     @inject('datasources.mongoDB') dataSource: MongoDbDataSource,
     @repository.getter(ArmorRepository)
@@ -234,14 +234,14 @@ Then change the constructor to this:
 ```
 
 On the other hand, what we need to do for the `weapon.repository.ts` is kind of the same. Instead of `HasOneRepositoryFactory`, we add `BelongsToAccessor` before constructor.
-```
+```ts
   public readonly character: BelongsToAccessor<
     Character,
     typeof Weapon.prototype.id
   >;
 ```
 And change the constructor to this:
-```
+```ts
   constructor(
     @inject('datasources.mongoDB') dataSource: MongoDbDataSource,
     @repository.getter('CharacterRepository')
