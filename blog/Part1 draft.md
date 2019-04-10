@@ -251,11 +251,29 @@ And change the constructor to this:
 
     this.character = this.createBelongsToAccessorFor('character',characterRepositoryGetter);
   }
-  ```
-  Do the same thing for `armor.repository.ts` and `skill.repository.ts`.
+```
+Do the same thing for `armor.repository.ts` and `skill.repository.ts`.
   
-  You can check my repositories at [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/master/firstgame/src/repositories)
+You can check my code for repositories at [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/master/firstgame/src/repositories)
   
-  ### Controller
+### Controller
+Controller is the most important component. It contain the code for all of your project functions and handle all business logics. We will spend the majority of our time on controller.
+
+Run `lb4 controller` in your project root to create default controller.
+```
+wenbo:firstgame wenbo$ lb4 controller
+? Controller class name: character
+? What kind of controller would you like to generate? REST Controller with CRUD functions
+? What is the name of the model to use with this CRUD repository? Character
+? What is the name of your CRUD repository? CharacterRepository
+? What is the type of your ID? number
+? What is the base HTTP path name of the CRUD operations? /characters
+   create src/controllers/character.controller.ts
+   update src/controllers/index.ts
+```
+
+(to be continue)
   
-  ### Test
+  
+  
+### Test
