@@ -89,7 +89,7 @@ Now open `character.model.ts` with your favourite editer, we are going handle th
 The language we use in LB4 is Typescript. It's very similar to Javascript. Don't worry if you did't use it before. LB4 already generate the most of code for you. We only need to add or edit few lines of code as needed.
 
 If you take a look at `character.model.ts`, you will find it's very easy to understand.
-```
+```ts
   @property({
     type: 'number',
     id: true,
