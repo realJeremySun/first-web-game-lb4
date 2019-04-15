@@ -2,11 +2,28 @@
 ## Part 1
 
 ### Instruction
-In this series, we are going to create a API web game by using LoopBack4. This game is an online web Text-based Adventure Game. In this game, users can create their own characters, fight with monsters and find treasures. User can
-control their character by calling specific APIs. Their actions may include attack enemy, cast spell, defeat enemy and get loot.
+In this series, we are going to create a API web game by using LoopBack4. This game is an online web Text-based Adventure Game. 
+
+In this game, users can create their own account and characters, fight with monsters and find treasures. User can
+control their character to take actions like attack enemy, cast spell, defeat enemy and get loot. This game should also allow multiple players login and play with their friends.
 
 I don't have any background on web or game development. I graduated from college last year. The main purpose of this series is to show you how to learn LoopBack4 and how to use LoopBack4 to easily build your own API and web project.
 I am sure most of you have better understanding than me on those fields. If I can do this, you can do better.
+
+### Why LoopBack4
+LoopBack4 is a open source framework that can help you build REST API. You can use LB4 to automatically generate simple APIs in couple of minutes without any coding. You can even easily connect your project to many popular databses. In this series, I will use MongoDB as my databse. I don't even need to know how to use MongoDB as LB4 will handle everyting for me. Isn't this like magic?
+
+Another great advantage of LB4 is extensible. The auto-generated APIs are just some basic CRUD functions. You can add your own programing logic to those functions and customize your project on the top of the auto-generated APIs. You don't need to worry about any environment configuration and database connection. 
+
+### Project plan
+In this series I hope to achieve following goals:
+* Users can create their own character and customize their character.
+* Users can equip their character with weapon, armor, and skill.
+* Basic function for game: attack, defence, and cast spell.
+* User authorization and role-based access control.
+* Multiple users login and play at the same time.
+* UI.
+* Deployment on cloud like: IBM cloud, AWS, Google Cloud or Azure.
 
 ### Before we start
 There are some prerequisite knowledge you may want to catch before we start.
@@ -29,7 +46,7 @@ First, let's create a LB4 project.
 Run `lb4 app` in in a folder you want. This will create a new LB4 project.
 
 Disable "Docker" when it ask you to "Select features to enable in the project"
-```cmd
+```
 wenbo:firstgameDemo wenbo$ lb4 app
 ? Project name: firstgame
 ? Project description: firstgameDemo
