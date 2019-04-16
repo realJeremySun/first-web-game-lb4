@@ -178,14 +178,14 @@ Server is running at http://[::1]:3000
 Try http://[::1]:3000/ping
 ```
 Go to http://[::1]:3000 and open explorer. You will see this:
-[explorer](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/b1-api-explorer.png)
+![explorer](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/b1-api-explorer.png)
 That are thoes basic APIs we just created.
 
 Let's try to create a character. Open `post /character` and click "try it out". Only input a name for character and leave others blank.
-[post](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/b1-post-character.png)
+![post](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/b1-post-character.png)
 
 Then we can try to get information for the character. Open `get /character/{id}` and click "try it out". Input "1" as character Id.
-[get](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/b1-get-character.png)
+![get](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/b1-get-character.png)
 
 ### What you can apply on your own project.
 In this episode, we covered the how to create simple APIs. You can do the same for your own project as a start point.
