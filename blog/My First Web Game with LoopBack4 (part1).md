@@ -178,7 +178,7 @@ wenbo:firstgame wenbo$ npm start
 Server is running at http://[::1]:3000
 Try http://[::1]:3000/ping
 ```
-Go to http://[::1]:3000 and open explorer. You will see this:
+Go to [http://[::1]:3000](http://[::1]:3000) and open explorer. You will see this:
 ![explorer](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/b1-api-explorer.png)
 That are thoes basic APIs we just created.
 
