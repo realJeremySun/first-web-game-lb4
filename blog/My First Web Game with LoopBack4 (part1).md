@@ -101,8 +101,7 @@ Enter an empty property name when done
 ```
 * The first property is `id`. It's like the prime key in relational database. We don't need user to specify `id` and we will auto generate `id` for them.
 * The second property is `name`. That is the only thing we need user to specify.
-* All of other properties like `level`, `attack` and `defence` are default. We will not nee user to specify.
-We can create `weapon`, `armor`, and `skill` models in the same way.
+* All of other properties like `level`, `attack` and `defence` are default. We will not need user to specify.
 
 If you go to `/src/models`, you will see `character.model.ts`. We don't need to do anything about it at this point. We will come back in following episode.
 
