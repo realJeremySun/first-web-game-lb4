@@ -36,9 +36,9 @@ There are some prerequisite knowledge you may want to catch before we start.
 * I highly recommend you to check those two examples: [Todo tutorial](https://loopback.io/doc/en/lb4/todo-tutorial.html) and [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial.html). This episode is base on thise examples. You don't have to understand how does that work. Just keep in mind what function we can achieve. We will dig deep into that later.
 
 ### Itializing scaffolding
-LB4 provide CLI(command line interface) to help create your project. Simply Run `lb4 app` in a folder you want to use the CLI.
+LB4 provide CLI(command line interface) to help create your project. 
 
-Disable "Docker" when it ask you to "Select features to enable in the project"
+Simply Run `lb4 app` in a folder you want to use the CLI. Disable "Docker" when it ask you to "Select features to enable in the project"
 ```
 wenbo:firstgameDemo wenbo$ lb4 app
 ? Project name: firstgame
