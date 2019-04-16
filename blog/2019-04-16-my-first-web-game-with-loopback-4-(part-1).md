@@ -1,4 +1,15 @@
-# My First Web Game with LoopBack4 
+---
+layout: post
+title: My First Web Game with LoopBack 4 (part 1)
+date: 2019-05-16
+author: Wenbo Sun
+permalink: /strongblog/my-first-web-game-with-loopback-4-(part-1)/
+categories:
+  - How-To
+published: false  
+---
+
+# My First Web Game with LoopBack 4 
 
 ## Part 1
 
