@@ -21,7 +21,7 @@ In this series, we are going to create a API web game by using LoopBack 4. This 
 In this game, users can create their own accounts and characters, fight with monsters and find treasures. User can
 control their characters to take actions like attack enemy, cast spell, defeat enemy and get loot. This game should also allow multiple players login and play with their friends.
 
-I don't have any background on web or game development. I graduated from college last year. The main purpose of this series is to show you how to learn LoopBack4 and how to use LoopBack4 to easily build your own API and web project.
+I don't have any background on web or game development. I graduated from college last year. The main purpose of this series is to show you how to learn LoopBack 4 and how to use LoopBack 4 to easily build your own API and web project.
 I am sure most of you have better understanding than me on those fields. If I can do this, you can do better.
 
 #### Why LoopBack 4?
@@ -45,7 +45,7 @@ I will start from the easiest thing: auto-generate APIs for users to create char
 #### Before we start
 There are some prerequisite knowledge you may want to catch before we start.
 * Basic concept of [Javascript](https://www.w3schools.com/js/) and [Node.js](https://www.w3schools.com/nodejs/nodejs_intro.asp)
-* [Install LoopBack4](https://loopback.io/doc/en/lb4/Getting-started.html)
+* [Install LoopBack 4](https://loopback.io/doc/en/lb4/Getting-started.html)
 * I highly recommend you to check those two examples: [Todo tutorial](https://loopback.io/doc/en/lb4/todo-tutorial.html) and [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial.html). This episode is base on those examples. You don't have to understand how does that work. Just keep in mind what function we can achieve. We will dig deep into that later.
 
 #### Itializing scaffolding
