@@ -55,17 +55,17 @@ There are four important components in a LB4 project: Model, Datasource, Reposit
 Model is like the class in Java or a table in relational database. It is a entity with one or more properties. A model may also has relationship with other models. For example, a `student` model could has properties like `studentID`, `name`, and `GPA`. It may also has one or more entity of `course` model and belong to a `school` model.
 
 We will handle the model relationship in next blog. In this episode let't simply create a `character` model first. `character` model has following properties:
-* id: number
-* name: string
-* level: number
-* nextLevelExp: number
-* maxExp: number
-* maxHealth: number
-* currentHealth: number
-* maxMana: number
-* currentMana: number
-* attack: number
-* defence: number
+* id: number (id property)
+* name: string (required)
+* level: number (1)
+* nextLevelExp: number (100)
+* maxExp: number (0)
+* maxHealth: number (100)
+* currentHealth: number (100)
+* maxMana: number (50)
+* currentMana: number (50)
+* attack: number (20)
+* defence: number (5)
 
 Run `lb4 model` in the project folder we just created by using CLI (run `cd firstgame` first).
 ```
