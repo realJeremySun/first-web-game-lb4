@@ -9,11 +9,13 @@ categories:
 published: false  
 ---
 
-# My First Web Game with LoopBack 4 
+<!--more-->
 
-## Part 1
+## My First Web Game With LoopBack 4 
 
-### Instruction
+### Part 1
+
+#### Instruction
 
 In this series, we are going to create a API web game by using LoopBack 4. This game is an online web Text-based Adventure Game. 
 
@@ -23,13 +25,13 @@ control their characters to take actions like attack enemy, cast spell, defeat e
 I don't have any background on web or game development. I graduated from college last year. The main purpose of this series is to show you how to learn LoopBack4 and how to use LoopBack4 to easily build your own API and web project.
 I am sure most of you have better understanding than me on those fields. If I can do this, you can do better.
 
-### Why LoopBack 4?
+#### Why LoopBack 4?
 
 LoopBack 4 is a open source framework that can help you build REST API. You can use LB4 to automatically generate simple APIs in couple of minutes without any coding. You can even easily connect your project to many popular databses. In this series, I will use MongoDB as my database. I don't even need to know how to use MongoDB as LB4 will handle everyting for me. Isn't this like magic?
 
 Another great advantage of LB4 is extensible. The auto-generated APIs are just some basic CRUD functions. You can add your own programing logic to those functions and customize your project on the top of the auto-generated APIs. You don't need to worry about any environment configuration and database connection. 
 
-### Project Plan
+#### Project Plan
 
 In this series I hope to achieve following goals:
 
@@ -41,11 +43,11 @@ In this series I hope to achieve following goals:
 * UI.
 * Deployment on cloud like: IBM cloud, AWS, Google Cloud or Azure.
 
-### In this episode
+#### In this episode
 
 I will start from the easiest thing: auto-generate APIs for users to create character and connect to MongoDB. 
 
-### Before we start
+#### Before we start
 
 There are some prerequisite knowledge you may want to catch before we start.
 
@@ -53,7 +55,7 @@ There are some prerequisite knowledge you may want to catch before we start.
 * [Install LoopBack4](https://loopback.io/doc/en/lb4/Getting-started.html)
 * I highly recommend you to check those two examples: [Todo tutorial](https://loopback.io/doc/en/lb4/todo-tutorial.html) and [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial.html). This episode is base on those examples. You don't have to understand how does that work. Just keep in mind what function we can achieve. We will dig deep into that later.
 
-### Itializing scaffolding
+#### Itializing scaffolding
 
 LB4 provide CLI(command line interface) to help create your project. 
 
@@ -70,7 +72,7 @@ ble services
 ```
 There are four important components in a LB4 project: Model, Datasource, Repository, and Controller. Let's create them one by one.
 
-### Model
+#### Model
 
 Model is like the class in Java or a table in relational database. It is a entity with one or more properties. A model may also has relationship with other models. For example, a `student` model could has properties like `studentID`, `name`, and `GPA`. It may also has one or more entity of `course` model and belong to a `school` model.
 
@@ -128,7 +130,7 @@ Enter an empty property name when done
 
 If you go to `/src/models`, you will see `character.model.ts`. We don't need to do anything about it at this point. We will come back in following episode.
 
-### Datasource
+#### Datasource
 
 Datasource is how we connect to database in LB4. LB4 support alomst all of the popular databases. In this series I will use [MongoDB](https://www.mongodb.com/). You don't need to know how to use MongoDB. LB4 will take care everything for you. You only need to [install mongoDB](https://docs.mongodb.com/manual/administration/install-community) first.
 
@@ -151,7 +153,7 @@ Fill `host` with `localhost` and `port` with `27017`.
 
 This will build a connection between your project and MongoDB.
 
-### Repository
+#### Repository
 
 Repository is like a translator between databse and API operations. One of it's job is like database injecter and extracter, when you call some APIs, repository will help you inject data into database or extract data from databse.
 
@@ -166,7 +168,7 @@ wenbo:firstgame wenbo$ lb4 repository
 ```
 You will find `character.repository.ts` in `src/repositories`. It's all we need at this point.
 
-### Controller
+#### Controller
 
 Controller is the most important component. It contain the code for all of your project functions and handle all business logics. In this series We will spend the majority of our time on controller.
 
@@ -184,7 +186,7 @@ wenbo:firstgame wenbo$ lb4 controller
 ```
 This will generate all basic APIs for `character`, include `post`, `get`, `patch`, `put`, and `delete`.
 
-### API explorer
+#### API explorer
 
 LB4 has a build-in API explorer for you to play and test your API.
 
@@ -219,10 +221,10 @@ Let's try to create a character. Open `post /character` and click "try it out". 
 Then we can try to get information for the character. Open `get /character/{id}` and click "try it out". Input "1" as character Id.
 ![get](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/b1-get-character.png)
 
-### What you can apply on your own project.
+#### What you can apply on your own project.
 
 In this episode, we covered the how to create simple APIs. You can do the same for your own project as a start point.
 
-### To be continue
+#### What's Next?
 
 In next episode, we will add `weapon`, `armor`, `skill` model and handle the relationship between models.
