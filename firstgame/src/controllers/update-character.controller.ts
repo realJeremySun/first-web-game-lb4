@@ -53,6 +53,7 @@ export class UpdateCharacterController {
     @param.path.number('id') id: number,
   ): Promise<any[]> {
     let res: any[] = ['no weapon', 'no armor', 'no skill'];
+    //todo
     try{res[0] = await this.characterRepository.weapon(id).get()}
     catch{console.log('@get /updatecharacter/{id}: no current weapon')};
     try{res[1] = await this.characterRepository.armor(id).get()}
@@ -113,7 +114,7 @@ export class UpdateCharacterController {
     let char: Character = await this.characterRepository.findById(id);
     char.attack! += weapon.attack;
     char.defence! += weapon.defence;
-    try{
+    try{//todo
       let oldWeapon: Weapon = await this.characterRepository.weapon(id).get();
       char.attack! -= oldWeapon.attack!;
       char.defence! -= oldWeapon.defence!;
@@ -125,6 +126,7 @@ export class UpdateCharacterController {
     finally{
       await this.characterRepository.updateById(id, char);
       let weaponId = 1;
+      //todo
       while(await this.weaponRepository.exists(weaponId)){
         weaponId++;
       }
@@ -190,7 +192,7 @@ export class UpdateCharacterController {
     @param.path.number('id') id: number,
     @requestBody() skill: Skill,
   ): Promise<Skill> {
-    try{
+    try{//todo
       await this.characterRepository.skill(id).delete();
     }
     catch(e){
