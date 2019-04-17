@@ -12,4 +12,12 @@ published: false
 
 ## Part 1: Managing Models Relationship
 
-### Previously on 
+### Previously on My First API
+
+In previous episode, we have created a foundation for our project. Now we have some basic APIs to create, edit, and delete character.
+
+<!--more-->
+
+### In this episode
+
+
