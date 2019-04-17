@@ -11,3 +11,5 @@ published: false
 ---
 
 ## Part 1: Managing Models Relationship
+
+### Previously on 
