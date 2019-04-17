@@ -24,7 +24,7 @@ In this series, I'm going to do exactly that! Join me as I create an API web gam
 
 The main purpose of this series is to help you learn LoopBack 4 and how to use it to easily build your own API and web project.
 
-This project is an online web text-based adventure game. In it, users can create their own accounts to build characters, fight monsters and find treasures. Users will be able to control their characters to take a variety of actions: attacking enemies, casting spells, and getting loot. This game should also allow multiple players login and play with their friends.
+The project I'm sharing with you is an online web text-based adventure game. In it, users can create their own accounts to build characters, fight monsters and find treasures. Users will be able to control their characters to take a variety of actions: attacking enemies, casting spells, and getting loot. This game should also allow multiple players login and play with their friends.
 
 Some brief background on myself, first. I graduated from college last year. I don't have any background on web or game development. I am sure most of you have better understanding than me on those fields. If I can do this, you can do it too - perhaps even better!
 
