@@ -65,7 +65,7 @@ I also highly recommend you to check those two examples:
 
 This episode is base on those examples. You don't have to understand how they work, just keep in mind what function we can achieve. We will dig deep into that later.
 
-### Itializing Scaffolding
+### initializing Scaffolding
 
 LoopBack 4 provides a CLI (command line interface) to help create your project. 
 
