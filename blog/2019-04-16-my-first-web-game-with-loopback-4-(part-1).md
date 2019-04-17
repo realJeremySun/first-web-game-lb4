@@ -203,6 +203,31 @@ wenbo:firstgame wenbo$ lb4 controller
 
 This will generate all basic APIs for `character`, including `post`, `get`, `patch`, `put`, and `delete`.
 
+If you have tried the [Todo tutorial](https://loopback.io/doc/en/lb4/todo-tutorial.html), you probably already noticed the auto increment id feature. When you call the `post` API multiple times (leave `id` blank), the `id` increased by 1 every time. This feature is supported by the in-memory database. But we are using MongoDB in this project. If we want to have that feature, we need to do that programmatically.
+
+Go to `src/controllers` and open `character.controller.ts` with your favourite editer.
+```ts
+  @post('/characters', {
+    responses: {
+      '200': {
+        description: 'Character model instance',
+        content: {'application/json': {schema: {'x-ts-type': Character}}},
+      },
+    },
+  })
+  async create(@requestBody() character: Character): Promise<Character> {
+    //add following lines
+    let characterId = 1;
+    while(await this.characterRepository.exists(characterId)){
+      characterId ++;
+    }
+    character.id = characterId;
+    //add above lines
+    return await this.characterRepository.create(character);
+  }
+```
+Add those lines into the `post /character`. That will traverse your database to find a unique character id. It is not a very good programing practice. We will try to improve it in follow blogs.
+
 ### API Explorer
 
 LoopBack 4 has a build-in API explorer for you to play and test your API.
