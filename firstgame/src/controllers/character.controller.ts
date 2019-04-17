@@ -40,7 +40,7 @@ export class CharacterController {
   async create(@requestBody() character: Character): Promise<Character> {
     let characterId = 1;
     while(await this.characterRepository.exists(characterId)){
-      characterId++;
+      characterId *= 2;
     }
     character.id = characterId;
     return await this.characterRepository.create(character);
