@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Creating My First API with LoopBack 4 (part 1)
+title: Creating My First API with LoopBack 4 (Part 1)
 date: 2019-04-17
 author: Wenbo Sun
 permalink: /strongblog/my-first-API-with-loopback-4-(part-1)/
@@ -22,9 +22,7 @@ In this series, I'm going to do exactly that! Join me as I create an API web gam
 
 <!--more-->
 
-The main purpose of this series is to help you learn LoopBack 4 and how to use it to easily build your own API and web project.
-
-The project I'm sharing with you is an online web text-based adventure game. In it, users can create their own accounts to build characters, fight monsters and find treasures. Users will be able to control their characters to take a variety of actions: attacking enemies, casting spells, and getting loot. This game should also allow multiple players login and play with their friends.
+The main purpose of this series is to help you learn LoopBack 4 and how to use it to easily build your own API and web project. We'll do so by creating a new project I'm working on: an online web text-based adventure game. In it, users can create their own accounts to build characters, fight monsters and find treasures. Users will be able to control their characters to take a variety of actions: attacking enemies, casting spells, and getting loot. This game should also allow multiple players login and play with their friends.
 
 Some brief background on myself, first. I graduated from college last year. I don't have any background on web or game development. I am sure most of you have better understanding than me on those fields. If I can do this, you can do it too - perhaps even better!
 
@@ -36,7 +34,7 @@ Another great advantage of LB4 is that it is extensible. The auto-generated APIs
 
 ### Project Plan
 
-In this series I hope to achieve following goals:
+In this series, my goals are to build the following functionality into the game:
 
 * The ability for users to create their own character and customize their character.
 * The ability for users to equip their character with weapon, armor, and skill.
@@ -48,7 +46,7 @@ In this series I hope to achieve following goals:
 
 ### In this Episode
 
-To begin things, I will start with the easiest thing: auto-generate APIs for users to create their character and connect to MongoDB. 
+To begin things, I will start with the easiest task: auto-generate APIs for users to create their character and connect to MongoDB. 
 
 ### Before We Start
 
@@ -58,7 +56,7 @@ There are some prerequisites you may want to catch up on before we start.
 
 * [Install LoopBack 4](https://loopback.io/doc/en/lb4/Getting-started.html).
 
-I also highly recommend you to check those two examples: 
+I also highly recommend you to check these two examples: 
 
 * [Todo tutorial](https://loopback.io/doc/en/lb4/todo-tutorial.html).
 * [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial.html). 
@@ -205,7 +203,8 @@ This will generate all basic APIs for `character`, including `post`, `get`, `pat
 
 If you have tried the [Todo tutorial](https://loopback.io/doc/en/lb4/todo-tutorial.html), you probably already noticed the auto increment id feature. When you call the `post` API multiple times (leave `id` blank), the `id` increased by 1 every time. This feature is supported by the in-memory database. But we are using MongoDB in this project. If we want to have that feature, we need to do that programmatically.
 
-Go to `src/controllers` and open `character.controller.ts` with your favourite editer.
+Go to `src/controllers` and open `character.controller.ts` with your favourite editor.
+
 ```ts
   @post('/characters', {
     responses: {
@@ -226,7 +225,8 @@ Go to `src/controllers` and open `character.controller.ts` with your favourite e
     return await this.characterRepository.create(character);
   }
 ```
-Add those lines into the `post /character`. That will traverse your database to find a unique character id. It is not a very good programing practice. We will try to improve it in follow blogs.
+
+Add those lines into the `post /character`. That will traverse your database to find a unique character id. Since this is not a very good programing practice, we will try to improve it in upcoming blogs.
 
 ### API Explorer
 
@@ -269,7 +269,7 @@ Then we can try to get information for the character. Open `get /character/{id}`
 
 In this episode, we covered the how to create simple APIs. You can do the same to create a start point for your own project, for example, a student registration system which has a `student` model with properties like `studentId`, `name`, `major`, and `course`.
 
-On the other hand, you have freedom to choose any database you want. LB4 supports most of database very well. [Here](https://loopback.io/doc/en/lb4/soap-calculator-tutorial-add-datasource.html) is a example that use SOAP webservices as datasource.
+On the other hand, you have the freedom to choose any database you want. LB4 supports most databases very well. [Here](https://loopback.io/doc/en/lb4/soap-calculator-tutorial-add-datasource.html) is a example that uses SOAP webservices as datasource.
 
 ### What's Next?
 
