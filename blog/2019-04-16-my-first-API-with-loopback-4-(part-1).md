@@ -92,7 +92,7 @@ We will delve more deeply into the model relationship in next blog. In this epis
 * name: string (required)
 * level: number (1)
 * nextLevelExp: number (100)
-* maxExp: number (0)
+* currentExp: number (0)
 * maxHealth: number (100)
 * currentHealth: number (100)
 * maxMana: number (50)
