@@ -274,3 +274,5 @@ On the other hand, you have the freedom to choose any database you want. LB4 sup
 ### What's Next?
 
 In next episode, we will add `weapon`, `armor`, `skill` model and handle the relationship between models.
+
+In the meantime, you can learn more about LoopBack in [past blogs](https://strongloop.com/strongblog/tag_LoopBack.html).
