@@ -226,7 +226,7 @@ Go to `src/controllers` and open `character.controller.ts` with your favourite e
   }
 ```
 
-Add those lines into the `post /character`. That will traverse your database to find a unique character id. Since this is not a very good programing practice, we will try to improve it in upcoming blogs.
+Add those lines into the `post /character`. That will traverse your database to find a unique character id. Since this is a very bad programing practice, we will try to improve it in next episode.
 
 ### API Explorer
 
