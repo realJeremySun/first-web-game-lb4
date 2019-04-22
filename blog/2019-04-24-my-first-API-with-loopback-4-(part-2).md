@@ -10,7 +10,7 @@ categories:
 published: false  
 ---
 
-## Part 1: Managing Models Relationship
+## Part 1: Generating Universally Unique ID and Managing Models Relationship
 
 ### Previously on My First API
 
@@ -28,7 +28,7 @@ First, we will use a third-party library in our LoopBack 4 project to generate u
 
 We will use `HasOne` in this episode.
 
-### Universally unique id (UUID)
+### Universally Unique ID (UUID)
 In last episode, we use a while loop to generate continuous character IDs. However, that could be disaster in a real world application. Because fetching data from database is expensive. We don't want to do that hundreds times to just find a unique character id. On the other hand, we don't really need continuous IDs, we only need unique IDs to distinguish characters. So we will use a better approach to generate universally unique IDs (UUID).
 
 We are going to use a third-party library called [uuid](https://www.npmjs.com/package/uuid). Run `npm install uuid` in your project root to install it.
@@ -79,7 +79,7 @@ export class FirstgameApplication extends BootMixin(
   constructor(options: ApplicationConfig = {}) {
   ...
 ```
-Open `src/controllers/character.controller.ts` and add two lines at the very beginning:
+Open `src/controllers/character.controller.ts` and add two lines at the head:
 
 ```ts
 import {FirstgameApplication as app} from '../';
@@ -143,3 +143,56 @@ We will create `weapon`, `armor`, and `skill` models. One `character` may have o
 
 ![Models](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/models.png)
 
+In last episode, we built APIs for `character` in the order of model, repository, datasource, and controller. Now we will do it in the same way.
+
+#### Model
+
+First, we need to create `weapon` model. Is's very similar to what we did in last episode. Run `lb4 model` in project root.
+```
+wenbo:firstgame wenbo$ lb4 model
+? Model class name: weapon
+? Please select the model base class Entity (A persisted model with an ID)
+? Allow additional (free-form) properties? No
+Let's add a property to Weapon
+Enter an empty property name when done
+
+? Enter the property name: id
+? Property type: string
+? Is id the ID property? Yes
+? Is it required?: No
+? Default value [leave blank for none]:
+
+Let's add another property to Weapon
+Enter an empty property name when done
+
+? Enter the property name: name
+? Property type: string
+? Is it required?: Yes
+? Default value [leave blank for none]:
+
+Let's add another property to Weapon
+Enter an empty property name when done
+
+? Enter the property name: attack
+? Property type: number
+? Is it required?: Yes
+? Default value [leave blank for none]:
+
+Let's add another property to Weapon
+Enter an empty property name when done
+
+? Enter the property name: defence
+? Property type: number
+? Is it required?: Yes
+? Default value [leave blank for none]:
+```
+Do the same thing for `aromr` and `skill`.
+
+Now let's add relationships for `character` to indicate a `character` may has one `weapon`, `armor`, and `skill`. You can check [here](https://loopback.io/doc/en/lb4/Relations.html) for more details on model relationship. You can also take a look at [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial-model.html) to see how does it handle relationship.
+
+Add following imports at the head of `character.model.ts`.
+```ts
+import {Armor} from './armor.model';
+import {Weapon} from './weapon.model';
+import {Skill} from './skill.model';
+```
