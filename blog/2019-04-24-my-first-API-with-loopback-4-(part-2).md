@@ -45,4 +45,21 @@ Then go back to `src/models/character.model.ts` and change the type of `id` to s
   id?: string;
 ```
 
-Go to `src/controllers/character.controller.ts`
+Go to `src/controllers/character.controller.ts`. In the `@get('/characters/{id}` API, change the type of `id` to `string`.
+
+```ts
+  @get('/characters/{id}', {
+    responses: {
+      '200': {
+        description: 'Character model instance',
+        content: {'application/json': {schema: {'x-ts-type': Character}}},
+      },
+    },
+  })
+  async findById(
+    //@param.path.number('id') id: nuber
+    @param.path.string('id') id: string
+  ): Promise<Character> {
+    return await this.characterRepository.findById(id);
+  }
+```
