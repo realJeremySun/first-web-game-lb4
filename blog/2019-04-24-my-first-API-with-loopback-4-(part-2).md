@@ -34,6 +34,7 @@ In last episode, we use a while loop to generate continuous character IDs. Howev
 We are going to use a third-party library called [uuid](https://www.npmjs.com/package/uuid). Run `npm install uuid` in your project root to install it.
 
 Then go back to `src/models/character.model.ts` and change the type of `id` to string. Because string has better distinction than number.
+
 ```ts
   @property({
     //type: 'number',
@@ -43,3 +44,5 @@ Then go back to `src/models/character.model.ts` and change the type of `id` to s
   //id?: number;
   id?: string;
 ```
+
+Go to `src/controllers/character.controller.ts`
