@@ -10,7 +10,7 @@ categories:
 published: false  
 ---
 
-## Part 1: Generating Universally Unique ID and Managing Models Relationship
+## Part 2: Generating Universally Unique ID and Managing Models Relationship
 
 ### Previously on My First API
 
