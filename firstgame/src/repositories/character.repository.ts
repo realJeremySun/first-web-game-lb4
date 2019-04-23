@@ -39,7 +39,6 @@ export class CharacterRepository extends DefaultCrudRepository<
     protected skillRepositoryGetter: Getter<SkillRepository>,
   ) {
     super(Character, dataSource);
-
     this.armor = this.createHasOneRepositoryFactoryFor('armor', armorRepositoryGetter);
     this.weapon = this.createHasOneRepositoryFactoryFor('weapon', weaponRepositoryGetter);
     this.skill = this.createHasOneRepositoryFactoryFor('skill', skillRepositoryGetter);
