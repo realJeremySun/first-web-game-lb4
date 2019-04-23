@@ -228,6 +228,8 @@ This give `weapon` another property `characterId` means which character does thi
 
 Do the same thing for `armor.model.ts` and `skill.model.ts`. And our models are all set.
 
+You can check my code for all model at [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part1/firstgame/src/models).
+
 #### Datasource
 
 No need to create new datasource. We can use the one we created in last episode.
@@ -330,6 +332,21 @@ import {CharacterRepository} from './character.repository';
 ```
 Do the same thing for `armor.repository.ts` and `skill.repository.ts`. And our repositories are all set.
 
+You can check my code for all repositories at [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part1/firstgame/src/repositories).
+
 #### Controller
 
 We are not going to cover controller today. Because there is a lot of work to do in controller and this episode is long enough. We will do it in next episode.
+
+### Applying This to Your Own Project
+
+In this episode, we used a third-party library to generate UUID. LoopBack 4 project is extendable. You can easily use any external library in you project.
+
+On the other hand, we built relations between `character`, `weapon`, `aromr`, and `skill`. In a real world application, most of entities have relationship between each other. You can use LoopBack 4 to manage that in your project.
+
+### What's Next?
+
+In next episode, we will do a lot of coding in `controller` to create `weapon`, `armor`, `skill` and equip a character with them.
+
+In the meantime, you can learn more about LoopBack in [past blogs](https://strongloop.com/strongblog/tag_LoopBack.html).
+
