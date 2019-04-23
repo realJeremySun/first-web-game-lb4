@@ -86,7 +86,7 @@ import {FirstgameApplication as app} from '../';
 import {v4 as uuid} from 'uuid';
 ```
 
-The first line will import the `applications.ts` so that the `characterController` can find the `Set<string>` we just created. Second line will import `uuid`, so we can use it in our code.
+The first line will import the `applications.ts` so that the `characterController` can find the `Set<string>` we just created. The second line will import `uuid`, so we can use it in our code.
   
 Then in the `post /characters' API:
 
