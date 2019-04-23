@@ -28,6 +28,8 @@ First, we will use a third-party library in our LoopBack 4 project to generate u
 
 We will use `HasOne` in this episode.
 
+You can check [this branch](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part1) for the code of part 1 and part 2 of this series.
+
 ### Universally Unique ID (UUID)
 In last episode, we use a while loop to generate continuous character IDs. However, that could be disaster in a real world application. Because fetching data from database is expensive. We don't want to do that hundreds times to just find a unique character id. On the other hand, we don't really need continuous IDs, we only need unique IDs to distinguish characters. So we will use a better approach to generate universally unique IDs (UUID).
 
