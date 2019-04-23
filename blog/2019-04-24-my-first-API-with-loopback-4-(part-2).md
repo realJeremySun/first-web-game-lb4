@@ -143,11 +143,12 @@ We will create `weapon`, `armor`, and `skill` models. One `character` may have o
 
 ![Models](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/models.png)
 
-In last episode, we built APIs for `character` in the order of model, repository, datasource, and controller. Now we will do it in the same way.
+In last episode, we built APIs for `character` in the order of model, datasource, repository, and controller. Now we will do it in the same way.
 
 #### Model
 
 First, we need to create `weapon` model. Is's very similar to what we did in last episode. Run `lb4 model` in project root.
+
 ```
 wenbo:firstgame wenbo$ lb4 model
 ? Model class name: weapon
@@ -191,8 +192,144 @@ Do the same thing for `aromr` and `skill`.
 Now let's add relationships for `character` to indicate a `character` may has one `weapon`, `armor`, and `skill`. You can check [here](https://loopback.io/doc/en/lb4/Relations.html) for more details on model relationship. You can also take a look at [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial-model.html) to see how does it handle relationship.
 
 Add following imports at the head of `character.model.ts`.
+
 ```ts
 import {Armor} from './armor.model';
 import {Weapon} from './weapon.model';
 import {Skill} from './skill.model';
 ```
+
+Then add following code into `character.model.ts` after those auto-generated properties. That means each `character` may has one `weapon`, `armor`, and `skill`.
+
+```ts
+  @hasOne(() => Armor)
+  armor?: Armor;
+
+  @hasOne(() => Weapon)
+  weapon?: Weapon;
+
+  @hasOne(() => Skill)
+  skill?: Skill;
+```
+
+Next, we need to add relationship for `weapon.model.ts` as well. Add import to the head.
+
+```ts
+import {Character} from './character.model';
+```
+
+Then add following code after those auto-generated properties.
+
+```ts
+  @belongsTo(() => Character)
+    characterId: number;
+```
+This give `weapon` another property `characterId` means which character does this weapon belong to. It's similar to the foreign key in relational database. 
+
+Do the same thing for `armor.model.ts` and `skill.model.ts`. And our models are all set.
+
+#### Datasource
+
+No need to create new datasource. We can use the one we created in last episode.
+
+#### Repository
+
+Run `lb4 repository` in your project root.
+
+```
+? Please select the datasource MongoDatasource
+? Select the model(s) you want to generate a repository Weapon
+? Please select the repository base class DefaultCrudRepository (Legacy juggler bridge)
+   create src/repositories/weapon.repository.ts
+   update src/repositories/index.ts
+```
+
+Then create repositories for `armor` and `skill` in the same way.
+
+Let's add relations for `character.repository.ts` first. Add following imports:
+
+```ts
+import {HasOneRepositoryFactory, juggler, repository} from '@loopback/repository';
+import {Armor, Weapon, Skill} from '../models';
+import {Getter} from '@loopback/core';
+import {ArmorRepository} from './armor.repository';
+import {WeaponRepository} from './weapon.repository';
+import {SkillRepository} from './skill.repository';
+```
+
+Add follow code before ther constructor:
+```ts
+  public armor: HasOneRepositoryFactory<
+    Armor,
+    typeof Character.prototype.id
+  >;
+
+  public weapon: HasOneRepositoryFactory<
+    Weapon,
+    typeof Character.prototype.id
+  >;
+
+  public skill: HasOneRepositoryFactory<
+    Skill,
+    typeof Character.prototype.id
+  >;
+```
+
+This means `character` may has one `weapon`, `armor`, and `skill` ID.
+
+Then change the constructor to this:
+
+```ts
+  constructor(
+    @inject('datasources.mongoDB') dataSource: MongoDataSource,
+    @repository.getter(ArmorRepository)
+    protected armorRepositoryGetter: Getter<ArmorRepository>,
+    @repository.getter(WeaponRepository)
+    protected weaponRepositoryGetter: Getter<WeaponRepository>,
+    @repository.getter(SkillRepository)
+    protected skillRepositoryGetter: Getter<SkillRepository>,
+  ) {
+    super(Character, dataSource);
+    this.armor = this.createHasOneRepositoryFactoryFor('armor', armorRepositoryGetter);
+    this.weapon = this.createHasOneRepositoryFactoryFor('weapon', weaponRepositoryGetter);
+    this.skill = this.createHasOneRepositoryFactoryFor('skill', skillRepositoryGetter);
+  }
+```
+
+That can help you to assign `weapon`, `armor`, and `skill` to `character.`
+
+On the other hand, what we need to do for the `weapon.repository.ts` is kind of the same. Instead of `HasOneRepositoryFactory`, we add `BelongsToAccessor` before constructor.
+
+```ts
+  public readonly character: BelongsToAccessor<
+    Character,
+    typeof Weapon.prototype.id
+  >;
+```
+
+And change the constructor to this:
+
+```ts
+  constructor(
+    @inject('datasources.mongoDB') dataSource: MongoDataSource,
+    @repository.getter('CharacterRepository')
+    protected characterRepositoryGetter: Getter<CharacterRepository>,
+  ) {
+    super(Weapon, dataSource);
+    this.character = this.createBelongsToAccessorFor('character',characterRepositoryGetter);
+  }
+```
+
+Don't forget to add imports at the head.
+
+```ts
+import {BelongsToAccessor, juggler, repository} from '@loopback/repository';
+import {Character} from '../models';
+import {inject} from '@loopback/core';
+import {CharacterRepository} from './character.repository';
+```
+Do the same thing for `armor.repository.ts` and `skill.repository.ts`. And our repositories are all set.
+
+#### Controller
+
+We are not going to cover controller today. Because there is a lot of work to do in controller and this episode is long enough. We will do it in next episode.
