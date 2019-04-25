@@ -3,6 +3,7 @@ import {Armor} from './armor.model';
 import {Weapon} from './weapon.model';
 import {Skill} from './skill.model';
 
+//
 //@model({settings: {"strict":false}})
 @model()
 export class Character extends Entity {
