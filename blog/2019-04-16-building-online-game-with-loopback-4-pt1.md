@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Creating My First API with LoopBack 4 (Part 1)
+title: Building Online Game With LoopBack 4 (Part 1)
 date: 2019-04-17
 author: Wenbo Sun
 permalink: /strongblog/building-online-game-with-loopback-4-pt1/
