@@ -3,7 +3,7 @@ layout: post
 title: Creating My First API with LoopBack 4 (Part 1)
 date: 2019-04-17
 author: Wenbo Sun
-permalink: /strongblog/my-first-API-with-loopback-4-(part-1)/
+permalink: /strongblog/building-online-game-with-loopback-4-pt1/
 categories:
   - How-To
   - LoopBack
