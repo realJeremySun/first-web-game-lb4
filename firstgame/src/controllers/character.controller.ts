@@ -16,13 +16,17 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {Character} from '../models';
-import {CharacterRepository} from '../repositories';
+import {Character, IdSet} from '../models';
+import {CharacterRepository, IdSetRepository} from '../repositories';
+import {v4 as uuid} from 'uuid';
 
 export class CharacterController {
   constructor(
     @repository(CharacterRepository)
     public characterRepository : CharacterRepository,
+    //add following two lines
+    @repository(IdSetRepository)
+    public idSetRepository : IdSetRepository,
   ) {}
 
   /**
@@ -38,12 +42,23 @@ export class CharacterController {
     },
   })
   async create(@requestBody() character: Character): Promise<Character> {
-    let characterId = 1;
-    while(await this.characterRepository.exists(characterId)){
-      characterId ++;
-    }
-    character.id = characterId;
-    return await this.characterRepository.create(character);
+    /**
+      let characterId = 1;
+      while(await this.characterRepository.exists(characterId)){
+        characterId ++;
+      }
+    */
+
+      //generate unique characterId with in-memory database
+      let characterId: string = uuid();
+      while(await this.idSetRepository.exists(characterId)){
+        characterId = uuid();
+      }
+      character.id = characterId;
+      let uId : Partial<IdSet> = {};
+      uId.id = characterId;
+      await this.idSetRepository.create(uId);
+      return await this.characterRepository.create(character);
   }
 
   /**
@@ -117,7 +132,7 @@ export class CharacterController {
       },
     },
   })
-  async findById(@param.path.number('id') id: number): Promise<Character> {
+  async findById(@param.path.string('id') id: string): Promise<Character> {
     return await this.characterRepository.findById(id);
   }
 
@@ -133,7 +148,7 @@ export class CharacterController {
     },
   })
   async updateById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody() character: Character,
   ): Promise<void> {
     await this.characterRepository.updateById(id, character);
@@ -150,10 +165,11 @@ export class CharacterController {
       },
     },
   })
-  async deleteById(@param.path.number('id') id: number): Promise<void> {
+  async deleteById(
+    @param.path.string('id') id: string
+  ): Promise<void> {
+    //add this line to remove id from in-memory database
+    this.idSetRepository.deleteById(id);
     await this.characterRepository.deleteById(id);
-    await this.characterRepository.weapon(id).delete();
-    await this.characterRepository.armor(id).delete();
-    await this.characterRepository.skill(id).delete();
   }
 }
