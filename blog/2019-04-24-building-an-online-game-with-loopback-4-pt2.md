@@ -71,7 +71,7 @@ Go to `src/controllers/character.controller.ts`. In the `get /characters/{id}` A
 ```
 Then do the same thing for `patch /characters/{id}`, `put /characters/{id}`, and `del /characters/{id}` APIs.
 
-The [uuid](https://www.npmjs.com/package/uuid) will generate a 36 digits ID. But we still need to check if that ID already exsit. We will use keep all exsited IDs in memory so that we don't need to fetch them from database.
+The [uuid](https://www.npmjs.com/package/uuid) can generate 36 digits IDs. But we still need to check if that ID already exists. We will keep all existed IDs in memory so that we don't need to fetch them from database.
 
 LoopBack4 support in-memory database. There are two advantages to store our IDs in in-memory database:
 
