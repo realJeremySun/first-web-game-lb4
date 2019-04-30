@@ -409,7 +409,7 @@ We are not going to cover controller today. Because there is a lot of work to do
 
 ### Applying This to Your Own Project
 
-In this episode, we used a third-party library to generate UUID. LoopBack 4 project is extendable. You can easily use any external library in you project. We also used two different databases. You can always choose different databases based on your project need.
+In this episode, we used a third-party library to generate UUID. You can easily use any external library in you LoopBack 4 project. We also used two different databases. You can always choose different databases based on your project need.
 
 On the other hand, we built relations between `character`, `weapon`, `aromr`, and `skill`. In a real world application, most of entities have relationship between each other. You can use LoopBack 4 to easily manage that in your project.
 
