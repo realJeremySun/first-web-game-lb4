@@ -50,7 +50,7 @@ export class UpdateCharacterController {
     },
   })
   async findById(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
   ): Promise<any[]> {
     let res: any[] = ['no weapon', 'no armor', 'no skill'];
     //todo
@@ -75,7 +75,7 @@ export class UpdateCharacterController {
       },
     },
   })
-  async levelUp(@param.path.number('id') id: number): Promise<Character> {
+  async levelUp(@param.path.string('id') id: string): Promise<Character> {
       let char: Character = await this.characterRepository.findById(id);
       let levels: number = 0;
       while(char.currentExp! >= char.nextLevelExp!){
@@ -108,7 +108,7 @@ export class UpdateCharacterController {
     },
   })
   async updateWeapon(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody() weapon: Weapon,
   ): Promise<Weapon> {
     let char: Character = await this.characterRepository.findById(id);
@@ -149,7 +149,7 @@ export class UpdateCharacterController {
     },
   })
   async updateArmor(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody() armor: Armor,
   ): Promise<Armor> {
     let char: Character = await this.characterRepository.findById(id);
@@ -189,7 +189,7 @@ export class UpdateCharacterController {
     },
   })
   async updateSkill(
-    @param.path.number('id') id: number,
+    @param.path.string('id') id: string,
     @requestBody() skill: Skill,
   ): Promise<Skill> {
     try{//todo
@@ -219,7 +219,9 @@ export class UpdateCharacterController {
       },
     },
   })
-  async deleteWeapon(@param.path.number('id') id: number): Promise<void> {
+  async deleteWeapon(
+    @param.path.string('id') id: string
+  ): Promise<void> {
     try{
       let oldWeapon: Weapon = await this.characterRepository.weapon(id).get();
       await this.characterRepository.weapon(id).delete();
@@ -244,7 +246,9 @@ export class UpdateCharacterController {
       },
     },
   })
-  async deleteArmor(@param.path.number('id') id: number): Promise<void> {
+  async deleteArmor(
+    @param.path.string('id') id: string
+  ): Promise<void> {
     try{
       let oldArmor: Armor = await this.characterRepository.armor(id).get();
       await this.characterRepository.armor(id).delete();
@@ -269,7 +273,9 @@ export class UpdateCharacterController {
       },
     },
   })
-  async deleteSkill(@param.path.number('id') id: number): Promise<void> {
+  async deleteSkill(
+    @param.path.string('id') id: string
+  ): Promise<void> {
       await this.characterRepository.skill(id).delete();
   }
 }
