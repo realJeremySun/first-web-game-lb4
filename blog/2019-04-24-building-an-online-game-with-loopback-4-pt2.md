@@ -364,7 +364,7 @@ Then change the constructor to this:
   }
 ```
 
-That can help you to assign `weapon`, `armor`, and `skill` to `character.`
+This can help you to assign `weapon`, `armor`, and `skill` to `character.`
 
 On the other hand, what we need to do for the `weapon.repository.ts` is kind of the same. Instead of `HasOneRepositoryFactory`, we add `BelongsToAccessor` before constructor.
 
@@ -388,7 +388,7 @@ And change the constructor to this:
   }
 ```
 
-Don't forget to add imports at the head.
+Don't forget to add imports at the head of `weapon.repository.ts`.
 
 ```ts
 import {BelongsToAccessor, juggler, repository} from '@loopback/repository';
@@ -396,22 +396,22 @@ import {Character} from '../models';
 import {inject} from '@loopback/core';
 import {CharacterRepository} from './character.repository';
 ```
-Do the same thing for `armor.repository.ts` and `skill.repository.ts`. And our repositories are all set.
+Then do the same thing for `armor.repository.ts` and `skill.repository.ts`. And our repositories are all set.
 
-You can check my code for all repositories at [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part1/firstgame/src/repositories).
+You can check my code for all repositories at [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part2/firstgame/src/repositories).
 
 #### Controller
 
-We are not going to cover controller today. Because there is a lot of work to do in controller and this episode is long enough. We will do it in next episode.
+We are not going to cover controller today. Because there is a lot of work to do in controller and I will have a whole episode for that.
 
 ### Applying This to Your Own Project
 
-In this episode, we used a third-party library to generate UUID. LoopBack 4 project is extendable. You can easily use any external library in you project.
+In this episode, we used a third-party library to generate UUID. LoopBack 4 project is extendable. You can easily use any external library in you project. We also used two different databases. You can always choose different databases based on your project need.
 
-On the other hand, we built relations between `character`, `weapon`, `aromr`, and `skill`. In a real world application, most of entities have relationship between each other. You can use LoopBack 4 to manage that in your project.
+On the other hand, we built relations between `character`, `weapon`, `aromr`, and `skill`. In a real world application, most of entities have relationship between each other. You can use LoopBack 4 to easily manage that in your project.
 
 ### What's Next?
 
-In next episode, we will do a lot of coding in `controller` to create `weapon`, `armor`, `skill` and equip a character with them.
+In next episode, we will do a lot of coding in `controller` to create `weapon`, `armor`, `skill` and equip a character with them. Controller is where you achieve most of your project functions and business logic. I am sure we will have a lot of fun in next episode.
 
 In the meantime, you can learn more about LoopBack in [past blogs](https://strongloop.com/strongblog/tag_LoopBack.html).
