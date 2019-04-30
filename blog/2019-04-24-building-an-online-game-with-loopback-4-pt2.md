@@ -23,7 +23,9 @@ Here is the previous episode:
 
 ### In this episode
 
-First, we will use a third-party library in our LoopBack 4 project to generate unique character IDs. Then we will create `weapon`, `armor`, and `skill` models and build relationships between those models. Loopback 4 support three relations for now:
+First, we will use a third-party library in our LoopBack 4 project to generate unique character IDs. Then we will create `weapon`, `armor`, and `skill` models and build relationships between those models.
+
+Loopback 4 support three relations for now:
 
 * [HasMany](https://loopback.io/doc/en/lb4/HasMany-relation.html)
 * [BelongsTo](https://loopback.io/doc/en/lb4/BelongsTo-relation.html)
@@ -180,6 +182,7 @@ async create(@requestBody() character: Character): Promise<Character> {
     return await this.characterRepository.create(character);
 }
 ```
+
 We create a character ID by calling `uuid()`. Then we will check the in-memory database to make sure this ID is unique. If it's unique, we store it into the in-memory database.
 
 Don't forget to remove ID from the in-memory database when we call `delete /characters/{id}`.
@@ -343,7 +346,7 @@ Add follow code before ther constructor:
   >;
 ```
 
-This means `character` may has one `weapon`, `armor`, and `skill` ID.
+This means `character` may has one `weapon`, `armor`, and `skill` ID. Then we can the correct entity by that ID
 
 Then change the constructor to this:
 
