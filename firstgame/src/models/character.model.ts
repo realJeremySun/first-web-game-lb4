@@ -7,10 +7,10 @@ import {Skill} from './skill.model';
 @model()
 export class Character extends Entity {
   @property({
-    type: 'number',
+    type: 'string',
     id: true,
   })
-  id?: number;
+  id?: string;
 
   @property({
     type: 'string',

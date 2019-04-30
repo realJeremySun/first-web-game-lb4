@@ -1,0 +1,6 @@
+{
+  "name": "idSet",
+  "connector": "memory",
+  "localStorage": "",
+  "file": "./src/data/idSet.json"
+}

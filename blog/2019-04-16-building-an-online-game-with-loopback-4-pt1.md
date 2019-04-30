@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Creating My First API with LoopBack 4 (Part 1)
+title: Building an Online Game With LoopBack 4 (Part 1)
 date: 2019-04-17
 author: Wenbo Sun
-permalink: /strongblog/my-first-API-with-loopback-4-(part-1)/
+permalink: /strongblog/building-an-online-game-with-loopback-4-pt1/
 categories:
   - How-To
   - LoopBack
@@ -18,7 +18,7 @@ published: false
 
 "Try LoopBack 4 now."
 
-In this series, I'm going to do exactly that! Join me as I create an API web game using LoopBack 4. 
+In this series, I'm going to do exactly that! Join me as I create an API web game using LoopBack 4.
 
 <!--more-->
 
@@ -30,7 +30,7 @@ Some brief background on myself, first. I graduated from college last year. I do
 
 LoopBack 4 is a open source framework that can help you build REST API. You can use LB4 to automatically generate simple APIs in couple of minutes without any coding. You can even easily connect your project to many popular databases. For this project, I will use MongoDB as my database. I don't even need to know how to use MongoDB as LB4 will handle everyting for me. Isn't this like magic?
 
-Another great advantage of LB4 is that it is extensible. The auto-generated APIs are just some basic CRUD functions. You can add your own programing logic to those functions and customize your project on the top of the auto-generated APIs. You don't need to worry about any environment configuration and database connection. 
+Another great advantage of LB4 is that it is extensible. The auto-generated APIs are just some basic CRUD functions. You can add your own programing logic to those functions and customize your project on the top of the auto-generated APIs. You don't need to worry about any environment configuration and database connection.
 
 ### Project Plan
 
@@ -46,7 +46,7 @@ In this series, my goals are to build the following functionality into the game:
 
 ### In this Episode
 
-To begin things, I will start with the easiest task: auto-generate APIs for users to create their character and connect to MongoDB. 
+To begin things, I will start with the easiest task: auto-generate APIs for users to create their character and connect to MongoDB.
 
 ### Before We Start
 
@@ -56,16 +56,16 @@ There are some prerequisites you may want to catch up on before we start.
 
 * [Install LoopBack 4](https://loopback.io/doc/en/lb4/Getting-started.html).
 
-I also highly recommend you to check these two examples: 
+I also highly recommend you to check these two examples:
 
 * [Todo tutorial](https://loopback.io/doc/en/lb4/todo-tutorial.html).
-* [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial.html). 
+* [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial.html).
 
 This episode is base on those examples. You don't have to understand how they work, just keep in mind what function we can achieve. We will dig deep into that later.
 
 ### Initializing Scaffolding
 
-LoopBack 4 provides a CLI (command line interface) to help create your project. 
+LoopBack 4 provides a CLI (command line interface) to help create your project.
 
 Simply Run `lb4 app` in a folder you want to use the CLI. Disable "Docker" when it ask you to "Select features to enable in the project"
 
@@ -146,7 +146,7 @@ If you go to `/src/models`, you will see `character.model.ts`. We don't need to 
 
 We connect to the database in LB4 using datasource. LB4 supports almost all of the popular databases. In this project and series I will use [MongoDB](https://www.mongodb.com/). If you don't know how to use MongoDB, don't worry! LB4 will take care everything for you. You only need to [install mongoDB](https://docs.mongodb.com/manual/administration/install-community) first.
 
-After installation, run `lb4 datasource` in you project root. 
+After installation, run `lb4 datasource` in you project root.
 
 ```
 wenbo:firstgame wenbo$ lb4 datasource
