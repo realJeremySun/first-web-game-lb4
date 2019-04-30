@@ -3,10 +3,10 @@ import {juggler} from '@loopback/repository';
 import * as config from './mongo-db.datasource.json';
 
 export class MongoDbDataSource extends juggler.DataSource {
-  static dataSourceName = 'mongoDB';
+  static dataSourceName = 'mongo';
 
   constructor(
-    @inject('datasources.config.mongoDB', {optional: true})
+    @inject('datasources.config.mongo', {optional: true})
     dsConfig: object = config,
   ) {
     super(dsConfig);

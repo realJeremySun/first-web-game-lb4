@@ -160,14 +160,14 @@ Then in the `post /characters' API:
   },
 })
 async create(@requestBody() character: Character): Promise<Character> {
-  /** The old way we used in last episode
+  /**The old way we used in last episode
     let characterId = 1;
     while(await this.characterRepository.exists(characterId)){
       characterId ++;
     }
   */
 
-    //the new way
+    //The new way
     //generate unique characterId with in-memory database
     let characterId: string = uuid();
     while(await this.idSetRepository.exists(characterId)){
@@ -182,7 +182,7 @@ async create(@requestBody() character: Character): Promise<Character> {
 ```
 We create a character ID by calling `uuid()`. Then we will check the in-memory database to make sure this ID is unique. If it's unique, we store it into the in-memory database.
 
-Don't forget to remove ID in `delete /characters/{id}`.
+Don't forget to remove ID from the in-memory database when we call `delete /characters/{id}`.
 
 ```ts
 @del('/characters/{id}', {
@@ -200,6 +200,8 @@ Don't forget to remove ID in `delete /characters/{id}`.
     await this.characterRepository.deleteById(id);
   }
 ```
+
+That is how we generate UUID for `character`. In following episode, we will generate UUID for other models in the same way.
 
 ### Model Relations
 
@@ -253,7 +255,7 @@ Enter an empty property name when done
 ```
 Do the same thing for `aromr` and `skill`.
 
-Now let's add relationships for `character` to indicate a `character` may has one `weapon`, `armor`, and `skill`. You can check [here](https://loopback.io/doc/en/lb4/Relations.html) for more details on model relationship. You can also take a look at [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial-model.html) to see how does it handle relationship.
+Now let's add relationships for `character` to indicate that a `character` may has one `weapon`, `armor`, and `skill`. You can check [here](https://loopback.io/doc/en/lb4/Relations.html) for more details on model relationship. You can also take a look at [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial-model.html) to see how did it handle relationship.
 
 Add following imports at the head of `character.model.ts`.
 
@@ -263,7 +265,7 @@ import {Weapon} from './weapon.model';
 import {Skill} from './skill.model';
 ```
 
-Then add following code into `character.model.ts` after those auto-generated properties. That means each `character` may has one `weapon`, `armor`, and `skill`.
+Then add following code into `character.model.ts` after those auto-generated properties. That means each `character` may have one `weapon`, `armor`, and `skill`.
 
 ```ts
   @hasOne(() => Armor)
@@ -292,11 +294,11 @@ This give `weapon` another property `characterId` means which character does thi
 
 Do the same thing for `armor.model.ts` and `skill.model.ts`. And our models are all set.
 
-You can check my code for all model at [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part1/firstgame/src/models).
+You can check my code for all model at [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part2/firstgame/src/models).
 
 #### Datasource
 
-No need to create new datasource. We can use the one we created in last episode.
+No need to create new datasource. We can use the MongoDB we created in last episode.
 
 #### Repository
 
@@ -347,7 +349,7 @@ Then change the constructor to this:
 
 ```ts
   constructor(
-    @inject('datasources.mongoDB') dataSource: MongoDataSource,
+    @inject('datasources.mongo') dataSource: MongoDataSource,
     @repository.getter(ArmorRepository)
     protected armorRepositoryGetter: Getter<ArmorRepository>,
     @repository.getter(WeaponRepository)
@@ -377,7 +379,7 @@ And change the constructor to this:
 
 ```ts
   constructor(
-    @inject('datasources.mongoDB') dataSource: MongoDataSource,
+    @inject('datasources.mongo') dataSource: MongoDataSource,
     @repository.getter('CharacterRepository')
     protected characterRepositoryGetter: Getter<CharacterRepository>,
   ) {

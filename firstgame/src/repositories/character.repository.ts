@@ -30,7 +30,7 @@ export class CharacterRepository extends DefaultCrudRepository<
   >;
 
   constructor(
-    @inject('datasources.mongoDB') dataSource: MongoDbDataSource,
+    @inject('datasources.mongo') dataSource: MongoDbDataSource,
     @repository.getter(ArmorRepository)
     protected armorRepositoryGetter: Getter<ArmorRepository>,
     @repository.getter(WeaponRepository)
