@@ -10,11 +10,14 @@ categories:
 published: false  
 ---
 
-## Part 2: Generating Universally Unique ID and Managing Models Relationship
+## Part 2: Generating Universally Unique ID and Managing Models Relationships
 
-### Previously on My First API
+### Previously on Building an Online Game With LoopBack 4
 
 In previous episode, we have created a foundation for our project. Now we have some basic APIs to create, edit, and delete character.
+
+Here is the previous episode:
+* [Part 1: Building a Simple LoopBack Project With MongoDB](https://github.com/gobackhuoxing/first-web-game-lb4/blob/part2/blog/2019-04-16-building-an-online-game-with-loopback-4-pt1.md)
 
 <!--more-->
 
@@ -28,9 +31,10 @@ First, we will use a third-party library in our LoopBack 4 project to generate u
 
 We will use `HasOne` in this episode.
 
-You can check [this branch](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part1) for the code of part 1 and part 2 of this series.
+You can check [this branch](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part2) for the code of this episode.
 
 ### Universally Unique ID (UUID)
+
 In last episode, we use a while loop to generate continuous character IDs. However, that could be disaster in a real world application. Because fetching data from database is expensive. We don't want to do that hundreds times to just find a unique character id. On the other hand, we don't really need continuous IDs, we only need unique IDs to distinguish characters. So we will use a better approach to generate universally unique IDs (UUID).
 
 We are going to use a third-party library called [uuid](https://www.npmjs.com/package/uuid). Run `npm install uuid` in your project root to install it.
@@ -175,6 +179,7 @@ async create(@requestBody() character: Character): Promise<Character> {
     return await this.characterRepository.create(character);
 }
 ```
+We create a character ID by calling `uuid()`. Then we will check the in-memory database to make sure this ID is unique. If it's unique, we store it into the in-memory database.
 
 Don't forget to remove ID in `delete /characters/{id}`.
 
@@ -189,11 +194,12 @@ Don't forget to remove ID in `delete /characters/{id}`.
   async deleteById(
     @param.path.string('id') id: string
   ): Promise<void> {
-    //add this line
-    app.characterSet.delete(id);
+    //add this line to remove id from in-memory database
+    this.idSetRepository.deleteById(id);
     await this.characterRepository.deleteById(id);
   }
 ```
+
 ### Model Relations
 
 We will create `weapon`, `armor`, and `skill` models. One `character` may have one `weapon`, one `armor`, and one `skill`. It is [HasOne](https://loopback.io/doc/en/lb4/hasOne-relation.html) relationship.
