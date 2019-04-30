@@ -113,7 +113,7 @@ Datasource idSet was created in src/datasources/
 ```
 We need to create an empty json file called `idSet.json` in `src/data` manually.
 
-Then create a repository for `idSet` model. We will choose IdSet as datasource.
+Then create a repository for `idSet` model. We will choose `IdSetDatasource` as datasource.
 
 ```
 wenbo:firstgame wenbo$ lb4 repository
@@ -134,7 +134,7 @@ import {IdSetRepository} from '../repositories';
 import {v4 as uuid} from 'uuid';
 ```
 
-The first two lines will import the `idSet` model and repository so that the `characterController` can find them. The second line will import `uuid`, so we can use it in our code.
+The first two lines will import the `idSet` model and repository so that the `characterController` can find them. The third line will import `uuid`, so we can use it in our code.
 
 Add following two lines into constructor to indicate this controller is associated with `IdSetRepository` as well:
 
@@ -160,13 +160,14 @@ Then in the `post /characters' API:
   },
 })
 async create(@requestBody() character: Character): Promise<Character> {
-  /**
+  /** The old way we used in last episode
     let characterId = 1;
     while(await this.characterRepository.exists(characterId)){
       characterId ++;
     }
   */
 
+    //the new way
     //generate unique characterId with in-memory database
     let characterId: string = uuid();
     while(await this.idSetRepository.exists(characterId)){
