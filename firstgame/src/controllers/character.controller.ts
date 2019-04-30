@@ -165,7 +165,11 @@ export class CharacterController {
       },
     },
   })
-  async deleteById(@param.path.string('id') id: string): Promise<void> {
+  async deleteById(
+    @param.path.string('id') id: string
+  ): Promise<void> {
+    //add this line to remove id from in-memory database
+    this.idSetRepository.deleteById(id);
     await this.characterRepository.deleteById(id);
   }
 }
