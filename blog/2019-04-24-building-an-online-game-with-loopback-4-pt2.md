@@ -14,7 +14,7 @@ published: false
 
 ### Previously on Building an Online Game With LoopBack 4
 
-In previous episode, we have created a foundation for our project. Now we have some basic APIs to create, edit, and delete character.
+In the previous episode, we have created a foundation for our project. Now we have some basic APIs to create, edit, and delete character.
 
 Here is the previous episode:
 * [Part 1: Building a Simple LoopBack Project With MongoDB](https://strongloop.com/strongblog/building-online-game-with-loopback-4-pt1/)
