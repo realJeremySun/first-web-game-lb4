@@ -4,10 +4,10 @@ import {Character} from './character.model';
 @model({settings: {"strict":false}})
 export class Armor extends Entity {
   @property({
-    type: 'number',
+    type: 'string',
     id: true,
   })
-  id?: number;
+  id?: string;
 
   @property({
     type: 'string',
