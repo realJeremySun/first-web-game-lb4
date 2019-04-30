@@ -17,18 +17,23 @@ import {
   requestBody,
   HttpErrors,
 } from '@loopback/rest';
-import {Character, Armor, Weapon, Skill} from '../models';
+import {Character,IdSet, Armor, Weapon, Skill} from '../models';
 import {
   CharacterRepository,
+  IdSetRepository,
   WeaponRepository,
   ArmorRepository,
   SkillRepository
 } from '../repositories';
+import {v4 as uuid} from 'uuid';
 
 export class UpdateCharacterController {
   constructor(
     @repository(CharacterRepository)
     public characterRepository : CharacterRepository,
+    //add following lines
+    @repository(IdSetRepository)
+    public idSetRepository : IdSetRepository,
     @repository(WeaponRepository)
     public weaponRepository : CharacterRepository,
     @repository(ArmorRepository)
@@ -125,12 +130,14 @@ export class UpdateCharacterController {
     }
     finally{
       await this.characterRepository.updateById(id, char);
-      let weaponId = 1;
-      //todo
-      while(await this.weaponRepository.exists(weaponId)){
-        weaponId++;
+      let weaponId: string = uuid();
+      while(await this.idSetRepository.exists(weaponId)){
+        weaponId = uuid();
       }
       weapon.id = weaponId;
+      let wId : Partial<IdSet> = {};
+      wId.id = weaponId;
+      await this.idSetRepository.create(wId);
       return await this.characterRepository.weapon(id).create(weapon);
     }
   }
@@ -165,12 +172,14 @@ export class UpdateCharacterController {
       console.log('@patch /updatecharacter/{id}/armor: no current armor');
     }
     finally{
-      await this.characterRepository.updateById(id, char);
-      let armorId = 1;
-      while(await this.armorRepository.exists(armorId)){
-        armorId++;
+      let armorId: string = uuid();
+      while(await this.idSetRepository.exists(armorId)){
+        armorId = uuid();
       }
       armor.id = armorId;
+      let aId : Partial<IdSet> = {};
+      aId.id = armorId;
+      await this.idSetRepository.create(aId);
       return await this.characterRepository.armor(id).create(armor);
     }
   }
@@ -199,11 +208,14 @@ export class UpdateCharacterController {
       console.log('@patch /updatecharacter/{id}/skill: no current skill');
     }
     finally{
-      let skillId = 1;
-      while(await this.skillRepository.exists(skillId)){
-        skillId++;
+      let skillId: string = uuid();
+      while(await this.idSetRepository.exists(skillId)){
+        skillId = uuid();
       }
       skill.id = skillId;
+      let sId : Partial<IdSet> = {};
+      sId.id = skillId;
+      await this.idSetRepository.create(sId);
       return await this.characterRepository.skill(id).create(skill);
     }
   }
