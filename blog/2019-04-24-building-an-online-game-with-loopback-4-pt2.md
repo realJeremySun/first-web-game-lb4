@@ -37,7 +37,7 @@ You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/pa
 
 ### Universally Unique ID (UUID)
 
-In the last episode, we used a while loop to generate continuous character IDs. However, that could be disaster in a real world application. Because fetching data from database is expensive. We don't want to do that hundreds times to just find a unique character id. On the other hand, we don't really need continuous IDs, we only need unique IDs to distinguish characters. So we will use a better approach to generate universally unique IDs (UUID).
+In the last episode, we used a while loop to generate continuous character IDs. However, that could be disaster in a real world application. Because fetching data from database is expensive. We don't want to do that hundreds times to just find a unique character ID. On the other hand, we don't really need continuous IDs, we only need unique IDs to distinguish characters. So we will use a better approach to generate universally unique IDs (UUID).
 
 We are going to use a third-party library called [uuid](https://www.npmjs.com/package/uuid). Run `npm install uuid` in your project root to install it.
 
@@ -258,9 +258,9 @@ Enter an empty property name when done
 ```
 Do the same thing for `aromr` and `skill`.
 
-Now let's add relationships for `character` to indicate that a `character` may has one `weapon`, `armor`, and `skill`. You can check [here](https://loopback.io/doc/en/lb4/Relations.html) for more details on model relationship. You can also take a look at [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial-model.html) to see how did it handle relationship.
+Now let's add relationships for `character` to indicate that a `character` may has one `weapon`, `armor`, and `skill`. You can check [here](https://loopback.io/doc/en/lb4/Relations.html) for more details on model relationship. You can also take a look at the [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial-model.html) to see how did it handle relationship.
 
-Add following imports at the head of `character.model.ts`.
+Add following imports to the head of `character.model.ts`.
 
 ```ts
 import {Armor} from './armor.model';
@@ -281,7 +281,7 @@ Then add following code into `character.model.ts` after those auto-generated pro
   skill?: Skill;
 ```
 
-Next, we need to add relationship for `weapon.model.ts` as well. Add import to the head.
+Next, we need to add relationship for `weapon.model.ts` as well. Add this import to the head.
 
 ```ts
 import {Character} from './character.model';
@@ -297,7 +297,7 @@ This give `weapon` another property `characterId` means which character does thi
 
 Do the same thing for `armor.model.ts` and `skill.model.ts`. And our models are all set.
 
-You can check my code for all model at [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part2/firstgame/src/models).
+You can check my code for all models at [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part2/firstgame/src/models).
 
 #### Datasource
 
@@ -346,7 +346,7 @@ Add follow code before ther constructor:
   >;
 ```
 
-This means `character` may has one `weapon`, `armor`, and `skill` ID. Then we can the correct entity by that ID
+This means `character` may has one `weapon`, `armor`, and `skill` ID. Then we are able to find the correct entity by that ID.
 
 Then change the constructor to this:
 
