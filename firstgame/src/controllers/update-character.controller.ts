@@ -31,6 +31,7 @@ export class UpdateCharacterController {
   constructor(
     @repository(CharacterRepository)
     public characterRepository : CharacterRepository,
+
     //add following lines
     @repository(IdSetRepository)
     public idSetRepository : IdSetRepository,
@@ -119,6 +120,7 @@ export class UpdateCharacterController {
     let char: Character = await this.characterRepository.findById(id);
     char.attack! += weapon.attack;
     char.defence! += weapon.defence;
+    console.log( await this.characterRepository.weapon(id));
     try{//todo
       let oldWeapon: Weapon = await this.characterRepository.weapon(id).get();
       char.attack! -= oldWeapon.attack!;
