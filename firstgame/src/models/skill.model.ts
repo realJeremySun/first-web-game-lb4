@@ -28,11 +28,7 @@ export class Skill extends Entity {
   cost: number;
 
   @belongsTo(() => Character)
-    characterId: number;
-  // Define well-known properties here
-
-  // Indexer property to allow additional data
-  [prop: string]: any;
+    characterId: string;
 
   constructor(data?: Partial<Skill>) {
     super(data);

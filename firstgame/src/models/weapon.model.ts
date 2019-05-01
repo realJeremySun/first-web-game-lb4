@@ -28,7 +28,7 @@ export class Weapon extends Entity {
   defence: number;
 
   @belongsTo(() => Character)
-    characterId: number;
+    characterId: string;
 
   constructor(data?: Partial<Weapon>) {
     super(data);
