@@ -2,13 +2,15 @@ import {Entity, model, property, hasOne} from '@loopback/repository';
 import {Armor} from './armor.model';
 import {Weapon} from './weapon.model';
 import {Skill} from './skill.model';
+import {v4 as uuid} from 'uuid';
 
-//@model({settings: {"strict":false}})
 @model()
 export class Character extends Entity {
   @property({
     type: 'string',
     id: true,
+    //add this line
+    default: () => uuid(),
   })
   id?: string;
 
