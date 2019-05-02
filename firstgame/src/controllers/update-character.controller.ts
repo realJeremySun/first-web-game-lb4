@@ -117,31 +117,30 @@ export class UpdateCharacterController {
     @param.path.string('id') id: string,
     @requestBody() weapon: Weapon,
   ): Promise<Weapon> {
+    //equip new weapon
     let char: Character = await this.characterRepository.findById(id);
     char.attack! += weapon.attack;
     char.defence! += weapon.defence;
-    console.log( await this.characterRepository.weapon(id));
-    try{//todo
+
+    //unequip old weapon
+    let filter: Filter = {where:{"characterId":id}};
+    if((await this.weaponRepository.find(filter))[0] != undefined){
       let oldWeapon: Weapon = await this.characterRepository.weapon(id).get();
       char.attack! -= oldWeapon.attack!;
       char.defence! -= oldWeapon.defence!;
       await this.characterRepository.weapon(id).delete();
     }
-    catch(e){
-      console.log('@patch /updatecharacter/{id}/weapon: no current weapon');
+    await this.characterRepository.updateById(id, char);
+
+    //generate weapon ID
+    let weaponId: string = uuid();
+    while(await this.idSetRepository.exists(weaponId)){
+      weaponId = uuid();
     }
-    finally{
-      await this.characterRepository.updateById(id, char);
-      let weaponId: string = uuid();
-      while(await this.idSetRepository.exists(weaponId)){
-        weaponId = uuid();
-      }
-      weapon.id = weaponId;
-      let wId : Partial<IdSet> = {};
-      wId.id = weaponId;
-      await this.idSetRepository.create(wId);
-      return await this.characterRepository.weapon(id).create(weapon);
-    }
+    weapon.id = weaponId;
+    let wId : Partial<IdSet> = {"id":weaponId};
+    await this.idSetRepository.create(wId);
+    return await this.characterRepository.weapon(id).create(weapon);
   }
 
   /**
