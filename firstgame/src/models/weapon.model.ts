@@ -1,11 +1,14 @@
 import {Entity, model, property, belongsTo} from '@loopback/repository';
 import {Character} from './character.model';
+import {v4 as uuid} from 'uuid';
 
 @model({settings: {"strict":false}})
 export class Weapon extends Entity {
   @property({
     type: 'string',
     id: true,
+    //add this line
+    default: () => uuid(),
   })
   id?: string;
 

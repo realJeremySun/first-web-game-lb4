@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Building an Online Game With LoopBack 4 (Part 2)
-date: 2019-04-24
+date: 2019-05-08
 author: Wenbo Sun
 permalink: /strongblog/building-an-online-game-with-loopback-4-pt2/
 categories:
@@ -11,6 +11,16 @@ published: false
 ---
 
 ## Part 2: Generating Universally Unique ID and Managing Models Relationships
+
+### Introduction
+
+"Ready to build amazing things?" asks the LoopBack 4 homepage before encouraging you to try the open source framework.
+
+"Try LoopBack 4 now."
+
+In this series, I'm going to do exactly that! Join me as I create an API web game using LoopBack 4.
+
+The main purpose of this series is to help you learn LoopBack 4 and how to use it to easily build your own API and web project. We'll do so by creating a new project I'm working on: an online web text-based adventure game. In this game, you can create your own account to build characters, fight monsters and find treasures. You will be able to control your character to take a variety of actions: attacking enemies, casting spells, and getting loot. This game should also allow multiple players to log in and play with their friends.
 
 ### Previously on Building an Online Game With LoopBack 4
 
@@ -39,7 +49,7 @@ You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/pa
 
 In the last episode, we used a while loop to generate continuous character IDs. However, that could be disaster in a real world application. Because fetching data from database is expensive. We don't want to do that hundreds times to just find a unique character ID. On the other hand, we don't really need continuous IDs, we only need unique IDs to distinguish characters. So we will use a better approach to generate universally unique IDs (UUID).
 
-We are going to use a third-party library called [uuid](https://www.npmjs.com/package/uuid). Run `npm install uuid` in your project root to install it.
+We are going to use a third-party library called [uuid](https://www.npmjs.com/package/uuid). Run `npm install --save @types/uuid` in your project root to install it.
 
 Then go back to `src/models/character.model.ts` and change the type of `id` to string. Because [uuid](https://www.npmjs.com/package/uuid) can only generate string IDs.
 
@@ -73,84 +83,11 @@ Go to `src/controllers/character.controller.ts`. In the `get /characters/{id}` A
 ```
 Then do the same thing for `patch /characters/{id}`, `put /characters/{id}`, and `del /characters/{id}` APIs.
 
-The [uuid](https://www.npmjs.com/package/uuid) can generate 36 digits IDs. But we still need to check if that ID already exists. We will keep all existed IDs in memory so that we don't need to fetch them from database.
+The [uuid](https://www.npmjs.com/package/uuid) can generate 36 digits string IDs. The implementation of uuid library is using some high distinction values (like DNS, local time, IP address etc) as the seed to randomly generate strings to reduce the chance of duplication. We can simply call the function `uuid()` to use this library.
 
-LoopBack4 support in-memory database. There are two advantages to store our IDs in in-memory database:
+Remember how did we generate character ID in last episode? We can do it in a very elegant way by using `default` keyword in `model`.
 
-* It's in memory. So it's fast to fetch data.
-* We can specify a json file to hold data. So when we reboot the application, we can recover the in-memory database from the json file.
-
-The only drawback of this is it will need more time to start the application. This application is like a game server and we don't reboot a server very often, so this drawback is acceptable.
-
-Let's create a model to hold IDs. Run `lb4 model` in your project root.
-
-```
-wenbo:firstgame wenbo$ lb4 model
-? Model class name: idSet
-? Please select the model base class Entity (A persisted model with an ID)
-? Allow additional (free-form) properties? No
-Let's add a property to IdSet
-Enter an empty property name when done
-
-? Enter the property name: id
-? Property type: string
-? Is id the ID property? Yes
-? Is it required?: Yes
-? Default value [leave blank for none]:
-```
-
-Then create another datasource. We will choose `In-memory db` and specify `./src/data/idSet.json` as the file to hold data.
-
-```
-wenbo:firstgame wenbo$ lb4 datasource
-? Datasource name: idSet
-? Select the connector for idSet: In-memory db (supported by StrongLoop)
-? window.localStorage key to use for persistence (browser only):
-? Full path to file for persistence (server only): ./src/data/idSet.json
-   create src/datasources/id-set.datasource.json
-   create src/datasources/id-set.datasource.ts
-   update src/datasources/index.ts
-
-Datasource idSet was created in src/datasources/
-```
-We need to create an empty json file called `idSet.json` in `src/data` manually.
-
-Then create a repository for `idSet` model. We will choose `IdSetDatasource` as datasource.
-
-```
-wenbo:firstgame wenbo$ lb4 repository
-? Please select the datasource IdSetDatasource
-? Select the model(s) you want to generate a repository IdSet
-? Please select the repository base class DefaultCrudRepository (Legacy juggler bridge)
-   create src/repositories/id-set.repository.ts
-   update src/repositories/index.ts
-```
-
-Now we have an In-memory database for IDs. Let's make some changes to controller.
-
-Open `src/controllers/character.controller.ts` and add following imports :
-
-```ts
-import {IdSet} from '../models';
-import {IdSetRepository} from '../repositories';
-import {v4 as uuid} from 'uuid';
-```
-
-The first two lines will import the `idSet` model and repository so that the `characterController` can find them. The third line will import `uuid`, so we can use it in our code.
-
-Add following two lines into constructor to indicate this controller is associated with `IdSetRepository` as well:
-
-```ts
-constructor(
-  @repository(CharacterRepository)
-  public characterRepository : CharacterRepository,
-  //add following two lines
-  @repository(IdSetRepository)
-  public idSetRepository : IdSetRepository,
-) {}
-```
-
-Then in the `post /characters' API:
+Open `src/controllers/character.controller.ts` and remove following code from `post /characters` API:
 
 ```ts
 @post('/characters', {
@@ -162,55 +99,42 @@ Then in the `post /characters' API:
   },
 })
 async create(@requestBody() character: Character): Promise<Character> {
-  /**The old way we used in last episode
-    let characterId = 1;
-    while(await this.characterRepository.exists(characterId)){
-      characterId ++;
-    }
+  /**remove this
+  let characterId = 1;
+  while(await this.characterRepository.exists(characterId)){
+    characterId ++;
+  }
+  character.id = characterId;
   */
-
-    //The new way
-    //generate unique characterId with in-memory database
-    let characterId: string = uuid();
-    while(await this.idSetRepository.exists(characterId)){
-      characterId = uuid();
-    }
-    character.id = characterId;
-    let uId : Partial<IdSet> = {};
-    uId.id = characterId;
-    await this.idSetRepository.create(uId);
     return await this.characterRepository.create(character);
 }
 ```
 
-We create a character ID by calling `uuid()`. Then we will check the in-memory database to make sure this ID is unique. If it's unique, we store it into the in-memory database.
-
-Don't forget to remove ID from the in-memory database when we call `delete /characters/{id}`.
+Open `src/models/character.model.ts`, and add follow import. This will import `uuid` so we can use it in our code.
 
 ```ts
-@del('/characters/{id}', {
-    responses: {
-      '204': {
-        description: 'Character DELETE success',
-      },
-    },
-  })
-  async deleteById(
-    @param.path.string('id') id: string
-  ): Promise<void> {
-    //add this line to remove id from in-memory database
-    this.idSetRepository.deleteById(id);
-    await this.characterRepository.deleteById(id);
-  }
+import {v4 as uuid} from 'uuid';
 ```
 
-That is how we generate UUID for `character`. In following episode, we will generate UUID for other models in the same way.
+Add following line to generate character ID as `default`:
+
+```ts
+  @property({
+    type: 'string',
+    id: true,
+    //add this line
+    default: () => uuid(),
+  })
+  id?: string;
+```
+
+That is how we generate UUID for `character`. We will use the same way to generate UUID for other models later.
 
 ### Model Relations
 
 We will create `weapon`, `armor`, and `skill` models. One `character` may have one `weapon`, one `armor`, and one `skill`. It is [HasOne](https://loopback.io/doc/en/lb4/hasOne-relation.html) relationship.
 
-![Models](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/models.png)
+![Models](/blog-assets/2019/05/my-first-api-p2-models.png)
 
 In last episode, we built APIs for `character` in the order of model, datasource, repository, and controller. Now we will do it in the same way.
 
@@ -256,7 +180,7 @@ Enter an empty property name when done
 ? Is it required?: Yes
 ? Default value [leave blank for none]:
 ```
-Do the same thing for `aromr` and `skill`.
+Do the same thing for `aromor` and `skill`.
 
 Now let's add relationships for `character` to indicate that a `character` may has one `weapon`, `armor`, and `skill`. You can check [here](https://loopback.io/doc/en/lb4/Relations.html) for more details on model relationship. You can also take a look at the [TodoList tutorial](https://loopback.io/doc/en/lb4/todo-list-tutorial-model.html) to see how did it handle relationship.
 
@@ -285,15 +209,29 @@ Next, we need to add relationship for `weapon.model.ts` as well. Add this import
 
 ```ts
 import {Character} from './character.model';
+import {v4 as uuid} from 'uuid';
 ```
 
 Then add following code after those auto-generated properties.
 
 ```ts
   @belongsTo(() => Character)
-    characterId: number;
+    characterId: string;
 ```
+
 This give `weapon` another property `characterId` means which character does this weapon belong to. It's similar to the foreign key in relational database.
+
+Don't forget to generate UUID for `weapon`:
+
+```ts
+@property({
+  type: 'string',
+  id: true,
+  //add this line
+  default: () => uuid(),
+})
+id?: string;
+```
 
 Do the same thing for `armor.model.ts` and `skill.model.ts`. And our models are all set.
 
