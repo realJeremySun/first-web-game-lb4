@@ -62,7 +62,7 @@ wenbo:firstgame wenbo$ lb4 controller
 Controller UpdateCharacter was created in src/controllers/
 ```
 
-Open `/src/controllers/update-character.controller.ts`. Add following imports. This controller is
+Open `/src/controllers/update-character.controller.ts`. Add following imports because this controller is
 associated with `Armor`, `Weapon`, `skill` as well.
 
 ```ts
@@ -70,7 +70,7 @@ import {Armor, Weapon, Skill} from '../models';
 import {WeaponRepository, ArmorRepository, SkillRepository } from '../repositories';
 ```
 
-And add following line into constructor:
+And add following lines into constructor:
 
 ```ts
 constructor(
@@ -141,7 +141,7 @@ async updateWeapon(
   ...
 ```
 
-Following lines will find the character entity from database. Then we will update this character's `attack` and `defence`. The `!` after `attack` and `defence` tells compiler we guarantee those variables are not undefined. Otherwise we will get a compile error. In the `weapon` model, `attack` and `defence` are both required. So we know they can not be empty.
+Following lines will find the character entity from database. Then we will update this character's `attack` and `defence`. The `!` after `attack` and `defence` tell compiler we guarantee those variables are not undefined. Otherwise we will get a compile error. In the `weapon` model, `attack` and `defence` are both required. So we know they can not be empty.
 
 ```ts
 //equip new weapon
@@ -163,7 +163,7 @@ if((await this.weaponRepository.find(filter))[0] != undefined){
 }
 ```
 
-Last two line will update the update character information in database and add put the new weapon into database.
+Last two line will update the update character information in database and put the new weapon into database.
 
 ```ts
 await this.characterRepository.updateById(id, char);
@@ -259,7 +259,7 @@ async deleteSkill(
 }
 ```
 
-### LevelUp Character
+### Levelup Character
 When a character have enough experience, we need to levelup it. In `/src/controllers/update-character.controller.ts`:
 
 ```ts
@@ -353,12 +353,13 @@ async findById(
   }
   return res;
 }
+
 ```
 
-We first create a array contains three elements: 'no weapon', 'no armor', 'no skill'.
+We first create an array contains three elements: 'no weapon', 'no armor', 'no skill'.
 Then we will check database. For example, if this character has a weapon, we will replace `no weapon` with the weapon information. Lastly, we return the array as result.
 
-That are all the functions we want to achieve in this episode. If you can follow all steps, you should be able to try those API at [http://[::1]:3000](http://[::1]:3000)
+That is all we want to achieve in this episode. If you can follow all those steps, you should be able to try those API at [http://[::1]:3000](http://[::1]:3000)
 
 You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part3/firstgame) for the code of this episode.
 
