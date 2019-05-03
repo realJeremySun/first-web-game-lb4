@@ -321,3 +321,55 @@ Lastly, we update this character in databse.
 ```ts
 await this.characterRepository!.updateById(id, char);
 ```
+
+### Check Character information
+The last function we need to achieve is the ability to check character information.
+
+Here is the code for this API:
+
+```ts
+@get('/updatecharacter/{id}', {
+  responses: {
+    '200': {
+      description: 'armor, weapon, and skill info',
+      content: {},
+    },
+  },
+})
+async findById(
+  @param.path.string('id') id: string,
+): Promise<any[]> {
+  let res: any[] = ['no weapon', 'no armor', 'no skill'];
+
+  let filter: Filter = {where:{"characterId":id}};
+  if((await this.weaponRepository.find(filter))[0] != undefined){
+    res[0] = await this.characterRepository.weapon(id).get()
+  }
+  if((await this.armorRepository.find(filter))[0] != undefined){
+    res[1] = await this.characterRepository.armor(id).get()
+  }
+  if((await this.skillRepository.find(filter))[0] != undefined){
+    res[2] = await this.characterRepository.skill(id).get()
+  }
+  return res;
+}
+```
+
+We first create a array contains three elements: 'no weapon', 'no armor', 'no skill'.
+Then we will check database. For example, if this character has a weapon, we will replace `no weapon` with the weapon information. Lastly, we return the array as result.
+
+That are all the functions we want to achieve in this episode. If you can follow all steps, you should be able to try those API at [http://[::1]:3000](http://[::1]:3000)
+
+You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part3/firstgame) for the code of this episode.
+
+### Applying This to Your Own Project
+
+In this episode, we covered the how to create simple APIs. You can do the same to create a start point for your own project, for example, a student registration system which has a `student` model with properties like `studentId`, `name`, `major`, and `course`.
+
+On the other hand, you have the freedom to choose any database you want. LB4 supports most databases very well. [Here](https://loopback.io/doc/en/lb4/soap-calculator-tutorial-add-datasource.html) is an example that uses SOAP webservices as datasource.
+
+### What's Next?
+
+In next episode, we will add `weapon`, `armor`, `skill` model and handle the relationship between models.
+
+In the meantime, you can learn more about LoopBack in [past blogs](https://strongloop.com/strongblog/tag_LoopBack.html).
