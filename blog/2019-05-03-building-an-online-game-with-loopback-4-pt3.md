@@ -93,7 +93,7 @@ This will connect this controller with `Armor`, `Weapon`, and `skill`. Delete al
 
 ### Equip Character
 
-The first API we need is `@patch '/updatecharacter/{id}/weapon'`. This API's job is equip character a weapon and unequip the old weapon if there is one.
+The first API we need is `@patch '/updatecharacter/{id}/weapon'`. This API's job is equip character a weapon and unequip the old weapon if there is one. In this game, a character can only have one weapon.
 
 Here is code for this API:
 
@@ -130,6 +130,8 @@ async updateWeapon(
 
 Let's go over it line by line.
 
+This is the function signature. It means this API expect to get character ID from URL and weapon entity from body.
+
 ```ts
 async updateWeapon(
   @param.path.string('id') id: string,
@@ -138,4 +140,74 @@ async updateWeapon(
 
   ...
 ```
-This is the function signature. It means this API expect to get character ID from URL and weapon entity from body.
+
+Following lines will find the character entity from database. Then we will update this character's `attack` and `defence`. The `!` after `attack` and `defence` tells compiler we guarantee those variables are not undefined. Otherwise we will get a compile error. In the `weapon` model, `attack` and `defence` are both required. So we know they can not be empty.
+
+```ts
+//equip new weapon
+let char: Character = await this.characterRepository.findById(id);
+char.attack! += weapon.attack;
+char.defence! += weapon.defence;
+```
+
+This block will check if this character already has a weapon. If so, it will update character's `attack` and `defence` and remove the old weapon from database.
+
+```ts
+//unequip old weapon
+let filter: Filter = {where:{"characterId":id}};
+if((await this.weaponRepository.find(filter))[0] != undefined){
+  let oldWeapon: Weapon = await this.characterRepository.weapon(id).get();
+  char.attack! -= oldWeapon.attack!;
+  char.defence! -= oldWeapon.defence!;
+  await this.characterRepository.weapon(id).delete();
+}
+```
+
+Last two line will update the update character information in database and add put the new weapon into database.
+
+```ts
+await this.characterRepository.updateById(id, char);
+return await this.characterRepository.weapon(id).create(weapon);
+```
+
+What we need to do for `armor` is exactly the same. But `skill` is a little bit different. Because in this game, skill will not influence `attack` and `defence`. We just need to update new skill and delete old skill.
+
+```ts
+@patch('/updatecharacter/{id}/skill', {
+  responses: {
+    '200': {
+      description: 'update skill',
+      content: {'application/json': {schema: Skill}},
+    },
+  },
+})
+async updateSkill(
+  @param.path.string('id') id: string,
+  @requestBody() skill: Skill,
+): Promise<Skill> {
+  await this.characterRepository.skill(id).delete();
+  return await this.characterRepository.skill(id).create(skill);
+}
+```
+
+Don't forget when we delete a character, we also need to delete it's `weapon`, `armor`, and `skill`. Open `/src/controllers/character.controller.ts`, add following lines in `del '/characters/{id}` API.
+
+```ts
+@del('/characters/{id}', {
+  responses: {
+    '204': {
+      description: 'Character DELETE success',
+    },
+  },
+})
+async deleteById(
+  @param.path.string('id') id: string
+): Promise<void> {
+  //delete weapon, armor, and skill
+  await this.characterRepository.weapon(id).delete();
+  await this.characterRepository.armor(id).delete();
+  await this.characterRepository.skill(id).delete();
+  ///
+  await this.characterRepository.deleteById(id);
+}
+```

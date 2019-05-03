@@ -185,12 +185,7 @@ export class UpdateCharacterController {
     @param.path.string('id') id: string,
     @requestBody() skill: Skill,
   ): Promise<Skill> {
-
-    //unequip old armor
-    let filter: Filter = {where:{"characterId":id}};
-    if((await this.skillRepository.find(filter))[0] != undefined){
-      await this.characterRepository.skill(id).delete();
-    }
+    await this.characterRepository.skill(id).delete();
     return await this.characterRepository.skill(id).create(skill);
   }
 
