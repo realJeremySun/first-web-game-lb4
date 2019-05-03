@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Building an Online Game With LoopBack 4 (Part 3)
-date: 2019-05-08
+date: 2019-05-03
 author: Wenbo Sun
 permalink: /strongblog/building-an-online-game-with-loopback-4-pt3/
 categories:
@@ -43,3 +43,99 @@ We already have some simply APIs in our project. They are all default CRUD(Creat
 * The ability for users to unequip their character. We also need to update `defence` and `attack`.
 * The ability to levelup a character when it get enough experience. We should update `currentExp`, `nextLevelExp`, `level`, `maxHealth`, `currentHealth`, `maxMana`, `currentMana`, `attack`, and `defence`.
 * The ability to check character's `weapon`, `aromr`, and `skill` information.
+
+### Create controller
+
+First, let's create a controller for updating character. Run `lb4 controller` in your project root.
+
+```
+wenbo:firstgame wenbo$ lb4 controller
+? Controller class name: UpdateCharacter
+? What kind of controller would you like to generate? REST Controller with CRUD functions
+? What is the name of the model to use with this CRUD repository? Character
+? What is the name of your CRUD repository? CharacterRepository
+? What is the type of your ID? string
+? What is the base HTTP path name of the CRUD operations? /updatecharacter
+   create src/controllers/update-character.controller.ts
+   update src/controllers/index.ts
+
+Controller UpdateCharacter was created in src/controllers/
+```
+
+Open `/src/controllers/update-character.controller.ts`. Add following imports. This controller is
+associated with `Armor`, `Weapon`, `skill` as well.
+
+```ts
+import {Armor, Weapon, Skill} from '../models';
+import {WeaponRepository, ArmorRepository, SkillRepository } from '../repositories';
+```
+
+And add following line into constructor:
+
+```ts
+constructor(
+  @repository(CharacterRepository)
+  public characterRepository : CharacterRepository,
+
+  //add following lines
+  @repository(WeaponRepository)
+  public weaponRepository : CharacterRepository,
+  @repository(ArmorRepository)
+  public armorRepository : CharacterRepository,
+  @repository(SkillRepository)
+  public skillRepository : CharacterRepository,
+) {}
+
+```
+
+This will connect this controller with `Armor`, `Weapon`, and `skill`. Delete all those default APIs since we don't need them anymore.
+
+
+### Equip Character
+
+The first API we need is `@patch '/updatecharacter/{id}/weapon'`. This API's job is equip character a weapon and unequip the old weapon if there is one.
+
+Here is code for this API:
+
+```ts
+@patch('/updatecharacter/{id}/weapon', {
+  responses: {
+    '200': {
+      description: 'update weapon',
+      content: {'application/json': {schema: Weapon}},
+    },
+  },
+})
+async updateWeapon(
+  @param.path.string('id') id: string,
+  @requestBody() weapon: Weapon,
+): Promise<Weapon> {
+  //equip new weapon
+  let char: Character = await this.characterRepository.findById(id);
+  char.attack! += weapon.attack;
+  char.defence! += weapon.defence;
+
+  //unequip old weapon
+  let filter: Filter = {where:{"characterId":id}};
+  if((await this.weaponRepository.find(filter))[0] != undefined){
+    let oldWeapon: Weapon = await this.characterRepository.weapon(id).get();
+    char.attack! -= oldWeapon.attack!;
+    char.defence! -= oldWeapon.defence!;
+    await this.characterRepository.weapon(id).delete();
+  }
+  await this.characterRepository.updateById(id, char);
+  return await this.characterRepository.weapon(id).create(weapon);
+}
+```
+
+Let's go over it line by line.
+
+```ts
+async updateWeapon(
+  @param.path.string('id') id: string,
+  @requestBody() weapon: Weapon,
+): Promise<Weapon> {
+
+  ...
+```
+This is the function signature. It means this API expect to get character ID from URL and weapon entity from body.

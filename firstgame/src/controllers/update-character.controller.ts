@@ -15,7 +15,6 @@ import {
   put,
   del,
   requestBody,
-  HttpErrors,
 } from '@loopback/rest';
 import {Character, Armor, Weapon, Skill} from '../models';
 import {
@@ -24,7 +23,6 @@ import {
   ArmorRepository,
   SkillRepository
 } from '../repositories';
-import {v4 as uuid} from 'uuid';
 
 export class UpdateCharacterController {
   constructor(
