@@ -364,12 +364,10 @@ You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/pa
 
 ### Applying This to Your Own Project
 
-In this episode, we covered the how to create simple APIs. You can do the same to create a start point for your own project, for example, a student registration system which has a `student` model with properties like `studentId`, `name`, `major`, and `course`.
-
-On the other hand, you have the freedom to choose any database you want. LB4 supports most databases very well. [Here](https://loopback.io/doc/en/lb4/soap-calculator-tutorial-add-datasource.html) is an example that uses SOAP webservices as datasource.
+In this episode, we covered the how to customize APIs. You can always implement your own amazing idea in your LoopBack 4 project.
 
 ### What's Next?
 
-In next episode, we will add `weapon`, `armor`, `skill` model and handle the relationship between models.
+In next episode, we will add user authentication and role-based access control to this project.
 
 In the meantime, you can learn more about LoopBack in [past blogs](https://strongloop.com/strongblog/tag_LoopBack.html).
