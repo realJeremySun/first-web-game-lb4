@@ -16,17 +16,13 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {Character, IdSet} from '../models';
-import {CharacterRepository, IdSetRepository} from '../repositories';
-import {v4 as uuid} from 'uuid';
+import {Character} from '../models';
+import {CharacterRepository} from '../repositories';
 
 export class CharacterController {
   constructor(
     @repository(CharacterRepository)
     public characterRepository : CharacterRepository,
-    //add following two lines
-    @repository(IdSetRepository)
-    public idSetRepository : IdSetRepository,
   ) {}
 
   /**
@@ -42,22 +38,6 @@ export class CharacterController {
     },
   })
   async create(@requestBody() character: Character): Promise<Character> {
-    /**
-      let characterId = 1;
-      while(await this.characterRepository.exists(characterId)){
-        characterId ++;
-      }
-    */
-
-      //generate unique characterId with in-memory database
-      let characterId: string = uuid();
-      while(await this.idSetRepository.exists(characterId)){
-        characterId = uuid();
-      }
-      character.id = characterId;
-      let uId : Partial<IdSet> = {};
-      uId.id = characterId;
-      await this.idSetRepository.create(uId);
       return await this.characterRepository.create(character);
   }
 
@@ -168,8 +148,6 @@ export class CharacterController {
   async deleteById(
     @param.path.string('id') id: string
   ): Promise<void> {
-    //add this line to remove id from in-memory database
-    await this.idSetRepository.deleteById(id);
     await this.characterRepository.deleteById(id);
   }
 }
