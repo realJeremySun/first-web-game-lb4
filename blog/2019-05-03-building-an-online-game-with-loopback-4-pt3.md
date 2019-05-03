@@ -211,3 +211,113 @@ async deleteById(
   await this.characterRepository.deleteById(id);
 }
 ```
+
+### Unequip Character
+
+Unequip character is very easy.
+
+For `weapon` and `armor`, simply remove them from database and update `attack` and `defence`.
+
+```ts
+@del('/updatecharacter/{id}/weapon', {
+  responses: {
+    '204': {
+      description: 'DELETE Weapon',
+    },
+  },
+})
+async deleteWeapon(
+  @param.path.string('id') id: string
+): Promise<void> {
+  //unequip old weapon
+  let filter: Filter = {where:{"characterId":id}};
+  if((await this.weaponRepository.find(filter))[0] != undefined){
+    let oldWeapon: Weapon = await this.characterRepository.weapon(id).get();
+    let char: Character = await this.characterRepository.findById(id);
+    char.attack! -= oldWeapon.attack!;
+    char.defence! -= oldWeapon.defence!;
+    await this.characterRepository.weapon(id).delete();
+    await this.characterRepository.updateById(id, char);
+  }
+}
+```
+
+For `skill`, just remove it from database.
+
+```ts
+@del('/updatecharacter/{id}/skill', {
+  responses: {
+    '204': {
+      description: 'DELETE Skill',
+    },
+  },
+})
+async deleteSkill(
+  @param.path.string('id') id: string
+): Promise<void> {
+    await this.characterRepository.skill(id).delete();
+}
+```
+
+### LevelUp Character
+When a character have enough experience, we need to levelup it. In `/src/controllers/update-character.controller.ts`:
+
+```ts
+@patch('/updatecharacter/{id}/levelup', {
+  responses: {
+    '200': {
+      description: 'level up',
+      content: {'application/json': {schema: Character}},
+    },
+  },
+})
+async levelUp(@param.path.string('id') id: string): Promise<Character> {
+    let char: Character = await this.characterRepository.findById(id);
+    let levels: number = 0;
+    while(char.currentExp! >= char.nextLevelExp!){
+      levels++;
+      char.currentExp! -= char.nextLevelExp!;
+      char.nextLevelExp! += 100;
+    }
+    char.level! += levels;
+    char.maxHealth! += 10 * levels;
+    char.currentHealth! = char.maxHealth!;
+    char.maxMana! += 5 * levels;
+    char.currentMana! = char.maxMana!;
+    char.attack! += 3 * levels;
+    char.defence! += levels;
+    await this.characterRepository!.updateById(id, char);
+    return char;
+}
+```
+
+Let's go over this line by line.
+
+If a character just beat a very strong enemy and got a lot of experience, it could levelup more than one time. So the first thing we need to do is figuring out how many times we need to levelup.
+
+```ts
+let levels: number = 0;
+while(char.currentExp! >= char.nextLevelExp!){
+  levels++;
+  char.currentExp! -= char.nextLevelExp!;
+  char.nextLevelExp! += 100;
+}
+```
+
+Then we can update everyting accordingly.
+
+```ts
+char.level! += levels;
+char.maxHealth! += 10 * levels;
+char.currentHealth! = char.maxHealth!;
+char.maxMana! += 5 * levels;
+char.currentMana! = char.maxMana!;
+char.attack! += 3 * levels;
+char.defence! += levels;
+```
+
+Lastly, we update this character in databse.
+
+```ts
+await this.characterRepository!.updateById(id, char);
+```

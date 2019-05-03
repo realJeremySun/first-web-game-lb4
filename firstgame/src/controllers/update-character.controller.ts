@@ -65,7 +65,6 @@ export class UpdateCharacterController {
     if((await this.skillRepository.find(filter))[0] != undefined){
       res[2] = await this.characterRepository.skill(id).get()
     }
-
     return res;
   }
 
