@@ -125,8 +125,8 @@ export class UpdateCharacterController {
     let filter: Filter = {where:{"characterId":id}};
     if((await this.weaponRepository.find(filter))[0] != undefined){
       let oldWeapon: Weapon = await this.characterRepository.weapon(id).get();
-      char.attack! -= oldWeapon.attack!;
-      char.defence! -= oldWeapon.defence!;
+      char.attack! -= oldWeapon.attack;
+      char.defence! -= oldWeapon.defence;
       await this.characterRepository.weapon(id).delete();
     }
     await this.characterRepository.updateById(id, char);
@@ -159,8 +159,8 @@ export class UpdateCharacterController {
     let filter: Filter = {where:{"characterId":id}};
     if((await this.armorRepository.find(filter))[0] != undefined){
       let oldArmor: Armor = await this.characterRepository.armor(id).get();
-      char.attack! -= oldArmor.attack!;
-      char.defence! -= oldArmor.defence!;
+      char.attack! -= oldArmor.attack;
+      char.defence! -= oldArmor.defence;
       await this.characterRepository.armor(id).delete();
     }
     await this.characterRepository.updateById(id, char);
@@ -207,8 +207,8 @@ export class UpdateCharacterController {
     if((await this.weaponRepository.find(filter))[0] != undefined){
       let oldWeapon: Weapon = await this.characterRepository.weapon(id).get();
       let char: Character = await this.characterRepository.findById(id);
-      char.attack! -= oldWeapon.attack!;
-      char.defence! -= oldWeapon.defence!;
+      char.attack! -= oldWeapon.attack;
+      char.defence! -= oldWeapon.defence;
       await this.characterRepository.weapon(id).delete();
       await this.characterRepository.updateById(id, char);
     }
@@ -233,8 +233,8 @@ export class UpdateCharacterController {
     if((await this.armorRepository.find(filter))[0] != undefined){
       let oldArmor: Armor = await this.characterRepository.armor(id).get();
       let char: Character = await this.characterRepository.findById(id);
-      char.attack! -= oldArmor.attack!;
-      char.defence! -= oldArmor.defence!;
+      char.attack! -= oldArmor.attack;
+      char.defence! -= oldArmor.defence;
       await this.characterRepository.armor(id).delete();
       await this.characterRepository.updateById(id, char);
     }
