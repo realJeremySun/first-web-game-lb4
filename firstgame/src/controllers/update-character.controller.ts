@@ -125,8 +125,8 @@ export class UpdateCharacterController {
     let filter: Filter = {where:{"characterId":id}};
     if((await this.weaponRepository.find(filter))[0] != undefined){
       let oldWeapon: Weapon = await this.characterRepository.weapon(id).get();
-      char.attack! -= oldWeapon.attack!;
-      char.defence! -= oldWeapon.defence!;
+      char.attack -= oldWeapon.attack;
+      char.defence -= oldWeapon.defence;
       await this.characterRepository.weapon(id).delete();
     }
     await this.characterRepository.updateById(id, char);
