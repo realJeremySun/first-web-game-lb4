@@ -55,6 +55,7 @@
     "@loopback/rest-explorer": "^1.1.13",
     "@loopback/service-proxy": "^1.1.1",
     "@types/uuid": "^3.4.4",
+    "jsonwebtoken": "^8.5.1",
     "loopback-connector-mongodb": "^4.0.0",
     "passport": "^0.4.0",
     "passport-http": "^0.3.0",
