@@ -17,6 +17,18 @@ export class Character extends Entity {
     type: 'string',
     required: true,
   })
+  email: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  password: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
   name: string;
 
   @property({
