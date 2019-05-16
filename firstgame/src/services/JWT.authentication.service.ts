@@ -78,7 +78,6 @@ export class JWTAuthenticationService {
     const decoded = await verifyAsync(token, this.jwt_secret);
     let user = _.pick(decoded, ['id', 'email', 'name', `userType`]);
     (user as UserProfile).name = user.name;
-    (user as UserProfile).userType = user.userType;
     //delete user.name;
     return user;
   }
