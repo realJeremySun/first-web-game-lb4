@@ -4,7 +4,7 @@
 // License text available at https://opensource.org/licenses/MIT
 
 import * as _ from 'lodash';
-import {Credentials, UserRepository} from '../repositories/user.repository';
+import {Credentials, CharacterRepository} from '../repositories/character.repository';
 import {toJSON} from '@loopback/testlab';
 import {promisify} from 'util';
 import * as isemail from 'isemail';
@@ -12,8 +12,7 @@ import {HttpErrors} from '@loopback/rest';
 import {UserProfile} from '@loopback/authentication';
 import {repository} from '@loopback/repository';
 import {inject} from '@loopback/core';
-import {JWTAuthenticationBindings, PasswordHasherBindings} from '../keys';
-import {PasswordHasher} from './hash.password.bcryptjs';
+import {JWTAuthenticationBindings} from '../keys';
 const jwt = require('jsonwebtoken');
 const signAsync = promisify(jwt.sign);
 const verifyAsync = promisify(jwt.verify);
@@ -32,10 +31,9 @@ export const JWT_SECRET = 'jwtsecret';
  */
 export class JWTAuthenticationService {
   constructor(
-    @repository(UserRepository) public userRepository: UserRepository,
-    @inject(JWTAuthenticationBindings.SECRET) public jwt_secret: string,
-    @inject(PasswordHasherBindings.PASSWORD_HASHER)
-    public passwordHasher: PasswordHasher,
+    @repository(CharacterRepository) public characterRepository: CharacterRepository,
+    @inject(JWTAuthenticationBindings.SECRET)
+    public jwt_secret: string
   ) {}
 
   /**
@@ -48,7 +46,7 @@ export class JWTAuthenticationService {
    * @param credentials The user credentials including email and password.
    */
   async getAccessTokenForUser(credentials: Credentials): Promise<string> {
-    const foundUser = await this.userRepository.findOne({
+    const foundUser = await this.characterRepository.findOne({
       where: {email: credentials.email},
     });
     if (!foundUser) {
@@ -57,16 +55,11 @@ export class JWTAuthenticationService {
       );
     }
 
-    const passwordMatched = await this.passwordHasher.comparePassword(
-      credentials.password,
-      foundUser.password,
-    );
-
-    if (!passwordMatched) {
+    if (credentials.password != foundUser.password) {
       throw new HttpErrors.Unauthorized('The credentials are not correct.');
     }
 
-    const currentUser = _.pick(toJSON(foundUser), ['id', 'email', 'firstName']);
+    const currentUser = _.pick(toJSON(foundUser), ['id', 'email', 'name']);
     // Generate user token using JWT
     const token = await signAsync(currentUser, this.jwt_secret, {
       expiresIn: 300,
@@ -83,9 +76,10 @@ export class JWTAuthenticationService {
    */
   async decodeAccessToken(token: string): Promise<UserProfile> {
     const decoded = await verifyAsync(token, this.jwt_secret);
-    let user = _.pick(decoded, ['id', 'email', 'firstName']);
-    (user as UserProfile).name = user.firstName;
-    delete user.firstName;
+    let user = _.pick(decoded, ['id', 'email', 'name', `userType`]);
+    (user as UserProfile).name = user.name;
+    (user as UserProfile).userType = user.userType;
+    //delete user.name;
     return user;
   }
 }

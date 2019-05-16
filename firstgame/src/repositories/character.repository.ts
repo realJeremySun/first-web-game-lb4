@@ -10,23 +10,28 @@ import {ArmorRepository} from './armor.repository';
 import {WeaponRepository} from './weapon.repository';
 import {SkillRepository} from './skill.repository';
 
+export type Credentials = {
+  email: string;
+  password: string;
+};
+
 export class CharacterRepository extends DefaultCrudRepository<
   Character,
-  typeof Character.prototype.id
+  typeof Character.prototype.email
 > {
   public armor: HasOneRepositoryFactory<
     Armor,
-    typeof Character.prototype.id
+    typeof Character.prototype.email
   >;
 
   public weapon: HasOneRepositoryFactory<
     Weapon,
-    typeof Character.prototype.id
+    typeof Character.prototype.email
   >;
 
   public skill: HasOneRepositoryFactory<
     Skill,
-    typeof Character.prototype.id
+    typeof Character.prototype.email
   >;
 
   constructor(

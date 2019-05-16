@@ -9,12 +9,47 @@ import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import * as path from 'path';
 import {MySequence} from './sequence';
+//add
+import {
+  AuthenticationBindings,
+  AuthenticationComponent,
+} from '@loopback/authentication';
+import {JWTAuthenticationBindings} from './keys';
+import {StrategyResolverProvider} from './providers/strategy.resolver.provider';
+import {AuthenticateActionProvider} from './providers/custom.authentication.provider';
+import {
+  JWTAuthenticationService,
+  JWT_SECRET,
+} from './services/JWT.authentication.service';
+import {JWTStrategy} from './authentication-strategies/JWT.strategy';
 
 export class FirstgameApplication extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
 ) {
   constructor(options: ApplicationConfig = {}) {
     super(options);
+
+    //add
+    // Bind authentication component related elements
+    this.component(AuthenticationComponent);
+
+    this.bind(AuthenticationBindings.AUTH_ACTION).toProvider(
+      AuthenticateActionProvider,
+    );
+
+    this.bind(AuthenticationBindings.STRATEGY).toProvider(
+      StrategyResolverProvider,
+    );
+
+
+    // Bind JWT authentication strategy related elements
+    this.bind(JWTAuthenticationBindings.STRATEGY).toClass(JWTStrategy);
+    this.bind(JWTAuthenticationBindings.SECRET).to(JWT_SECRET);
+    this.bind(JWTAuthenticationBindings.SERVICE).toClass(
+      JWTAuthenticationService,
+    );
+    //end
+
 
     // Set up the custom sequence
     this.sequence(MySequence);

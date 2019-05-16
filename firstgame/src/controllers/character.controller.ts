@@ -18,11 +18,30 @@ import {
 } from '@loopback/rest';
 import {Character} from '../models';
 import {CharacterRepository} from '../repositories';
+//add
+import {
+  authenticate,
+  UserProfile,
+  AuthenticationBindings,
+} from '@loopback/authentication';
+import {inject, Setter} from '@loopback/core';
+import {
+  CredentialsRequestBody,
+  UserProfileSchema,
+} from '../models/character.model';
+import {Credentials} from '../repositories/character.repository';
+import {JWTAuthenticationService} from '../services/JWT.authentication.service';
+import {JWTAuthenticationBindings} from '../keys';
+import {validateCredentials} from '../services/JWT.authentication.service';
+import * as _ from 'lodash';
+import {HttpErrors} from '@loopback/rest';
 
 export class CharacterController {
   constructor(
     @repository(CharacterRepository)
     public characterRepository : CharacterRepository,
+    @inject(JWTAuthenticationBindings.SERVICE)
+    public jwtAuthenticationService: JWTAuthenticationService,
   ) {}
 
   /**
@@ -38,73 +57,76 @@ export class CharacterController {
     },
   })
   async create(@requestBody() character: Character): Promise<Character> {
-      return await this.characterRepository.create(character);
+      //add
+      character.userType = 'regular';
+      validateCredentials(_.pick(character, ['email', 'password', 'userType']) as Credentials);
+      if (await this.characterRepository.exists(character.email)){
+        throw new HttpErrors.BadRequest(`This email already exists`);
+      }
+      else {
+        const savedCharacter = await this.characterRepository.create(character);
+        delete savedCharacter.password;
+        return savedCharacter;
+      }
   }
 
+  //add
   /**
-   * count character
-   * @param where filter
+   * user login
+   * @param credentials email and password
    */
-  @get('/characters/count', {
+  @post('/characters/login', {
     responses: {
       '200': {
-        description: 'Character model count',
-        content: {'application/json': {schema: CountSchema}},
-      },
-    },
-  })
-  async count(
-    @param.query.object('where', getWhereSchemaFor(Character)) where?: Where,
-  ): Promise<Count> {
-    return await this.characterRepository.count(where);
-  }
-
-  /**
-   * show all character
-   * @param where filter
-   */
-  @get('/characters', {
-    responses: {
-      '200': {
-        description: 'Array of Character model instances',
+        description: 'Token',
         content: {
           'application/json': {
-            schema: {type: 'array', items: {'x-ts-type': Character}},
+            schema: {
+              type: 'object',
+              properties: {
+                token: {
+                  type: 'string',
+                },
+              },
+            },
           },
         },
       },
     },
   })
-  async find(
-    @param.query.object('filter', getFilterSchemaFor(Character)) filter?: Filter,
-  ): Promise<Character[]> {
-    return await this.characterRepository.find(filter);
+  async login(
+    @requestBody(CredentialsRequestBody) credentials: Credentials,
+  ): Promise<{token: string}> {
+    validateCredentials(credentials);
+    const token = await this.jwtAuthenticationService.getAccessTokenForUser(
+      credentials,
+    );
+    return {token};
   }
 
-  /**
-   * path all character
-   * @param where filter
-   */
-  @patch('/characters', {
+  @get('/characters/me', {
     responses: {
       '200': {
-        description: 'Character PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
+        description: 'The current user profile',
+        content: {
+          'application/json': {
+            schema: UserProfileSchema,
+          },
+        },
       },
     },
   })
-  async updateAll(
-    @requestBody() character: Character,
-    @param.query.object('where', getWhereSchemaFor(Character)) where?: Where,
-  ): Promise<Count> {
-    return await this.characterRepository.updateAll(character, where);
+  @authenticate('jwt')
+  async printCurrentUser(
+    @inject('authentication.currentUser') currentUser: UserProfile,
+  ): Promise<UserProfile> {
+    return currentUser;
   }
 
   /**
-   * show character by id
-   * @param id id
+   * show current character
    */
-  @get('/characters/{id}', {
+  @get('/characters', {
     responses: {
       '200': {
         description: 'Character model instance',
@@ -112,47 +134,32 @@ export class CharacterController {
       },
     },
   })
-  async findById(@param.path.string('id') id: string): Promise<Character> {
-    return await this.characterRepository.findById(id);
+  @authenticate('jwt')
+  async findById(
+    @inject('authentication.currentUser') currentUser: UserProfile,
+  ): Promise<Character> {
+    return await this.characterRepository.findById(currentUser.email);
   }
 
   /**
-   * patch character by id
-   * @param where filter
+   * delete current character
    */
-  @patch('/characters/{id}', {
-    responses: {
-      '204': {
-        description: 'Character PATCH success',
-      },
-    },
-  })
-  async updateById(
-    @param.path.string('id') id: string,
-    @requestBody() character: Character,
-  ): Promise<void> {
-    await this.characterRepository.updateById(id, character);
-  }
-
-  /**
-   * delete character by id
-   * @param where filter
-   */
-  @del('/characters/{id}', {
+  @del('/characters', {
     responses: {
       '204': {
         description: 'Character DELETE success',
       },
     },
   })
+  @authenticate('jwt')
   async deleteById(
-    @param.path.string('id') id: string
+    @inject('authentication.currentUser') currentUser: UserProfile,
   ): Promise<void> {
     //delete weapon, armor, and skill
-    await this.characterRepository.weapon(id).delete();
-    await this.characterRepository.armor(id).delete();
-    await this.characterRepository.skill(id).delete();
+    await this.characterRepository.weapon(currentUser.email).delete();
+    await this.characterRepository.armor(currentUser.email).delete();
+    await this.characterRepository.skill(currentUser.email).delete();
     ///
-    await this.characterRepository.deleteById(id);
+    await this.characterRepository.deleteById(currentUser.email);
   }
 }
