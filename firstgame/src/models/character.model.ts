@@ -2,6 +2,7 @@ import {Entity, model, property, hasOne} from '@loopback/repository';
 import {Armor} from './armor.model';
 import {Weapon} from './weapon.model';
 import {Skill} from './skill.model';
+import {PermissionKey} from '../authorization/permission-key';
 
 @model()
 export class Character extends Entity {
@@ -18,16 +19,14 @@ export class Character extends Entity {
   })
   password: string;
 
+  @property.array(String)
+  permissions: PermissionKey[];
+
   @property({
     type: 'string',
     required: true,
   })
   name: string;
-
-  @property({
-    type: 'string',
-  })
-  userType?: string;
 
   @property({
     type: 'number',
@@ -96,47 +95,3 @@ export class Character extends Entity {
     super(data);
   }
 }
-
-
-// Copyright IBM Corp. 2019. All Rights Reserved.
-// Node module: loopback4-example-shopping
-// This file is licensed under the MIT License.
-// License text available at https://opensource.org/licenses/MIT
-
-// TODO(jannyHou): This should be moved to @loopback/authentication
-export const UserProfileSchema = {
-  type: 'object',
-  required: ['email'],
-  properties: {
-    email: {type: 'string'},
-    name: {type: 'string'},
-  },
-};
-
-// TODO(jannyHou): This is a workaround to manually
-// describe the request body of 'Users/login'.
-// We should either create a Credential model, or
-// infer the spec from User model
-
-const CredentialsSchema = {
-  type: 'object',
-  required: ['email', 'password'],
-  properties: {
-    email: {
-      type: 'string',
-      format: 'email',
-    },
-    password: {
-      type: 'string',
-      minLength: 8,
-    },
-  },
-};
-
-export const CredentialsRequestBody = {
-  description: 'The input of login function',
-  required: true,
-  content: {
-    'application/json': {schema: CredentialsSchema},
-  },
-};

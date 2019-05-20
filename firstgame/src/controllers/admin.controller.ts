@@ -19,19 +19,14 @@ import {
 import {Character} from '../models';
 import {CharacterRepository} from '../repositories';
 import {
-  authenticate,
+  authorize,
   UserProfile,
-  AuthenticationBindings,
-} from '@loopback/authentication';
-import {inject, Setter} from '@loopback/core';
-import {
+  AuthorizationBindings,
+  PermissionKey,
   CredentialsRequestBody,
   UserProfileSchema,
-} from '../models/character.model';
-import {Credentials} from '../repositories/character.repository';
-import {JWTAuthenticationService} from '../services/JWT.authentication.service';
-import {JWTAuthenticationBindings} from '../keys';
-import {validateCredentials} from '../services/JWT.authentication.service';
+} from '../authorization';
+import {inject, Setter} from '@loopback/core';
 import * as _ from 'lodash';
 import {HttpErrors} from '@loopback/rest';
 
@@ -39,10 +34,43 @@ export class AdminController {
   constructor(
     @repository(CharacterRepository)
     public characterRepository : CharacterRepository,
-    //add
-    @inject(JWTAuthenticationBindings.SERVICE)
-    public jwtAuthenticationService: JWTAuthenticationService,
   ) {}
+
+  @post('/admin', {
+    responses: {
+      '200': {
+        description: 'create admin',
+        content: {'application/json': {schema: {'x-ts-type': Character}}},
+      },
+    },
+  })
+  async create(
+    @param.query.string('admin_code') admin_code: string,
+    @requestBody() character: Character,
+  ): Promise<Character> {
+      if(admin_code != '901029'){
+        throw new HttpErrors.Forbidden('WRONG_ADMIN_CODE');
+      }
+
+      //todo validateCredentials
+
+
+      character.permissions = [PermissionKey.ViewOwnUser,
+                               PermissionKey.CreateUser,
+                               PermissionKey.UpdateOwnUser,
+                               PermissionKey.DeleteOwnUser,
+                               PermissionKey.UpdateAnyUser,
+                               PermissionKey.ViewAnyUser,
+                               PermissionKey.DeleteAnyUser];
+      if (await this.characterRepository.exists(character.email)){
+        throw new HttpErrors.BadRequest(`This email already exists`);
+      }
+      else {
+        const savedCharacter = await this.characterRepository.create(character);
+        delete savedCharacter.password;
+        return savedCharacter;
+      }
+  }
 
   /**
    * count character
@@ -56,14 +84,10 @@ export class AdminController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewAnyUser])
   async count(
-    @inject('authentication.currentUser') currentUser: UserProfile,
     @param.query.object('where', getWhereSchemaFor(Character)) where?: Where,
   ): Promise<Count> {
-    if((await this.characterRepository.findById(currentUser.email)).userType != 'admin'){
-      throw new HttpErrors.Unauthorized('You are not admin');
-    }
     return await this.characterRepository.count(where);
   }
 
@@ -83,14 +107,10 @@ export class AdminController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewAnyUser])
   async find(
-    @inject('authentication.currentUser') currentUser: UserProfile,
     @param.query.object('filter', getFilterSchemaFor(Character)) filter?: Filter,
   ): Promise<Character[]> {
-    if((await this.characterRepository.findById(currentUser.email)).userType != 'admin'){
-      throw new HttpErrors.Unauthorized('You are not admin');
-    }
     return await this.characterRepository.find(filter);
   }
 
@@ -106,15 +126,11 @@ export class AdminController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewAnyUser, PermissionKey.UpdateAnyUser])
   async updateAll(
-    @inject('authentication.currentUser') currentUser: UserProfile,
     @requestBody() character: Character,
     @param.query.object('where', getWhereSchemaFor(Character)) where?: Where,
   ): Promise<Count> {
-    if((await this.characterRepository.findById(currentUser.email)).userType != 'admin'){
-      throw new HttpErrors.Unauthorized('You are not admin');
-    }
     return await this.characterRepository.updateAll(character, where);
   }
 
@@ -130,14 +146,10 @@ export class AdminController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewAnyUser])
   async findById(
-    @inject('authentication.currentUser') currentUser: UserProfile,
     @param.path.string('email') email: string
   ): Promise<Character> {
-    if((await this.characterRepository.findById(currentUser.email)).userType != 'admin'){
-      throw new HttpErrors.Unauthorized('You are not admin');
-    }
     return await this.characterRepository.findById(email);
   }
 
@@ -152,15 +164,11 @@ export class AdminController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewAnyUser, PermissionKey.UpdateAnyUser])
   async updateById(
-    @inject('authentication.currentUser') currentUser: UserProfile,
-    @param.path.string('email') email: string,
+    @param.query.string('email') email: string,
     @requestBody() character: Character,
   ): Promise<void> {
-    if((await this.characterRepository.findById(currentUser.email)).userType != 'admin'){
-      throw new HttpErrors.Unauthorized('You are not admin');
-    }
     await this.characterRepository.updateById(email, character);
   }
 
@@ -174,14 +182,10 @@ export class AdminController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewAnyUser, PermissionKey.DeleteAnyUser])
   async deleteById(
-    @inject('authentication.currentUser') currentUser: UserProfile,
     @param.path.string('email') email: string
   ): Promise<void> {
-    if((await this.characterRepository.findById(currentUser.email)).userType != 'admin'){
-      throw new HttpErrors.Unauthorized('You are not admin');
-    }
     //delete weapon, armor, and skill
     await this.characterRepository.weapon(email).delete();
     await this.characterRepository.armor(email).delete();

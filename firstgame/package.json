@@ -45,7 +45,7 @@
     "!*/__tests__"
   ],
   "dependencies": {
-    "@loopback/authentication": "^1.2.1",
+    "@loopback/authentication": "^2.0.3",
     "@loopback/boot": "^1.1.2",
     "@loopback/context": "^1.8.1",
     "@loopback/core": "^1.2.1",
@@ -59,6 +59,7 @@
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^8.5.1",
     "loopback-connector-mongodb": "^4.0.0",
+    "npm-check": "^5.9.0",
     "passport": "^0.4.0",
     "passport-http": "^0.3.0",
     "uuid": "^3.3.2"

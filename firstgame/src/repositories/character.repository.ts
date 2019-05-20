@@ -10,11 +10,6 @@ import {ArmorRepository} from './armor.repository';
 import {WeaponRepository} from './weapon.repository';
 import {SkillRepository} from './skill.repository';
 
-export type Credentials = {
-  email: string;
-  password: string;
-};
-
 export class CharacterRepository extends DefaultCrudRepository<
   Character,
   typeof Character.prototype.email

@@ -20,19 +20,17 @@ import {Character} from '../models';
 import {CharacterRepository} from '../repositories';
 //add
 import {
-  authenticate,
+  authorize,
   UserProfile,
-  AuthenticationBindings,
-} from '@loopback/authentication';
-import {inject, Setter} from '@loopback/core';
-import {
+  AuthorizationBindings,
+  PermissionKey,
   CredentialsRequestBody,
+  UserRequestBody,
   UserProfileSchema,
-} from '../models/character.model';
-import {Credentials} from '../repositories/character.repository';
-import {JWTAuthenticationService} from '../services/JWT.authentication.service';
-import {JWTAuthenticationBindings} from '../keys';
-import {validateCredentials} from '../services/JWT.authentication.service';
+  Credentials,
+  JWTStrategy,
+} from '../authorization';
+import {inject, Setter, Getter} from '@loopback/core';
 import * as _ from 'lodash';
 import {HttpErrors} from '@loopback/rest';
 
@@ -40,8 +38,10 @@ export class CharacterController {
   constructor(
     @repository(CharacterRepository)
     public characterRepository : CharacterRepository,
-    @inject(JWTAuthenticationBindings.SERVICE)
-    public jwtAuthenticationService: JWTAuthenticationService,
+    @inject(AuthorizationBindings.STRATEGY)
+    public jwt: JWTStrategy,
+    @inject.getter(AuthorizationBindings.CURRENT_USER)
+    public getCurrentUser: Getter<UserProfile>,
   ) {}
 
   /**
@@ -56,10 +56,14 @@ export class CharacterController {
       },
     },
   })
-  async create(@requestBody() character: Character): Promise<Character> {
-      //add
-      character.userType = 'regular';
-      validateCredentials(_.pick(character, ['email', 'password', 'userType']) as Credentials);
+  async create(
+    @requestBody(UserRequestBody) character: Character
+  ): Promise<Character> {
+      //todo validateCredentials
+      character.permissions = [PermissionKey.ViewOwnUser,
+                               PermissionKey.CreateUser,
+                               PermissionKey.UpdateOwnUser,
+                               PermissionKey.DeleteOwnUser];
       if (await this.characterRepository.exists(character.email)){
         throw new HttpErrors.BadRequest(`This email already exists`);
       }
@@ -79,26 +83,15 @@ export class CharacterController {
     responses: {
       '200': {
         description: 'Token',
-        content: {
-          'application/json': {
-            schema: {
-              type: 'object',
-              properties: {
-                token: {
-                  type: 'string',
-                },
-              },
-            },
-          },
-        },
+        content: {},
       },
     },
   })
   async login(
     @requestBody(CredentialsRequestBody) credentials: Credentials,
   ): Promise<{token: string}> {
-    validateCredentials(credentials);
-    const token = await this.jwtAuthenticationService.getAccessTokenForUser(
+    //todo validateCredentials
+    const token = await this.jwt.getAccessTokenForUser(
       credentials,
     );
     return {token};
@@ -116,11 +109,10 @@ export class CharacterController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewOwnUser])
   async printCurrentUser(
-    @inject('authentication.currentUser') currentUser: UserProfile,
   ): Promise<UserProfile> {
-    return currentUser;
+    return await this.getCurrentUser();
   }
 
   /**
@@ -134,10 +126,10 @@ export class CharacterController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewOwnUser])
   async findById(
-    @inject('authentication.currentUser') currentUser: UserProfile,
   ): Promise<Character> {
+    const currentUser = await this.getCurrentUser();
     return await this.characterRepository.findById(currentUser.email);
   }
 
@@ -151,10 +143,10 @@ export class CharacterController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.DeleteOwnUser])
   async deleteById(
-    @inject('authentication.currentUser') currentUser: UserProfile,
   ): Promise<void> {
+    const currentUser = await this.getCurrentUser();
     //delete weapon, armor, and skill
     await this.characterRepository.weapon(currentUser.email).delete();
     await this.characterRepository.armor(currentUser.email).delete();

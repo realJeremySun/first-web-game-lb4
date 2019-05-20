@@ -25,18 +25,14 @@ import {
 } from '../repositories';
 //add
 import {
-  authenticate,
+  authorize,
   UserProfile,
-} from '@loopback/authentication';
-import {inject, Setter} from '@loopback/core';
-import {
+  AuthorizationBindings,
+  PermissionKey,
   CredentialsRequestBody,
   UserProfileSchema,
-} from '../models/character.model';
-import {Credentials} from '../repositories/character.repository';
-import {JWTAuthenticationService} from '../services/JWT.authentication.service';
-import {JWTAuthenticationBindings} from '../keys';
-import {validateCredentials} from '../services/JWT.authentication.service';
+} from '../authorization';
+import {inject, Setter, Getter} from '@loopback/core';
 import * as _ from 'lodash';
 import {HttpErrors} from '@loopback/rest';
 
@@ -50,9 +46,9 @@ export class UpdateCharacterController {
     public armorRepository : CharacterRepository,
     @repository(SkillRepository)
     public skillRepository : CharacterRepository,
-    //add
-    @inject(JWTAuthenticationBindings.SERVICE)
-    public jwtAuthenticationService: JWTAuthenticationService,
+    //
+    @inject.getter(AuthorizationBindings.CURRENT_USER)
+    public getCurrentUser: Getter<UserProfile>,
   ) {}
 
   /**
@@ -66,10 +62,10 @@ export class UpdateCharacterController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewOwnUser, PermissionKey.UpdateOwnUser])
   async findById(
-    @inject('authentication.currentUser') currentUser: UserProfile,
   ): Promise<any[]> {
+    const currentUser = await this.getCurrentUser();
     let res: any[] = ['no weapon', 'no armor', 'no skill'];
 
     let filter: Filter = {where:{"characterId": currentUser.email}};
@@ -96,10 +92,10 @@ export class UpdateCharacterController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewOwnUser, PermissionKey.UpdateOwnUser])
   async levelUp(
-    @inject('authentication.currentUser') currentUser: UserProfile,
   ): Promise<Character> {
+      const currentUser = await this.getCurrentUser();
       let char: Character = await this.characterRepository.findById(currentUser.email);
       let levels: number = 0;
       while(char.currentExp! >= char.nextLevelExp!){
@@ -130,11 +126,11 @@ export class UpdateCharacterController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewOwnUser, PermissionKey.UpdateOwnUser])
   async updateWeapon(
-    @inject('authentication.currentUser') currentUser: UserProfile,
     @requestBody() weapon: Weapon,
   ): Promise<Weapon> {
+    const currentUser = await this.getCurrentUser();
     //equip new weapon
     let char: Character = await this.characterRepository.findById(currentUser.email);
     char.attack! += weapon.attack;
@@ -164,11 +160,11 @@ export class UpdateCharacterController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewOwnUser, PermissionKey.UpdateOwnUser])
   async updateArmor(
-    @inject('authentication.currentUser') currentUser: UserProfile,
     @requestBody() armor: Armor,
   ): Promise<Armor> {
+    const currentUser = await this.getCurrentUser();
     //equip new armor
     let char: Character = await this.characterRepository.findById(currentUser.email);
     char.attack! += armor.attack;
@@ -198,11 +194,11 @@ export class UpdateCharacterController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewOwnUser, PermissionKey.UpdateOwnUser])
   async updateSkill(
-    @inject('authentication.currentUser') currentUser: UserProfile,
     @requestBody() skill: Skill,
   ): Promise<Skill> {
+    const currentUser = await this.getCurrentUser();
     await this.characterRepository.skill(currentUser.email).delete();
     return await this.characterRepository.skill(currentUser.email).create(skill);
   }
@@ -217,10 +213,10 @@ export class UpdateCharacterController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewOwnUser, PermissionKey.UpdateOwnUser])
   async deleteWeapon(
-    @inject('authentication.currentUser') currentUser: UserProfile,
   ): Promise<void> {
+    const currentUser = await this.getCurrentUser();
     //unequip old weapon
     let filter: Filter = {where:{"characterId": currentUser.email}};
     if((await this.weaponRepository.find(filter))[0] != undefined){
@@ -243,10 +239,10 @@ export class UpdateCharacterController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewOwnUser, PermissionKey.UpdateOwnUser])
   async deleteArmor(
-    @inject('authentication.currentUser') currentUser: UserProfile,
   ): Promise<void> {
+    const currentUser = await this.getCurrentUser();
     //unequip old armor
     let filter: Filter = {where:{"characterId": currentUser.email}};
     if((await this.armorRepository.find(filter))[0] != undefined){
@@ -269,10 +265,10 @@ export class UpdateCharacterController {
       },
     },
   })
-  @authenticate('jwt')
+  @authorize([PermissionKey.ViewOwnUser, PermissionKey.UpdateOwnUser])
   async deleteSkill(
-    @inject('authentication.currentUser') currentUser: UserProfile,
   ): Promise<void> {
+      const currentUser = await this.getCurrentUser();
       await this.characterRepository.skill(currentUser.email).delete();
   }
 }
