@@ -34,19 +34,47 @@ Here are the previous episodes:
 
 We already have some APIs that allow user to customize characters. But a user should not get access to other character. So in this episode, we will add user authentication and role-based access control to this project.
 
-### `@loopback/authentication` Package
+### Authentication Structure
 
 LoopBack 4 provide us a build-in authentication package. This package has some basic authentication functions and an extension point for us to apply our own authentication strategies. Here is a diagram for the basic structure:
 
 [!structure]()
 
+#### `@loopback/authentication` Package
+
 The one in the middle is the `@loopback/authentication` package. It has three main components:
 
 * Providers:
-  * AuthorizationMetadataProvider - This will read the decorator metadata from the controller methods wherever the decorator is used.
+  * AuthMetadataProvider: this will read all metadata from `@authenticate` decorators.
+  * AuthenticateActionProvider: this holds the business logic for authentication action.
+  * AuthenticationStrategyProvider: this is the extension point for you to add your own authentication strategies. I will show you how to do that later.
+
+* Services: all services in this package are interfaces. You can your own services as well.
+  * TokenService: an interface for generating and verifying an authentication token.
+  * UserService: an interface for performing the login action in an authentication strategy. To keep this project as simple as possible, I am not going to use this interface. I will integrate this to the TokenService.
+
+* Decorators: `@authenticate`. Put this before those APIs that need authentication. You can create you own decorators if necessary.
+
+#### User-defined Authentication
+
+The one in the bottom left is our self-defined authentication. It has three components:
+
+* Providers:
+  * UserPermissionsProvider: this will check user's permission. We will create different user permissions for different users.
+
+* Strategies: this is where we add our own authentication strategies.
+  * JWTStrategy: we are going to use [JSON Web Token](https://jwt.io/) as our authentication strategy.
 
 * Services:
-* Decorators:
+  * JWTService: a service associate with JWTStrategy to generate and verify JWT.
+
+#### `application.ts`, `sequence.ts` and `controller`
+
+In order to use the all of above in our project, we have three more steps to do:   
+
+ * Binding everything in `application.ts`. `application.ts` is like the main function of LoopBack project.
+ * Adding authenticate action into `sequence.ts`. `sequence.ts` is where we specify how to response a request.
+ * Put `@authenticate` before your APIs.
 
 
 
