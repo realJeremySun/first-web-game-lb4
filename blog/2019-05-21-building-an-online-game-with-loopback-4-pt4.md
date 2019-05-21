@@ -44,7 +44,7 @@ The one in the middle is the `@loopback/authentication` package. It has three ma
 
 * Providers:
   * AuthorizationMetadataProvider - This will read the decorator metadata from the controller methods wherever the decorator is used.
-  
+
 * Services:
 * Decorators:
 
