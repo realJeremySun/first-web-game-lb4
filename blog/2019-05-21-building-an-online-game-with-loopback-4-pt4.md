@@ -38,7 +38,7 @@ We already have some APIs that allow user to customize characters. But a user sh
 
 LoopBack 4 provide us a build-in authentication package. This package has some basic authentication functions and an extension point for us to apply our own authentication strategies. Here is a diagram for the basic structure:
 
-[!structure](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/Auth%20structure.png)
+![structure](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/Auth%20structure.png)
 
 #### `@loopback/authentication` Package
 
