@@ -36,6 +36,19 @@ We already have some APIs that allow user to customize characters. But a user sh
 
 ### `@loopback/authentication` Package
 
+LoopBack 4 provide us a build-in authentication package. This package has some basic authentication functions and an extension point for us to apply our own authentication strategies. Here is a diagram for the basic structure:
+
+[!structure]()
+
+The one in the middle is the `@loopback/authentication` package. It has three main components:
+
+* Providers:
+  * AuthorizationMetadataProvider - This will read the decorator metadata from the controller methods wherever the decorator is used.
+  
+* Services:
+* Decorators:
+
+
 
 ### Applying This to Your Own Project
 
