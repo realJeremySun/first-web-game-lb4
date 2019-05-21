@@ -11,7 +11,13 @@ import * as path from 'path';
 import {MySequence} from './sequence';
 //add
 import {HttpErrors} from '@loopback/rest';
-import {AuthorizationComponent, AuthorizationBindings, JWTStrategy, JWT_SECRET, UserProfile} from './authorization';
+import {MyAuthBindings,
+        JWTService,
+        JWTStrategy,
+        UserPermissionsProvider,} from './authorization';
+import {AuthenticationComponent,
+       registerAuthenticationStrategy,
+       } from '@loopback/authentication';
 
 
 export class FirstgameApplication extends BootMixin(
@@ -22,17 +28,12 @@ export class FirstgameApplication extends BootMixin(
 
     //add
     // Bind authentication component related elements
-    this.component(AuthorizationComponent);
+    this.component(AuthenticationComponent);
 
-
-
-    // Bind JWT authentication strategy related elements
-    this.bind(AuthorizationBindings.STRATEGY).toClass(JWTStrategy);
-    this.bind(AuthorizationBindings.SECRET).to(JWT_SECRET);
-    //this.bind(AuthorizationBindings.CURRENT_USER).to(Credentials);
-
-
-
+    // Bind JWT & permission authentication strategy related elements
+    registerAuthenticationStrategy(this, JWTStrategy);
+    this.bind(MyAuthBindings.TOKEN_SERVICE).toClass(JWTService);
+    this.bind(MyAuthBindings.USER_PERMISSIONS).toProvider(UserPermissionsProvider);
 
     // Set up the custom sequence
     this.sequence(MySequence);

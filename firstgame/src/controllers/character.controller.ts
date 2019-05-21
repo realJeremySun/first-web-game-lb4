@@ -19,29 +19,31 @@ import {
 import {Character} from '../models';
 import {CharacterRepository} from '../repositories';
 //add
+import {inject, Setter, Getter} from '@loopback/core';
+import * as _ from 'lodash';
+import {HttpErrors} from '@loopback/rest';
 import {
-  authorize,
-  UserProfile,
-  AuthorizationBindings,
+  MyUserProfile,
+  MyAuthBindings,
   PermissionKey,
   CredentialsRequestBody,
   UserRequestBody,
   UserProfileSchema,
-  Credentials,
   JWTStrategy,
 } from '../authorization';
-import {inject, Setter, Getter} from '@loopback/core';
-import * as _ from 'lodash';
-import {HttpErrors} from '@loopback/rest';
+import {authenticate,
+        TokenService,
+        AuthenticationBindings,
+} from '@loopback/authentication';
 
 export class CharacterController {
   constructor(
     @repository(CharacterRepository)
     public characterRepository : CharacterRepository,
-    @inject(AuthorizationBindings.STRATEGY)
-    public jwt: JWTStrategy,
-    @inject.getter(AuthorizationBindings.CURRENT_USER)
-    public getCurrentUser: Getter<UserProfile>,
+    @inject(MyAuthBindings.TOKEN_SERVICE)
+    public jwtService: TokenService,
+    @inject.getter(AuthenticationBindings.CURRENT_USER)
+    public getCurrentUser: Getter<MyUserProfile>,
   ) {}
 
   /**
@@ -88,13 +90,14 @@ export class CharacterController {
     },
   })
   async login(
-    @requestBody(CredentialsRequestBody) credentials: Credentials,
+    @requestBody(CredentialsRequestBody) myUserProfile: MyUserProfile,
   ): Promise<{token: string}> {
-    //todo validateCredentials
-    const token = await this.jwt.getAccessTokenForUser(
-      credentials,
-    );
+
+    //console.log(this.jwt);
+    const token = await this.jwtService.generateToken(myUserProfile);
+    //console.log((await this.getStrategy()).getAccessTokenForUser);
     return {token};
+
   }
 
   @get('/characters/me', {
@@ -109,9 +112,9 @@ export class CharacterController {
       },
     },
   })
-  @authorize([PermissionKey.ViewOwnUser])
+  @authenticate('jwt', [PermissionKey.ViewOwnUser])
   async printCurrentUser(
-  ): Promise<UserProfile> {
+  ): Promise<MyUserProfile> {
     return await this.getCurrentUser();
   }
 
@@ -126,7 +129,7 @@ export class CharacterController {
       },
     },
   })
-  @authorize([PermissionKey.ViewOwnUser])
+  @authenticate('jwt', [PermissionKey.ViewOwnUser])
   async findById(
   ): Promise<Character> {
     const currentUser = await this.getCurrentUser();
@@ -143,7 +146,7 @@ export class CharacterController {
       },
     },
   })
-  @authorize([PermissionKey.DeleteOwnUser])
+  @authenticate('jwt', [PermissionKey.DeleteOwnUser])
   async deleteById(
   ): Promise<void> {
     const currentUser = await this.getCurrentUser();

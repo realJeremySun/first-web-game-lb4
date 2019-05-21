@@ -1,28 +1,7 @@
 import {PermissionKey} from './permission-key';
 import {Request} from '@loopback/rest';
+import {UserProfile} from '@loopback/authentication';
 
-/**
- * Authorize action method interface
- */
-export interface AuthorizeFn {
-  // userPermissions - Array of permission keys granted to the user
-  // This is actually a union of permissions picked up based on role
-  // attached to the user and allowed permissions at specific user level
-  (request: Request): Promise<UserProfile | undefined>;
-}
-
-/**
- * Authorization metadata interface for the method decorator
- */
-export interface AuthorizationMetadata {
-  // Array of permissions required at the method level.
-  // User need to have at least one of these to access the API method.
-  permissions: string[];
-}
-
-export interface AuthorizationStrategy {
-  authorize(request: Request): Promise<UserProfile | undefined>;
-}
 
 /**
  * User permissions manipulation method interface.
@@ -39,16 +18,13 @@ export interface UserPermissionsFn {
   ): boolean;
 }
 
-export interface UserProfile {
+export interface MyUserProfile  {
+  id: string;
   email: string;
+  password: string;
   name: string;
   permissions: PermissionKey[];
 }
-
-export type Credentials = {
-  email: string;
-  password: string;
-};
 
 export const UserProfileSchema = {
   type: 'object',

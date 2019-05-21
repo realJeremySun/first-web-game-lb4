@@ -16,19 +16,18 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
+import {inject, Setter} from '@loopback/core';
+import * as _ from 'lodash';
+import {HttpErrors} from '@loopback/rest';
 import {Character} from '../models';
 import {CharacterRepository} from '../repositories';
 import {
-  authorize,
-  UserProfile,
-  AuthorizationBindings,
+  MyUserProfile,
   PermissionKey,
   CredentialsRequestBody,
   UserProfileSchema,
 } from '../authorization';
-import {inject, Setter} from '@loopback/core';
-import * as _ from 'lodash';
-import {HttpErrors} from '@loopback/rest';
+import {authenticate} from '@loopback/authentication';
 
 export class AdminController {
   constructor(
@@ -51,9 +50,6 @@ export class AdminController {
       if(admin_code != '901029'){
         throw new HttpErrors.Forbidden('WRONG_ADMIN_CODE');
       }
-
-      //todo validateCredentials
-
 
       character.permissions = [PermissionKey.ViewOwnUser,
                                PermissionKey.CreateUser,
@@ -84,7 +80,7 @@ export class AdminController {
       },
     },
   })
-  @authorize([PermissionKey.ViewAnyUser])
+  @authenticate('jwt', [PermissionKey.ViewAnyUser])
   async count(
     @param.query.object('where', getWhereSchemaFor(Character)) where?: Where,
   ): Promise<Count> {
@@ -107,7 +103,7 @@ export class AdminController {
       },
     },
   })
-  @authorize([PermissionKey.ViewAnyUser])
+  @authenticate('jwt', [PermissionKey.ViewAnyUser])
   async find(
     @param.query.object('filter', getFilterSchemaFor(Character)) filter?: Filter,
   ): Promise<Character[]> {
@@ -126,7 +122,7 @@ export class AdminController {
       },
     },
   })
-  @authorize([PermissionKey.ViewAnyUser, PermissionKey.UpdateAnyUser])
+  @authenticate('jwt', [PermissionKey.ViewAnyUser, PermissionKey.UpdateAnyUser])
   async updateAll(
     @requestBody() character: Character,
     @param.query.object('where', getWhereSchemaFor(Character)) where?: Where,
@@ -146,7 +142,7 @@ export class AdminController {
       },
     },
   })
-  @authorize([PermissionKey.ViewAnyUser])
+  @authenticate('jwt', [PermissionKey.ViewAnyUser])
   async findById(
     @param.path.string('email') email: string
   ): Promise<Character> {
@@ -164,7 +160,7 @@ export class AdminController {
       },
     },
   })
-  @authorize([PermissionKey.ViewAnyUser, PermissionKey.UpdateAnyUser])
+  @authenticate('jwt', [PermissionKey.ViewAnyUser, PermissionKey.UpdateAnyUser])
   async updateById(
     @param.query.string('email') email: string,
     @requestBody() character: Character,
@@ -182,7 +178,7 @@ export class AdminController {
       },
     },
   })
-  @authorize([PermissionKey.ViewAnyUser, PermissionKey.DeleteAnyUser])
+  @authenticate('jwt', [PermissionKey.ViewAnyUser, PermissionKey.DeleteAnyUser])
   async deleteById(
     @param.path.string('email') email: string
   ): Promise<void> {

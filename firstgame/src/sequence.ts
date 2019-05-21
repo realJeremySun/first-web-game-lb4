@@ -11,9 +11,9 @@ import {
 } from '@loopback/rest';
 import {HttpErrors} from '@loopback/rest';
 import {
-  AuthorizationBindings,
-  AuthorizeFn,
-} from './authorization';
+  AuthenticationBindings,
+  AuthenticateFn,
+} from '@loopback/authentication';
 
 const SequenceActions = RestBindings.SequenceActions;
 
@@ -25,8 +25,8 @@ export class MySequence implements SequenceHandler {
     @inject(SequenceActions.SEND) public send: Send,
     @inject(SequenceActions.REJECT) public reject: Reject,
     //add
-    @inject(AuthorizationBindings.AUTHORIZE_ACTION)
-    protected authorizeRequest: AuthorizeFn,
+    @inject(AuthenticationBindings.AUTH_ACTION)
+    protected authenticateRequest: AuthenticateFn,
   ) {}
 
   async handle(context: RequestContext) {
@@ -36,7 +36,7 @@ export class MySequence implements SequenceHandler {
       const args = await this.parseParams(request, route);
 
 
-      await this.authorizeRequest(request);
+      await this.authenticateRequest(request);
 
       const result = await this.invoke(route, args);
       this.send(response, result);

@@ -8,7 +8,7 @@ export const enum PermissionKey {
   // For deleting a user
   DeleteOwnUser = 'DeleteOwnUser',
 
-
+  //admin
   // For updating other users profile
   UpdateAnyUser = 'UpdateAnyUser',
   // For accessing other users profile.

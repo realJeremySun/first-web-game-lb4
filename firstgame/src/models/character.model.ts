@@ -2,7 +2,7 @@ import {Entity, model, property, hasOne} from '@loopback/repository';
 import {Armor} from './armor.model';
 import {Weapon} from './weapon.model';
 import {Skill} from './skill.model';
-import {PermissionKey} from '../authorization/permission-key';
+import {PermissionKey} from '../authorization';
 
 @model()
 export class Character extends Entity {
