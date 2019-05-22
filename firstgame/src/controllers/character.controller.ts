@@ -19,8 +19,7 @@ import {
 import {Character} from '../models';
 import {CharacterRepository} from '../repositories';
 //add
-import {inject, Setter, Getter} from '@loopback/core';
-import * as _ from 'lodash';
+import {inject, Getter} from '@loopback/core';
 import {HttpErrors} from '@loopback/rest';
 import {
   MyUserProfile,
@@ -29,7 +28,6 @@ import {
   CredentialsRequestBody,
   UserRequestBody,
   UserProfileSchema,
-  JWTStrategy,
 } from '../authorization';
 import {authenticate,
         TokenService,
@@ -97,7 +95,6 @@ export class CharacterController {
     const token = await this.jwtService.generateToken(myUserProfile);
     //console.log((await this.getStrategy()).getAccessTokenForUser);
     return {token};
-
   }
 
   @get('/characters/me', {

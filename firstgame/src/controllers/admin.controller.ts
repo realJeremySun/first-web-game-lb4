@@ -16,17 +16,11 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {inject, Setter} from '@loopback/core';
-import * as _ from 'lodash';
-import {HttpErrors} from '@loopback/rest';
+import {inject} from '@loopback/core';
 import {Character} from '../models';
 import {CharacterRepository} from '../repositories';
-import {
-  MyUserProfile,
-  PermissionKey,
-  CredentialsRequestBody,
-  UserProfileSchema,
-} from '../authorization';
+import {HttpErrors} from '@loopback/rest';
+import {PermissionKey,} from '../authorization';
 import {authenticate} from '@loopback/authentication';
 
 export class AdminController {

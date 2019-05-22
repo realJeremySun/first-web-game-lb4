@@ -122,7 +122,7 @@ permissions: PermissionKey[];
 
 ### Self-Defined Authentication Component
 
-Let's first create a folder 'authorization' in `src` to hold everything in this episode.
+Let's first create a folder 'authorization' in `src` to hold everything in this episode. This will be our self-defined authentication package.
 
 I will show you how to create everything step by step. You can also check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part4/firstgame/src/authorization) for my `authorization` folder.
 
@@ -476,15 +476,190 @@ async handle(context: RequestContext) {
 
 ### Authenticate APIs
 
-Our Authentication components are ready to use.
+Our Authentication components are ready to use. Now we can apply it to our APIs.
 
+#### CharacterController
+
+Open `src/controllers/character.controller.ts`, add the following imports.
+
+```ts
+import {
+  MyUserProfile,
+  MyAuthBindings,
+  PermissionKey,
+  CredentialsRequestBody,
+  UserRequestBody,
+  UserProfileSchema,
+} from '../authorization';
+import {authenticate,
+        TokenService,
+        AuthenticationBindings,
+} from '@loopback/authentication';
+```
+
+Then let's make some changes to the `@post /characters` API.
+
+```ts
+@post('/characters', {
+  responses: {
+    '200': {
+      description: 'Character model instance',
+      content: {'application/json': {schema: {'x-ts-type': Character}}},
+    },
+  },
+})
+async create(
+  @requestBody(UserRequestBody) character: Character
+): Promise<Character> {
+    //todo validateCredentials
+    character.permissions = [PermissionKey.ViewOwnUser,
+                             PermissionKey.CreateUser,
+                             PermissionKey.UpdateOwnUser,
+                             PermissionKey.DeleteOwnUser];
+    if (await this.characterRepository.exists(character.email)){
+      throw new HttpErrors.BadRequest(`This email already exists`);
+    }
+    else {
+      const savedCharacter = await this.characterRepository.create(character);
+      delete savedCharacter.password;
+      return savedCharacter;
+    }
+}
+```
+
+Put `UserRequestBody` in `@requestBody` decorator to specify the format of request body. That is how we validate the format of email and password.
+
+Because this API is used to create a regular user, we will assign `ViewOwnUser`, `CreateUser`, `UpdateOwnUser`, and `DeleteOwnUser` permissions to new user.
+
+We also need to create an API for login.
+
+```ts
+@post('/characters/login', {
+  responses: {
+    '200': {
+      description: 'Token',
+      content: {},
+    },
+  },
+})
+async login(
+  @requestBody(CredentialsRequestBody) myUserProfile: MyUserProfile,
+): Promise<{token: string}> {
+  const token = await this.jwtService.generateToken(myUserProfile);
+  return {token};
+}
+```
+
+This API will use `JWTService` to verify user email and password, and then generate a JWT based on necessary credential information ,like email, password and permissions.
+
+The next API we need is `@get /characters/me`. It will show current logged-in user.
+
+```ts
+@get('/characters/me', {
+  responses: {
+    '200': {
+      description: 'The current user profile',
+      content: {
+        'application/json': {
+          schema: UserProfileSchema,
+        },
+      },
+    },
+  },
+})
+@authenticate('jwt', [PermissionKey.ViewOwnUser])
+async printCurrentUser(
+): Promise<MyUserProfile> {
+  return await this.getCurrentUser();
+}
+```
+
+`@authenticate('jwt', [PermissionKey.ViewOwnUser])` is how we authenticate this API. The first parameter `jwt` specify which authentication strategy you want to use for this API. If you have more than one strategies, make you choice here. The second parameter is an array or `PermissionKey`. It specify what permissions are required to access this API. In this case, the only required permission is `ViewOwnUser`. Because this API only show current logged-in user information. You can customize permissions based on your APIs.
+
+To get current logged-in user information, simply call `this.getCurrentUser()`.
+
+The above three APIs show you most of use cases. You should got enough knowledge on how to apply LoopBack 4 authentication components to your APIs.
+
+Let me show you one more example before we done.
+
+#### AdminController
+
+Let's create another controller for admins. Admins should have privilege to view, update, and delete any user.
+
+Here is how we create an admin.
+
+```ts
+@post('/admin', {
+  responses: {
+    '200': {
+      description: 'create admin',
+      content: {'application/json': {schema: {'x-ts-type': Character}}},
+    },
+  },
+})
+async create(
+  @param.query.string('admin_code') admin_code: string,
+  @requestBody() character: Character,
+): Promise<Character> {
+    if(admin_code != '901029'){
+      throw new HttpErrors.Forbidden('WRONG_ADMIN_CODE');
+    }
+
+    character.permissions = [PermissionKey.ViewOwnUser,
+                             PermissionKey.CreateUser,
+                             PermissionKey.UpdateOwnUser,
+                             PermissionKey.DeleteOwnUser,
+                             PermissionKey.UpdateAnyUser,
+                             PermissionKey.ViewAnyUser,
+                             PermissionKey.DeleteAnyUser];
+    if (await this.characterRepository.exists(character.email)){
+      throw new HttpErrors.BadRequest(`This email already exists`);
+    }
+    else {
+      const savedCharacter = await this.characterRepository.create(character);
+      delete savedCharacter.password;
+      return savedCharacter;
+    }
+}
+```
+
+It is very similar to `@post /characters` API. The difference is it require `admin_code` to create an admin with three more permissions: `UpdateAnyUser`, `ViewAnyUser`, and `DeleteAnyUser`.
+
+This is an API to show all users informaion.
+
+```ts
+@get('/admin/characters', {
+  responses: {
+    '200': {
+      description: 'Array of Character model instances',
+      content: {
+        'application/json': {
+          schema: {type: 'array', items: {'x-ts-type': Character}},
+        },
+      },
+    },
+  },
+})
+@authenticate('jwt', [PermissionKey.ViewAnyUser])
+async find(
+  @param.query.object('filter', getFilterSchemaFor(Character)) filter?: Filter,
+): Promise<Character[]> {
+  return await this.characterRepository.find(filter);
+}
+```
+
+As you can see, this required `ViewAnyUser` permission.
+
+You can check my controllers at [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part4/firstgame/src/controllers)
 
 ### Applying This to Your Own Project
 
-In this episode, we covered the how to customize APIs. You can always implement your own amazing idea in your LoopBack 4 project.
+In this episode, we covered how to combine your self-defined authorization strategies and services with `@loopback/authentication` and how to apply that to your API.
+
+You can always design your own authorization strategies and services based on your project need. For example, you may want to have hash password services, so that you don't need to directly store users password in database. [Here](https://github.com/strongloop/loopback4-example-shopping/blob/master/packages/shopping/src/services/hash.password.bcryptjs.ts) is an example for how to implement hash password.
 
 ### What's Next?
 
-In next episode, we will add user authentication and role-based access control to this project.
+In next episode, we will deploy this project to cloud.
 
 In the meantime, you can learn more about LoopBack in [past blogs](https://strongloop.com/strongblog/tag_LoopBack.html).

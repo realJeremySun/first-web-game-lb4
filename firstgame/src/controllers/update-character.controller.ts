@@ -24,17 +24,10 @@ import {
   SkillRepository
 } from '../repositories';
 //add
-import {inject, Setter, Getter} from '@loopback/core';
-import * as _ from 'lodash';
-import {HttpErrors} from '@loopback/rest';
+import {inject, Getter} from '@loopback/core';
 import {
   MyUserProfile,
-  MyAuthBindings,
   PermissionKey,
-  CredentialsRequestBody,
-  UserRequestBody,
-  UserProfileSchema,
-  JWTStrategy,
 } from '../authorization';
 import {authenticate,
         AuthenticationBindings,

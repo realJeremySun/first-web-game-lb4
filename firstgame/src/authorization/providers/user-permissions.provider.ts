@@ -1,5 +1,4 @@
 import {Provider} from '@loopback/context';
-
 import {PermissionKey} from '../permission-key';
 import {UserPermissionsFn} from '../types';
 import {intersection} from 'lodash';
