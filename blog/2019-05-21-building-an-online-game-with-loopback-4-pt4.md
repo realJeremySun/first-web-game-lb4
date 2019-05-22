@@ -51,7 +51,7 @@ The one in the middle is the `@loopback/authentication` package. It has three ma
   * AuthenticateActionProvider: this holds the business logic for authentication action.
   * AuthenticationStrategyProvider: this is the extension point for you to add your own authentication strategies. I will show you how to do that later.
 
-* Services: all services in this package are interfaces. You can your own services as well.
+* Services: all services in this package are interfaces. You can create your own services as well.
   * TokenService: an interface for generating and verifying an authentication token.
   * UserService: an interface for performing the login action in an authentication strategy. To keep this project as simple as possible, I am not going to use this interface. I will integrate this to the TokenService.
 
@@ -84,7 +84,7 @@ You can check [this tutorial](https://loopback.io/doc/en/lb4/Loopback-component-
 
 Simply run `npm install --save @loopback/authentication@2.0.3` in your project root.
 
-Reminder: We are using `@loopback/authentication@2.0.3` in this project. If you want to use other version, you may need to change you code accordingly.
+Reminder: We are using `@loopback/authentication@2.0.3` in this project. If you want to use other version, you may need to change you code accordingly. You may need to run `npm outdate` in your project root to see if other LoopBack packages need update.
 
 ### Refactor Model
 
