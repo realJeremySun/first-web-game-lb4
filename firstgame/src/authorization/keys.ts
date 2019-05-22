@@ -1,7 +1,5 @@
 import {BindingKey} from '@loopback/context';
-import {MetadataAccessor} from '@loopback/metadata';
-import {UserPermissionsFn, MyUserProfile} from './types';
-import {JWTStrategy} from './strategies/JWT.strategy';
+import {UserPermissionsFn} from './types';
 import {TokenService} from '@loopback/authentication';
 
 

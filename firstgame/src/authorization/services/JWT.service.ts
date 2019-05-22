@@ -1,15 +1,9 @@
-// Copyright IBM Corp. 2019. All Rights Reserved.
-// Node module: @loopback/authentication
-// This file is licensed under the MIT License.
-// License text available at https://opensource.org/licenses/MIT
-
 import {inject} from '@loopback/context';
 import {HttpErrors} from '@loopback/rest';
 import {promisify} from 'util';
 import {TokenService} from '@loopback/authentication';
-import {repository} from '@loopback/repository';
-import {MyAuthBindings} from '../keys';
 import {MyUserProfile} from '../types';
+import {repository} from '@loopback/repository';
 import {CharacterRepository} from '../../repositories';
 import * as _ from 'lodash';
 import {toJSON} from '@loopback/testlab';

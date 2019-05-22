@@ -1,16 +1,5 @@
 import {PermissionKey} from './permission-key';
-import {Request} from '@loopback/rest';
-import {UserProfile} from '@loopback/authentication';
 
-
-/**
- * User permissions manipulation method interface.
- *
- * This is where we can add our business logic to read and
- * union permissions associated to user via role with
- * those associated directly to the user.
- *
- */
 export interface UserPermissionsFn {
   (
     userPermissions: PermissionKey[],
