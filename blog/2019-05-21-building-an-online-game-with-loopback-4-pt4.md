@@ -84,13 +84,13 @@ You can check [this tutorial](https://loopback.io/doc/en/lb4/Loopback-component-
 
 Simply run `npm install --save @loopback/authentication@2.0.3` in your project root.
 
-Reminder: We are using `@loopback/authentication@2.0.3` in this project. If you want to use other version, you may need to change you code accordingly. You may need to run `npm outdate` in your project root to see if other LoopBack packages need update.
+Reminder: We are using `@loopback/authentication@2.0.3` in this project. If you want to use other version, you may need to change you code accordingly. You may also need to run `npm outdate` in your project root to see if other LoopBack packages need update.
 
 ### Refactor Model
 
 In previous episodes, we used UUIDs as our `character` IDs. But UUIDs are 36 digits string IDs. We can not let user use UUIDs to login. So we will use email instead of UUID.
 
-In `src/controllers/character.models`, add email and password properties.
+In `src/controllers/character.models`, remove id and add email and password properties.
 
 ```ts
 @property({
@@ -339,7 +339,7 @@ export class JWTStrategy implements AuthenticationStrategy{
 }
 ```
 
-You can also create your own authentication strategy. Or you can even use multiple strategies in one project.
+You can also create your own authentication strategy or even use multiple strategies in one project.
 
 #### Services
 
@@ -656,7 +656,7 @@ You can check my controllers at [here](https://github.com/gobackhuoxing/first-we
 
 In this episode, we covered how to combine your self-defined authorization strategies and services with `@loopback/authentication` and how to apply it to your API.
 
-You can always design your own authorization strategies and services based on your project need. For example, you may want to have hash password services, so that you don't need to directly store users password in database. [Here](https://github.com/strongloop/loopback4-example-shopping/blob/master/packages/shopping/src/services/hash.password.bcryptjs.ts) is an example for how to implement hash password.
+You can always design your own authorization strategies and services based on your project need. For example, you may want to have hash password services, so that you don't need to directly save users password in database. [Here](https://github.com/strongloop/loopback4-example-shopping/blob/master/packages/shopping/src/services/hash.password.bcryptjs.ts) is an example for how to implement hash password.
 
 ### What's Next?
 
