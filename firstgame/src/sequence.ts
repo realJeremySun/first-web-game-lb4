@@ -9,7 +9,6 @@ import {
   Send,
   SequenceHandler,
 } from '@loopback/rest';
-import {HttpErrors} from '@loopback/rest';
 import {
   AuthenticationBindings,
   AuthenticateFn,
@@ -35,7 +34,7 @@ export class MySequence implements SequenceHandler {
       const route = this.findRoute(request);
       const args = await this.parseParams(request, route);
 
-
+      //add authentication actions
       await this.authenticateRequest(request);
 
       const result = await this.invoke(route, args);

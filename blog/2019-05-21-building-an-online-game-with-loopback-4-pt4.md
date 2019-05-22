@@ -343,7 +343,7 @@ You can also create your own authentication strategy. Or you can even use multip
 
 #### Services
 
-Create folder `services` in `src`, then inside `services`, create `JWT.services.ts`. This is our self defined authentication strategy.
+Create folder `services` in `src`, then inside `services`, create `JWT.services.ts`. This is a service associate with JWTStrategy to generate and verify JWT
 
 ```ts
 import {inject} from '@loopback/context';
@@ -402,6 +402,82 @@ export class JWTService implements TokenService {
   }
 }
 ```
+
+You can also create your own authentication services, like Hash Password service in [the shopping example](https://github.com/strongloop/loopback4-example-shopping/blob/master/packages/shopping/src/services/hash.password.bcryptjs.ts).
+
+### Put Everything Together
+
+#### `application.ts`
+
+Open `application.ts`, add the following imports.
+
+```ts
+import {MyAuthBindings,
+        JWTService,
+        JWTStrategy,
+        UserPermissionsProvider,
+} from './authorization';
+import {AuthenticationComponent,
+       registerAuthenticationStrategy,
+} from '@loopback/authentication';
+```
+
+Then, add the following lines in constructor.
+
+```ts
+constructor(options: ApplicationConfig = {}) {
+  super(options);
+  //add
+  // Bind authentication component related elements
+  this.component(AuthenticationComponent);
+
+  // Bind JWT & permission authentication strategy related elements
+  registerAuthenticationStrategy(this, JWTStrategy);
+  this.bind(MyAuthBindings.TOKEN_SERVICE).toClass(JWTService);
+  this.bind(MyAuthBindings.USER_PERMISSIONS).toProvider(UserPermissionsProvider);
+```
+
+If you have more authentication strategies, add them in this way:
+
+```ts
+registerAuthenticationStrategy(this, NewStrategy);
+```
+
+#### `sequence.ts`
+
+In `sequence.ts`, add the following imports.
+
+```ts
+import {
+  AuthenticationBindings,
+  AuthenticateFn,
+} from '@loopback/authentication';
+```
+
+Then add this line in the `handle` function.
+
+```ts
+async handle(context: RequestContext) {
+  try {
+    const {request, response} = context;
+    const route = this.findRoute(request);
+    const args = await this.parseParams(request, route);
+
+    //add authentication actions
+    await this.authenticateRequest(request);
+
+    const result = await this.invoke(route, args);
+    this.send(response, result);
+  } catch (err) {
+    this.reject(context, err);
+  }
+}
+```
+
+### Authenticate APIs
+
+Our Authentication components are ready to use.
+
 
 ### Applying This to Your Own Project
 

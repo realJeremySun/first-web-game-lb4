@@ -10,14 +10,14 @@ import {ServiceMixin} from '@loopback/service-proxy';
 import * as path from 'path';
 import {MySequence} from './sequence';
 //add
-import {HttpErrors} from '@loopback/rest';
 import {MyAuthBindings,
         JWTService,
         JWTStrategy,
-        UserPermissionsProvider,} from './authorization';
+        UserPermissionsProvider,
+} from './authorization';
 import {AuthenticationComponent,
        registerAuthenticationStrategy,
-       } from '@loopback/authentication';
+} from '@loopback/authentication';
 
 
 export class FirstgameApplication extends BootMixin(
