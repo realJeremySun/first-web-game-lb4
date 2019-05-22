@@ -32,7 +32,7 @@ Here are the previous episodes:
 
 ### In This Episode
 
-We already have some APIs that allow user to customize characters. But a user should not get access to other character. So in this episode, we will add user authentication and role-based access control to this project.
+We already have some APIs that allow users to customize characters. But a user should not get access to other character. So in this episode, we will add user authentication and role-based access control to this project.
 
 You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part4/firstgame) for the code of this episode.
 
@@ -76,7 +76,7 @@ In order to use the all of above in our project, we have three more steps to do:
 
  * Binding everything in `application.ts`. `application.ts` is like the main function of LoopBack project.
  * Adding authenticate action into `sequence.ts`. `sequence.ts` is where we specify how to response a request.
- * Put `@authenticate` before your APIs.
+ * Put `@authenticate` decorator before your APIs.
 
 You can check [this tutorial](https://loopback.io/doc/en/lb4/Loopback-component-authorization.html) or [this shopping example](https://github.com/strongloop/loopback4-example-shopping) for more information of LoopBack 4 Authentication package.
 
