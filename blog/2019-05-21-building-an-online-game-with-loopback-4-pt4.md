@@ -654,7 +654,7 @@ You can check my controllers at [here](https://github.com/gobackhuoxing/first-we
 
 ### Applying This to Your Own Project
 
-In this episode, we covered how to combine your self-defined authorization strategies and services with `@loopback/authentication` and how to apply that to your API.
+In this episode, we covered how to combine your self-defined authorization strategies and services with `@loopback/authentication` and how to apply it to your API.
 
 You can always design your own authorization strategies and services based on your project need. For example, you may want to have hash password services, so that you don't need to directly store users password in database. [Here](https://github.com/strongloop/loopback4-example-shopping/blob/master/packages/shopping/src/services/hash.password.bcryptjs.ts) is an example for how to implement hash password.
 
