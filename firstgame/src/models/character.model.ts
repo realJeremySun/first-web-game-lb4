@@ -20,7 +20,7 @@ export class Character extends Entity {
   password: string;
 
   @property.array(String)
-  permissions: PermissionKey[];
+  permissions: String[];
 
   @property({
     type: 'string',

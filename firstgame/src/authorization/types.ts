@@ -3,7 +3,7 @@ import {PermissionKey} from './permission-key';
 export interface UserPermissionsFn {
   (
     userPermissions: PermissionKey[],
-    requiredermissions: PermissionKey[],
+    requiredPermissions: PermissionKey[],
   ): boolean;
 }
 
