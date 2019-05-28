@@ -59,7 +59,6 @@ export class CharacterController {
   async create(
     @requestBody(UserRequestBody) character: Character
   ): Promise<Character> {
-      //todo validateCredentials
       character.permissions = [PermissionKey.ViewOwnUser,
                                PermissionKey.CreateUser,
                                PermissionKey.UpdateOwnUser,
@@ -112,7 +111,7 @@ export class CharacterController {
   @authenticate('jwt', [PermissionKey.ViewOwnUser])
   async printCurrentUser(
   ): Promise<MyUserProfile> {
-    return await this.getCurrentUser();
+    return this.getCurrentUser();
   }
 
   /**

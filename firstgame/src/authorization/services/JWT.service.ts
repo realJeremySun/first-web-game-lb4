@@ -2,6 +2,7 @@ import {inject} from '@loopback/context';
 import {HttpErrors} from '@loopback/rest';
 import {promisify} from 'util';
 import {TokenService} from '@loopback/authentication';
+import {TokenServiceConstants} from '../keys';
 import {MyUserProfile} from '../types';
 import {repository} from '@loopback/repository';
 import {CharacterRepository} from '../../repositories';
@@ -25,7 +26,7 @@ export class JWTService implements TokenService {
       );
     }
 
-    const decryptedToken = await verifyAsync(token, 'jwtsecret');
+    const decryptedToken = await verifyAsync(token, TokenServiceConstants.TOKEN_SECRET_VALUE);
     let userProfile = _.pick(decryptedToken, ['id', 'email', 'password', 'name', `permissions`]);
     return userProfile;
   }
@@ -45,9 +46,9 @@ export class JWTService implements TokenService {
     }
 
     // Generate a JSON Web Token
-    const currentUser = _.pick(toJSON(foundUser), ['email', 'name', 'permissions']);
-    const token = await signAsync(currentUser, 'jwtsecret', {
-      expiresIn: 300,
+    const currentUser = _.pick(toJSON(foundUser), ['email', 'password', 'name', 'permissions']);
+    const token = await signAsync(currentUser, TokenServiceConstants.TOKEN_SECRET_VALUE, {
+      expiresIn: TokenServiceConstants.TOKEN_EXPIRES_IN_VALUE,
     });
 
     return token;

@@ -10,7 +10,7 @@ import {MyUserProfile,
 import {MyAuthBindings,} from '../keys';
 import {PermissionKey} from '../permission-key';
 
-export const JWT_SECRET = 'jwtsecret';
+//export const JWT_SECRET = 'jwtsecret';
 
 export class JWTStrategy implements AuthenticationStrategy{
   name: string = 'jwt';
