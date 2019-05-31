@@ -74,7 +74,7 @@ export class AdminController {
       },
     },
   })
-  @authenticate('jwt', [PermissionKey.ViewAnyUser])
+  @authenticate('jwt', {"required": [PermissionKey.ViewAnyUser]})
   async count(
     @param.query.object('where', getWhereSchemaFor(Character)) where?: Where,
   ): Promise<Count> {
@@ -97,7 +97,7 @@ export class AdminController {
       },
     },
   })
-  @authenticate('jwt', [PermissionKey.ViewAnyUser])
+  @authenticate('jwt', {"required": [PermissionKey.ViewAnyUser]})
   async find(
     @param.query.object('filter', getFilterSchemaFor(Character)) filter?: Filter,
   ): Promise<Character[]> {
@@ -116,7 +116,7 @@ export class AdminController {
       },
     },
   })
-  @authenticate('jwt', [PermissionKey.ViewAnyUser, PermissionKey.UpdateAnyUser])
+  @authenticate('jwt', {"required": [PermissionKey.ViewAnyUser, PermissionKey.UpdateAnyUser]})
   async updateAll(
     @requestBody() character: Character,
     @param.query.object('where', getWhereSchemaFor(Character)) where?: Where,
@@ -136,7 +136,7 @@ export class AdminController {
       },
     },
   })
-  @authenticate('jwt', [PermissionKey.ViewAnyUser])
+  @authenticate('jwt', {"required":[PermissionKey.ViewAnyUser]})
   async findById(
     @param.path.string('email') email: string
   ): Promise<Character> {
@@ -154,7 +154,7 @@ export class AdminController {
       },
     },
   })
-  @authenticate('jwt', [PermissionKey.ViewAnyUser, PermissionKey.UpdateAnyUser])
+  @authenticate('jwt', {"required": [PermissionKey.ViewAnyUser, PermissionKey.UpdateAnyUser]})
   async updateById(
     @param.query.string('email') email: string,
     @requestBody() character: Character,
@@ -172,7 +172,7 @@ export class AdminController {
       },
     },
   })
-  @authenticate('jwt', [PermissionKey.ViewAnyUser, PermissionKey.DeleteAnyUser])
+  @authenticate('jwt', {"required": [PermissionKey.ViewAnyUser, PermissionKey.DeleteAnyUser]})
   async deleteById(
     @param.path.string('email') email: string
   ): Promise<void> {

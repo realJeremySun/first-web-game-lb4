@@ -1,6 +1,6 @@
 import {Provider} from '@loopback/context';
 import {PermissionKey} from '../permission-key';
-import {UserPermissionsFn} from '../types';
+import {UserPermissionsFn, RequiredPermissions} from '../types';
 import {intersection} from 'lodash';
 
 export class UserPermissionsProvider implements Provider<UserPermissionsFn> {
@@ -13,9 +13,9 @@ export class UserPermissionsProvider implements Provider<UserPermissionsFn> {
 
   action(
     userPermissions: PermissionKey[],
-    requiredPermissions: PermissionKey[],
+    requiredPermissions: RequiredPermissions,
   ): boolean {
-    return intersection(userPermissions, requiredPermissions).length
-          === requiredPermissions.length;
+    return intersection(userPermissions, requiredPermissions.required).length
+      === requiredPermissions.required.length;
   }
 }
