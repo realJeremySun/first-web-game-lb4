@@ -23,14 +23,15 @@ import {inject, Getter} from '@loopback/core';
 import {HttpErrors} from '@loopback/rest';
 import {
   MyUserProfile,
+  Credential,
   MyAuthBindings,
   PermissionKey,
   CredentialsRequestBody,
   UserRequestBody,
   UserProfileSchema,
+  JWTService
 } from '../authorization';
 import {authenticate,
-        TokenService,
         AuthenticationBindings,
 } from '@loopback/authentication';
 
@@ -39,7 +40,7 @@ export class CharacterController {
     @repository(CharacterRepository)
     public characterRepository : CharacterRepository,
     @inject(MyAuthBindings.TOKEN_SERVICE)
-    public jwtService: TokenService,
+    public jwtService: JWTService,
     @inject.getter(AuthenticationBindings.CURRENT_USER)
     public getCurrentUser: Getter<MyUserProfile>,
   ) {}
@@ -87,12 +88,9 @@ export class CharacterController {
     },
   })
   async login(
-    @requestBody(CredentialsRequestBody) myUserProfile: MyUserProfile,
+    @requestBody(CredentialsRequestBody) credential: Credential,
   ): Promise<{token: string}> {
-
-    //console.log(this.jwt);
-    const token = await this.jwtService.generateToken(myUserProfile);
-    //console.log((await this.getStrategy()).getAccessTokenForUser);
+    const token = await this.jwtService.getToken(credential);
     return {token};
   }
 
@@ -108,7 +106,7 @@ export class CharacterController {
       },
     },
   })
-  @authenticate('jwt', [PermissionKey.ViewOwnUser])
+  @authenticate('jwt', {"required": [PermissionKey.ViewOwnUser]})
   async printCurrentUser(
   ): Promise<MyUserProfile> {
     return this.getCurrentUser();
@@ -125,7 +123,7 @@ export class CharacterController {
       },
     },
   })
-  @authenticate('jwt', [PermissionKey.ViewOwnUser])
+  @authenticate('jwt', {"required": [PermissionKey.ViewOwnUser]})
   async findById(
   ): Promise<Character> {
     const currentUser = await this.getCurrentUser();
@@ -142,7 +140,7 @@ export class CharacterController {
       },
     },
   })
-  @authenticate('jwt', [PermissionKey.DeleteOwnUser])
+  @authenticate('jwt', {"required": [PermissionKey.DeleteOwnUser]})
   async deleteById(
   ): Promise<void> {
     const currentUser = await this.getCurrentUser();

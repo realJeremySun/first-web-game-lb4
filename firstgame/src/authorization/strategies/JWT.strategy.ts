@@ -6,11 +6,11 @@ import {AuthenticationStrategy,
         TokenService,
 } from '@loopback/authentication';
 import {MyUserProfile,
-        UserPermissionsFn,} from '../types';
+        UserPermissionsFn,
+        RequiredPermissions,} from '../types';
 import {MyAuthBindings,} from '../keys';
-import {PermissionKey} from '../permission-key';
+import * as _ from 'lodash';
 
-//export const JWT_SECRET = 'jwtsecret';
 
 export class JWTStrategy implements AuthenticationStrategy{
   name: string = 'jwt';
@@ -24,23 +24,18 @@ export class JWTStrategy implements AuthenticationStrategy{
     protected tokenService: TokenService,
   ) {}
   async authenticate(request: Request): Promise<MyUserProfile | undefined> {
-    let token = request.query.access_token || request.headers['authentication'];
-    if (!token) throw new HttpErrors.Unauthorized('No access token found!');
-
-    if (token.startsWith('Bearer ')) {
-      token = token.slice(7, token.length);
-    }
+    const token: string = this.extractCredentials(request);
 
     try {
-      const user = await this.tokenService.verifyToken(token);
-      const requiredPermissions = this.metadata.options;
+      const user: MyUserProfile = await this.tokenService.verifyToken(token) as MyUserProfile;
+      const requiredPermissions = this.metadata.options as RequiredPermissions;
       if(!this.checkPermissons(
-        (user as MyUserProfile).permissions ,
-        requiredPermissions as PermissionKey[]
+        user.permissions ,
+        requiredPermissions
       )){
         throw new HttpErrors.Forbidden('INVALID_ACCESS_PERMISSION');
       }
-      return user as MyUserProfile;
+      return user;
     } catch (err) {
       Object.assign(err, {
         code: 'INVALID_ACCESS_TOKEN',
@@ -48,5 +43,27 @@ export class JWTStrategy implements AuthenticationStrategy{
       });
       throw err;
     }
+  }
+
+  extractCredentials(request: Request): string {
+    if (!request.headers.authorization) {
+      throw new HttpErrors.Unauthorized(`Authorization header not found.`);
+    }
+    // for example : Bearer xxx.yyy.zzz
+    const authHeaderValue = request.headers.authorization;
+
+    if (!authHeaderValue.startsWith('Bearer')) {
+      throw new HttpErrors.Unauthorized(
+        `Authorization header is not of type 'Bearer'.`,
+      );
+    }
+    //split the string into 2 parts : 'Bearer ' and the `xxx.yyy.zzz`
+    const parts = authHeaderValue.split(' ');
+    if (parts.length !== 2)
+      throw new HttpErrors.Unauthorized(
+        `Authorization header value has too many parts. It must follow the pattern: 'Bearer xx.yy.zz' where xx.yy.zz is a valid JWT token.`,
+      );
+      const token = parts[1];
+      return token;
   }
 }

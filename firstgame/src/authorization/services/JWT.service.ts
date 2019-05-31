@@ -3,7 +3,7 @@ import {HttpErrors} from '@loopback/rest';
 import {promisify} from 'util';
 import {TokenService} from '@loopback/authentication';
 import {TokenServiceConstants} from '../keys';
-import {MyUserProfile} from '../types';
+import {MyUserProfile, Credential} from '../types';
 import {repository} from '@loopback/repository';
 import {CharacterRepository} from '../../repositories';
 import * as _ from 'lodash';
@@ -27,30 +27,33 @@ export class JWTService implements TokenService {
     }
 
     const decryptedToken = await verifyAsync(token, TokenServiceConstants.TOKEN_SECRET_VALUE);
-    let userProfile = _.pick(decryptedToken, ['id', 'email', 'password', 'name', `permissions`]);
+    let userProfile = _.pick(decryptedToken, ['id', 'email', 'name', `permissions`]);
     return userProfile;
   }
 
   async generateToken(userProfile: MyUserProfile): Promise<string> {
-    const foundUser = await this.characterRepository.findOne({
-      where: {email: userProfile.email},
-    });
-    if (!foundUser) {
-      throw new HttpErrors['NotFound'](
-        `User with email ${userProfile.email} not found.`,
-      );
-    }
-
-    if (userProfile.password != foundUser.password) {
-      throw new HttpErrors.Unauthorized('The credentials are not correct.');
-    }
-
-    // Generate a JSON Web Token
-    const currentUser = _.pick(toJSON(foundUser), ['email', 'password', 'name', 'permissions']);
-    const token = await signAsync(currentUser, TokenServiceConstants.TOKEN_SECRET_VALUE, {
+    const token = await signAsync(userProfile, TokenServiceConstants.TOKEN_SECRET_VALUE, {
       expiresIn: TokenServiceConstants.TOKEN_EXPIRES_IN_VALUE,
     });
 
+    return token;
+  }
+
+  async getToken(credential: Credential): Promise<string> {
+    const foundUser = await this.characterRepository.findOne({
+      where: {email: credential.email},
+    });
+    if (!foundUser) {
+      throw new HttpErrors['NotFound'](
+        `User with email ${credential.email} not found.`,
+      );
+    }
+
+    if (credential.password != foundUser.password) {
+      throw new HttpErrors.Unauthorized('The credentials are not correct.');
+    }
+    const currentUser: MyUserProfile = _.pick(toJSON(foundUser), ['email', 'name', 'permissions']) as MyUserProfile;
+    const token = await this.generateToken(currentUser);
     return token;
   }
 }

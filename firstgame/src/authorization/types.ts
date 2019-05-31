@@ -3,16 +3,19 @@ import {PermissionKey} from './permission-key';
 export interface UserPermissionsFn {
   (
     userPermissions: PermissionKey[],
-    requiredPermissions: PermissionKey[],
+    requiredPermissions: RequiredPermissions,
   ): boolean;
 }
 
 export interface MyUserProfile  {
   id: string;
   email: string;
-  password: string;
   name: string;
   permissions: PermissionKey[];
+}
+
+export interface RequiredPermissions {
+  required: PermissionKey[];
 }
 
 export const UserProfileSchema = {
@@ -38,6 +41,12 @@ export const UserRequestBody = {
     'application/json': {schema: UserProfileSchema},
   },
 };
+
+export interface Credential  {
+  email: string;
+  password: string;
+  permissions: PermissionKey[];
+}
 
 export const CredentialsSchema = {
   type: 'object',
