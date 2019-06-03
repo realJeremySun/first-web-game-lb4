@@ -505,7 +505,7 @@ import {
 } from '@loopback/authentication';
 ```
 
-Then add this line in the `handle` function.
+Then add those lines in the `handle` function.
 
 ```ts
 async handle(context: RequestContext) {
