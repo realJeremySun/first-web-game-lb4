@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Building an Online Game With LoopBack 4 - User Authentication and Role-Based Access Control (Part 4)
-date: 2019-05-21
+date: 2019-06-05
 author: Wenbo Sun
 permalink: /strongblog/building-an-online-game-with-loopback-4-pt4/
 categories:
@@ -32,34 +32,36 @@ Here are the previous episodes:
 
 ### In This Episode
 
-We already have some APIs that allow users to customize characters. But a user should not get access to other character. So in this episode, we will add user authentication and role-based access control to this project.
+We already have some APIs that allow users to customize characters. But a user should not get access to characters that belong to other users. So in this episode, we will add user authentication and role-based access control to this project.
 
 You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part4/firstgame) for the code of this episode.
 
-### Authentication Structure
+### Basic Structure
 
-LoopBack 4 provide us a build-in authentication package. This package has some basic authentication functions and an extension point for us to apply our own authentication strategies. Here is a diagram for the basic structure:
+LoopBack 4 provides us with a built-in authentication package. This package provides an authentication system as the skeleton to verify the identity of a request. It invokes an authentication strategy provided by the developer to process the authentication information in the request and returns the corresponding user profile.
 
-![structure](https://github.com/gobackhuoxing/first-web-game-lb4/blob/master/picture/Auth%20structure.png)
+In this episode, I will combine LoopBack authentication package with my self-defined authorization. Here is a diagram for the basic structure:
 
-#### `@loopback/authentication` Package
+![structure](/blog-assets/2019/05/building-online-game-pt4-auth-structure.png)
+
+#### LoopBack Authentication Package
 
 The one in the middle is the `@loopback/authentication` package. It has three main components:
 
 * Providers:
-  * AuthMetadataProvider: this will read all metadata from `@authenticate` decorators.
-  * AuthenticateActionProvider: this holds the business logic for authentication action.
-  * AuthenticationStrategyProvider: this is the extension point for you to add your own authentication strategies. I will show you how to do that later.
+  * AuthMetadataProvider: this reads the decorator metadata from the controller methods wherever the `@authenticate` decorator is used.
+  * AuthenticateActionProvider: this provides the authentication action which uses AuthenticationStrategyProvider to obtain a registered authentication strategy (if one exists), calls the authenticate(request) method of the given authentication strategy, and places the user profile on the request context.
+  * AuthenticationStrategyProvider: this is the extension point for you to add your own authentication strategies. I will show you how to do that later. It also has the job of finding a strategy of a given name (if existed), and returning it to AuthenticateActionProvider.
 
 * Services: all services in this package are interfaces. You can create your own services as well.
   * TokenService: an interface for generating and verifying an authentication token.
-  * UserService: an interface for performing the login action in an authentication strategy. To keep this project as simple as possible, I am not going to use this interface. I will integrate this to the TokenService.
+  * UserService: an interface for performing the login action in an authentication strategy, and for converting a User object into a UserProfile object. To keep this project as simple as possible, I am not going to use this interface. I will integrate this to the TokenService.
 
-* Decorators: `@authenticate`. Put this before those APIs that need authentication. You can create you own decorators if necessary.
+* Decorators: `@authenticate`. Annotate the APIs that need authentication with this decorator.
 
-#### User-defined Authentication
+#### Self-defined Authorization
 
-The one in the bottom left is our self-defined authentication. It has three components:
+The one in the bottom left is our self-defined authorization. It has three components:
 
 * Providers:
   * UserPermissionsProvider: this will check user's permission. We will create different user permissions for different users.
@@ -75,10 +77,10 @@ The one in the bottom left is our self-defined authentication. It has three comp
 In order to use the all of above in our project, we have three more steps to do:   
 
  * Binding everything in `application.ts`. `application.ts` is like the main function of LoopBack project.
- * Adding authenticate action into `sequence.ts`. `sequence.ts` is where we specify how to response a request.
- * Put `@authenticate` decorator before your APIs.
+ * Adding authenticate action into `sequence.ts`. A sequence contains a list of actions that is performed for each request.
+ * Put `@authenticate` decorator above your APIs.
 
-You can check [this tutorial](https://loopback.io/doc/en/lb4/Loopback-component-authorization.html) or [this shopping example](https://github.com/strongloop/loopback4-example-shopping) for more information of LoopBack 4 Authentication package.
+You can check [this tutorial](https://github.com/strongloop/loopback-next/blob/master/packages/authentication/docs/authentication-system.md) or [this shopping example](https://github.com/strongloop/loopback4-example-shopping) for more information of LoopBack 4 Authentication package.
 
 ### Install `@loopback/authentication`
 
@@ -89,6 +91,8 @@ Reminder: We are using `@loopback/authentication@2.0.3` in this project. If you 
 ### Refactor Model
 
 In previous episodes, we used UUIDs as our `character` IDs. But UUIDs are 36 digits string IDs. We can not let user use UUIDs to login. So we will use email instead of UUID.
+
+To keep this project as simple as possible, a user can only own one character. So user and character are basically the same thing. `character` model holds all user information.
 
 In `src/controllers/character.models`, remove id and add email and password properties.
 
@@ -120,15 +124,17 @@ permissions: PermissionKey[];
 
 `permissions` is an array of `PermissionKey`s. We will create `PermissionKey` later.
 
-### Self-Defined Authentication Component
+### Self-Defined Authorization Component
 
-Let's first create a folder 'authorization' in `src` to hold everything in this episode. This will be our self-defined authentication package.
+Let's first create a folder 'authorization' in `src` to hold everything in this episode. This will be our self-defined authorization package.
 
 I will show you how to create everything step by step. You can also check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part4/firstgame/src/authorization) for my `authorization` folder.
 
-#### `PermissionKey.ts`
+#### Users Permissions
 
-Create `PermissionKey.ts` in `src/authorization`.
+Let's create permissions for users. An API may have one or more required permissions. Users need to have all of the required permissions to access that API.
+
+Create `permission-key.ts` in `src/authorization`.
 
 ```ts
 export const enum PermissionKey {
@@ -150,11 +156,12 @@ export const enum PermissionKey {
   DeleteAnyUser = 'DeleteAnyUser',
 }
 ```
-Those are the users privileges. `ViewOwnUser`, `CreateUser`, `UpdateOwnUser`, `DeleteOwnUser` are for regular users. `UpdateAnyUser`, `ViewAnyUser`, `DeleteAnyUser` are for admins only.
+This file holds all permissions. `ViewOwnUser`, `CreateUser`, `UpdateOwnUser`, `DeleteOwnUser` are for regular users. `UpdateAnyUser`, `ViewAnyUser`, `DeleteAnyUser` are for admins only.
 
-#### `types.ts`
+#### Interfaces and Types
+To make it easier to import, we will put all of useful interfaces, types, and schemas together.
 
-Create `types.ts` in `src/authorization`. Here is where we put all of our interfaces and types.
+Create `types.ts` in `src/authorization`.
 
 ```ts
 import {PermissionKey} from './permission-key';
@@ -162,16 +169,19 @@ import {PermissionKey} from './permission-key';
 export interface UserPermissionsFn {
   (
     userPermissions: PermissionKey[],
-    requiredermissions: PermissionKey[],
+    requiredPermissions: RequiredPermissions,
   ): boolean;
 }
 
 export interface MyUserProfile  {
   id: string;
   email: string;
-  password: string;
   name: string;
   permissions: PermissionKey[];
+}
+
+export interface RequiredPermissions {
+  required: PermissionKey[];
 }
 
 export const UserProfileSchema = {
@@ -198,6 +208,12 @@ export const UserRequestBody = {
   },
 };
 
+export interface Credential  {
+  email: string;
+  password: string;
+  permissions: PermissionKey[];
+}
+
 export const CredentialsSchema = {
   type: 'object',
   required: ['email', 'password'],
@@ -222,13 +238,13 @@ export const CredentialsRequestBody = {
 };
 ```
 
-`MyUserProfile` is the format of our user profile. That is the necessary information we need to do authentication.
+`MyUserProfile` is the format of our user profile. It is the information needed to perform authentication and authorization.
 
-`UserProfileSchema` and `CredentialsSchema` are the format of request input. We will use them to validate request input in `controller`.
+`UserProfileSchema` and `CredentialsSchema` are the formats of request input. We use them to validate request input in `controller`.
 
-#### `keys.ts`
+#### Binding Self-Defined Authorization Component
 
-Create `keys.ts` in `src/authorization`. This is the self-defined component that we need to bind to `application.ts`.
+Create `keys.ts` in `src/authorization`. `MyAuthBindings` is the self-defined component that we need to bind to `application.ts`. `TokenServiceConstants` is the value we will use later in token service.
 
 ```ts
 import {BindingKey} from '@loopback/context';
@@ -246,16 +262,23 @@ export namespace MyAuthBindings {
     'services.authentication.jwt.tokenservice',
   );
 }
+
+export namespace TokenServiceConstants {
+  export const TOKEN_SECRET_VALUE = 'myjwts3cr3t';
+  export const TOKEN_EXPIRES_IN_VALUE = '600';
+}
 ```
 
 #### Providers
 
-Create folder `providers` in `src`, then inside `providers`, create `user-permissions.provider.ts`. This is how we deal with user permissions.
+The LoopBack authorization package gives us three providers for authorization: strategies, action, and metadata. We need to customize our own provider for users permissions.
+
+Create folder `providers` in `src`, then inside `providers`, create `user-permissions.provider.ts`.
 
 ```ts
 import {Provider} from '@loopback/context';
 import {PermissionKey} from '../permission-key';
-import {UserPermissionsFn} from '../types';
+import {UserPermissionsFn, RequiredPermissions} from '../types';
 import {intersection} from 'lodash';
 
 export class UserPermissionsProvider implements Provider<UserPermissionsFn> {
@@ -268,21 +291,25 @@ export class UserPermissionsProvider implements Provider<UserPermissionsFn> {
 
   action(
     userPermissions: PermissionKey[],
-    requiredPermissions: PermissionKey[],
+    requiredPermissions: RequiredPermissions,
   ): boolean {
-    return intersection(userPermissions, requiredPermissions).length
-          === requiredPermissions.length;
+    return intersection(userPermissions, requiredPermissions.required).length
+      === requiredPermissions.required.length;
   }
 }
 ```
 
-It will compare user's permissions and required permissions and allow user get access only if this user has all of required permissions.
+It will compare a user's permissions and required permissions, and allow the user to get access if and only if this user has all of the required permissions.
 
 #### Strategies
 
-First, run `npm install jsonwebtoken` in your project root to install JWT package.
+The `AuthenticationStrategyProvider` can find a registered strategy by its name. We will create our own custom authentication strategy and then specify its name in the `@authenticate` decorator.
 
-Create folder `strategies` in `src`, then inside `strategies`, create `JWT.strategy.ts`. This is our self defined authentication strategy.
+In this episode, we will create a custom authentication strategy based on the [JSON Web Token](https://jwt.io/).
+
+First, run `npm install jsonwebtoken --save` in your project root to install the JWT package.
+
+Create a folder `strategies` in `src/authorization`. Then inside `strategies`, create a file named `JWT.strategy.ts`. This is our custom authentication strategy.
 
 ```ts
 import {Request, HttpErrors} from '@loopback/rest';
@@ -293,11 +320,11 @@ import {AuthenticationStrategy,
         TokenService,
 } from '@loopback/authentication';
 import {MyUserProfile,
-        UserPermissionsFn,} from '../types';
+        UserPermissionsFn,
+        RequiredPermissions,} from '../types';
 import {MyAuthBindings,} from '../keys';
-import {PermissionKey} from '../permission-key';
+import * as _ from 'lodash';
 
-export const JWT_SECRET = 'jwtsecret';
 
 export class JWTStrategy implements AuthenticationStrategy{
   name: string = 'jwt';
@@ -311,23 +338,18 @@ export class JWTStrategy implements AuthenticationStrategy{
     protected tokenService: TokenService,
   ) {}
   async authenticate(request: Request): Promise<MyUserProfile | undefined> {
-    let token = request.query.access_token || request.headers['authentication'];
-    if (!token) throw new HttpErrors.Unauthorized('No access token found!');
-
-    if (token.startsWith('Bearer ')) {
-      token = token.slice(7, token.length);
-    }
+    const token: string = this.extractCredentials(request);
 
     try {
-      const user = await this.tokenService.verifyToken(token);
-      const requiredPermissions = this.metadata.options;
+      const user: MyUserProfile = await this.tokenService.verifyToken(token) as MyUserProfile;
+      const requiredPermissions = this.metadata.options as RequiredPermissions;
       if(!this.checkPermissons(
-        (user as MyUserProfile).permissions ,
-        requiredPermissions as PermissionKey[]
+        user.permissions ,
+        requiredPermissions
       )){
         throw new HttpErrors.Forbidden('INVALID_ACCESS_PERMISSION');
       }
-      return user as MyUserProfile;
+      return user;
     } catch (err) {
       Object.assign(err, {
         code: 'INVALID_ACCESS_TOKEN',
@@ -336,21 +358,47 @@ export class JWTStrategy implements AuthenticationStrategy{
       throw err;
     }
   }
+
+  extractCredentials(request: Request): string {
+    if (!request.headers.authorization) {
+      throw new HttpErrors.Unauthorized(`Authorization header not found.`);
+    }
+
+    // for example : Bearer xxx.yyy.zzz
+    const authHeaderValue = request.headers.authorization;
+
+    if (!authHeaderValue.startsWith('Bearer')) {
+      throw new HttpErrors.Unauthorized(
+        `Authorization header is not of type 'Bearer'.`,
+      );
+    }
+
+    //split the string into 2 parts : 'Bearer ' and the `xxx.yyy.zzz`
+    const parts = authHeaderValue.split(' ');
+    if (parts.length !== 2)
+      throw new HttpErrors.Unauthorized(
+        `Authorization header value has too many parts. It must follow the pattern: 'Bearer xx.yy.zz' where xx.yy.zz is a valid JWT token.`,
+      );
+      const token = parts[1];
+
+      return token;
+  }
 }
 ```
 
-You can also create your own authentication strategy or even use multiple strategies in one project.
+You can even use multiple strategies in one project; if needed.
 
 #### Services
 
-Create folder `services` in `src`, then inside `services`, create `JWT.services.ts`. This is a service associate with JWTStrategy to generate and verify JWT
+Create a folder `services` in `src/authorization`, then inside `services`, create a file named `JWT.service.ts`. This is a service that generates and verifies JWT tokens, and will be used by JWTStrategy.
 
 ```ts
 import {inject} from '@loopback/context';
 import {HttpErrors} from '@loopback/rest';
 import {promisify} from 'util';
 import {TokenService} from '@loopback/authentication';
-import {MyUserProfile} from '../types';
+import {TokenServiceConstants} from '../keys';
+import {MyUserProfile, Credential} from '../types';
 import {repository} from '@loopback/repository';
 import {CharacterRepository} from '../../repositories';
 import * as _ from 'lodash';
@@ -373,31 +421,34 @@ export class JWTService implements TokenService {
       );
     }
 
-    const decryptedToken = await verifyAsync(token, 'jwtsecret');
-    let userProfile = _.pick(decryptedToken, ['id', 'email', 'password', 'name', `permissions`]);
+    const decryptedToken = await verifyAsync(token, TokenServiceConstants.TOKEN_SECRET_VALUE);
+    let userProfile = _.pick(decryptedToken, ['id', 'email', 'name', `permissions`]);
     return userProfile;
   }
 
   async generateToken(userProfile: MyUserProfile): Promise<string> {
+    const token = await signAsync(userProfile, TokenServiceConstants.TOKEN_SECRET_VALUE, {
+      expiresIn: TokenServiceConstants.TOKEN_EXPIRES_IN_VALUE,
+    });
+
+    return token;
+  }
+
+  async getToken(credential: Credential): Promise<string> {
     const foundUser = await this.characterRepository.findOne({
-      where: {email: userProfile.email},
+      where: {email: credential.email},
     });
     if (!foundUser) {
       throw new HttpErrors['NotFound'](
-        `User with email ${userProfile.email} not found.`,
+        `User with email ${credential.email} not found.`,
       );
     }
 
-    if (userProfile.password != foundUser.password) {
+    if (credential.password != foundUser.password) {
       throw new HttpErrors.Unauthorized('The credentials are not correct.');
     }
-
-    // Generate a JSON Web Token
-    const currentUser = _.pick(toJSON(foundUser), ['email', 'name', 'permissions']);
-    const token = await signAsync(currentUser, 'jwtsecret', {
-      expiresIn: 300,
-    });
-
+    const currentUser: MyUserProfile = _.pick(toJSON(foundUser), ['email', 'name', 'permissions']) as MyUserProfile;
+    const token = await this.generateToken(currentUser);
     return token;
   }
 }
@@ -405,11 +456,11 @@ export class JWTService implements TokenService {
 
 You can also create your own authentication services, like Hash Password service in [the shopping example](https://github.com/strongloop/loopback4-example-shopping/blob/master/packages/shopping/src/services/hash.password.bcryptjs.ts).
 
-### Put Everything Together
+### Putting Everything Together
 
-#### `application.ts`
+#### Binding all Components in `application.ts`
 
-Open `application.ts`, add the following imports.
+Open `src/application.ts`, and add the following imports.
 
 ```ts
 import {MyAuthBindings,
@@ -422,7 +473,7 @@ import {AuthenticationComponent,
 } from '@loopback/authentication';
 ```
 
-Then, add the following lines in constructor.
+Then, add the following lines in the constructor.
 
 ```ts
 constructor(options: ApplicationConfig = {}) {
@@ -443,9 +494,9 @@ If you have more authentication strategies, add them in this way:
 registerAuthenticationStrategy(this, NewStrategy);
 ```
 
-#### `sequence.ts`
+#### Specifying the Authentication Action in `sequence.ts`
 
-In `sequence.ts`, add the following imports.
+In `src/sequence.ts`, add the following imports.
 
 ```ts
 import {
@@ -469,14 +520,23 @@ async handle(context: RequestContext) {
     const result = await this.invoke(route, args);
     this.send(response, result);
   } catch (err) {
+    if (
+      err.code === 'AUTHENTICATION_STRATEGY_NOT_FOUND' ||
+      err.code === 'USER_PROFILE_NOT_FOUND'
+    ) {
+      Object.assign(err, {statusCode: 401 /* Unauthorized */});
+    }
     this.reject(context, err);
+    return;
   }
 }
 ```
 
+This will check for authentication for every request.
+
 ### Authenticate APIs
 
-Our Authentication components are ready to use. Now we can apply it to our APIs.
+Our Authentication and Authorization components are ready to use. Now we can apply their decorators to our REST API endpoints.
 
 #### CharacterController
 
@@ -485,16 +545,27 @@ Open `src/controllers/character.controller.ts`, add the following imports.
 ```ts
 import {
   MyUserProfile,
+  Credential,
   MyAuthBindings,
   PermissionKey,
   CredentialsRequestBody,
   UserRequestBody,
   UserProfileSchema,
+  JWTService,
 } from '../authorization';
 import {authenticate,
         TokenService,
         AuthenticationBindings,
 } from '@loopback/authentication';
+```
+
+Inject `TOKEN_SERVICE` and `CURRENT_USER` in the constructor.
+
+```ts
+@inject(MyAuthBindings.TOKEN_SERVICE)
+public jwtService: JWTService,
+@inject.getter(AuthenticationBindings.CURRENT_USER)
+public getCurrentUser: Getter<MyUserProfile>,
 ```
 
 Then let's make some changes to the `@post /characters` API.
@@ -511,7 +582,6 @@ Then let's make some changes to the `@post /characters` API.
 async create(
   @requestBody(UserRequestBody) character: Character
 ): Promise<Character> {
-    //todo validateCredentials
     character.permissions = [PermissionKey.ViewOwnUser,
                              PermissionKey.CreateUser,
                              PermissionKey.UpdateOwnUser,
@@ -527,9 +597,9 @@ async create(
 }
 ```
 
-Put `UserRequestBody` in `@requestBody` decorator to specify the format of request body. That is how we validate the format of email and password.
+Put `UserRequestBody` in `@requestBody` decorator to specify the format of request body. That is how we validate the format of email and password fields.
 
-Because this API is used to create a regular user, we will assign `ViewOwnUser`, `CreateUser`, `UpdateOwnUser`, and `DeleteOwnUser` permissions to new user.
+Because this API is used to create a regular character, we will assign `ViewOwnUser`, `CreateUser`, `UpdateOwnUser`, and `DeleteOwnUser` permissions to the new character.
 
 We also need to create an API for login.
 
@@ -543,9 +613,9 @@ We also need to create an API for login.
   },
 })
 async login(
-  @requestBody(CredentialsRequestBody) myUserProfile: MyUserProfile,
+  @requestBody(CredentialsRequestBody) credential: Credential,
 ): Promise<{token: string}> {
-  const token = await this.jwtService.generateToken(myUserProfile);
+  const token = await this.jwtService.getToken(credential);
   return {token};
 }
 ```
@@ -567,20 +637,20 @@ The next API we need is `@get /characters/me`. It will show current logged-in us
     },
   },
 })
-@authenticate('jwt', [PermissionKey.ViewOwnUser])
+@authenticate('jwt', {"required": [PermissionKey.ViewOwnUser]})
 async printCurrentUser(
 ): Promise<MyUserProfile> {
   return await this.getCurrentUser();
 }
 ```
 
-`@authenticate('jwt', [PermissionKey.ViewOwnUser])` is how we authenticate this API. The first parameter `jwt` specify which authentication strategy you want to use for this API. If you have more than one strategies, make you choice here. The second parameter is an array or `PermissionKey`. It specify what permissions are required to access this API. In this case, the only required permission is `ViewOwnUser`. Because this API only show current logged-in user information. You can customize permissions based on your APIs.
+`@authenticate('jwt', {"required": [PermissionKey.ViewOwnUser]})` is how we authenticate this API. The first parameter `jwt` specify which authentication strategy you want to use for this API. If you have more than one strategy, make you choice here. The second parameter is an object which has one field `required` (array of `PermissionKey`). It specify what permissions are required to access this API. In this case, the only required permission is `ViewOwnUser`. Because this API only show current logged-in user information. You can customize permissions based on your APIs.
 
 To get current logged-in user information, simply call `this.getCurrentUser()`.
 
-The above three APIs show you most of use cases. You should got enough knowledge on how to apply LoopBack 4 authentication components to your APIs.
+The above three APIs show you most of the use cases. You should now have enough knowledge on how to apply LoopBack 4 authentication to your APIs.
 
-Let me show you one more example before we done.
+Let me show you one more example before we're done.
 
 #### AdminController
 
@@ -623,9 +693,9 @@ async create(
 }
 ```
 
-It is very similar to `@post /characters` API. The difference is it require `admin_code` to create an admin with three more permissions: `UpdateAnyUser`, `ViewAnyUser`, and `DeleteAnyUser`.
+It is very similar to the `@post /characters` API. The difference is it requires an `admin_code` to create an admin with three more permissions: `UpdateAnyUser`, `ViewAnyUser`, and `DeleteAnyUser`.
 
-This is an API to show all users informaion.
+This is an API to show the information of all users that match the filter criteria.
 
 ```ts
 @get('/admin/characters', {
@@ -640,7 +710,7 @@ This is an API to show all users informaion.
     },
   },
 })
-@authenticate('jwt', [PermissionKey.ViewAnyUser])
+@authenticate('jwt', {"required": [PermissionKey.ViewAnyUser]})
 async find(
   @param.query.object('filter', getFilterSchemaFor(Character)) filter?: Filter,
 ): Promise<Character[]> {
@@ -648,15 +718,15 @@ async find(
 }
 ```
 
-As you can see, this required `ViewAnyUser` permission.
+As you can see, this requires `ViewAnyUser` permission.
 
-You can check my controllers at [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part4/firstgame/src/controllers)
+You can check my controllers [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part4/firstgame/src/controllers)
 
 ### Applying This to Your Own Project
 
 In this episode, we covered how to combine your self-defined authorization strategies and services with `@loopback/authentication` and how to apply it to your API.
 
-You can always design your own authorization strategies and services based on your project need. For example, you may want to have hash password services, so that you don't need to directly save users password in database. [Here](https://github.com/strongloop/loopback4-example-shopping/blob/master/packages/shopping/src/services/hash.password.bcryptjs.ts) is an example for how to implement hash password.
+You can always design your own strategies and services based on your project need. For example, you may want to have a password hashing service, so that you don't directly save a user's raw password in the database. [Here](https://github.com/strongloop/loopback4-example-shopping/blob/master/packages/shopping/src/services/hash.password.bcryptjs.ts) is an example of how to implement a password hashing service.
 
 ### What's Next?
 
