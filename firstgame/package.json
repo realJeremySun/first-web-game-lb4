@@ -28,7 +28,7 @@
     "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js && npm run posttest",
 
     "docker:build": "docker build -t firstgame .",
-    "docker:run": "docker run -p 3000:3000 -d -it --network my-network firstgame",
+    "docker:run": "docker run -p 3000:3000 -d firstgame",
 
     "migrate": "node ./dist/migrate",
     "prestart": "npm run build",
