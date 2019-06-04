@@ -49,7 +49,7 @@ You don't have to fully understand those concepts. I will show you how to use th
 
 [The Illustrated Children's Guide to Kubernetes](https://www.youtube.com/watch?v=4ht22ReBjno) is a wonderful video on YouTube that can give you a clear idea of Kubernetes.
 
-[Deploying to Kubernetes on IBM Cloud](https://loopback.io/doc/en/lb4/deploying_to_ibm_cloud_kubernetes.html#prerequisite) is a tutorial from LoopBack 4 official website. What we are going to do is a little different from it, because our project is using MongoDB. So we need to setup MongoDB on cloud as well and connect our project to it.
+[Deploying to Kubernetes on IBM Cloud](https://loopback.io/doc/en/lb4/deploying_to_ibm_cloud_kubernetes.html#prerequisite) is a tutorial on LoopBack 4 official website. What we are going to do is a little different from it, because our project is using MongoDB. So we need to setup MongoDB on cloud as well and connect our project to it.
 
 ### Adding Docker Feature
 
@@ -103,7 +103,7 @@ Open `package.json`, add two lines under `scripts`. Those are the command lines 
 "docker:run": "docker run -p 3000:3000 -d firstgame",
 ```
 
-### Docker Image
+### Building Docker Image
 
 Install [Docker](https://www.docker.com/get-started) if you haven't.
 
@@ -153,7 +153,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 88cc8acfbeea        firstgame           "node ."            5 minutes ago       Up 5 minutes        0.0.0.0:3000->3000/tcp   friendly_archimedes
 ```
 
-Because we didn't specify container's name, Docker randomly assign one for it.
+Because we didn't specify container's name, Docker randomly assigned one for it.
 
 Run this command to see the log output of your container. Replace `<container id>` with your container id. In my case, it is `88cc8acfbeea`.
 
@@ -170,6 +170,19 @@ Try http://127.0.0.1:3000/ping
 
 Now, you should be able to open the API explorer: http://127.0.0.1:3000/explorer/
 
+If everything is fine. Run this command to stop the image.
+
+```
+docker stop <container id>
+```
+
+Our Docker image is all set.
+
+### Pushing Docker image to IBM Cloud.
+
+Sign up for [IBM Cloud](https://cloud.ibm.com/login) if you haven't.
+
+Install [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
 
 
 
