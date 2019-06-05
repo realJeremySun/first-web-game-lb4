@@ -31,11 +31,11 @@ export class UpdateCharacterController {
 
     //add following lines
     @repository(WeaponRepository)
-    public weaponRepository : CharacterRepository,
+    public weaponRepository : WeaponRepository,
     @repository(ArmorRepository)
-    public armorRepository : CharacterRepository,
+    public armorRepository : ArmorRepository,
     @repository(SkillRepository)
-    public skillRepository : CharacterRepository,
+    public skillRepository : SkillRepository,
   ) {}
 
   /**
