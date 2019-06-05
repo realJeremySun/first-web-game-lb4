@@ -180,11 +180,7 @@ Our Docker image is all set.
 
 ### Pushing Docker image to IBM Cloud.
 
-#### Step 1: Signing up for IBM Cloud
-
 Sign up for [IBM Cloud](https://cloud.ibm.com/login) and install [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
-
-#### Step 2: Logging in to IBM Cloud
 
 Run this command to login IBM Cloud.
 
@@ -205,8 +201,6 @@ Org:
 Space:
 ```
 
-#### Step 3: Logging in to IBM Cloud Container Registry
-
 Login IBM Cloud Container Registry. This is where we store our Docker image.
 
 ```
@@ -221,8 +215,6 @@ Logged in to 'us.icr.io'.
 ```
 
 This is the container registry region you logged into.
-
-#### Step 8: Pushing docker image to IBM Cloud Container Registry
 
 After logged in, let's create a new namespace for our project.
 
