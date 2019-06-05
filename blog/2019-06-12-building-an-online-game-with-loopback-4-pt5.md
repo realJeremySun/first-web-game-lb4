@@ -180,9 +180,103 @@ Our Docker image is all set.
 
 ### Pushing Docker image to IBM Cloud.
 
-Sign up for [IBM Cloud](https://cloud.ibm.com/login) if you haven't.
+#### Step 1: Signing up for IBM Cloud
 
-Install [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+Sign up for [IBM Cloud](https://cloud.ibm.com/login) and install [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud-cli#ibmcloud-cli).
+
+#### Step 2: Logging in to IBM Cloud
+
+Run this command to login IBM Cloud.
+
+```
+ibmcloud login
+```
+
+If logged in successfully, you will see something like:
+
+```
+API endpoint:      https://cloud.ibm.com
+Region:            us-east
+User:              wenbo.sun@ibm.com
+Account:           IBM (114e44f826b74008a2afbf099e6b3561)
+Resource group:    Default
+CF API endpoint:
+Org:
+Space:
+```
+
+#### Step 3: Logging in to IBM Cloud Container Registry
+
+Login IBM Cloud Container Registry. This is where we store our Docker image.
+
+```
+ibmcloud cr login
+```
+
+If success, you will see something like:
+
+```
+Logging in to 'us.icr.io'...
+Logged in to 'us.icr.io'.
+```
+
+This is the container registry region you logged into.
+
+#### Step 8: Pushing docker image to IBM Cloud Container Registry
+
+After logged in, let's create a new namespace for our project.
+
+```
+ibmcloud cr namespace-add my-lb4-namespace
+```
+
+You can run `ibmcloud cr namespace-list` to show all of your namespaces.
+
+Run this command to tag the local docker image with the IBM Cloud container registry.
+
+```
+docker tag <image_name>:<tag> <container_registry_region>/<my_namespace>/<new_image_repo>:<new_tag>
+```
+
+In my case, this command will looks like this:
+
+```
+docker tag firstgame:latest us.icr.io/my-lb4-namespace/firstgame-repo:1.0
+```
+
+Then push the local image to the container registry.
+
+```
+docker push us.icr.io/my-lb4-namespace/firstgame-repo:1.0
+```
+
+You will see something like this:
+
+```
+The push refers to repository [us.icr.io/my-lb4-namespace/firstgame-repo]
+8f77245a867e: Pushed
+f3f824dbea6d: Pushed
+637a53e1e6ed: Pushing [==============================>                    ]  144.1MB/236.6MB
+69d1baa1ae3c: Pushed
+30cea096009e: Pushed
+344e2d688289: Pushed
+61cb38befba5: Pushed
+aa5a12ea4279: Pushed
+6270adb5794c: Pushed
+```
+
+When it is done, run the following command to show images on your container registry.
+
+```
+ibmcloud cr image-list
+```
+
+You should see this:
+
+```
+REPOSITORY                                     TAG   DIGEST         NAMESPACE             CREATED      SIZE     SECURITY STATUS
+us.icr.io/my-lb4-namespace/firstgame-repo      1.0   3c853b97ffec   my-lb4-namespace      1 hour ago   137 MB   No Issues
+```
 
 
 
