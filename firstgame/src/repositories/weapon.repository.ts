@@ -24,6 +24,6 @@ export class WeaponRepository extends DefaultCrudRepository<
   ) {
     super(Weapon, dataSource);
 
-    this.character = this.createBelongsToAccessorFor('character',characterRepositoryGetter);
+    //this.character = this.createBelongsToAccessorFor('character',characterRepositoryGetter);
   }
 }

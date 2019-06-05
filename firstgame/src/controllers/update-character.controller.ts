@@ -38,11 +38,11 @@ export class UpdateCharacterController {
     @repository(CharacterRepository)
     public characterRepository : CharacterRepository,
     @repository(WeaponRepository)
-    public weaponRepository : CharacterRepository,
+    public weaponRepository : WeaponRepository,
     @repository(ArmorRepository)
-    public armorRepository : CharacterRepository,
+    public armorRepository : ArmorRepository,
     @repository(SkillRepository)
-    public skillRepository : CharacterRepository,
+    public skillRepository : SkillRepository,
     //
     @inject.getter(AuthenticationBindings.CURRENT_USER)
     public getCurrentUser: Getter<MyUserProfile>,
@@ -65,14 +65,16 @@ export class UpdateCharacterController {
     const currentUser = await this.getCurrentUser();
     let res: any[] = ['no weapon', 'no armor', 'no skill'];
 
-    let filter: Filter = {where:{"characterId": currentUser.email}};
-    if((await this.weaponRepository.find(filter))[0] != undefined){
+    let wfilter: Filter<Weapon> = {where:{"characterId": currentUser.email}};
+    if((await this.weaponRepository.find(wfilter))[0] != undefined){
       res[0] = await this.characterRepository.weapon(currentUser.email).get()
     }
-    if((await this.armorRepository.find(filter))[0] != undefined){
+    let afilter: Filter<Armor> = {where:{"characterId": currentUser.email}};
+    if((await this.armorRepository.find(afilter))[0] != undefined){
       res[1] = await this.characterRepository.armor(currentUser.email).get()
     }
-    if((await this.skillRepository.find(filter))[0] != undefined){
+    let sfilter: Filter<Skill> = {where:{"characterId": currentUser.email}};
+    if((await this.skillRepository.find(sfilter))[0] != undefined){
       res[2] = await this.characterRepository.skill(currentUser.email).get()
     }
     return res;
@@ -134,7 +136,7 @@ export class UpdateCharacterController {
     char.defence! += weapon.defence;
 
     //unequip old weapon
-    let filter: Filter = {where:{"characterId": currentUser.email}};
+    let filter: Filter<Weapon> = {where:{"characterId": currentUser.email}};
     if((await this.weaponRepository.find(filter))[0] != undefined){
       let oldWeapon: Weapon = await this.characterRepository.weapon(currentUser.email).get();
       char.attack! -= oldWeapon.attack;
@@ -168,7 +170,7 @@ export class UpdateCharacterController {
     char.defence! += armor.defence;
 
     //unequip old armor
-    let filter: Filter = {where:{"characterId": currentUser.email}};
+    let filter: Filter<Armor> = {where:{"characterId": currentUser.email}};
     if((await this.armorRepository.find(filter))[0] != undefined){
       let oldArmor: Armor = await this.characterRepository.armor(currentUser.email).get();
       char.attack! -= oldArmor.attack;
@@ -215,7 +217,7 @@ export class UpdateCharacterController {
   ): Promise<void> {
     const currentUser = await this.getCurrentUser();
     //unequip old weapon
-    let filter: Filter = {where:{"characterId": currentUser.email}};
+    let filter: Filter<Weapon> = {where:{"characterId": currentUser.email}};
     if((await this.weaponRepository.find(filter))[0] != undefined){
       let oldWeapon: Weapon = await this.characterRepository.weapon(currentUser.email).get();
       let char: Character = await this.characterRepository.findById(currentUser.email);
@@ -241,7 +243,7 @@ export class UpdateCharacterController {
   ): Promise<void> {
     const currentUser = await this.getCurrentUser();
     //unequip old armor
-    let filter: Filter = {where:{"characterId": currentUser.email}};
+    let filter: Filter<Armor> = {where:{"characterId": currentUser.email}};
     if((await this.armorRepository.find(filter))[0] != undefined){
       let oldArmor: Armor = await this.characterRepository.armor(currentUser.email).get();
       let char: Character = await this.characterRepository.findById(currentUser.email);

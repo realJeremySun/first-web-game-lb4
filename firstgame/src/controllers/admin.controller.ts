@@ -76,7 +76,7 @@ export class AdminController {
   })
   @authenticate('jwt', {"required": [PermissionKey.ViewAnyUser]})
   async count(
-    @param.query.object('where', getWhereSchemaFor(Character)) where?: Where,
+    @param.query.object('where', getWhereSchemaFor(Character)) where?: Where<Character>,
   ): Promise<Count> {
     return await this.characterRepository.count(where);
   }
@@ -99,7 +99,7 @@ export class AdminController {
   })
   @authenticate('jwt', {"required": [PermissionKey.ViewAnyUser]})
   async find(
-    @param.query.object('filter', getFilterSchemaFor(Character)) filter?: Filter,
+    @param.query.object('filter', getFilterSchemaFor(Character)) filter?: Filter<Character>,
   ): Promise<Character[]> {
     return await this.characterRepository.find(filter);
   }
@@ -119,7 +119,7 @@ export class AdminController {
   @authenticate('jwt', {"required": [PermissionKey.ViewAnyUser, PermissionKey.UpdateAnyUser]})
   async updateAll(
     @requestBody() character: Character,
-    @param.query.object('where', getWhereSchemaFor(Character)) where?: Where,
+    @param.query.object('where', getWhereSchemaFor(Character)) where?: Where<Character>,
   ): Promise<Count> {
     return await this.characterRepository.updateAll(character, where);
   }

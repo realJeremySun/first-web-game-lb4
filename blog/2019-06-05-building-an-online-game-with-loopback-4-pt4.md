@@ -14,11 +14,11 @@ published: false
 
 ### Introduction
 
-In this series, I'm going to help you learn LoopBack 4 and how to easily build your own API and web project with it. We'll do so by creating a new project I'm working on: an online web text-based adventure game. In this game, you can create your own account to build characters, fight monsters and find treasures. You will be able to control your character to take a variety of actions: attacking enemies, casting spells, and getting loot. This game should also allow multiple players to log in and play with their friends.
+In this series, I'm going to help you learn LoopBack 4 and how to easily build your own API and web project with it. We'll do so by creating a new project I'm working on: an online web text-based adventure game. In this game, you can create your own account to build characters, fight monsters and find treasures. You will be able to control your character to take a variety of actions: attacking enemies, casting spells, and getting loot. This game also allows multiple players to log in and play with their friends.
 
 ### Previously on Building an Online Game With LoopBack 4
 
-In last episode, we created customized APIs to manage `weapon`, `armor`, and `skill` for `character`.
+In the last episode, we created customized APIs to manage `weapon`, `armor`, and `skill` for `character`.
 
 Here are the previous episodes:
 
@@ -32,7 +32,7 @@ Here are the previous episodes:
 
 ### In This Episode
 
-We already have some APIs that allow users to customize characters. But a user should not get access to characters that belong to other users. So in this episode, we will add user authentication and role-based access control to this project.
+We already have some APIs that allow users to customize their characters. Since a user should not get access to characters that belong to other users. In this episode, we will add user authentication and role-based access control to this project.
 
 You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part4/firstgame) for the code of this episode.
 
@@ -84,9 +84,9 @@ You can check [this tutorial](https://github.com/strongloop/loopback-next/blob/m
 
 ### Install `@loopback/authentication`
 
-Simply run `npm install --save @loopback/authentication@2.0.3` in your project root.
+Simply run `npm install --save @loopback/authentication@latest` in your project root.
 
-Reminder: We are using `@loopback/authentication@2.0.3` in this project. If you want to use other version, you may need to change you code accordingly. You may also need to run `npm outdate` in your project root to see if other LoopBack packages need update.
+Reminder: We are using `@loopback/authentication@2.1.0` in this project. If you want to use other version, you may need to change you code accordingly. You may also need to run `npm outdate` in your project root to see if other LoopBack packages need update.
 
 ### Refactor Model
 
