@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Building an Online Game With LoopBack 4 - Deploying our Application to Kubernetes on IBM Cloud (Part 5)
-date: 2019-06-12
+date: 2019-06-19
 author: Wenbo Sun
 permalink: /strongblog/building-an-online-game-with-loopback-4-pt5/
 categories:
@@ -98,7 +98,7 @@ npm-debug.log
 /dist
 ```
 
-`Dockerfile` and`.dockerignore` are two Docker-related file that provided by LoopBack 4. We will use them to create Docker image.
+`Dockerfile` and`.dockerignore` are two Docker-related files that provided by LoopBack 4. We will use them to create Docker image.
 
 Open `package.json`, add two lines under `scripts`. Those are the commands to build and run Docker image.
 
@@ -111,7 +111,7 @@ Open `package.json`, add two lines under `scripts`. Those are the commands to bu
 
 Install [Docker](https://www.docker.com/get-started) if you haven't.
 
-Run this command:
+Run this command to create Docker image.
 
 ```
 npm run docker:build
@@ -138,13 +138,13 @@ firstgame           latest              0b2c1ff52a2e        44 seconds ago      
 node                10-slim             a41b78200d6f        6 days ago           148MB
 ```
 
-Now, our image is ready to run.
+Now, our image is ready to run. Run this command to create a container. A container is a running instance of an image.
 
 ```
 npm run docker:run
 ```
 
-Run this command to show all running containers. Container is a running instance of an image.
+Run this command to show all running containers.
 
 ```
 docker ps
@@ -192,6 +192,12 @@ Run this command to login IBM Cloud.
 ibmcloud login
 ```
 
+Use this command instead, if you are using a federated IBM ID.
+
+```
+ibmcloud login -sso
+```
+
 If logged in successfully, you will see something like:
 
 ```
@@ -205,7 +211,7 @@ Org:
 Space:
 ```
 
-Login IBM Cloud Container Registry. This is where we store our Docker image.
+Login to IBM Cloud Container Registry. This is where we store our Docker image.
 
 ```
 ibmcloud cr login
@@ -439,6 +445,6 @@ In this episode, we covered how to deploy our project with Docker and Kubernetes
 
 ### What's Next?
 
-In next episode, we will create a simply frontend UI for our project and do a quick demo.
+In next episode, we will create a simply front-end UI for our project and do a quick demo.
 
 In the meantime, you can learn more about LoopBack in [past blogs](https://strongloop.com/strongblog/tag_LoopBack.html).

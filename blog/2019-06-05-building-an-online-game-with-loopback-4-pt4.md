@@ -67,7 +67,7 @@ The one in the bottom left is our self-defined authorization. It has three compo
   * UserPermissionsProvider: this will check user's permission. We will create different user permissions for different users.
 
 * Strategies: this is where we add our own authentication strategies.
-  * JWTStrategy: we are going to use [JSON Web Token](https://jwt.io/) as our authentication strategy.
+  * JWTStrategy: we are going to create a custom authentication strategy based on [JSON Web Token](https://jwt.io/).
 
 * Services:
   * JWTService: a service associate with JWTStrategy to generate and verify JWT.
@@ -86,7 +86,7 @@ You can check [this tutorial](https://github.com/strongloop/loopback-next/blob/m
 
 Simply run `npm install --save @loopback/authentication@latest` in your project root.
 
-Reminder: We are using `@loopback/authentication@2.1.0` in this project. If you want to use other version, you may need to change you code accordingly. You may also need to run `npm outdate` in your project root to see if other LoopBack packages need update.
+Reminder: We are using `@loopback/authentication@2.1.0` in this project. If you want to use other version, you may need to change you code accordingly. You may also need to run `npm outdated` in your project root to see if other LoopBack packages need update.
 
 ### Refactor Model
 
@@ -458,7 +458,7 @@ You can also create your own authentication services, like Hash Password service
 
 ### Putting Everything Together
 
-#### Binding all Components in `application.ts`
+#### Binding all the Pieces in `application.ts`
 
 Open `src/application.ts`, and add the following imports.
 
