@@ -37,6 +37,8 @@ Now, this project has some basic features that allow us to create our own charac
 
 In this episode we will first run our project in Docker. Then we will push it to Kubernetes cluster on IBM Cloud.
 
+Docker image is lightweight, portable, self-sufficient. Once you create a Docker image, you can run it almost everywhere. On the other hand, Kubernetes will handle those high level concepts such as storage, network and scale-up.
+
 You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part5/firstgame) for the code of this episode.
 
 ### Prerequisites
@@ -425,13 +427,11 @@ kube-hou02-pa572a9bc002c7487989c712a80af241cc-w1   184.172.229.128   10.47.84.60
 
 My cluster IP address is `184.172.229.128`.
 
-Now we should be able to access to our application via http://184.172.229.128:30604 !
+Now we should be able to access to our application via http://184.172.229.128:30604
 
 ### Applying This to Your Own Project
 
-In this episode, we covered how to combine your self-defined authorization strategies and services with `@loopback/authentication` and how to apply it to your API.
-
-You can always design your own strategies and services based on your project need. For example, you may want to have a password hashing service, so that you don't directly save a user's raw password in the database. [Here](https://github.com/strongloop/loopback4-example-shopping/blob/master/packages/shopping/src/services/hash.password.bcryptjs.ts) is an example of how to implement a password hashing service.
+In this episode, we covered how to deploy our project with Docker and Kubernetes on IBM Cloud. Once you create a Docker image, you can run it almost everywhere. You can also push your own project image to other cloud like AWS, Azure, and Google Cloud. It should be very easy.
 
 ### What's Next?
 
