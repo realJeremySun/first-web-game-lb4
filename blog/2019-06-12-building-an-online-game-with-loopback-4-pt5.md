@@ -37,7 +37,7 @@ Now, this project has some basic features that allow us to create our own charac
 
 In this episode we will first run our project in Docker. Then we will push it to Kubernetes cluster on IBM Cloud.
 
-Docker image is lightweight, portable, self-sufficient. Once you create a Docker image, you can run it almost everywhere. On the other hand, Kubernetes will handle those high level concepts such as storage, network and scale-up.
+Docker image is lightweight, portable, and self-sufficient. Once you create a Docker image, you can run it almost everywhere. On the other hand, Kubernetes will handle those high level concepts such as storage, network and scale-up.
 
 You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part5/firstgame) for the code of this episode.
 
@@ -47,15 +47,15 @@ You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/pa
 * [Kubernetes](https://kubernetes.io/)
 * Sign up for [IBM Cloud](https://www.ibm.com/cloud/)
 
-You don't have to fully understand those concepts. I will show you how to use them step by step.
+You don't have to fully understand those concepts before we start. I will show you how to use them step by step.
 
-[The Illustrated Children's Guide to Kubernetes](https://www.youtube.com/watch?v=4ht22ReBjno) is a wonderful video on YouTube that can give you a clear idea of Kubernetes.
+[The Illustrated Children's Guide to Kubernetes](https://www.youtube.com/watch?v=4ht22ReBjno) is a wonderful video on YouTube that can give you a clear idea of what is Kubernetes.
 
-[Deploying to Kubernetes on IBM Cloud](https://loopback.io/doc/en/lb4/deploying_to_ibm_cloud_kubernetes.html#prerequisite) is a tutorial on LoopBack 4 official website. What we are going to do is a little different from it. Because our project is using MongoDB, we need to setup MongoDB on cloud as well and connect our project to it.
+[Deploying to Kubernetes on IBM Cloud](https://loopback.io/doc/en/lb4/deploying_to_ibm_cloud_kubernetes.html#prerequisite) is a tutorial on LoopBack 4 official website. What we are going to do is a little different from it. Because our project is using MongoDB, we need to setup MongoDB on cloud and connect our project to it.
 
 ### Adding Docker Feature
 
-In [episode 1](https://strongloop.com/strongblog/building-online-game-with-loopback-4-pt1/), we disabled Docker when created our project. Now we need to manually add Docker feature.
+In [the Episode 1](https://strongloop.com/strongblog/building-online-game-with-loopback-4-pt1/), we disabled Docker when created our project. Now we need to manually add Docker feature.
 
 In your project root, create a file called `Dockerfile`.
 
@@ -98,7 +98,9 @@ npm-debug.log
 /dist
 ```
 
-Open `package.json`, add two lines under `scripts`. Those are the command lines to build and run Docker image.
+`Dockerfile` and`.dockerignore` are two Docker-related file that provided by LoopBack 4. We will use them to create Docker image.
+
+Open `package.json`, add two lines under `scripts`. Those are the commands to build and run Docker image.
 
 ```
 "docker:build": "docker build -t firstgame .",
@@ -136,7 +138,7 @@ firstgame           latest              0b2c1ff52a2e        44 seconds ago      
 node                10-slim             a41b78200d6f        6 days ago           148MB
 ```
 
-Our image is ready to run.
+Now, our image is ready to run.
 
 ```
 npm run docker:run
@@ -172,13 +174,13 @@ Try http://127.0.0.1:3000/ping
 
 Now, you should be able to open the API explorer: http://127.0.0.1:3000/explorer/
 
-If everything is fine. Run this command to stop the image.
+If everything is fine, run this command to stop the image.
 
 ```
 docker stop <container id>
 ```
 
-Our Docker image is all set.
+We are ready to push our Docker image to cloud.
 
 ### Pushing Docker image to IBM Cloud.
 
@@ -320,7 +322,7 @@ Now you cluster is ready to use.
 
 Because our project is using MongoDB, we need to set up a MongoDB container and our project container in one Kubernetes [pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/). A Kubernetes pod is a group of one or more containers. Containers in the same pod will share storage and network.
 
-Let's first create a file called `first-game.yaml` in our project root. We will use this `yaml` file to specify containers and pod.
+Let's first create a file called `first-game.yaml` in our project root. We will use this `yaml` file to specify containers and pod. Check [here](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/) for more information about Kubernetes `yaml` file.
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -345,6 +347,8 @@ spec:
             - containerPort: 27017
 ```
 
+As you can see, we have two containers. `fg` is for our project. `db` is for MongoDB. They will be running in the same pod. So that they can share network and talk to each other.
+
 Run this command to use the `yaml` file to create containers and pod.
 
 ```
@@ -365,7 +369,7 @@ Run this command to verify our pod is running.
 kubectl get pods
 ```
 
-If success, you will see this.
+If success, you will see this. The `2/2` means there are two containers running in this pod.
 
 ```
 NAME                         READY     STATUS    RESTARTS   AGE
@@ -435,6 +439,6 @@ In this episode, we covered how to deploy our project with Docker and Kubernetes
 
 ### What's Next?
 
-In next episode, we will deploy this project to cloud.
+In next episode, we will create a simply frontend UI for our project and do a quick demo.
 
 In the meantime, you can learn more about LoopBack in [past blogs](https://strongloop.com/strongblog/tag_LoopBack.html).
