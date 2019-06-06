@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: fg
-          image: us.icr.io/firstgame-namespace/firstgame-repo:fg
+          image: us.icr.io/my-lb4-namespace/firstgame-repo:1.0
           ports:
             - containerPort: 3000
         - name: db

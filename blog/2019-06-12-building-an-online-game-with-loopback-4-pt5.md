@@ -49,7 +49,7 @@ You don't have to fully understand those concepts. I will show you how to use th
 
 [The Illustrated Children's Guide to Kubernetes](https://www.youtube.com/watch?v=4ht22ReBjno) is a wonderful video on YouTube that can give you a clear idea of Kubernetes.
 
-[Deploying to Kubernetes on IBM Cloud](https://loopback.io/doc/en/lb4/deploying_to_ibm_cloud_kubernetes.html#prerequisite) is a tutorial on LoopBack 4 official website. What we are going to do is a little different from it, because our project is using MongoDB. So we need to setup MongoDB on cloud as well and connect our project to it.
+[Deploying to Kubernetes on IBM Cloud](https://loopback.io/doc/en/lb4/deploying_to_ibm_cloud_kubernetes.html#prerequisite) is a tutorial on LoopBack 4 official website. What we are going to do is a little different from it. Because our project is using MongoDB, we need to setup MongoDB on cloud as well and connect our project to it.
 
 ### Adding Docker Feature
 
@@ -116,7 +116,7 @@ npm run docker:build
 If it success, you will see:
 
 ```
-Successfully built 2fc1837ccd8e
+Successfully built 0b2c1ff52a2e
 Successfully tagged firstgame:latest
 ```
 
@@ -130,7 +130,7 @@ You should see two images like this:
 
 ```
 REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
-firstgame           latest              2fc1837ccd8e        About a minute ago   385MB
+firstgame           latest              0b2c1ff52a2e        44 seconds ago       430MB
 node                10-slim             a41b78200d6f        6 days ago           148MB
 ```
 
@@ -267,7 +267,7 @@ You should see this:
 
 ```
 REPOSITORY                                     TAG   DIGEST         NAMESPACE             CREATED      SIZE     SECURITY STATUS
-us.icr.io/my-lb4-namespace/firstgame-repo      1.0   3c853b97ffec   my-lb4-namespace      1 hour ago   137 MB   No Issues
+us.icr.io/my-lb4-namespace/firstgame-repo      1.0   3c853b97ffec   my-lb4-namespace      1 hour ago   144 MB   No Issues
 ```
 
 The `SECURITY STATUS` shows `No Issues`. If you get issues here, you may want to check [Managing image security with Vulnerability Advisor](https://cloud.ibm.com/docs/services/va?topic=va-va_index#va_index) for more related information.
@@ -276,15 +276,156 @@ Lastly, run this command to build Docker image on the container registry. Don't 
 
 ```
 ibmcloud cr build -t us.icr.io/my-lb4-namespace/firstgame-repo:1.0 .
-``
+```
 
+### Creating Kubernetes Cluster
 
+If you don't have a Kubernetes Cluster yet, login to your IBM Cloud in browser and go to https://cloud.ibm.com/kubernetes/catalog/cluster/create to create a free cluster. It may take a while.
 
+When it is done, run this command to point to Kubernetes cluster. My cluster name is `firstgame-cluster`.
 
+```
+ibmcloud cs cluster-config <Cluster Name>
+```
 
+You will see something like this. Copy and run the last line.
 
+```
+OK
+The configuration for firstgame-cluster was downloaded successfully.
 
+Export environment variables to start using Kubernetes.
 
+export KUBECONFIG=/Users/xiaocase/.bluemix/plugins/container-service/clusters/firstgame-cluster/kube-config-hou02-firstgame-cluster.yml
+```
+
+Run this command to verify your cluster.
+
+```
+kubectl get nodes
+```
+
+You should see something like this.
+
+```
+NAME          STATUS    ROLES     AGE       VERSION
+10.47.84.60   Ready     <none>    5d        v1.13.6+IKS
+```
+
+Now you cluster is ready to use.
+
+### Setting up MongoDB and Deploying our Project to Kubernetes
+
+Because our project is using MongoDB, we need to set up a MongoDB container and our project container in one Kubernetes [pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/). A Kubernetes pod is a group of one or more containers. Containers in the same pod will share storage and network.
+
+Let's first create a file called `first-game.yaml` in our project root. We will use this `yaml` file to specify containers and pod.
+
+```yaml
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: firstgame
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: firstgame
+    spec:
+      containers:
+        - name: fg
+          image: us.icr.io/my-lb4-namespace/firstgame-repo:1.0
+          ports:
+            - containerPort: 3000
+        - name: db
+          image: mongo
+          ports:
+            - containerPort: 27017
+```
+
+Run this command to use the `yaml` file to create containers and pod.
+
+```
+kubectl create -f first-game.yaml
+```
+
+You will see something like this.
+
+```
+deployment.extensions "firstgame" deleted
+wenbo:firstgame wenbo$ kubectl create -f first-game.yaml
+deployment.extensions "firstgame" created
+```
+
+Run this command to verify our pod is running.
+
+```
+kubectl get pods
+```
+
+If success, you will see this.
+
+```
+NAME                         READY     STATUS    RESTARTS   AGE
+firstgame-85ccbd5496-6nmvt   2/2       Running   0          1m
+```
+
+Now our application is running on Kubernetes. Next step is to expose it to public.
+
+```
+kubectl expose deployment firstgame --type=NodePort --port=3000 --name=firstgame-service --target-port=3000
+```
+
+You should see this.
+
+```
+service "firstgame-service" exposed
+```
+
+Run this command to get NodePort for this service.
+
+```
+kubectl describe service firstgame-service
+```
+
+You should see:
+
+```
+Name:                     firstgame-service
+Namespace:                default
+Labels:                   run=firstgame
+Annotations:              <none>
+Selector:                 run=firstgame
+Type:                     NodePort
+IP:                       172.21.16.4
+Port:                     <unset>  3000/TCP
+TargetPort:               3000/TCP
+NodePort:                 <unset>  30604/TCP
+Endpoints:                172.30.246.14:3000
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:                   <none>
+```
+
+In my case, the NodePort is `30604`.
+
+The last thing we need is the IP address of our cluster.
+
+```
+ibmcloud ks workers firstgame-cluster
+```
+
+You will get something like this:
+
+```
+ID                                                 Public IP         Private IP    Machine Type   State    Status   Zone    Version
+kube-hou02-pa572a9bc002c7487989c712a80af241cc-w1   184.172.229.128   10.47.84.60   free           normal   Ready    hou02   1.13.6_1522*
+
+```
+
+My cluster IP address is `184.172.229.128`.
+
+Now we should be able to access to our application via http://184.172.229.128:30604 !
 
 ### Applying This to Your Own Project
 
