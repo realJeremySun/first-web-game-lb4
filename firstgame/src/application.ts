@@ -10,15 +10,16 @@ import {ServiceMixin} from '@loopback/service-proxy';
 import * as path from 'path';
 import {MySequence} from './sequence';
 //add
+import {asGlobalInterceptor} from '@loopback/context';
 import {MyAuthBindings,
         JWTService,
         JWTStrategy,
         UserPermissionsProvider,
+        AuthorizationInterceptor,
 } from './authorization';
 import {AuthenticationComponent,
        registerAuthenticationStrategy,
 } from '@loopback/authentication';
-
 
 export class FirstgameApplication extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
@@ -34,7 +35,8 @@ export class FirstgameApplication extends BootMixin(
     registerAuthenticationStrategy(this, JWTStrategy);
     this.bind(MyAuthBindings.TOKEN_SERVICE).toClass(JWTService);
     this.bind(MyAuthBindings.USER_PERMISSIONS).toProvider(UserPermissionsProvider);
-
+    this.bind(MyAuthBindings.AUTH_INTERCEPTOR).toProvider(AuthorizationInterceptor)
+    .apply(asGlobalInterceptor());;
     // Set up the custom sequence
     this.sequence(MySequence);
 

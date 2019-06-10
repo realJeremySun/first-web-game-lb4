@@ -10,8 +10,9 @@ import {MyUserProfile,
         RequiredPermissions,} from '../types';
 import {MyAuthBindings,} from '../keys';
 import * as _ from 'lodash';
+import {intercept} from '@loopback/context';
 
-
+@intercept(MyAuthBindings.AUTH_INTERCEPTOR)
 export class JWTStrategy implements AuthenticationStrategy{
   name: string = 'jwt';
 
@@ -25,22 +26,11 @@ export class JWTStrategy implements AuthenticationStrategy{
   ) {}
   async authenticate(request: Request): Promise<MyUserProfile | undefined> {
     const token: string = this.extractCredentials(request);
-
-    try {
+    try{
       const user: MyUserProfile = await this.tokenService.verifyToken(token) as MyUserProfile;
-      const requiredPermissions = this.metadata.options as RequiredPermissions;
-      if(!this.checkPermissons(
-        user.permissions ,
-        requiredPermissions
-      )){
-        throw new HttpErrors.Forbidden('INVALID_ACCESS_PERMISSION');
-      }
       return user;
     } catch (err) {
-      Object.assign(err, {
-        code: 'INVALID_ACCESS_TOKEN',
-        statusCode: 401,
-      });
+      Object.assign(err, {code: 'INVALID_ACCESS_TOKEN', statusCode: 401,});
       throw err;
     }
   }
@@ -49,7 +39,6 @@ export class JWTStrategy implements AuthenticationStrategy{
     if (!request.headers.authorization) {
       throw new HttpErrors.Unauthorized(`Authorization header not found.`);
     }
-    // for example : Bearer xxx.yyy.zzz
     const authHeaderValue = request.headers.authorization;
 
     if (!authHeaderValue.startsWith('Bearer')) {
@@ -57,7 +46,6 @@ export class JWTStrategy implements AuthenticationStrategy{
         `Authorization header is not of type 'Bearer'.`,
       );
     }
-    //split the string into 2 parts : 'Bearer ' and the `xxx.yyy.zzz`
     const parts = authHeaderValue.split(' ');
     if (parts.length !== 2)
       throw new HttpErrors.Unauthorized(
