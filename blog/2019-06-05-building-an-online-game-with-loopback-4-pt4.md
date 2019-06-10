@@ -64,13 +64,16 @@ The one in the middle is the `@loopback/authentication` package. It has three ma
 The one in the bottom left is our self-defined authorization. It has three components:
 
 * Providers:
-  * UserPermissionsProvider: this will check user's permission. We will create different user permissions for different users.
+  * UserPermissionsProvider: this will check user's permission. We will create different user permissions for different users. This provider will be invoked in AuthorizationInterceptor.
 
 * Strategies: this is where we add our own authentication strategies.
   * JWTStrategy: we are going to create a custom authentication strategy based on [JSON Web Token](https://jwt.io/).
 
 * Services:
   * JWTService: a service associate with JWTStrategy to generate and verify JWT.
+
+* Interceptors:
+  * AuthorizationInterceptor: a middle layer between API request and authentication strategy that use UserPermissionsProvider to verify user's permission.
 
 #### `application.ts`, `sequence.ts` and `controller`
 
@@ -247,7 +250,7 @@ export const CredentialsRequestBody = {
 Create `keys.ts` in `src/authorization`. `MyAuthBindings` is the self-defined component that we need to bind to `application.ts`. `TokenServiceConstants` is the value we will use later in token service.
 
 ```ts
-import {BindingKey} from '@loopback/context';
+import {BindingKey, Interceptor} from '@loopback/context';
 import {UserPermissionsFn} from './types';
 import {TokenService} from '@loopback/authentication';
 /**
@@ -260,6 +263,10 @@ export namespace MyAuthBindings {
 
   export const TOKEN_SERVICE = BindingKey.create<TokenService>(
     'services.authentication.jwt.tokenservice',
+  );
+
+  export const AUTH_INTERCEPTOR = BindingKey.create<Interceptor>(
+    'interceptors.authorization',
   );
 }
 
@@ -324,8 +331,9 @@ import {MyUserProfile,
         RequiredPermissions,} from '../types';
 import {MyAuthBindings,} from '../keys';
 import * as _ from 'lodash';
+import {intercept} from '@loopback/context';
 
-
+@intercept(MyAuthBindings.AUTH_INTERCEPTOR)
 export class JWTStrategy implements AuthenticationStrategy{
   name: string = 'jwt';
 
@@ -339,22 +347,11 @@ export class JWTStrategy implements AuthenticationStrategy{
   ) {}
   async authenticate(request: Request): Promise<MyUserProfile | undefined> {
     const token: string = this.extractCredentials(request);
-
-    try {
+    try{
       const user: MyUserProfile = await this.tokenService.verifyToken(token) as MyUserProfile;
-      const requiredPermissions = this.metadata.options as RequiredPermissions;
-      if(!this.checkPermissons(
-        user.permissions ,
-        requiredPermissions
-      )){
-        throw new HttpErrors.Forbidden('INVALID_ACCESS_PERMISSION');
-      }
       return user;
     } catch (err) {
-      Object.assign(err, {
-        code: 'INVALID_ACCESS_TOKEN',
-        statusCode: 401,
-      });
+      Object.assign(err, {code: 'INVALID_ACCESS_TOKEN', statusCode: 401,});
       throw err;
     }
   }
@@ -363,8 +360,6 @@ export class JWTStrategy implements AuthenticationStrategy{
     if (!request.headers.authorization) {
       throw new HttpErrors.Unauthorized(`Authorization header not found.`);
     }
-
-    // for example : Bearer xxx.yyy.zzz
     const authHeaderValue = request.headers.authorization;
 
     if (!authHeaderValue.startsWith('Bearer')) {
@@ -372,21 +367,66 @@ export class JWTStrategy implements AuthenticationStrategy{
         `Authorization header is not of type 'Bearer'.`,
       );
     }
-
-    //split the string into 2 parts : 'Bearer ' and the `xxx.yyy.zzz`
     const parts = authHeaderValue.split(' ');
     if (parts.length !== 2)
       throw new HttpErrors.Unauthorized(
         `Authorization header value has too many parts. It must follow the pattern: 'Bearer xx.yy.zz' where xx.yy.zz is a valid JWT token.`,
       );
       const token = parts[1];
-
       return token;
   }
 }
 ```
 
+The `@intercept(MyAuthBindings.AUTH_INTERCEPTOR)` above this class is how we apply the AuthorizationInterceptor. We will cover it later.
+
 You can even use multiple strategies in one project; if needed.
+
+#### Interceptor
+
+Create a folder `interceptors` in `src/authorization`, then inside `interceptors`, create a file named `authorization.interceptor.ts`.
+
+Interceptor is a middle layer between API request and authentication strategy. After the strategy verified user's access token, interceptor will verify use's permission.
+
+```ts
+import {
+  inject,
+  Interceptor,
+  Provider,
+} from '@loopback/context';
+import {Getter} from '@loopback/core';
+import {MyAuthBindings,} from '../keys';
+import {HttpErrors} from '@loopback/rest';
+import {MyUserProfile,
+        UserPermissionsFn,
+        RequiredPermissions,} from '../types';
+import {AuthenticationMetadata,AuthenticationBindings} from '@loopback/authentication';
+
+export class AuthorizationInterceptor implements Provider<Interceptor> {
+  constructor(
+    @inject(AuthenticationBindings.METADATA)
+    public metadata: AuthenticationMetadata,
+    @inject(MyAuthBindings.USER_PERMISSIONS)
+    protected checkPermissons: UserPermissionsFn,
+    @inject.getter(AuthenticationBindings.CURRENT_USER)
+    public getCurrentUser: Getter<MyUserProfile>,
+  ) {}
+
+  value(): Interceptor {
+    return async (invocationCtx, next) => {
+      if (!this.metadata) return await next();
+      const result = await next();
+
+      const requiredPermissions = this.metadata.options as RequiredPermissions;
+      const user = await this.getCurrentUser();
+      if(!this.checkPermissons(user.permissions, requiredPermissions)){
+        throw new HttpErrors.Forbidden('INVALID_ACCESS_PERMISSION');
+      }
+      return result;
+    };
+  }
+}
+```
 
 #### Services
 
@@ -463,10 +503,12 @@ You can also create your own authentication services, like Hash Password service
 Open `src/application.ts`, and add the following imports.
 
 ```ts
+import {asGlobalInterceptor} from '@loopback/context';
 import {MyAuthBindings,
         JWTService,
         JWTStrategy,
         UserPermissionsProvider,
+        AuthorizationInterceptor,
 } from './authorization';
 import {AuthenticationComponent,
        registerAuthenticationStrategy,
@@ -486,7 +528,9 @@ constructor(options: ApplicationConfig = {}) {
   registerAuthenticationStrategy(this, JWTStrategy);
   this.bind(MyAuthBindings.TOKEN_SERVICE).toClass(JWTService);
   this.bind(MyAuthBindings.USER_PERMISSIONS).toProvider(UserPermissionsProvider);
-```
+  this.bind(MyAuthBindings.AUTH_INTERCEPTOR).toProvider(AuthorizationInterceptor)
+  .apply(asGlobalInterceptor());;
+  ```
 
 If you have more authentication strategies, add them in this way:
 

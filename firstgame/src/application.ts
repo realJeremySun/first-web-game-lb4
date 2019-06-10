@@ -30,7 +30,6 @@ export class FirstgameApplication extends BootMixin(
     //add
     // Bind authentication component related elements
     this.component(AuthenticationComponent);
-
     // Bind JWT & permission authentication strategy related elements
     registerAuthenticationStrategy(this, JWTStrategy);
     this.bind(MyAuthBindings.TOKEN_SERVICE).toClass(JWTService);
