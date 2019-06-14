@@ -384,9 +384,22 @@ You can even use multiple strategies in one project; if needed.
 
 #### Interceptor
 
-Create a folder `interceptors` in `src/authorization`, then inside `interceptors`, create a file named `authorization.interceptor.ts`.
-
 Interceptor is a middle layer between API request and authentication strategy. After the strategy verified user's access token, interceptor will verify use's permission.
+
+Run `lb4 interceptor` in your project root.
+
+```
+? Interceptor name: authorize
+? Is it a global interceptor? Yes
+? Global interceptors are sorted by the order of an array of group names bound to ContextBindings.GLOBAL_INTERCEPTOR_ORDERED_GROUPS. See https://loopback.io/doc/en/lb4/Interceptors.html#order-of-invocation-for-interceptors.
+Group name for the global interceptor: ('')
+   create src/interceptors/authorize.interceptor.ts
+   update src/interceptors/index.ts
+
+Interceptor authorize was created in src/interceptors/
+```
+
+Then change `src/interceptors/authorize.interceptor.ts` to this:
 
 ```ts
 import {
@@ -508,8 +521,8 @@ import {MyAuthBindings,
         JWTService,
         JWTStrategy,
         UserPermissionsProvider,
-        AuthorizationInterceptor,
 } from './authorization';
+import {AuthorizationInterceptor} from './interceptors';
 import {AuthenticationComponent,
        registerAuthenticationStrategy,
 } from '@loopback/authentication';

@@ -15,8 +15,8 @@ import {MyAuthBindings,
         JWTService,
         JWTStrategy,
         UserPermissionsProvider,
-        AuthorizationInterceptor,
 } from './authorization';
+import {AuthorizationInterceptor} from './interceptors';
 import {AuthenticationComponent,
        registerAuthenticationStrategy,
 } from '@loopback/authentication';

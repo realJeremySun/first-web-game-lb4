@@ -4,11 +4,11 @@ import {
   Provider,
 } from '@loopback/context';
 import {Getter} from '@loopback/core';
-import {MyAuthBindings,} from '../keys';
 import {HttpErrors} from '@loopback/rest';
 import {MyUserProfile,
+        MyAuthBindings,
         UserPermissionsFn,
-        RequiredPermissions,} from '../types';
+        RequiredPermissions,} from '../authorization';
 import {AuthenticationMetadata,AuthenticationBindings} from '@loopback/authentication';
 
 export class AuthorizationInterceptor implements Provider<Interceptor> {
