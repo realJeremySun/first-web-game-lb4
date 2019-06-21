@@ -9,10 +9,7 @@ import {MyUserProfile,
         UserPermissionsFn,
         RequiredPermissions,} from '../types';
 import {MyAuthBindings,} from '../keys';
-import * as _ from 'lodash';
-import {intercept} from '@loopback/context';
 
-@intercept(MyAuthBindings.AUTH_INTERCEPTOR)
 export class JWTStrategy implements AuthenticationStrategy{
   name: string = 'jwt';
 

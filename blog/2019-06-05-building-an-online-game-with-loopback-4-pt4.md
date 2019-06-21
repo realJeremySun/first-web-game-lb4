@@ -42,7 +42,7 @@ LoopBack 4 provides us with a built-in authentication package. This package prov
 
 In this episode, I will combine LoopBack authentication package with my self-defined authorization. Here is a diagram for the basic structure:
 
-![structure](/blog-assets/2019/05/building-online-game-pt4-auth-structure.png)
+![structure](/blog-assets/2019/06/building-online-game-pt4-auth-structure.png)
 
 #### LoopBack Authentication Package
 
@@ -73,7 +73,11 @@ The one in the bottom left is our self-defined authorization. It has three compo
   * JWTService: a service associate with JWTStrategy to generate and verify JWT.
 
 * Interceptors:
-  * AuthorizationInterceptor: a middle layer between API request and authentication strategy that use UserPermissionsProvider to verify user's permission.
+  * AuthorizationInterceptor: a middle layer between API request and authentication that use UserPermissionsProvider to verify user's permission. You can find more information about LoopBack 4 Interceptor at [here](https://loopback.io/doc/en/lb4/Interceptors.html#order-of-invocation-for-interceptors).
+
+Here is a diagram to show you what will happen after an API call.
+
+![structure](/blog-assets/2019/06/building-online-game-pt4-auth-activity-flow.png)
 
 #### `application.ts`, `sequence.ts` and `controller`
 
@@ -250,7 +254,7 @@ export const CredentialsRequestBody = {
 Create `keys.ts` in `src/authorization`. `MyAuthBindings` is the self-defined component that we need to bind to `application.ts`. `TokenServiceConstants` is the value we will use later in token service.
 
 ```ts
-import {BindingKey, Interceptor} from '@loopback/context';
+import {BindingKey} from '@loopback/context';
 import {UserPermissionsFn} from './types';
 import {TokenService} from '@loopback/authentication';
 /**
@@ -263,10 +267,6 @@ export namespace MyAuthBindings {
 
   export const TOKEN_SERVICE = BindingKey.create<TokenService>(
     'services.authentication.jwt.tokenservice',
-  );
-
-  export const AUTH_INTERCEPTOR = BindingKey.create<Interceptor>(
-    'interceptors.authorization',
   );
 }
 
@@ -330,10 +330,7 @@ import {MyUserProfile,
         UserPermissionsFn,
         RequiredPermissions,} from '../types';
 import {MyAuthBindings,} from '../keys';
-import * as _ from 'lodash';
-import {intercept} from '@loopback/context';
 
-@intercept(MyAuthBindings.AUTH_INTERCEPTOR)
 export class JWTStrategy implements AuthenticationStrategy{
   name: string = 'jwt';
 
@@ -378,15 +375,15 @@ export class JWTStrategy implements AuthenticationStrategy{
 }
 ```
 
-The `@intercept(MyAuthBindings.AUTH_INTERCEPTOR)` above this class is how we apply the AuthorizationInterceptor. We will cover it later.
 
 You can even use multiple strategies in one project; if needed.
 
 #### Interceptor
 
-Interceptor is a middle layer between API request and authentication strategy. After the strategy verified user's access token, interceptor will verify use's permission.
+Interceptor is a middle layer between API request and authentication. After the authentication strategy verified user's access token, interceptor will verify use's permission.
 
-Run `lb4 interceptor` in your project root.
+Run `lb4 interceptor` in your project root. A global interceptor will be automatically applied
+to all methods in controllers.
 
 ```
 ? Interceptor name: authorize
@@ -404,17 +401,27 @@ Then change `src/interceptors/authorize.interceptor.ts` to this:
 ```ts
 import {
   inject,
+  globalInterceptor,
   Interceptor,
+  InvocationContext,
+  InvocationResult,
   Provider,
+  ValueOrPromise,
 } from '@loopback/context';
 import {Getter} from '@loopback/core';
-import {MyAuthBindings,} from '../keys';
 import {HttpErrors} from '@loopback/rest';
 import {MyUserProfile,
+        MyAuthBindings,
         UserPermissionsFn,
-        RequiredPermissions,} from '../types';
+        RequiredPermissions,} from '../authorization';
 import {AuthenticationMetadata,AuthenticationBindings} from '@loopback/authentication';
 
+
+/**
+ * This class will be bound to the application as an `Interceptor` during
+ * `boot`
+ */
+@globalInterceptor('', {tags: {name: 'authorization'}})
 export class AuthorizationInterceptor implements Provider<Interceptor> {
   constructor(
     @inject(AuthenticationBindings.METADATA)
@@ -425,18 +432,35 @@ export class AuthorizationInterceptor implements Provider<Interceptor> {
     public getCurrentUser: Getter<MyUserProfile>,
   ) {}
 
-  value(): Interceptor {
-    return async (invocationCtx, next) => {
-      if (!this.metadata) return await next();
-      const result = await next();
+  /**
+   * This method is used by LoopBack context to produce an interceptor function
+   * for the binding.
+   *
+   * @returns An interceptor function
+   */
+  value() {
+    return this.intercept.bind(this);
+  }
 
-      const requiredPermissions = this.metadata.options as RequiredPermissions;
-      const user = await this.getCurrentUser();
-      if(!this.checkPermissons(user.permissions, requiredPermissions)){
-        throw new HttpErrors.Forbidden('INVALID_ACCESS_PERMISSION');
-      }
-      return result;
-    };
+  /**
+   * The logic to intercept an invocation
+   * @param invocationCtx - Invocation context
+   * @param next - A function to invoke next interceptor or the target method
+   */
+  async intercept(
+    invocationCtx: InvocationContext,
+    next: () => ValueOrPromise<InvocationResult>,
+  ) {
+    if (!this.metadata) return await next();
+
+    const result = await next();
+
+    const requiredPermissions = this.metadata.options as RequiredPermissions;
+    const user = await this.getCurrentUser();
+    if(!this.checkPermissons(user.permissions, requiredPermissions)){
+      throw new HttpErrors.Forbidden('INVALID_ACCESS_PERMISSION');
+    }
+    return result;
   }
 }
 ```
@@ -520,7 +544,7 @@ import {asGlobalInterceptor} from '@loopback/context';
 import {MyAuthBindings,
         JWTService,
         JWTStrategy,
-        UserPermissionsProvider,
+        UserPermissionsProvider
 } from './authorization';
 import {AuthorizationInterceptor} from './interceptors';
 import {AuthenticationComponent,
@@ -541,8 +565,6 @@ constructor(options: ApplicationConfig = {}) {
   registerAuthenticationStrategy(this, JWTStrategy);
   this.bind(MyAuthBindings.TOKEN_SERVICE).toClass(JWTService);
   this.bind(MyAuthBindings.USER_PERMISSIONS).toProvider(UserPermissionsProvider);
-  this.bind(MyAuthBindings.AUTH_INTERCEPTOR).toProvider(AuthorizationInterceptor)
-  .apply(asGlobalInterceptor());;
   ```
 
 If you have more authentication strategies, add them in this way:

@@ -1,4 +1,4 @@
-import {BindingKey,Interceptor} from '@loopback/context';
+import {BindingKey} from '@loopback/context';
 import {UserPermissionsFn} from './types';
 import {TokenService} from '@loopback/authentication';
 
@@ -12,10 +12,6 @@ export namespace MyAuthBindings {
 
   export const TOKEN_SERVICE = BindingKey.create<TokenService>(
     'services.authentication.jwt.tokenservice',
-  );
-
-  export const AUTH_INTERCEPTOR = BindingKey.create<Interceptor>(
-    'interceptors.authorization',
   );
 }
 
