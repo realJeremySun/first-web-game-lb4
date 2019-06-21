@@ -421,7 +421,7 @@ import {AuthenticationMetadata,AuthenticationBindings} from '@loopback/authentic
  * This class will be bound to the application as an `Interceptor` during
  * `boot`
  */
-@globalInterceptor('', {tags: {name: 'authorization'}})
+@globalInterceptor('', {tags: {name: 'authorize'}})
 export class AuthorizationInterceptor implements Provider<Interceptor> {
   constructor(
     @inject(AuthenticationBindings.METADATA)
