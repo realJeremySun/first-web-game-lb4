@@ -382,8 +382,7 @@ You can even use multiple strategies in one project; if needed.
 
 Interceptor is a middle layer between API request and authentication. After the authentication strategy verified user's access token, interceptor will verify use's permission.
 
-Run `lb4 interceptor` in your project root. A global interceptor will be automatically applied
-to all methods in controllers.
+Run `lb4 interceptor` in your project root.
 
 ```
 ? Interceptor name: authorize
@@ -464,6 +463,8 @@ export class AuthorizationInterceptor implements Provider<Interceptor> {
   }
 }
 ```
+
+A global interceptor will be automatically applied to all methods in controllers.
 
 #### Services
 
