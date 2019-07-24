@@ -7257,6 +7257,7 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/ping.controller.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/index.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/update-character.controller.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/interceptors/authorize.interceptor.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/interceptors/index.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/bcryptjs/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/debug/index.d.ts",
@@ -7266,8 +7267,7 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/mocha/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/on-finished/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport-http/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/type-is/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/interceptors/authorize.interceptor.ts"
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/type-is/index.d.ts"
     ]
   },
   "version": "3.5.2"

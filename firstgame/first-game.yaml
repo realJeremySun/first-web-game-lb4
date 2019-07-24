@@ -10,11 +10,11 @@ spec:
         run: firstgame
     spec:
       containers:
-        - name: fg
+        - name: fg1
           image: us.icr.io/my-lb4-namespace/firstgame-repo:1.0
           ports:
             - containerPort: 3000
-        - name: db
+        - name: db1
           image: mongo
           ports:
             - containerPort: 27017
