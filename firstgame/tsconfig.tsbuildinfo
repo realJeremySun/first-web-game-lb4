@@ -21,6 +21,10 @@
         "version": "2edd3ddf436ef8e12df876dcae4ecd6a8748577944c477bf4b20d5596e0c9843",
         "signature": "2edd3ddf436ef8e12df876dcae4ecd6a8748577944c477bf4b20d5596e0c9843"
       },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/typescript/lib/lib.dom.d.ts": {
+        "version": "973df4e41aea3780ce77073777d37dd5896f684124f4c42409f3a832133837a4",
+        "signature": "973df4e41aea3780ce77073777d37dd5896f684124f4c42409f3a832133837a4"
+      },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/typescript/lib/lib.es2015.core.d.ts": {
         "version": "2a0390a665763bcc90f0670e43c587928d8fefe2a94a11209c1e22cba7b09f52",
         "signature": "2a0390a665763bcc90f0670e43c587928d8fefe2a94a11209c1e22cba7b09f52"
@@ -138,8 +142,8 @@
         "signature": "bd0ac11f1dffdef1e19d7f6a00c1416adff4ceaa774468594115806c5298b7ec"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/globals.d.ts": {
-        "version": "1bba2fc2e58c0340b92eeb9185be6e75e27d52f10a315aa65810a19b3277f1c7",
-        "signature": "1bba2fc2e58c0340b92eeb9185be6e75e27d52f10a315aa65810a19b3277f1c7"
+        "version": "b4cc3f267394f85076d04afc86df4d44c453cb6e0ab31504919dfb47d128bb6c",
+        "signature": "b4cc3f267394f85076d04afc86df4d44c453cb6e0ab31504919dfb47d128bb6c"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/assert.d.ts": {
         "version": "e37e4814461321ef67cbb2f4c9def6be18ff85670e6c665131b320e052905b75",
@@ -158,8 +162,8 @@
         "signature": "400db42c3a46984118bff14260d60cec580057dc1ab4c2d7310beb643e4f5935"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/child_process.d.ts": {
-        "version": "f1086bf9854d882321f28c3691987832c97e5bb360f9bbc5e0e5a150fa055f56",
-        "signature": "f1086bf9854d882321f28c3691987832c97e5bb360f9bbc5e0e5a150fa055f56"
+        "version": "13084b2c9d246289892aceb7ecc3fe9666a9cf6d8e59cae17f76649f4e0773e8",
+        "signature": "13084b2c9d246289892aceb7ecc3fe9666a9cf6d8e59cae17f76649f4e0773e8"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/cluster.d.ts": {
         "version": "d2704553f735d9b9cf31a26cbf4dd085e89b0ec3eec33d684b2517555370b665",
@@ -174,16 +178,16 @@
         "signature": "b952021e804dcd9cb5e5552e1ec8bf9f479b61e20da5641e2a542fe77db9a598"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/crypto.d.ts": {
-        "version": "6b956acd0fa4df8f2723012d18498954438874cc63a0bd639dc470135a782101",
-        "signature": "6b956acd0fa4df8f2723012d18498954438874cc63a0bd639dc470135a782101"
+        "version": "1ceaa2057744c0173e45c1d8347ba5b0ab8cbae8c969e2f7e46734e062104a76",
+        "signature": "1ceaa2057744c0173e45c1d8347ba5b0ab8cbae8c969e2f7e46734e062104a76"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/dgram.d.ts": {
         "version": "3d1cb0eaae19fa89fe381bba6d5a149d1bf34efc0134220879f57e2061732a6d",
         "signature": "3d1cb0eaae19fa89fe381bba6d5a149d1bf34efc0134220879f57e2061732a6d"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/dns.d.ts": {
-        "version": "896cd7d58e9d832392a6e374a8f8b64f142089b4d2678a2c90fd8d1d49128677",
-        "signature": "896cd7d58e9d832392a6e374a8f8b64f142089b4d2678a2c90fd8d1d49128677"
+        "version": "05e732266b5a36789fd9eb846b1f45fec1b6e318b740e3f20fc22fd95f9ebf31",
+        "signature": "05e732266b5a36789fd9eb846b1f45fec1b6e318b740e3f20fc22fd95f9ebf31"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/domain.d.ts": {
         "version": "ae3487bdb9b50c1d8bbeb6b55c8b2b9aa79bbc46d7afbc3483169ad8750c4304",
@@ -194,8 +198,8 @@
         "signature": "4a419878f025046ff6748d073123b0451849f83b7dbca907037a53e3eaa9bbbb"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/fs.d.ts": {
-        "version": "351eba3b2cf940c98b87cc72014a66cc5f10373bf44fbdc525fae1b22d984aab",
-        "signature": "351eba3b2cf940c98b87cc72014a66cc5f10373bf44fbdc525fae1b22d984aab"
+        "version": "6fb7f35ccf86d2bd2e1b5b1a6f481206f095a78f62218c62776614af5b8c14a1",
+        "signature": "6fb7f35ccf86d2bd2e1b5b1a6f481206f095a78f62218c62776614af5b8c14a1"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/http.d.ts": {
         "version": "896c59370c35abd48415751b78ce927eda463a20f1a3921bf3dc4962504ec06e",
@@ -338,8 +342,8 @@
         "signature": "60435ddc72955e6863d8a6c5cee1a30e4ce2df6b6e6b568d343b6c194f0754a3"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/binding-config.d.ts": {
-        "version": "458989512032f047be8b25e380c6f8141a9b3a286410e96b09ef0ee20c499f72",
-        "signature": "458989512032f047be8b25e380c6f8141a9b3a286410e96b09ef0ee20c499f72"
+        "version": "bab66d53a6740ceb64f736b1f7fe8f3b6bebc35226da79b057f0d2634b44422d",
+        "signature": "bab66d53a6740ceb64f736b1f7fe8f3b6bebc35226da79b057f0d2634b44422d"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/context-observer.d.ts": {
         "version": "d140549fe13949440732a31fe1d3fafb12f7d67b50b8dabf15955bd803ff676e",
@@ -350,8 +354,8 @@
         "signature": "ca95d7fbe9e18e923dd11114f8c3b13679334ec7d161a841f5ef6aa8393c8ce8"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/context.d.ts": {
-        "version": "bad87f4a9b1a40b288ba20074a88dcba1f1b77f56e268edcd999661761b2accb",
-        "signature": "bad87f4a9b1a40b288ba20074a88dcba1f1b77f56e268edcd999661761b2accb"
+        "version": "dd13e5c888b6ac59609c88ad38e4fdf4014b041c6881286f8aad0beded36e3ea",
+        "signature": "dd13e5c888b6ac59609c88ad38e4fdf4014b041c6881286f8aad0beded36e3ea"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/provider.d.ts": {
         "version": "a969127a1cbfdf769c5c8963388a8cf50433d9128e4df5e0c39cb6b67d53f13f",
@@ -370,8 +374,8 @@
         "signature": "f67d9dc69c983ca9256abd1ade5a5ecef04a9fa863a6f5b80edf8b7729a89e02"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/invocation.d.ts": {
-        "version": "6303fd9957690538be1c7030d417ff7882d083902f7adc75d28c3b128df041eb",
-        "signature": "6303fd9957690538be1c7030d417ff7882d083902f7adc75d28c3b128df041eb"
+        "version": "eff85c01382c67df1bda2a3ae314873452017e99964d1d153a954e534eb014a2",
+        "signature": "eff85c01382c67df1bda2a3ae314873452017e99964d1d153a954e534eb014a2"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/interceptor-chain.d.ts": {
         "version": "9601215f69bb3aa6ce012ce4fb469b5a15c1ba9d0b28fc51c4d2c218b18adf32",
@@ -382,12 +386,12 @@
         "signature": "adffde720aadda9d400816641aa1acfac888ed3e987fc5fc1533d575bdb24c14"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/interceptor.d.ts": {
-        "version": "25452e34aebcc5592c92eb7e21bbcc2edc977b944567bfdf4c470c3362bec257",
-        "signature": "25452e34aebcc5592c92eb7e21bbcc2edc977b944567bfdf4c470c3362bec257"
+        "version": "0cd069df78e1224b0a3f158b7c42f455b65073f9b79c0ec1f05ebed120176637",
+        "signature": "0cd069df78e1224b0a3f158b7c42f455b65073f9b79c0ec1f05ebed120176637"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/inject-config.d.ts": {
-        "version": "8fd527c68178be836229da47dec24826c93ef595b0c8a3487c69b455f032869f",
-        "signature": "8fd527c68178be836229da47dec24826c93ef595b0c8a3487c69b455f032869f"
+        "version": "34c65274418bd2c3ab2b311744266c64f1e18bc53779ae235c0af6c7ca678e57",
+        "signature": "34c65274418bd2c3ab2b311744266c64f1e18bc53779ae235c0af6c7ca678e57"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/keys.d.ts": {
         "version": "1ae2f1f9d245165840c2f66d07255df0e2b2ff2f8f1dffa179812a6b2d3ee34c",
@@ -418,8 +422,8 @@
         "signature": "35c7b62fcf0742d6535530b1d62c71f4ef260fd98e3f33da8e5d55fbd26e4dcd"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/dist/application.d.ts": {
-        "version": "a20333293df3bafa676c7d0d7c7c80c830632196ed4d6d5ee39c1dfba2cc46a0",
-        "signature": "a20333293df3bafa676c7d0d7c7c80c830632196ed4d6d5ee39c1dfba2cc46a0"
+        "version": "a21dc6e578720d1d86e2daba05bdd7ce1a909b5b2510a2dec5ed570f892c30fa",
+        "signature": "a21dc6e578720d1d86e2daba05bdd7ce1a909b5b2510a2dec5ed570f892c30fa"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/dist/extension-point.d.ts": {
         "version": "c04a4db03bb5179bfb9b1a2b68f7e04523d11a70190bcf24c8652c12db3681d4",
@@ -430,8 +434,8 @@
         "signature": "f49fe7ea06a8a4043764bed876b173ba1f395ccc1f6b8b2561d76cde9a15a6a9"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/dist/keys.d.ts": {
-        "version": "6ec65bfa9b3e116116679f3e91a4d11ed0eaecc8f350da92087eb3f847856c91",
-        "signature": "6ec65bfa9b3e116116679f3e91a4d11ed0eaecc8f350da92087eb3f847856c91"
+        "version": "6900e2a34316587cb35c3377a9146e63651ce1cda54084fb160726c718970bd2",
+        "signature": "6900e2a34316587cb35c3377a9146e63651ce1cda54084fb160726c718970bd2"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/dist/index.d.ts": {
         "version": "e717e964125072453e87bc004b90bdc148ba26b0dc64a478042fbcb8eee04888",
@@ -441,25 +445,25 @@
         "version": "4fbf20a62369c951e219667ea93f8a5acd965f0fc7ca0c1a8a4ba9ae449157e0",
         "signature": "4fbf20a62369c951e219667ea93f8a5acd965f0fc7ca0c1a8a4ba9ae449157e0"
       },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts": {
-        "version": "17f3d6220389868346eb5484d13f79416ed00df289e475b760a76b1503acc279",
-        "signature": "17f3d6220389868346eb5484d13f79416ed00df289e475b760a76b1503acc279"
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts": {
+        "version": "a1997153147c92c7c0c5dca10a618274684d9848d359859df32022bde9f30e8b",
+        "signature": "a1997153147c92c7c0c5dca10a618274684d9848d359859df32022bde9f30e8b"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/application-metadata.booter.d.ts": {
-        "version": "19f7dd51583ea3e6625bad957343279dc55e40341a2be57db1614e73b1deb848",
-        "signature": "19f7dd51583ea3e6625bad957343279dc55e40341a2be57db1614e73b1deb848"
+        "version": "eb8fefedf7e1cd1ccbfe04978db9ea3c8c2e81ea1036dc9a6072c8b56acd2273",
+        "signature": "eb8fefedf7e1cd1ccbfe04978db9ea3c8c2e81ea1036dc9a6072c8b56acd2273"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts": {
-        "version": "056cbf47be2ea318cd6aa5a08157e2577572074c377acaa1def85eedad3266da",
-        "signature": "056cbf47be2ea318cd6aa5a08157e2577572074c377acaa1def85eedad3266da"
+        "version": "24e71de14279f811a15c7b6cd3e7ab3e775354723cfb1ca947c1821857fb40cc",
+        "signature": "24e71de14279f811a15c7b6cd3e7ab3e775354723cfb1ca947c1821857fb40cc"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/booter-utils.d.ts": {
         "version": "bec223bd0421f9954c05fa016fea5c31d9b600a289327320666302d648e76614",
         "signature": "bec223bd0421f9954c05fa016fea5c31d9b600a289327320666302d648e76614"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/controller.booter.d.ts": {
-        "version": "5c58e2384b3dfbfb28207b187578543e9254ca3af1ca888d7c18d432ec6e721c",
-        "signature": "5c58e2384b3dfbfb28207b187578543e9254ca3af1ca888d7c18d432ec6e721c"
+        "version": "5971478c2deb928de1677bf7aacf888293573df9ee9c99c1c70da990a206c831",
+        "signature": "5971478c2deb928de1677bf7aacf888293573df9ee9c99c1c70da990a206c831"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/dist/common-types.d.ts": {
         "version": "0696d35c89cfa9e3da9867f7b0482b281351bd2deac7ad687bc56bd7b40ec2de",
@@ -537,9 +541,13 @@
         "version": "5e1794981e6cccef0a823983af670d2138e2f798aae22b063444884fd1ce3ac8",
         "signature": "5e1794981e6cccef0a823983af670d2138e2f798aae22b063444884fd1ce3ac8"
       },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/transaction-mixin.d.ts": {
+        "version": "4e507449171a9c33c281bab99a4ccd400740a94301f53a502a3d69c774ce1eba",
+        "signature": "4e507449171a9c33c281bab99a4ccd400740a94301f53a502a3d69c774ce1eba"
+      },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/datasource.d.ts": {
-        "version": "c1c38bc9a76759d29b8940e574f61249f13844ac4865b90b84e286a16e582e5c",
-        "signature": "c1c38bc9a76759d29b8940e574f61249f13844ac4865b90b84e286a16e582e5c"
+        "version": "c8b8a2006c5071e86a85e30e81e93cd164f674ea7bd0bca3bb2d80d88a2f2329",
+        "signature": "c8b8a2006c5071e86a85e30e81e93cd164f674ea7bd0bca3bb2d80d88a2f2329"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/model.d.ts": {
         "version": "b7f796d10f51f8cab9e7f1fa5b0be92adbd6081458a356f24e9883cc33a7fbd3",
@@ -564,10 +572,6 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/scope.d.ts": {
         "version": "f855491e4d96d8d555e7de757e7205550594f2e874fd3520d6abb104a5009c67",
         "signature": "f855491e4d96d8d555e7de757e7205550594f2e874fd3520d6abb104a5009c67"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/transaction-mixin.d.ts": {
-        "version": "4e507449171a9c33c281bab99a4ccd400740a94301f53a502a3d69c774ce1eba",
-        "signature": "4e507449171a9c33c281bab99a4ccd400740a94301f53a502a3d69c774ce1eba"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/relation-mixin.d.ts": {
         "version": "655cc5cb031bed168c0b4f2133220792c4e7fecd53f19878b79dd3809d9f60f8",
@@ -670,8 +674,8 @@
         "signature": "c6a33ed15bf001fd20f463e0ea9ceb54ff74ac2b2201179555a79f3a32bc9f5a"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/dist/model.d.ts": {
-        "version": "787e2df5e713e28730bb65e030656d0385e27bfe3d39dbe3507ccc75f72dfcf5",
-        "signature": "787e2df5e713e28730bb65e030656d0385e27bfe3d39dbe3507ccc75f72dfcf5"
+        "version": "27936db53c6d61a9476482fed46ee3d8e228a30e57af23090b28723d89fe0849",
+        "signature": "27936db53c6d61a9476482fed46ee3d8e228a30e57af23090b28723d89fe0849"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/dist/connectors/connector.d.ts": {
         "version": "30250c910bedba94486ce095fafd31d156ba597281e0403fda08402ea6f952d1",
@@ -718,8 +722,8 @@
         "signature": "4c61ca1a931f18cd2d728ac82277a0f33f3f2e4d17a6e036773324350ab292eb"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/dist/mixins/repository.mixin.d.ts": {
-        "version": "ec27ef6d0d4cc9e34d97e92e7e0379b5f137a8eebb9b0cfcf0d1b89fb3d7fab6",
-        "signature": "ec27ef6d0d4cc9e34d97e92e7e0379b5f137a8eebb9b0cfcf0d1b89fb3d7fab6"
+        "version": "b2fc3623f5ed7996d1e16d6474d6f373b23742aba991f19e2b6afc93e1278f1e",
+        "signature": "b2fc3623f5ed7996d1e16d6474d6f373b23742aba991f19e2b6afc93e1278f1e"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/dist/mixins/index.d.ts": {
         "version": "825ce81429f76c8b4c0741fc2c63fcb724479857e2c73ded59e9ae6b5ad31561",
@@ -734,20 +738,20 @@
         "signature": "5bf00a02898fd8400d4c571883b94a4f6e7c4a76d3b85a892e1c2d6dc90ecf92"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/datasource.booter.d.ts": {
-        "version": "1dd0ecbc72d5ee1691036ac79c875ed3814e78a07a3542a5c34ce20744773553",
-        "signature": "1dd0ecbc72d5ee1691036ac79c875ed3814e78a07a3542a5c34ce20744773553"
+        "version": "636b275cc89048bc2c895282a21031d3e874d3af6f6705f0143f1a0f02082e27",
+        "signature": "636b275cc89048bc2c895282a21031d3e874d3af6f6705f0143f1a0f02082e27"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/interceptor.booter.d.ts": {
-        "version": "7ab044215775d33da4e13b5331a54765c5eec44f0d5c48dad9b9630b2fd9226a",
-        "signature": "7ab044215775d33da4e13b5331a54765c5eec44f0d5c48dad9b9630b2fd9226a"
+        "version": "2ce1c6a345f590425e6373f3b6a5ac173ee565b9f19169602da63014814adc8e",
+        "signature": "2ce1c6a345f590425e6373f3b6a5ac173ee565b9f19169602da63014814adc8e"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/lifecyle-observer.booter.d.ts": {
-        "version": "f9a1e4338f75845217f2a46ce149945f8c9fc8681d795a99fb526e80deb11fad",
-        "signature": "f9a1e4338f75845217f2a46ce149945f8c9fc8681d795a99fb526e80deb11fad"
+        "version": "0cedc0cea4e08fe273d770127800a2a52555e9897bf91540c5f0ce049aaf2a23",
+        "signature": "0cedc0cea4e08fe273d770127800a2a52555e9897bf91540c5f0ce049aaf2a23"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/repository.booter.d.ts": {
-        "version": "0676179dcc51e7088f9ad88f6d021430847285f6d84441df46e55fde018daf70",
-        "signature": "0676179dcc51e7088f9ad88f6d021430847285f6d84441df46e55fde018daf70"
+        "version": "f50e14d5905e982420dfce0aa6c033c6a508f8d1642ecc7262642590caf61ae4",
+        "signature": "f50e14d5905e982420dfce0aa6c033c6a508f8d1642ecc7262642590caf61ae4"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/service-proxy/dist/legacy-juggler-bridge.d.ts": {
         "version": "d785903bb59abaf29e31ac47fd27ce871eb9e75cb74bddd3c790e380edbf1422",
@@ -758,8 +762,8 @@
         "signature": "8fe402682d51e81f5c6396c0769314f40929213b3d46a213a379e78d6b53e9cc"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/service-proxy/dist/mixins/service.mixin.d.ts": {
-        "version": "f5fbd33cbb28aae87f0472493977da51a2620a91c0ce088072651e62d8f72878",
-        "signature": "f5fbd33cbb28aae87f0472493977da51a2620a91c0ce088072651e62d8f72878"
+        "version": "3e6c253940f42424eb085bbdce48a59db03a585fd4c8e423c8fa2c761c201898",
+        "signature": "3e6c253940f42424eb085bbdce48a59db03a585fd4c8e423c8fa2c761c201898"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/service-proxy/dist/mixins/index.d.ts": {
         "version": "ce83de640596c946ea046f6290e9c76452df7604c33873c99f93a9f3294974c9",
@@ -774,36 +778,36 @@
         "signature": "f0e53985c496ef246cf522d6dff4ba59a999ddb2e070299c63b546bf5eef8121"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/service.booter.d.ts": {
-        "version": "f54a0314df6510b032267f899eb7845e30c4319465e067880f0d9c79980af2b8",
-        "signature": "f54a0314df6510b032267f899eb7845e30c4319465e067880f0d9c79980af2b8"
+        "version": "f599b2f8ed004a1cabde8cb90b286fc4894101bf0aafe766b4e66ff33c6aeaec",
+        "signature": "f599b2f8ed004a1cabde8cb90b286fc4894101bf0aafe766b4e66ff33c6aeaec"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/index.d.ts": {
         "version": "c5e2d4ea4fdedf9231e343df511e45876a74ff1374877106b7c71fdc8dd50bb9",
         "signature": "c5e2d4ea4fdedf9231e343df511e45876a74ff1374877106b7c71fdc8dd50bb9"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/bootstrapper.d.ts": {
-        "version": "33c3bc67da787e0c431b2869c15acb3b3abd92a9d504b621001ac1d05fe2023f",
-        "signature": "33c3bc67da787e0c431b2869c15acb3b3abd92a9d504b621001ac1d05fe2023f"
+        "version": "e50630b7f842e85cd9f44558c90e3b5af6c6ab4827903aade304f67c66dbf23e",
+        "signature": "e50630b7f842e85cd9f44558c90e3b5af6c6ab4827903aade304f67c66dbf23e"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/boot.component.d.ts": {
         "version": "04da8497d8ff8fe0a0a96650c09519ff2e0546c8521aa81d8a84a9690b2e4e72",
         "signature": "04da8497d8ff8fe0a0a96650c09519ff2e0546c8521aa81d8a84a9690b2e4e72"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/keys.d.ts": {
-        "version": "3b8cb9894abbe2f4de351bda69bf8b79d492850a265e390dfc0daaa65a8e8037",
-        "signature": "3b8cb9894abbe2f4de351bda69bf8b79d492850a265e390dfc0daaa65a8e8037"
+        "version": "e8bb4f125923643827051054da4aa407b9c8b307ccdc0e78e8acab2876640ecb",
+        "signature": "e8bb4f125923643827051054da4aa407b9c8b307ccdc0e78e8acab2876640ecb"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/mixins/boot.mixin.d.ts": {
-        "version": "78909492f0c5049d5e9644cbc5a2309c11da302e316db15c92621ad1d1fbde30",
-        "signature": "78909492f0c5049d5e9644cbc5a2309c11da302e316db15c92621ad1d1fbde30"
+        "version": "6f3cd6e07c9300719dda6a0d718776df5caafebbb509e568265372402c6c7a24",
+        "signature": "6f3cd6e07c9300719dda6a0d718776df5caafebbb509e568265372402c6c7a24"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/mixins/index.d.ts": {
         "version": "4e3fac06511b62b58d9c835e9d7d7c45e2a4e002f63d93ca3d83c89c4071a054",
         "signature": "4e3fac06511b62b58d9c835e9d7d7c45e2a4e002f63d93ca3d83c89c4071a054"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/index.d.ts": {
-        "version": "147af078b4abe749ed80dc56ce64024ac1e766afa602da2e2ae9da792b7d83a4",
-        "signature": "147af078b4abe749ed80dc56ce64024ac1e766afa602da2e2ae9da792b7d83a4"
+        "version": "85a5a0f427e0d98ca647fd98821e944cbc4374c4a8eeddfbc53462d5ae4c7204",
+        "signature": "85a5a0f427e0d98ca647fd98821e944cbc4374c4a8eeddfbc53462d5ae4c7204"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/index.d.ts": {
         "version": "87e50640b7de4a65d5e0770d40d7e99a3ab5ca2c737a97ae7961a3298fe79f1d",
@@ -813,9 +817,29 @@
         "version": "904c99f7c89af1fe33d0f16bf574c633b7bd11399a485272e3a8daa3bdfa73b4",
         "signature": "904c99f7c89af1fe33d0f16bf574c633b7bd11399a485272e3a8daa3bdfa73b4"
       },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.keys.d.ts": {
-        "version": "62f8ed7f19e312190ac2ee55555e2ebe30bc211e78cd3d2caa4686993748bebd",
-        "signature": "62f8ed7f19e312190ac2ee55555e2ebe30bc211e78cd3d2caa4686993748bebd"
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts": {
+        "version": "751b8d5b85eee82bd38964a6ff43e89e61a586c64f653e3d1eb8fa7eb372ed30",
+        "signature": "751b8d5b85eee82bd38964a6ff43e89e61a586c64f653e3d1eb8fa7eb372ed30"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/build-schema.d.ts": {
+        "version": "ee876c1d494a5b7e8efc08502ae60f5887601ac52633067ba3a0ed0286a2b239",
+        "signature": "ee876c1d494a5b7e8efc08502ae60f5887601ac52633067ba3a0ed0286a2b239"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/keys.d.ts": {
+        "version": "40f1c6069e2c501183b1ce6d106e24f8383e01c4398e30abfeb7df55eaa258dc",
+        "signature": "40f1c6069e2c501183b1ce6d106e24f8383e01c4398e30abfeb7df55eaa258dc"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/filter-json-schema.d.ts": {
+        "version": "3e34b7bd78c2bc5faf71be3d335ed455a0266aa7943db33f13f4b65be3e51d63",
+        "signature": "3e34b7bd78c2bc5faf71be3d335ed455a0266aa7943db33f13f4b65be3e51d63"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/index.d.ts": {
+        "version": "3ee28fa10f3ac8571b746e16c0fc50a53179538a68828b3e065726376edbf12e",
+        "signature": "3ee28fa10f3ac8571b746e16c0fc50a53179538a68828b3e065726376edbf12e"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts": {
+        "version": "3831721a3849b7a85f9382739ae7b8561d1e37d4ae8156a6619731380e3c0ebd",
+        "signature": "3831721a3849b7a85f9382739ae7b8561d1e37d4ae8156a6619731380e3c0ebd"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/openapi3-ts/dist/model/specificationextension.d.ts": {
         "version": "9508fcc6616ea31bf848463f161571bcb0c8726b267a43e231f21fca775007e7",
@@ -845,21 +869,53 @@
         "version": "55b0987723fe57b0a8756299005ff218eefe1772d1215c68c20894aad5074453",
         "signature": "55b0987723fe57b0a8756299005ff218eefe1772d1215c68c20894aad5074453"
       },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/dist/openapi-v3-spec-types.d.ts": {
-        "version": "eb884e63527fda9cae78536626fe1b64efa127e5ffd8b8d4c4569cd73b066038",
-        "signature": "eb884e63527fda9cae78536626fe1b64efa127e5ffd8b8d4c4569cd73b066038"
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts": {
+        "version": "3c84485e13929f840c00dc40054c059c9e51aefee2d625dd553deb2df9439fb9",
+        "signature": "3c84485e13929f840c00dc40054c059c9e51aefee2d625dd553deb2df9439fb9"
       },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/dist/index.d.ts": {
-        "version": "74e659fe1c1c0d6f4b6887d1191d624af237349395f161c3430e2c2ca9ec8b9b",
-        "signature": "74e659fe1c1c0d6f4b6887d1191d624af237349395f161c3430e2c2ca9ec8b9b"
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts": {
+        "version": "80e45915724172d5fba4e4d1901e9ef39f9bd4f5614f6f28ab4dcfa2fc2cb09a",
+        "signature": "80e45915724172d5fba4e4d1901e9ef39f9bd4f5614f6f28ab4dcfa2fc2cb09a"
       },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts": {
-        "version": "cd6d1e679a7247e9d537a6873df24f65cac97564034cbd5f9259441c00539201",
-        "signature": "cd6d1e679a7247e9d537a6873df24f65cac97564034cbd5f9259441c00539201"
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts": {
+        "version": "c448be29d6853ccc6dddd348100cca9c2d052098cfae02a20b25e2120983795a",
+        "signature": "c448be29d6853ccc6dddd348100cca9c2d052098cfae02a20b25e2120983795a"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/api.decorator.d.ts": {
+        "version": "541cbbabefb3d32b5b598cc84ff3fe8dbeb1531bbe2c2c2704975f8cea068c0a",
+        "signature": "541cbbabefb3d32b5b598cc84ff3fe8dbeb1531bbe2c2c2704975f8cea068c0a"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/operation.decorator.d.ts": {
+        "version": "8f4a756abdf2a1476ab371227b87309fb8a0b4aee707bbdbd89ce56f103a8b41",
+        "signature": "8f4a756abdf2a1476ab371227b87309fb8a0b4aee707bbdbd89ce56f103a8b41"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/parameter.decorator.d.ts": {
+        "version": "8eae70076e8fe30fe90997bdfac3a7374cf2d459a868eebf230334ed7951c509",
+        "signature": "8eae70076e8fe30fe90997bdfac3a7374cf2d459a868eebf230334ed7951c509"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/request-body.decorator.d.ts": {
+        "version": "ce55184f2ed85d2a8f59e2f69875c0a9ba7b324953a139d9722781a3ced32a2f",
+        "signature": "ce55184f2ed85d2a8f59e2f69875c0a9ba7b324953a139d9722781a3ced32a2f"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/index.d.ts": {
+        "version": "b4b9b9a1948164cfc544e290680ff896bff853badc622f8bcc589b3b838992ce",
+        "signature": "b4b9b9a1948164cfc544e290680ff896bff853badc622f8bcc589b3b838992ce"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/filter-schema.d.ts": {
+        "version": "15fb465ea4e2696d4f572e853f4de9645044aa7d916e223de41fe3968ff58089",
+        "signature": "15fb465ea4e2696d4f572e853f4de9645044aa7d916e223de41fe3968ff58089"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/index.d.ts": {
+        "version": "53a6e0fda7d79d97853beaf605be799104a74bf0f42112b9a84fa5bdf237f9ac",
+        "signature": "53a6e0fda7d79d97853beaf605be799104a74bf0f42112b9a84fa5bdf237f9ac"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts": {
+        "version": "6d49733ea22d9eb5f643881d0abb64f6a4daef82d21b79512ddfb227ce3b1187",
+        "signature": "6d49733ea22d9eb5f643881d0abb64f6a4daef82d21b79512ddfb227ce3b1187"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/ajv/lib/ajv.d.ts": {
-        "version": "2ededed48e7d88b78ed7d0212b78aa46c2c4ea96109f38b54185583db888baa9",
-        "signature": "2ededed48e7d88b78ed7d0212b78aa46c2c4ea96109f38b54185583db888baa9"
+        "version": "b040cc8b4fd1b9d0a74b4dad292fb1554c66ccef626abca4798f532d084a3975",
+        "signature": "b040cc8b4fd1b9d0a74b4dad292fb1554c66ccef626abca4798f532d084a3975"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/connect/index.d.ts": {
         "version": "c3be42b83b5f57ae2f65280fa395f6d31f61304ac1a29b7b406b6a0e71da8c82",
@@ -894,32 +950,32 @@
         "signature": "a6742e25ac12860727c22a379707e050a126c48c4dd98ddd795a3a33dd0a63c7"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts": {
-        "version": "647929ec4a6513c46a20cd6b036a1b6ab2f8fe19484ef54bbb80b6d40b00a677",
-        "signature": "647929ec4a6513c46a20cd6b036a1b6ab2f8fe19484ef54bbb80b6d40b00a677"
+        "version": "e333b75df3b68403aaebe09503869c9cfa1f70489698735c82a083e1c1be3045",
+        "signature": "e333b75df3b68403aaebe09503869c9cfa1f70489698735c82a083e1c1be3045"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/route-entry.d.ts": {
-        "version": "66094b67be1036b5120b032655f3e2fccb2c5a088a34d81d5795f2ca48876a71",
-        "signature": "66094b67be1036b5120b032655f3e2fccb2c5a088a34d81d5795f2ca48876a71"
+        "version": "9a596606368fa6a60d9e5b829f43bbb8b788677d1da3933152fd5fc591f8f35f",
+        "signature": "9a596606368fa6a60d9e5b829f43bbb8b788677d1da3933152fd5fc591f8f35f"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/base-route.d.ts": {
-        "version": "8c68e7afcd362367aa2216fa6a07cbb0ac37606303191e2506d2bc53693bea9e",
-        "signature": "8c68e7afcd362367aa2216fa6a07cbb0ac37606303191e2506d2bc53693bea9e"
+        "version": "d9c7539f7e60fea88b8a7a4af465ff52c7cd9d3eca1d4ca7dd628a0e9191a48a",
+        "signature": "d9c7539f7e60fea88b8a7a4af465ff52c7cd9d3eca1d4ca7dd628a0e9191a48a"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/controller-route.d.ts": {
-        "version": "5920132ce92536150956a2764f209c1fad515ba96d59cd42f16697d33af09271",
-        "signature": "5920132ce92536150956a2764f209c1fad515ba96d59cd42f16697d33af09271"
+        "version": "19dc33acb630c09893a03500442c542976c8194a3f6a51256180413ea5d7ed14",
+        "signature": "19dc33acb630c09893a03500442c542976c8194a3f6a51256180413ea5d7ed14"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/handler-route.d.ts": {
-        "version": "3b2746adf00f880172fe0bf44aa22f363105940830d635698f276f23924640fb",
-        "signature": "3b2746adf00f880172fe0bf44aa22f363105940830d635698f276f23924640fb"
+        "version": "ec339e72020f698d34f919697d84ecf0215c810f471d84fb7e3ff30154a84e5a",
+        "signature": "ec339e72020f698d34f919697d84ecf0215c810f471d84fb7e3ff30154a84e5a"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/router-spec.d.ts": {
-        "version": "058666efd004f53924ccbd444d7f5604f5d46cc5dfadb00f43ac9bc63fd7ea23",
-        "signature": "058666efd004f53924ccbd444d7f5604f5d46cc5dfadb00f43ac9bc63fd7ea23"
+        "version": "35fe3b683af14d3a28f91ddb985a5eb0b1aba18b7a424091d7ef163bdf8fd297",
+        "signature": "35fe3b683af14d3a28f91ddb985a5eb0b1aba18b7a424091d7ef163bdf8fd297"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/external-express-routes.d.ts": {
-        "version": "5055ef890ee74dfb4820d3a3ff9a1f68adf0f53150017f34be49f994a0dc7645",
-        "signature": "5055ef890ee74dfb4820d3a3ff9a1f68adf0f53150017f34be49f994a0dc7645"
+        "version": "149be8a936d3f84e14eeb2c1575aabef26cf56c5c18ee295d0eb966fddfb93fd",
+        "signature": "149be8a936d3f84e14eeb2c1575aabef26cf56c5c18ee295d0eb966fddfb93fd"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/express/index.d.ts": {
         "version": "434d7d3188d85bd46c64dcc8268422ffdfdd19fdbc98ec01446d650414fcaa0b",
@@ -942,12 +998,12 @@
         "signature": "bacd29cf2a5a2829856d37f47173dfb7e26c396845e61e0802204cba3e2560f5"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/body-parsers/types.d.ts": {
-        "version": "22ba2520d1ec8583fb611b837d2cbbd10c0ca6fd32e8070f848c68ee3e0610c5",
-        "signature": "22ba2520d1ec8583fb611b837d2cbbd10c0ca6fd32e8070f848c68ee3e0610c5"
+        "version": "71b967157f07c931434cf32a4bb4628c6e8886a8e54d391870e2fb3bd6222ffe",
+        "signature": "71b967157f07c931434cf32a4bb4628c6e8886a8e54d391870e2fb3bd6222ffe"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/body-parsers/body-parser.d.ts": {
-        "version": "8d6b1ce7aec415bb84c7bbb12d14ff6f23cbdf9769326e8ccb4968d401a6e22a",
-        "signature": "8d6b1ce7aec415bb84c7bbb12d14ff6f23cbdf9769326e8ccb4968d401a6e22a"
+        "version": "7c25cbbfb9f24679112a0913c28bc23546e18272d70ab0ecf5864447d2844309",
+        "signature": "7c25cbbfb9f24679112a0913c28bc23546e18272d70ab0ecf5864447d2844309"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/body-parsers/body-parser.json.d.ts": {
         "version": "9cb707e7d617d67a5a8d7aa94fcc8356d8d0d31167c292e45ef8071e28797aa7",
@@ -973,89 +1029,25 @@
         "version": "101758f8c05a0bbc9154fa01dd024e84d4ae12f7299552ed47c343b04afb1c5d",
         "signature": "101758f8c05a0bbc9154fa01dd024e84d4ae12f7299552ed47c343b04afb1c5d"
       },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts": {
-        "version": "751b8d5b85eee82bd38964a6ff43e89e61a586c64f653e3d1eb8fa7eb372ed30",
-        "signature": "751b8d5b85eee82bd38964a6ff43e89e61a586c64f653e3d1eb8fa7eb372ed30"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/build-schema.d.ts": {
-        "version": "fbeacb1ca46033cbff1627e47436fef7c814f09219943e1e8d9b5946c7f7a975",
-        "signature": "fbeacb1ca46033cbff1627e47436fef7c814f09219943e1e8d9b5946c7f7a975"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/keys.d.ts": {
-        "version": "cf1fa3ee7dd8945c99f0f10287f0147c1717e711efbfe1285702b05b7932753d",
-        "signature": "cf1fa3ee7dd8945c99f0f10287f0147c1717e711efbfe1285702b05b7932753d"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/filter-json-schema.d.ts": {
-        "version": "3e34b7bd78c2bc5faf71be3d335ed455a0266aa7943db33f13f4b65be3e51d63",
-        "signature": "3e34b7bd78c2bc5faf71be3d335ed455a0266aa7943db33f13f4b65be3e51d63"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/index.d.ts": {
-        "version": "3ee28fa10f3ac8571b746e16c0fc50a53179538a68828b3e065726376edbf12e",
-        "signature": "3ee28fa10f3ac8571b746e16c0fc50a53179538a68828b3e065726376edbf12e"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts": {
-        "version": "3831721a3849b7a85f9382739ae7b8561d1e37d4ae8156a6619731380e3c0ebd",
-        "signature": "3831721a3849b7a85f9382739ae7b8561d1e37d4ae8156a6619731380e3c0ebd"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts": {
-        "version": "1a0b8aebb11b978cdd3fc851bebb8f4d319fb5fe4686d1529d743b946dd58c7f",
-        "signature": "1a0b8aebb11b978cdd3fc851bebb8f4d319fb5fe4686d1529d743b946dd58c7f"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts": {
-        "version": "45b50fe02c98e7b04450003cb720982ffd455e083027e27696933321363688d2",
-        "signature": "45b50fe02c98e7b04450003cb720982ffd455e083027e27696933321363688d2"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/api.decorator.d.ts": {
-        "version": "541cbbabefb3d32b5b598cc84ff3fe8dbeb1531bbe2c2c2704975f8cea068c0a",
-        "signature": "541cbbabefb3d32b5b598cc84ff3fe8dbeb1531bbe2c2c2704975f8cea068c0a"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/operation.decorator.d.ts": {
-        "version": "7ce4e8d3c4546cf6efa33175d10e8172d99b795915b046f4b2ad2af92c5a30a8",
-        "signature": "7ce4e8d3c4546cf6efa33175d10e8172d99b795915b046f4b2ad2af92c5a30a8"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/parameter.decorator.d.ts": {
-        "version": "8ec00678dfc67c819f9bd787c9bf30c46362ebe4f73040e1907f00ea240fce89",
-        "signature": "8ec00678dfc67c819f9bd787c9bf30c46362ebe4f73040e1907f00ea240fce89"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/request-body.decorator.d.ts": {
-        "version": "ddbf90d3a1ac58e9ad9a5c0cf3b2a08bce4b39deebb4fb0bdd52eb88d448c69f",
-        "signature": "ddbf90d3a1ac58e9ad9a5c0cf3b2a08bce4b39deebb4fb0bdd52eb88d448c69f"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/index.d.ts": {
-        "version": "b4b9b9a1948164cfc544e290680ff896bff853badc622f8bcc589b3b838992ce",
-        "signature": "b4b9b9a1948164cfc544e290680ff896bff853badc622f8bcc589b3b838992ce"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/filter-schema.d.ts": {
-        "version": "fffcdbe691efaca132d02ca62e0f0601999e0b98c95d38802dcd8f761744c84a",
-        "signature": "fffcdbe691efaca132d02ca62e0f0601999e0b98c95d38802dcd8f761744c84a"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/index.d.ts": {
-        "version": "20576fbd81e66e01121edbf7da53622b13bec57e4544db58f6351d5909198f2e",
-        "signature": "20576fbd81e66e01121edbf7da53622b13bec57e4544db58f6351d5909198f2e"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts": {
-        "version": "6d49733ea22d9eb5f643881d0abb64f6a4daef82d21b79512ddfb227ce3b1187",
-        "signature": "6d49733ea22d9eb5f643881d0abb64f6a4daef82d21b79512ddfb227ce3b1187"
-      },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/http-handler.d.ts": {
-        "version": "62046084b1553fb1ce18feb9eb0de7f7111b0b7f330056a4b31a3f95aad054b5",
-        "signature": "62046084b1553fb1ce18feb9eb0de7f7111b0b7f330056a4b31a3f95aad054b5"
+        "version": "dd8b4401833223d2dbc316c7a3ad2212c0de8aaf7131f1ed197020acd12ce477",
+        "signature": "dd8b4401833223d2dbc316c7a3ad2212c0de8aaf7131f1ed197020acd12ce477"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/sequence.d.ts": {
         "version": "c46613166a97d1cd5beaa05891cce127c9e81efe6ee5054085acd4d4488c5941",
         "signature": "c46613166a97d1cd5beaa05891cce127c9e81efe6ee5054085acd4d4488c5941"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/rest.server.d.ts": {
-        "version": "fc7656bc771f912e7600815220b06c9a736f79ca783db390cee786d6c397c043",
-        "signature": "fc7656bc771f912e7600815220b06c9a736f79ca783db390cee786d6c397c043"
+        "version": "2dc239a8e167fc7a904d0431b0608c7f339ab7e35f4c0e314d5c3dd0a33bd9a4",
+        "signature": "2dc239a8e167fc7a904d0431b0608c7f339ab7e35f4c0e314d5c3dd0a33bd9a4"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/request-context.d.ts": {
         "version": "5335b63d70bca30a5062e1a3105f2acb1d8294133ebd518bab2c2c15df6a3fb1",
         "signature": "5335b63d70bca30a5062e1a3105f2acb1d8294133ebd518bab2c2c15df6a3fb1"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/redirect-route.d.ts": {
-        "version": "444a67e93f068a161f04e4b4440718934c01a4a89b38062185df53e9fd265b52",
-        "signature": "444a67e93f068a161f04e4b4440718934c01a4a89b38062185df53e9fd265b52"
+        "version": "50be2d86c7b8c5051731a57a00eb2ee017d55b4f8a3a13ffc7eb6497e48b1715",
+        "signature": "50be2d86c7b8c5051731a57a00eb2ee017d55b4f8a3a13ffc7eb6497e48b1715"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/rest-router.d.ts": {
         "version": "ba1304cc8d15a86d2320fedac704824b71fa11eac2ff4544758f821ef0cc4c86",
@@ -1078,8 +1070,8 @@
         "signature": "867a7b4aa08cc5e90b2b54394f1094161f1ea8038299a93de53ef26c4d771033"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/routing-table.d.ts": {
-        "version": "9b24c62bea06ebcc17d229f8835139656e166c58af501b81fa854b4815c3232b",
-        "signature": "9b24c62bea06ebcc17d229f8835139656e166c58af501b81fa854b4815c3232b"
+        "version": "31a3b7e66c470ca6a0e3396b5d15f7b30d4eb92305a76d7510d5d302013e9106",
+        "signature": "31a3b7e66c470ca6a0e3396b5d15f7b30d4eb92305a76d7510d5d302013e9106"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/route-sort.d.ts": {
         "version": "eeda33d6368be6990dac830564a7670122d4b30559c16562ed322dc3f7abfdb1",
@@ -1146,12 +1138,12 @@
         "signature": "3f99c016097f49ee63f01b34e6843b557c3adec2cf1a122d4d3e553880589b1a"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/keys.d.ts": {
-        "version": "344e77a72e26a1fca67d8bbef81fa6e7a0ec7b377e1e3a9b1c02be52e782996a",
-        "signature": "344e77a72e26a1fca67d8bbef81fa6e7a0ec7b377e1e3a9b1c02be52e782996a"
+        "version": "f314ae914a53cb86edf6a3563f9c6636e7fe09a4f2ed4f1a4c7487c2e232779c",
+        "signature": "f314ae914a53cb86edf6a3563f9c6636e7fe09a4f2ed4f1a4c7487c2e232779c"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/rest.application.d.ts": {
-        "version": "9ecd6d1a9e75a396fd5d22591104f400a7e544fbc3c5799ecdafc4c9631e8ba9",
-        "signature": "9ecd6d1a9e75a396fd5d22591104f400a7e544fbc3c5799ecdafc4c9631e8ba9"
+        "version": "313ca21474d21060cc5513c951df28fc2074732edb80764016d4ea8cd68992e4",
+        "signature": "313ca21474d21060cc5513c951df28fc2074732edb80764016d4ea8cd68992e4"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/rest.component.d.ts": {
         "version": "75afe0962d82be4b5c9d28832997ed7eaa62093fa3b640640e4a850cd9e0ddde",
@@ -1170,20 +1162,24 @@
         "signature": "1baf6f4649ff40b94725d519eef9701ed55d984241451e81435d8e8be39f391a"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/validation/request-body.validator.d.ts": {
-        "version": "60d58b6c0ba79da004715503799aff4b459da77a9ed360c8cfd41be84d1fe86a",
-        "signature": "60d58b6c0ba79da004715503799aff4b459da77a9ed360c8cfd41be84d1fe86a"
+        "version": "e7adf78049da0c0251795c77e51448496e6122fe83d7f368925feb5a9b06585f",
+        "signature": "e7adf78049da0c0251795c77e51448496e6122fe83d7f368925feb5a9b06585f"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/index.d.ts": {
-        "version": "6da8e7633299cfeb2b0695c93987b2b61aa94ecf10abc9f934f804c97f9609e9",
-        "signature": "6da8e7633299cfeb2b0695c93987b2b61aa94ecf10abc9f934f804c97f9609e9"
+        "version": "6d93d01d5151ad324e8a1623e77d2cb49a1986573cc6f5622d528cf6810f0b85",
+        "signature": "6d93d01d5151ad324e8a1623e77d2cb49a1986573cc6f5622d528cf6810f0b85"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/index.d.ts": {
         "version": "875b1fd98fd7fc2e2a58fbaf4621db2807b5f72626ea3ef48b22c2f409d1aacf",
         "signature": "875b1fd98fd7fc2e2a58fbaf4621db2807b5f72626ea3ef48b22c2f409d1aacf"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.component.d.ts": {
-        "version": "5f47a9c18727cdaec4b5f9e8974f6d5ccafaf74c6290056cf12070dcb62ec860",
-        "signature": "5f47a9c18727cdaec4b5f9e8974f6d5ccafaf74c6290056cf12070dcb62ec860"
+        "version": "bd31fafa74c805eb74619f8c46f6b611ae3d517293b401f972806afc650450c0",
+        "signature": "bd31fafa74c805eb74619f8c46f6b611ae3d517293b401f972806afc650450c0"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.keys.d.ts": {
+        "version": "2cf6cee7d866bb256a183649ae599c60ee004800b66c3398a0fa276e4c5b2564",
+        "signature": "2cf6cee7d866bb256a183649ae599c60ee004800b66c3398a0fa276e4c5b2564"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/index.d.ts": {
         "version": "1a3f74e7fa8c5269b8ee25a3eef29c40d23650bf9d33f95895945b7a3c78e3cb",
@@ -1225,17 +1221,9 @@
         "version": "356582901fa81ef02f806db1a2c1259ec2bab3f617ca194082c2e89eb1afdd08",
         "signature": "356582901fa81ef02f806db1a2c1259ec2bab3f617ca194082c2e89eb1afdd08"
       },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport/index.d.ts": {
-        "version": "d28897ce8805732025d37e0acb24accd2903396d5c6a880b1cc3c2307f5ba7a2",
-        "signature": "d28897ce8805732025d37e0acb24accd2903396d5c6a880b1cc3c2307f5ba7a2"
-      },
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/strategy-adapter.d.ts": {
-        "version": "f39ffd9b66bdc7c243a6bb2123ab41359a89b93e87e2030df5236ab16b5cf0fb",
-        "signature": "f39ffd9b66bdc7c243a6bb2123ab41359a89b93e87e2030df5236ab16b5cf0fb"
-      },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/index.d.ts": {
-        "version": "a951fd5eb4320239f092caf6de16bf86acf8763bda4fe02d29eb8aa8a62f479e",
-        "signature": "a951fd5eb4320239f092caf6de16bf86acf8763bda4fe02d29eb8aa8a62f479e"
+        "version": "cd76c13efd8037725323c64b89f6b19a4a38ae3a9d3b1869e1b33ddb066f7e7b",
+        "signature": "cd76c13efd8037725323c64b89f6b19a4a38ae3a9d3b1869e1b33ddb066f7e7b"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/index.d.ts": {
         "version": "c1b57e8e85579db3675a9f7a5983af198238c2f02079b6315d5f2ed76a4f0584",
@@ -1262,8 +1250,8 @@
         "signature": "4025cf62742c5bb3d383c8a62342481622c87e3397ea5e7b7baab18b9efd5798"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/lodash/ts3.1/common/array.d.ts": {
-        "version": "b6d3763d7f9ce84118df4340505c24384267ccb48fa8772852260cb5ed4617c2",
-        "signature": "b6d3763d7f9ce84118df4340505c24384267ccb48fa8772852260cb5ed4617c2"
+        "version": "73fb996a752650f39a705b3def90b6b999b630007f8680a5569c10e6b8aefe66",
+        "signature": "73fb996a752650f39a705b3def90b6b999b630007f8680a5569c10e6b8aefe66"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/lodash/ts3.1/common/collection.d.ts": {
         "version": "0c75b204aed9cf6ff1c7b4bed87a3ece0d9d6fc857a6350c0c95ed0c38c814e8",
@@ -1290,8 +1278,8 @@
         "signature": "00baffbe8a2f2e4875367479489b5d43b5fc1429ecb4a4cc98cfc3009095f52a"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/lodash/ts3.1/common/object.d.ts": {
-        "version": "d9e9cc5cc0bad6669e74bdbb8cd555c041d9c4f82886d6aef91ba42d1ac950b1",
-        "signature": "d9e9cc5cc0bad6669e74bdbb8cd555c041d9c4f82886d6aef91ba42d1ac950b1"
+        "version": "a46a28781991cd761431784ea72cb7772f4a9155a7ee78f0b040088e856ed9a2",
+        "signature": "a46a28781991cd761431784ea72cb7772f4a9155a7ee78f0b040088e856ed9a2"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/lodash/ts3.1/common/seq.d.ts": {
         "version": "3c92b6dfd43cc1c2485d9eba5ff0b74a19bb8725b692773ef1d66dac48cda4bd",
@@ -1318,8 +1306,8 @@
         "signature": "e53210698634c020f2bb3b17c155ab91f6cbcab9e26402e99aa88c14178bd875"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/uuid/interfaces.d.ts": {
-        "version": "82a32b2f8fb8b7c6a62f3129d1faec8f18dd04918cf86aa3962e52de6724ad89",
-        "signature": "82a32b2f8fb8b7c6a62f3129d1faec8f18dd04918cf86aa3962e52de6724ad89"
+        "version": "3ba72b1127de9897cf5b2de9be1d2d91166d1335a096435e59b0797745b7c3f1",
+        "signature": "3ba72b1127de9897cf5b2de9be1d2d91166d1335a096435e59b0797745b7c3f1"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/uuid/index.d.ts": {
         "version": "ad52430a0480fd221ff10281a93e3683cbc6666027e24aea148db93d732a68f7",
@@ -1381,12 +1369,12 @@
         "signature": "16b7fb094ffaa5d270f934e7406e8baee2f8245cfabf6dcc20f693389f005f56"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/superagent/index.d.ts": {
-        "version": "e8bd972c3895277d7d9e702262a0408fbe36bb69c733bf26f9f15c396cad34c5",
-        "signature": "e8bd972c3895277d7d9e702262a0408fbe36bb69c733bf26f9f15c396cad34c5"
+        "version": "dc5ff565b22046c7e0fe8d7dd3bbc1fa6926426a048975c6ef2856c846d67f6c",
+        "signature": "dc5ff565b22046c7e0fe8d7dd3bbc1fa6926426a048975c6ef2856c846d67f6c"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/supertest/index.d.ts": {
-        "version": "79e8fe7df47b9eee82aba6de491c17ed11759171ed0ee0d804e83971b2a17fc3",
-        "signature": "79e8fe7df47b9eee82aba6de491c17ed11759171ed0ee0d804e83971b2a17fc3"
+        "version": "02a185b5e8d74b38264ffb77baa99e83969ba558958df28f971528dcbdd94876",
+        "signature": "02a185b5e8d74b38264ffb77baa99e83969ba558958df28f971528dcbdd94876"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/testlab/dist/client.d.ts": {
         "version": "8798c3585d1bfd609f6b802f813536de0933c96c7af0a4a3c78a5a761271817d",
@@ -1433,16 +1421,16 @@
         "signature": "8db60cfc9bee37981b64c02e58ff9073edcb116507065947cee87bee58508bdc"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/testlab/dist/skip.d.ts": {
-        "version": "30653506ea8fa24069c56943841aa173d7e9c57abeb66d57bdd12a2d0b9c958e",
-        "signature": "30653506ea8fa24069c56943841aa173d7e9c57abeb66d57bdd12a2d0b9c958e"
+        "version": "71c85b35493110fcbf7fbd961e5df88e184991b4c9ecf6888e930ed7a8983b25",
+        "signature": "71c85b35493110fcbf7fbd961e5df88e184991b4c9ecf6888e930ed7a8983b25"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/testlab/dist/test-sandbox.d.ts": {
         "version": "c172d4e38c8c5e2b4877f61ee8ac2e5851c8eb7980cc32b93dbbe9f0f6fc0ec5",
         "signature": "c172d4e38c8c5e2b4877f61ee8ac2e5851c8eb7980cc32b93dbbe9f0f6fc0ec5"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/testlab/dist/to-json.d.ts": {
-        "version": "9b5efec931d27fad6f57fcfea509985beeb578b8e2152738c4acd7bdb7f4c132",
-        "signature": "9b5efec931d27fad6f57fcfea509985beeb578b8e2152738c4acd7bdb7f4c132"
+        "version": "d22280c29a0d4d6acba8968091ed9b772946c78e36d4b0cb7eca1803b8b8c2f0",
+        "signature": "d22280c29a0d4d6acba8968091ed9b772946c78e36d4b0cb7eca1803b8b8c2f0"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/testlab/dist/validate-api-spec.d.ts": {
         "version": "8730131999f563de6b559e35f6253007cd311e676e9d17999c9287dd3e11e618",
@@ -1493,8 +1481,8 @@
         "signature": "a9df1cf0cb778d5c2ae949476c235ff2664530d729e94e3df4a7440e3bbc061a"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/character.controller.ts": {
-        "version": "192b4563baeca0fabf900841c0711c073b54ccaddbc589a32b97d8204f313a1a",
-        "signature": "88aedd313480d4b70456f928350ff67dac450713e9aa59f6e0f95e576a363032"
+        "version": "99288c0a8fef4c96ee5ad4338d8a3f0eedea59a91f0deb9bdca5b6cec80a20eb",
+        "signature": "942798c2e19f153c8fcfc4653ed5860b099d30bfc28137dbf17d90900fcd12e3"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/ping.controller.ts": {
         "version": "470b5d86ecdb3c9a8a2fa8f91d4bdc321967327bad4ca27ce6c9ef32dd35c3c4",
@@ -1505,7 +1493,7 @@
         "signature": "388f03fa01a375478b8f6a9ca797001171d588c1133f92c4f8c2d15628234364"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/update-character.controller.ts": {
-        "version": "5c002a592e7982e9308c7be789101637eb84fd0fd0926206c61b8d6571e9b9aa",
+        "version": "f619750183d2618b8653d4b1cd8881fdb0ec9c8e4b67a76c589e8303a5cfb512",
         "signature": "5f7e8f516ac31ba5beae4565b4c1fa217e2439015e775cd673ff65222c828f0e"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/interceptors/authorize.interceptor.ts": {
@@ -1528,6 +1516,10 @@
         "version": "725d9be2fd48440256f4deb00649adffdbc5ecd282b09e89d4e200663792c34c",
         "signature": "725d9be2fd48440256f4deb00649adffdbc5ecd282b09e89d4e200663792c34c"
       },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/fs-extra/index.d.ts": {
+        "version": "02f8dc4777a4efb7efdc6613659540925b2a5660b483f9fa12cbc1b3ddef6050",
+        "signature": "02f8dc4777a4efb7efdc6613659540925b2a5660b483f9fa12cbc1b3ddef6050"
+      },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/minimatch/index.d.ts": {
         "version": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633",
         "signature": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633"
@@ -1543,6 +1535,10 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/on-finished/index.d.ts": {
         "version": "c69767317aec528b574762b18727db85eef7cf66f33617cc0ee905cbe5a43d97",
         "signature": "c69767317aec528b574762b18727db85eef7cf66f33617cc0ee905cbe5a43d97"
+      },
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport/index.d.ts": {
+        "version": "d28897ce8805732025d37e0acb24accd2903396d5c6a880b1cc3c2307f5ba7a2",
+        "signature": "d28897ce8805732025d37e0acb24accd2903396d5c6a880b1cc3c2307f5ba7a2"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport-http/index.d.ts": {
         "version": "07ffba02c6176ec93053908ed19f6de6d8cc18a1867ce26bdb3c47fbec1778d0",
@@ -1593,6 +1589,10 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/typescript/lib/lib.es2018.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/typescript/lib/lib.dom.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2133,6 +2133,7 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/inject-config.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/binding-key.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/inject.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -2242,20 +2243,20 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts": [
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/application-metadata.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2266,7 +2267,7 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/controller.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -2391,11 +2392,17 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/transaction-mixin.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/common.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/datasource.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/common.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/connector.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/model.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/events.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/transaction-mixin.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2436,11 +2443,6 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/model.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/persisted-model.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/query.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/transaction-mixin.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/common.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2715,8 +2717,8 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/dist/common-types.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/dist/repositories/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/dist/datasource.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/dist/repositories/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2748,7 +2750,7 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/datasource.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -2756,7 +2758,7 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/interceptor.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -2764,15 +2766,15 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/lifecyle-observer.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/repository.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2812,8 +2814,7 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/service.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/service-proxy/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -2834,7 +2835,7 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/bootstrapper.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2846,14 +2847,14 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/keys.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/bootstrapper.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/mixins/boot.mixin.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2868,7 +2869,7 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/boot.component.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/keys.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/mixins/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2881,9 +2882,39 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.keys.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.types.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/build-schema.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/keys.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/metadata/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/filter-json-schema.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/build-schema.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/keys.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/filter-json-schema.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2924,18 +2955,70 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/dist/openapi-v3-spec-types.d.ts": [
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/openapi3-ts/dist/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/dist/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/dist/openapi-v3-spec-types.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/dist/index.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/api.decorator.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/operation.decorator.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/parameter.decorator.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/request-body.decorator.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/api.decorator.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/operation.decorator.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/parameter.decorator.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/request-body.decorator.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/filter-schema.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/filter-schema.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -2996,7 +3079,7 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/ajv/lib/ajv.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/body-parser/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/node_modules/@types/express/index.d.ts",
@@ -3006,14 +3089,14 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/route-entry.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/base-route.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/route-entry.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
@@ -3021,7 +3104,7 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/controller-route.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/base-route.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
@@ -3029,19 +3112,19 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/handler-route.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/base-route.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/router-spec.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/external-express-routes.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/node_modules/@types/express/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/node_modules/@types/express-serve-static-core/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/serve-static/index.d.ts",
@@ -3082,7 +3165,7 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/body-parsers/types.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/express/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
@@ -3090,7 +3173,7 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/body-parsers/body-parser.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/body-parsers/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/express/index.d.ts",
@@ -3143,110 +3226,12 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/build-schema.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/keys.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/metadata/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/filter-json-schema.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/build-schema.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/keys.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/filter-json-schema.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/api.decorator.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/operation.decorator.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/parameter.decorator.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/request-body.decorator.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/api.decorator.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/operation.decorator.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/parameter.decorator.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/request-body.decorator.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/filter-schema.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/filter-schema.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/http-handler.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/rest.server.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/rest.server.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/express/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -3261,7 +3246,7 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/http-server/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/cors/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/node_modules/@types/express/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/node_modules/@types/express-serve-static-core/index.d.ts",
@@ -3285,9 +3270,9 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/redirect-route.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/request-context.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -3328,7 +3313,6 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/routing-table.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/controller-route.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/external-express-routes.d.ts",
@@ -3468,7 +3452,7 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/sequence.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/express/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
@@ -3477,7 +3461,7 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/rest.application.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/node_modules/@types/express-serve-static-core/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/serve-static/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/body-parsers/index.d.ts",
@@ -3511,7 +3495,7 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/validation/request-body.validator.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
@@ -3536,7 +3520,6 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/validation/request-body.validator.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/http-errors/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -3548,6 +3531,13 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.component.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.types.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.keys.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.component.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -3609,24 +3599,11 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/express/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/strategy-adapter.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/types.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/index.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/authentication.component.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/decorators/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/keys.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/services/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/strategy-adapter.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -4253,6 +4230,12 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/fs-extra/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/fs.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/minimatch/index.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -4271,6 +4254,11 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/on-finished/index.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/http.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/express/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -4305,6 +4293,10 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/typescript/lib/lib.es2018.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/typescript/lib/lib.dom.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -4845,6 +4837,7 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/inject-config.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/binding-key.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/dist/inject.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -4954,20 +4947,20 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts": [
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/application-metadata.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -4978,7 +4971,7 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/controller.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -5103,11 +5096,17 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/transaction-mixin.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/common.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/datasource.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/common.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/connector.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/model.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/events.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/transaction-mixin.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -5148,11 +5147,6 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/model.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/persisted-model.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/query.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/transaction-mixin.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/common.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -5427,8 +5421,8 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/dist/common-types.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/dist/repositories/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/dist/datasource.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/dist/repositories/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -5460,7 +5454,7 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/datasource.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -5468,7 +5462,7 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/interceptor.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -5476,15 +5470,15 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/lifecyle-observer.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/repository.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -5524,8 +5518,7 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/service.booter.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/service-proxy/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -5546,7 +5539,7 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/bootstrapper.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -5558,14 +5551,14 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/keys.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/bootstrapper.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/mixins/boot.mixin.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -5580,7 +5573,7 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/boot.component.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/keys.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/mixins/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -5593,9 +5586,39 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.keys.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.types.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/build-schema.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/keys.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/metadata/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/filter-json-schema.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/build-schema.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/keys.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/filter-json-schema.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -5636,18 +5659,70 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/dist/openapi-v3-spec-types.d.ts": [
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/openapi3-ts/dist/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/dist/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/dist/openapi-v3-spec-types.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/dist/index.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/api.decorator.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/operation.decorator.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/parameter.decorator.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/request-body.decorator.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/api.decorator.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/operation.decorator.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/parameter.decorator.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/request-body.decorator.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/filter-schema.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/filter-schema.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -5708,7 +5783,7 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/ajv/lib/ajv.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/body-parser/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/node_modules/@types/express/index.d.ts",
@@ -5718,14 +5793,14 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/route-entry.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/base-route.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/route-entry.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
@@ -5733,7 +5808,7 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/controller-route.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/base-route.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
@@ -5741,19 +5816,19 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/handler-route.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/base-route.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/router-spec.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/external-express-routes.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/node_modules/@types/express/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/node_modules/@types/express-serve-static-core/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/serve-static/index.d.ts",
@@ -5794,7 +5869,7 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/body-parsers/types.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/express/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
@@ -5802,7 +5877,7 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/body-parsers/body-parser.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/body-parsers/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/express/index.d.ts",
@@ -5855,110 +5930,12 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/build-schema.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/keys.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/metadata/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/filter-json-schema.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/build-schema.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/keys.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/filter-json-schema.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/api.decorator.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/operation.decorator.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/parameter.decorator.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/request-body.decorator.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/api.decorator.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/operation.decorator.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/parameter.decorator.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/request-body.decorator.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/filter-schema.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/filter-schema.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/http-handler.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/rest.server.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/rest.server.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/express/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -5973,7 +5950,7 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/http-server/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/cors/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/node_modules/@types/express/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/node_modules/@types/express-serve-static-core/index.d.ts",
@@ -5997,9 +5974,9 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/redirect-route.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/request-context.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -6040,7 +6017,6 @@
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/routing-table.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/controller-route.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/external-express-routes.d.ts",
@@ -6180,7 +6156,7 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/router/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/sequence.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/express/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
@@ -6189,7 +6165,7 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/rest.application.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/node_modules/@types/express-serve-static-core/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/serve-static/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/body-parsers/index.d.ts",
@@ -6223,7 +6199,7 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/validation/request-body.validator.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
@@ -6248,7 +6224,6 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/validation/request-body.validator.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/http-errors/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -6260,6 +6235,13 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.component.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.types.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.keys.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/context/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.component.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -6321,24 +6303,11 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport/index.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/express/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/strategy-adapter.d.ts": [
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/types.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/index.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/authentication.component.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/decorators/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/keys.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/services/index.d.ts",
-        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/strategy-adapter.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/types.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -6845,6 +6814,12 @@
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/fs-extra/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/fs.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/minimatch/index.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
@@ -6863,6 +6838,11 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/on-finished/index.d.ts": [
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/http.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/index.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport/index.d.ts": [
+        "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/express/index.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/util.d.ts",
         "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -6885,6 +6865,7 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/typescript/lib/lib.es2016.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/typescript/lib/lib.es2017.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/typescript/lib/lib.es2018.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/typescript/lib/lib.dom.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/typescript/lib/lib.es2015.core.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/typescript/lib/lib.es2015.collection.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/typescript/lib/lib.es2015.generator.d.ts",
@@ -6990,7 +6971,7 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/dist/keys.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/dist/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/core/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/interfaces.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/types.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/application-metadata.booter.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/base-artifact.booter.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/booters/booter-utils.d.ts",
@@ -7014,6 +6995,7 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository/dist/repositories/kv.repository.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/common.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/connector.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/transaction-mixin.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/datasource.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/model.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/query.d.ts",
@@ -7021,7 +7003,6 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/relation.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/kv-model.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/scope.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/transaction-mixin.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/relation-mixin.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/observer-mixin.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/loopback-datasource-juggler/types/validation-mixin.d.ts",
@@ -7083,7 +7064,12 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/dist/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/boot/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.types.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.keys.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/build-schema.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/keys.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/filter-json-schema.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/index.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/openapi3-ts/dist/model/specificationextension.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/openapi3-ts/dist/model/openapi.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/openapi3-ts/dist/model/server.d.ts",
@@ -7091,9 +7077,17 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/openapi3-ts/dist/dsl/openapibuilder.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/openapi3-ts/dist/dsl/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/openapi3-ts/dist/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/dist/openapi-v3-spec-types.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/dist/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3-types/index.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/types.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/api.decorator.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/operation.decorator.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/parameter.decorator.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/request-body.decorator.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/index.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/filter-schema.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/index.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/ajv/lib/ajv.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/connect/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/body-parser/index.d.ts",
@@ -7123,22 +7117,6 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/body-parsers/body-parser.stream.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/body-parsers/body-parser.raw.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/body-parsers/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/json-schema/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/build-schema.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/keys.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/filter-json-schema.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/dist/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/repository-json-schema/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/json-to-schema.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/controller-spec.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/api.decorator.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/operation.decorator.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/parameter.decorator.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/request-body.decorator.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/decorators/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/filter-schema.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/dist/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/openapi-v3/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/http-handler.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/sequence.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/rest.server.d.ts",
@@ -7176,6 +7154,7 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/dist/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.component.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/rest-explorer.keys.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/dist/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/rest-explorer/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/authentication.component.d.ts",
@@ -7186,8 +7165,6 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/services/token.service.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/services/user.service.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/services/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/strategy-adapter.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/dist/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@loopback/authentication/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/sequence.ts",
@@ -7253,7 +7230,6 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/__tests__/acceptance/home-page.acceptance.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/__tests__/acceptance/ping.controller.acceptance.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/admin.controller.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/character.controller.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/ping.controller.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/index.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/update-character.controller.ts",
@@ -7262,13 +7238,16 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/bcryptjs/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/debug/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/eslint-visitor-keys/index.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/fs-extra/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/minimatch/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/glob/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/mocha/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/on-finished/index.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport-http/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/type-is/index.d.ts"
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/type-is/index.d.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/character.controller.ts"
     ]
   },
-  "version": "3.5.2"
+  "version": "3.5.3"
 }
