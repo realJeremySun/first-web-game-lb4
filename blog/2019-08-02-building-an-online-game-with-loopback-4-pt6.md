@@ -73,7 +73,7 @@ create-react-app <your_project_name>
 
 If you go the the project you just created and run `npm start`, you will see a page like this:
 
-![default_page](/blog-assets/2019/08/building-online-game-pt6—react-default.jpg)
+![default_page](/blog-assets/2019/08/building-online-game-pt6-react-default.jpg)
 
 ### structure Designing
 
@@ -81,7 +81,7 @@ Before we start, we need to spend some time on project structure.
 
 In a React project, everything is [component](https://reactjs.org/docs/react-component.html). Your pages, navigation bar, input form, or even a button, all of them could be components. All of components are organized in a tree structure. Here is my project structure.
 
-![default_page](/blog-assets/2019/08/building-online-game-pt6—structure.jpg)
+![default_page](/blog-assets/2019/08/building-online-game-pt6-structure.jpg)
 
 Here is
 
