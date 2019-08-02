@@ -79,11 +79,13 @@ If you go the the project you just created and run `npm start`, you will see a p
 
 Before we start, we need to spend some time on project structure.
 
-In a React project, everything is [component](https://reactjs.org/docs/react-component.html). Your pages, navigation bar, input form, or even a button, all of them could be components. All of components are organized in a tree structure. Here is my project structure.
+In a React project, everything is [component](https://reactjs.org/docs/react-component.html). Your pages, navigation bar, input form, or even a button, all of them could be components. All of those components are organized in a tree structure. Here is my project structure.
 
 ![default_page](/blog-assets/2019/08/building-online-game-pt6-structure.jpg)
 
-Here is
+And here is my directory structure:
+
+![default_page](/blog-assets/2019/08/building-online-game-pt6-directory-structure.jpg)
 
 ### Applying This to Your Own Project
 
