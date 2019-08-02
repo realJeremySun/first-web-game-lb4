@@ -73,7 +73,7 @@ create-react-app <your_project_name>
 
 If you go the the project you just created and run `npm start`, you will see a page like this:
 
-![default_page](/blog-assets/2019/08/building-online-game-pt6—react_default.jpg)
+![default_page](/blog-assets/2019/08/building-online-game-pt6—react-default.jpg)
 
 ### structure Designing
 
