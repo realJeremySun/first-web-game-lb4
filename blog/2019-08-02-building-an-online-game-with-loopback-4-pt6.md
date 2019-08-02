@@ -81,11 +81,116 @@ Before we start, we need to spend some time on project structure.
 
 In a React project, everything is [component](https://reactjs.org/docs/react-component.html). Your pages, navigation bar, input form, or even a button, all of them could be components. All of those components are organized in a tree structure. Here is my project structure.
 
-![default_page](/blog-assets/2019/08/building-online-game-pt6-structure.jpg)
+![structure](/blog-assets/2019/08/building-online-game-pt6-structure.jpg)
 
 And here is my directory structure:
 
-![default_page](/blog-assets/2019/08/building-online-game-pt6-directory-structure.jpg)
+![directory](/blog-assets/2019/08/building-online-game-pt6-directory-structure.jpg)
+
+### App
+
+First open the `src/App.js` file. It will be the parent of all other componments.
+
+Change your `App.js` to `App.jsx`. It make our life easier to use `.jsx` in React.
+
+Then change your `App.jsx` to this:
+
+```jsx
+import React, { Component } from "react";
+import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
+import { NavBar } from "./components";
+import { Login, Signup, HomePage } from "./containers";
+import { userService, authenticationService } from "./services";
+import "./containers/style.css";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentUser: "",
+      data: {},
+      gear: {}
+    };
+    this.handelLogout = this.handelLogout.bind(this);
+    this.handelUserData = this.handelUserData.bind(this);
+  }
+  componentDidMount() {
+    this.handelUserData();
+  }
+
+  handelLogout() {
+    authenticationService.logout();
+    this.setState({ currentUser: "", data: {}, gear: {} });
+  }
+
+  handelUserData() {
+    const currentUser = localStorage.getItem("currentUser");
+    if (currentUser) {
+      this.setState({ currentUser });
+      userService.getUserData(currentUser, this);
+      userService.getGearData(currentUser, this);
+    }
+  }
+
+  render() {
+    const { gear, data, currentUser } = this.state;
+    return (
+      <div className="jumbotron">
+        <NavBar data={data} onLogout={this.handelLogout} />
+        <div className="container basic">
+          <div className="col-sm-8 col-sm-offset-2 basic">
+            <Router>
+              <div>
+                <Route
+                  exact
+                  path="/"
+                  render={props =>
+                    localStorage.getItem("currentUser") ? (
+                      <HomePage
+                        {...props}
+                        currentUser={currentUser}
+                        data={data}
+                        gear={gear}
+                        handelUserData={this.handelUserData}
+                      />
+                    ) : (
+                      <Redirect
+                        to={{
+                          pathname: "/login",
+                          state: { from: props.location }
+                        }}
+                      />
+                    )
+                  }
+                />
+                <Route
+                  path="/login"
+                  render={props => (
+                    <Login {...props} handelUserData={this.handelUserData} />
+                  )}
+                />
+                <Route path="/signup" component={Signup} />
+              </div>
+            </Router>
+          </div>
+        </div>
+        <div className="text-center">
+          <p>
+            <a href="https://loopback.io/">Powered by Loopback 4</a>
+          </p>
+          <p>
+            <a href="https://github.com/gobackhuoxing/first-web-game-lb4">
+              Github@gobackhuoxing
+            </a>
+          </p>
+        </div>
+      </div>
+    );
+  }
+}
+
+export { App };
+```
 
 ### Applying This to Your Own Project
 
