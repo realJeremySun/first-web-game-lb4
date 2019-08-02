@@ -1,24 +1,24 @@
 ---
 layout: post
-title: Building an Online Game With LoopBack 4 - Deploying our Application to Kubernetes on IBM Cloud (Part 5)
-date: 2019-07-24
+title: Building an Online Game With LoopBack 4 - Front-end with React (Part 6)
+date: 2019-08-02
 author: Wenbo Sun
-permalink: /strongblog/building-an-online-game-with-loopback-4-pt5/
+permalink: /strongblog/building-an-online-game-with-loopback-4-pt6/
 categories:
   - How-To
   - LoopBack
-published: true
+published: false
 ---
 
-## Part 5: Deploying our Application to Kubernetes on IBM Cloud
+## Part 6: Front-end with React
 
 ### In This Episode
 
-Now that our project has basic features that allow us to create our own characters and log in, it's time to deploy it to cloud! So, we will first run our project in Docker and then push it to Kubernetes cluster on IBM Cloud.
+Now our project is on IBM CLoud. But you may notice there is not anything that we can actually play with. It's just some APIs. How can we call it a game without front-end?
 
-Docker images are lightweight, portable, and self-sufficient. Once you create a Docker image, you can run it almost everywhere. On the other hand, Kubernetes will handle those high level concepts such as storage, network and scale-up.
+In this episode, I will build signup, login, and home pages with React.
 
-You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part5/firstgame) for the code from this episode.
+You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part6/firstgame) for the code from this episode.
 
 <!--more-->
 
@@ -28,7 +28,7 @@ In this series, I’m going to help you learn LoopBack 4 and how to use it to ea
 
 ### Previously on Building an Online Game With LoopBack 4
 
-In last episode, we covered how to combine your self-defined authorization strategies and services with `@loopback/authentication` and how to apply it to your API.
+In last episode, we covered how to run our project in Docker and push it to Kubernetes cluster on IBM Cloud.
 
 Here are the previous episodes:
 
@@ -36,8 +36,12 @@ Here are the previous episodes:
 - [Part 2: Generating Universally Unique ID and Managing Models Relationships](https://strongloop.com/strongblog/building-an-online-game-with-loopback-4-pt2/)
 - [Part 3: Customizing APIs in Controller](https://strongloop.com/strongblog/building-an-online-game-with-loopback-4-pt3/)
 - [Part 4: User Authentication and Role-Based Access Control](https://strongloop.com/strongblog/building-an-online-game-with-loopback-4-pt4/)
+- [Part 5: Deploying our Application to Kubernetes on IBM Cloud](https://strongloop.com/strongblog/building-an-online-game-with-loopback-4-pt5/)
 
 ### Prerequisites
+
+I am completely new to front-end world. So I took some online courses
+The reason I choose React as
 
 - [Docker](https://www.docker.com/)
 - [Kubernetes](https://kubernetes.io/)
