@@ -87,7 +87,7 @@ And here is my directory structure:
 
 ![directory](/blog-assets/2019/08/building-online-game-pt6-directory-structure.jpg)
 
-### App
+### `App.jsx`
 
 First open the `src/App.js` file. It will be the parent of all other componments.
 
@@ -191,6 +191,474 @@ class App extends Component {
 
 export { App };
 ```
+
+Here we will use a library called [react-router-dom](https://www.npmjs.com/package/react-router-dom). Simply run `npm install react-router-dom` to install it. This library allow us to navigate between different components.
+
+Let's go through this line by line.
+
+The first thing you can see is:
+
+```jsx
+this.state = {
+  currentUser: "",
+  data: {},
+  gear: {}
+};
+```
+
+This is the state of this componment. Because we are using `JWT` in back-end for loging. we need to store the token for future API calls. We alse need to store the basic user information, so we can display it somewhere.
+
+Then we have three functions:
+
+```jsx
+  componentDidMount() {
+    this.handelUserData();
+  }
+
+  handelLogout() {
+    authenticationService.logout();
+    this.setState({ currentUser: "", data: {}, gear: {} });
+  }
+
+  handelUserData() {
+    const currentUser = localStorage.getItem("currentUser");
+    if (currentUser) {
+      this.setState({ currentUser });
+      userService.getUserData(currentUser, this);
+      userService.getGearData(currentUser, this);
+    }
+  }
+```
+
+- `handelLogout` is a function to logout. It will remove our token from `localStorage` and user data from `state`.
+- `handelUserData` is a function to fetch user data from back-end and store the data in `state`.
+- `authenticationService` and `userService` are my self-defined services to do all of the API calls.
+- `componentDidMount` is a react build-in function that will be executed after the first render. I use it to get user data before page loading. You can check [here](https://www.tutorialspoint.com/reactjs/reactjs_component_life_cycle) for more information about React component life cycle.
+
+The `render` function defined how does our componment looks like. I have four children components here: `NavBar`, `HomePage`, `Login`, and `Signup`.
+
+We use `react-router-dom` for redirecting. I have three pages in my route:
+
+- Login("/login")
+- Signup("/signup")
+- HomePage("/")
+
+```jsx
+<Route
+  exact
+  path="/"
+  render={props =>
+    localStorage.getItem("currentUser") ? (
+      <HomePage
+        {...props}
+        currentUser={currentUser}
+        data={data}
+        gear={gear}
+        handelUserData={this.handelUserData}
+      />
+    ) : (
+      <Redirect
+        to={{
+          pathname: "/login",
+          state: { from: props.location }
+        }}
+      />
+    )
+  }
+/>
+```
+
+If we can find token in `localStorage`, we will go to `HomePage`, otherwise, we will go to `Login`. We can also pass data to children.
+
+You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/blob/part6/firstgame-frontend/src/App.jsx) for my code of `App.jsx`.
+
+### Containers
+
+A container is also a componment. It is alse a holder for other componments. We have three containers: `HomePage`, `Login`, `Signup`.
+
+Let's first creat a `containers` folder in `/src`.
+
+#### Login and Signup
+
+![login](/blog-assets/2019/08/building-online-game-pt6-login.jpg)
+
+This is my `Login.jsx`.
+
+```jsx
+import React, { Component } from "react";
+import { authenticationService } from "../services";
+
+class Login extends Component {
+  unmount = false;
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: "",
+      password: "",
+      error: "",
+      submitted: false,
+      loading: false,
+      shortPassword: false
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.unmount = true;
+  }
+
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const { email, password } = this.state;
+    const { handelUserData } = this.props;
+
+    this.setState({ submitted: true });
+    if (!(email && password)) {
+      return;
+    }
+    if (password.length < 8) {
+      this.setState({ shortPassword: true });
+      return;
+    }
+
+    this.setState({ loading: true, shortPassword: false });
+    authenticationService.login(email, password, this).then(
+      function() {
+        if (!this.unmount) this.setState({ loading: false });
+      }.bind(this)
+    );
+    handelUserData();
+  };
+
+  render() {
+    const {
+      email,
+      password,
+      error,
+      loading,
+      submitted,
+      shortPassword
+    } = this.state;
+    return (
+      <React.Fragment>
+        <h2>Login</h2>
+        {error && error.response.data.error.statusCode === 404 && (
+          <div className={"alert alert-danger"}>Email doesn't exist</div>
+        )}
+        {error && error.response.data.error.statusCode === 401 && (
+          <div className={"alert alert-danger"}>Password is incorrect</div>
+        )}
+        {error && error.response.data.error.statusCode === 422 && (
+          <div className={"alert alert-danger"}>
+            Email or Password is invalid
+          </div>
+        )}
+        <form name="form" onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              className="form-control"
+              name="email"
+              value={email}
+              onChange={this.handleChange}
+            />
+          </div>
+          {submitted && !email && (
+            <div className="alert alert-danger">Email is required</div>
+          )}
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              className="form-control"
+              name="password"
+              value={password}
+              onChange={this.handleChange}
+            />
+          </div>
+          {submitted && !password && (
+            <div className="alert alert-danger">Password is required</div>
+          )}
+          {submitted && shortPassword && (
+            <div className="alert alert-danger">
+              Password too short - minimum length is 8 characters
+            </div>
+          )}
+          <div className="form-group">
+            <button className="btn btn-primary" disabled={loading}>
+              Login
+            </button>
+          </div>
+          <div>
+            Don't have an account? <a href="/signup"> SignUp!</a>
+          </div>
+        </form>
+      </React.Fragment>
+    );
+  }
+}
+export { Login };
+```
+
+I have a input form to collect data from user and pass that data to back-end. After user hit the `Login` button, this `handleSubmit` function will be called.
+
+```jsx
+handleSubmit = e => {
+  e.preventDefault();
+  const { email, password } = this.state;
+  const { handelUserData } = this.props;
+
+  this.setState({ submitted: true });
+  if (!(email && password)) {
+    return;
+  }
+  if (password.length < 8) {
+    this.setState({ shortPassword: true });
+    return;
+  }
+
+  this.setState({ loading: true, shortPassword: false });
+  authenticationService.login(email, password, this).then(
+    function() {
+      if (!this.unmount) this.setState({ loading: false });
+    }.bind(this)
+  );
+  handelUserData();
+};
+```
+
+It basically validate all the user input and action. If everything looks good, it will pass user's email and password to back-end, otherwises, it will tell user there is something wrong.
+
+It also use `authenticationService` for login API call. We will talk about that later. The `Signup` page is almost the same. You can always check my repo for more details.
+
+### HomePage
+
+After login, the user will be navigate to `HomePage`.
+
+```jsx
+import React, { Component } from "react";
+import { Display, InitCharacter } from "../components";
+import "./style.css";
+
+class HomePage extends Component {
+  componentDidMount() {
+    const { handelUserData, data } = this.props;
+    if (!data) this.props.history.push("/login");
+    handelUserData();
+  }
+
+  render() {
+    const { data, gear, currentUser, handelUserData } = this.props;
+
+    return (
+      <React.Fragment>
+        <div className="basic">
+          {data.name !== "nousername" && (
+            <h2>
+              LV.{data.level} {data.name}
+            </h2>
+          )}
+          {data.name !== "nousername" && (
+            <Display className="basic" data={data} gear={gear} />
+          )}
+
+          {data.name === "nousername" && (
+            <InitCharacter
+              className="basic"
+              currentUser={currentUser}
+              data={data}
+              handelUserData={handelUserData}
+            />
+          )}
+        </div>
+      </React.Fragment>
+    );
+  }
+}
+
+export { HomePage };
+```
+
+We have two children componments in `HomePage`:
+
+- `InitCharacter` to create a new character if this is the user's first time login.
+- `Display` to display user's character information, if the user already have one.
+
+```jsx
+{
+  data.name !== "nousername" && (
+    <Display className="basic" data={data} gear={gear} />
+  );
+}
+
+{
+  data.name === "nousername" && (
+    <InitCharacter
+      className="basic"
+      currentUser={currentUser}
+      data={data}
+      handelUserData={handelUserData}
+    />
+  );
+}
+```
+
+We will store the user's information in the `state` of `App`. If user don't have a character name, we will show `Display` componment, otherwise, we will show `InitCharacter` componment.
+
+You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part6/firstgame-frontend/src/containers) for the code of `containers`.
+
+### Componments
+
+Create a `componment` folder in `src`. We will put all re-useble componments here.
+
+#### InitCharacter
+
+![init](/blog-assets/2019/08/building-online-game-pt6-init.jpg)
+
+```jsx
+import React, { Component } from "react";
+import { userService, gearList } from "../services";
+import "./style.css";
+
+class InitCharacter extends Component {
+  unmount = false;
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: "",
+      error: null,
+      submitted: false,
+      loading: false,
+      lastClick: null
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.unmount = true;
+  }
+
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  }
+
+  handleSubmit = e => {
+    e.preventDefault();
+    const { name, lastClick } = this.state;
+    const { currentUser, handelUserData } = this.props;
+
+    this.setState({ submitted: true });
+    if (!name && !lastClick) {
+      return;
+    }
+    this.setState({ loading: true });
+
+    let gear = {};
+    switch (lastClick.id) {
+      case "1":
+        gear = {
+          weapon: gearList.weapons.guideBookJunior,
+          armor: gearList.armors.silkRobe,
+          skill: gearList.skills.sacrifice
+        };
+        break;
+      case "2":
+        gear = {
+          weapon: gearList.weapons.surgicalDagger,
+          armor: gearList.armors.labCoat,
+          skill: gearList.skills.bloodLetting
+        };
+        break;
+      case "3":
+        gear = {
+          weapon: gearList.weapons.rustyShortSword,
+          armor: gearList.armors.chainArmor,
+          skill: gearList.skills.slap
+        };
+        break;
+      default:
+        break;
+    }
+
+    userService.initCharacter(currentUser, name, gear, this).then(function() {
+      handelUserData();
+    });
+  };
+
+  handelClick = e => {
+    const { lastClick } = this.state;
+    e.target.classList.toggle("open");
+    if (lastClick) lastClick.classList.toggle("open");
+    if (!this.unmount) this.setState({ lastClick: e.target });
+  };
+
+  render() {
+    const { name, submitted, loading } = this.state;
+    return (
+      <React.Fragment>
+        <div className="panels">
+          <div id="1" className="panel panel1" onClick={this.handelClick}>
+            <p className="classes">Demon Scholar</p>
+          </div>
+          <div id="2" className="panel panel2" onClick={this.handelClick}>
+            <p className="classes">Plague Doctor</p>
+          </div>
+          <div id="3" className="panel panel3" onClick={this.handelClick}>
+            <p className="classes knight">Knight of Madness</p>
+          </div>
+        </div>
+        <form name="form" onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <label className="text" htmlFor="name">
+              Character Name
+            </label>
+            <input
+              type="name"
+              className="form-control"
+              name="name"
+              value={name}
+              onChange={this.handleChange}
+            />
+            {submitted && !name && (
+              <div className="alert alert-danger">
+                Character name is required
+              </div>
+            )}
+          </div>
+          <div className="form-group button">
+            <button className="btn btn-primary button" disabled={loading}>
+              Start
+            </button>
+          </div>
+        </form>
+      </React.Fragment>
+    );
+  }
+}
+
+export { InitCharacter };
+```
+
+I have three classes for user to choose. If user click one of the classes, the `handelClick` function will store that one in `state`. Then we call `userService.initCharacter` to create a new character.
+
+#### Display
+
+If the user have one character, we will jump to `Display` page to show all of user information.
+
+![display](/blog-assets/2019/08/building-online-game-pt6-display.jpg)
 
 ### Applying This to Your Own Project
 
