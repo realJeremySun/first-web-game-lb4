@@ -1238,7 +1238,7 @@
         "signature": "ec419335f2bb174ac3a3c2f4a1059c94b4686825970ba43f171758b1cbb07236"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/authorization/types.ts": {
-        "version": "2ee2d42f380629f92fd32034ab2d55fdcc0b84a3a401435bcf8ad3756f2a873e",
+        "version": "718dffc6505f5e76bf3a6da16f88732e7e1a9554366989ec161069a5f853cd02",
         "signature": "cfb29264f5a50471ff5058dae035a2e4ad62a90d0f02942e079cc934a7a11819"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/authorization/keys.ts": {
@@ -1493,8 +1493,8 @@
         "signature": "388f03fa01a375478b8f6a9ca797001171d588c1133f92c4f8c2d15628234364"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/update-character.controller.ts": {
-        "version": "f619750183d2618b8653d4b1cd8881fdb0ec9c8e4b67a76c589e8303a5cfb512",
-        "signature": "5f7e8f516ac31ba5beae4565b4c1fa217e2439015e775cd673ff65222c828f0e"
+        "version": "2bc9dd5e266707c2879d5d9a3c7c443ad7e3759867cd293bcbcff1ba142d8869",
+        "signature": "3acfecc89703730ec308ee90890f66789c1e30f48b3c45e9b285e38d6a099528"
       },
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/interceptors/authorize.interceptor.ts": {
         "version": "f875e61c6ae8faa3d0a707f7e99ab3807abbc3ce4a09f42c16d7b8c23324304c",
@@ -7230,9 +7230,9 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/__tests__/acceptance/home-page.acceptance.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/__tests__/acceptance/ping.controller.acceptance.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/admin.controller.ts",
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/character.controller.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/ping.controller.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/index.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/update-character.controller.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/interceptors/authorize.interceptor.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/interceptors/index.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/bcryptjs/index.d.ts",
@@ -7246,7 +7246,7 @@
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/passport-http/index.d.ts",
       "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/node_modules/@types/type-is/index.d.ts",
-      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/character.controller.ts"
+      "/users/xiaocase/documents/github/first-web-game-lb4/firstgame/src/controllers/update-character.controller.ts"
     ]
   },
   "version": "3.5.3"

@@ -4,7 +4,11 @@ import { apiService } from "./APIServices";
 export const userService = {
   getUserData,
   getGearData,
-  initCharacter
+  changeCharacterName,
+  initCharacter,
+  changeWeapon,
+  changeArmor,
+  changeSkill
 };
 
 const axios = require("axios");
@@ -15,10 +19,9 @@ function getUserData(currentUser, self) {
       headers: { Authorization: `Bearer ${currentUser}` }
     })
     .then(function(response) {
-      //console.log(response.data);
       self.setState({ data: response.data });
     })
-    .catch(function(error) {
+    .catch(function() {
       authenticationService.logout();
     });
 }
@@ -29,46 +32,76 @@ function getGearData(currentUser, self) {
       headers: { Authorization: `Bearer ${currentUser}` }
     })
     .then(function(response) {
-      //console.log(response.data);
       self.setState({ gear: response.data });
     })
-    .catch(function(error) {
+    .catch(function() {
       authenticationService.logout();
     });
 }
 
-function initCharacter(currentUser, name, gear, self) {
-  const URL = apiService.changename + `?name=${name}`;
-  const header = {
-    Authorization: `Bearer ${currentUser}`
-  };
+function changeCharacterName(currentUser, name, self) {
   const data = {
     name: name
   };
-  console.log(URL);
-  console.log(currentUser);
-
   axios
     .patch(apiService.changename, data, {
       headers: { Authorization: `Bearer ${currentUser}` }
     })
-    .then(function(response) {
-      //console.log(response.data);
-      //self.setState({ gear: response.data });
+    .catch(function(error) {
+      if (error.response && error.response.data.error.statusCode === 401)
+        authenticationService.logout();
+      else if (!self.unmount) self.setState({ error });
+    });
+}
+
+function initCharacter(currentUser, name, gear, self) {
+  const data = {
+    name: name,
+    gear
+  };
+  return axios
+    .patch(apiService.initCharacter, data, {
+      headers: { Authorization: `Bearer ${currentUser}` }
     })
     .catch(function(error) {
-      //authenticationService.logout();
+      if (error.response && error.response.data.error.statusCode === 401)
+        authenticationService.logout();
+      else if (!self.unmount) self.setState({ error });
     });
-  //   axios
-  //     .patch(URL, header)
-  //     .then(function(response) {
-  //       console.log(response.data);
-  //       self.setState({ data: response.data });
-  //     })
-  //     .catch(function(error) {
-  //       authenticationService.logout();
-  //     })
-  //     .then(function() {
-  //       if (!self.unmount) self.setState({ loading: false });
-  //     });
+}
+
+function changeWeapon(currentUser, gear, self) {
+  axios
+    .patch(apiService.updateweapon, gear.weapon, {
+      headers: { Authorization: `Bearer ${currentUser}` }
+    })
+    .catch(function(error) {
+      if (error.response && error.response.data.error.statusCode === 401)
+        authenticationService.logout();
+      else if (!self.unmount) self.setState({ error });
+    });
+}
+
+function changeArmor(currentUser, gear, self) {
+  axios
+    .patch(apiService.updatearmor, gear.armor, {
+      headers: { Authorization: `Bearer ${currentUser}` }
+    })
+    .catch(function(error) {
+      if (error.response && error.response.data.error.statusCode === 401)
+        authenticationService.logout();
+      else if (!self.unmount) self.setState({ error });
+    });
+}
+
+function changeSkill(currentUser, gear, self) {
+  axios
+    .patch(apiService.updateskill, gear.skill, {
+      headers: { Authorization: `Bearer ${currentUser}` }
+    })
+    .catch(function(error) {
+      if (error.response && error.response.data.error.statusCode === 401)
+        authenticationService.logout();
+      else if (!self.unmount) self.setState({ error });
+    });
 }

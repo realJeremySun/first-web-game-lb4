@@ -28,6 +28,17 @@ import {inject, Getter} from '@loopback/core';
 import {MyUserProfile, PermissionKey} from '../authorization';
 import {authenticate, AuthenticationBindings} from '@loopback/authentication';
 
+interface NewChar {
+  name: string;
+  gear: Gear;
+}
+
+interface Gear {
+  weapon: Weapon;
+  armor: Armor;
+  skill: Skill;
+}
+
 export class UpdateCharacterController {
   constructor(
     @repository(CharacterRepository)
@@ -110,6 +121,43 @@ export class UpdateCharacterController {
     char.defence! += levels;
     await this.characterRepository!.updateById(currentUser.email, char);
     return char;
+  }
+
+  @patch('/updatecharacter/initCharacter', {
+    responses: {
+      '200': {
+        description: 'initCharacter',
+        content: {},
+      },
+    },
+  })
+  @authenticate('jwt', {
+    required: [PermissionKey.ViewOwnUser, PermissionKey.UpdateOwnUser],
+  })
+  async initCharacter(@requestBody() newChar: NewChar): Promise<NewChar> {
+    const currentUser = await this.getCurrentUser();
+    //equip new weapon
+    let char: Character = await this.characterRepository.findById(
+      currentUser.email,
+    );
+    console.log(newChar);
+    char.attack! += newChar.gear.weapon.attack!;
+    char.defence! += newChar.gear.weapon.defence!;
+    char.attack! += newChar.gear.armor.attack!;
+    char.defence! += newChar.gear.armor.defence!;
+    char.name = newChar.name;
+    await this.characterRepository.updateById(currentUser.email, char);
+    //console.log(await this.characterRepository.findById(currentUser.email));
+    await this.characterRepository
+      .weapon(currentUser.email)
+      .create(newChar.gear.weapon);
+    await this.characterRepository
+      .armor(currentUser.email)
+      .create(newChar.gear.armor);
+    await this.characterRepository
+      .skill(currentUser.email)
+      .create(newChar.gear.skill);
+    return newChar;
   }
 
   /**

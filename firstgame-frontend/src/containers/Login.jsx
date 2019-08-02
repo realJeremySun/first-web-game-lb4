@@ -31,7 +31,7 @@ class Login extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { email, password } = this.state;
-    const { onLogin } = this.props;
+    const { handelUserData } = this.props;
 
     this.setState({ submitted: true });
     if (!(email && password)) {
@@ -43,13 +43,12 @@ class Login extends Component {
     }
 
     this.setState({ loading: true, shortPassword: false });
-
     authenticationService.login(email, password, this).then(
       function() {
         if (!this.unmount) this.setState({ loading: false });
       }.bind(this)
     );
-    onLogin();
+    handelUserData();
   };
 
   render() {

@@ -100,7 +100,7 @@ class Display extends Component {
                     <Dropdown.Item eventKey="2"> {gear[2]}</Dropdown.Item>
                   )}
                   {gear[2] && gear[2] !== "no skill" && (
-                    <Dropdown.Item eventKey="1">{gear[1].name} </Dropdown.Item>
+                    <Dropdown.Item eventKey="1">{gear[2].name} </Dropdown.Item>
                   )}
                   {gear[2] && gear[2] !== "no skill" && (
                     <Dropdown.Item eventKey="1">

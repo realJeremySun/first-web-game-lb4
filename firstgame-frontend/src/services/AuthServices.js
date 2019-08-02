@@ -18,12 +18,10 @@ function login(email, password, self) {
   return axios
     .post(apiService.login, data, header)
     .then(function(response) {
-      //console.log(response.data.token);
       localStorage.setItem("currentUser", response.data.token);
       self.props.history.push("/");
     })
     .catch(function(error) {
-      //console.log("error");
       if (!self.unmount) self.setState({ error });
     });
 }
@@ -41,7 +39,6 @@ function signup(email, password, self) {
     .post(apiService.character, data, header)
     .then(function(response) {
       self.props.history.push("/login");
-      console.log(response);
     })
     .catch(function(error) {
       if (!self.unmount) self.setState({ error });

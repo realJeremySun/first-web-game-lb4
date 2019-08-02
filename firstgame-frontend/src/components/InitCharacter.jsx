@@ -31,54 +31,53 @@ class InitCharacter extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { name, lastClick } = this.state;
-    const { currentUser } = this.props;
-
-    //console.log(currentUser);
-    //console.log(data);
+    const { currentUser, handelUserData } = this.props;
 
     this.setState({ submitted: true });
     if (!name && !lastClick) {
       return;
     }
-
     this.setState({ loading: true });
-    console.log(lastClick.id);
 
     let gear = {};
-
     switch (lastClick.id) {
-      case 1:
+      case "1":
         gear = {
           weapon: gearList.weapons.guideBookJunior,
           armor: gearList.armors.silkRobe,
           skill: gearList.skills.sacrifice
         };
-      case 2:
+        break;
+      case "2":
         gear = {
           weapon: gearList.weapons.surgicalDagger,
           armor: gearList.armors.labCoat,
           skill: gearList.skills.bloodLetting
         };
-      case 3:
+        break;
+      case "3":
         gear = {
           weapon: gearList.weapons.rustyShortSword,
           armor: gearList.armors.chainArmor,
           skill: gearList.skills.slap
         };
         break;
+      default:
+        break;
     }
 
-    userService.initCharacter(currentUser, name, gear, this);
+    userService.initCharacter(currentUser, name, gear, this).then(function() {
+      handelUserData();
+    });
   };
 
   handelClick = e => {
     const { lastClick } = this.state;
     e.target.classList.toggle("open");
     if (lastClick) lastClick.classList.toggle("open");
-    this.setState({ lastClick: e.target });
+    if (!this.unmount) this.setState({ lastClick: e.target });
   };
 
-  handleSubmit() {}
   render() {
     const { name, submitted, loading } = this.state;
     return (

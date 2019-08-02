@@ -32,13 +32,10 @@ class App extends Component {
       userService.getUserData(currentUser, this);
       userService.getGearData(currentUser, this);
     }
-    console.log("onLogin called");
   }
 
   render() {
     const { gear, data, currentUser } = this.state;
-    //console.log(data);
-
     return (
       <div className="jumbotron">
         <NavBar data={data} onLogout={this.handelLogout} />
@@ -71,7 +68,7 @@ class App extends Component {
                 <Route
                   path="/login"
                   render={props => (
-                    <Login {...props} onLogin={this.handelUserData} />
+                    <Login {...props} handelUserData={this.handelUserData} />
                   )}
                 />
                 <Route path="/signup" component={Signup} />

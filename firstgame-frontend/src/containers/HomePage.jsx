@@ -10,8 +10,7 @@ class HomePage extends Component {
   }
 
   render() {
-    const { data, gear, currentUser } = this.props;
-    //console.log(data);
+    const { data, gear, currentUser, handelUserData } = this.props;
 
     return (
       <React.Fragment>
@@ -30,6 +29,7 @@ class HomePage extends Component {
               className="basic"
               currentUser={currentUser}
               data={data}
+              handelUserData={handelUserData}
             />
           )}
         </div>

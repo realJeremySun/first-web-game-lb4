@@ -7,7 +7,7 @@ export interface UserPermissionsFn {
   ): boolean;
 }
 
-export interface MyUserProfile  {
+export interface MyUserProfile {
   id: string;
   email: string;
   name: string;
@@ -42,7 +42,7 @@ export const UserRequestBody = {
   },
 };
 
-export interface Credential  {
+export interface Credential {
   email: string;
   password: string;
   permissions: PermissionKey[];
