@@ -14,7 +14,7 @@ published: false
 
 ### In This Episode
 
-Now our project is on IBM CLoud. But you may notice there is not anything that we can actually play with. It's just some APIs. How can we call it a game without front-end?
+Now our project is on IBM Cloud. But you may notice there is not anything that we can actually play with. It's just some APIs. How can we call it a game without front-end UI?
 
 In this episode, I will build signup, login, and home pages with [React](https://reactjs.org/).
 
@@ -28,7 +28,7 @@ In this series, I’m going to help you learn LoopBack 4 and how to use it to ea
 
 ### Previously on Building an Online Game With LoopBack 4
 
-In last episode, we covered how to run our project in Docker and push it to Kubernetes cluster on IBM Cloud.
+In the last episode, we covered how to run our project in Docker and push it to Kubernetes cluster on IBM Cloud.
 
 Here are the previous episodes:
 
@@ -40,7 +40,7 @@ Here are the previous episodes:
 
 ### Prerequisites
 
-I am completely new to front-end world. So I took some online courses.
+I am completely new to the front-end world. So I took some online courses.
 If you don't have any front-end experience like me, you should spend some time on the basic knowledge before moving on.
 
 - [Javascript 30 days](https://javascript30.com/)
@@ -71,13 +71,13 @@ Then run this to create a new react project:
 create-react-app <your_project_name>
 ```
 
-If you go the the project you just created and run `npm start`, you will see a page like this:
+If you go to the project you just created and run `npm start`, you will see a page like this:
 
 ![default_page](/blog-assets/2019/08/building-online-game-pt6-react-default.jpg)
 
 ### structure Designing
 
-Before we start, we need to spend some time on project structure.
+Before we start, we need to spend some time on the project structure.
 
 In a React project, everything is [component](https://reactjs.org/docs/react-component.html). Your pages, navigation bar, input form, or even a button, all of them could be components. All of those components are organized in a tree structure. Here is my project structure.
 
@@ -89,9 +89,9 @@ And here is my directory structure:
 
 ### `App.jsx`
 
-First open the `src/App.js` file. It will be the parent of all other componments.
+First, open the `src/App.js` file. It will be the parent of all other components.
 
-Change your `App.js` to `App.jsx`. It make our life easier to use `.jsx` in React.
+Change your `App.js` to `App.jsx`. It makes our life easier to use `.jsx` in React.
 
 Then change your `App.jsx` to this:
 
@@ -192,7 +192,7 @@ class App extends Component {
 export { App };
 ```
 
-Here we will use a library called [react-router-dom](https://www.npmjs.com/package/react-router-dom). Simply run `npm install react-router-dom` to install it. This library allow us to navigate between different components.
+Here we will use a library called [react-router-dom](https://www.npmjs.com/package/react-router-dom). Simply run `npm install react-router-dom` to install it. This library allows us to navigate between different components.
 
 Let's go through this line by line.
 
@@ -206,7 +206,7 @@ this.state = {
 };
 ```
 
-This is the state of this componment. Because we are using `JWT` in back-end for loging. we need to store the token for future API calls. We also need to store the basic user information, so we can display it somewhere.
+This is the state of this component. Because we are using `JWT` in back-end for login. we need to store the token for future API calls. We also need to store the basic user information, so we can display it somewhere.
 
 Then we have three functions:
 
@@ -231,11 +231,11 @@ Then we have three functions:
 ```
 
 - `handelLogout` is a function to logout. It will remove our token from `localStorage` and user data from `state`.
-- `handelUserData` is a function to fetch user data from back-end and store the data in `state`. In react, never change `state` directly. If you do that, React will not update the page, because it doesn't know what has been changed. You should always use `setState()` to change `state`, so that React can update all pages that related to this change.
+- `handelUserData` is a function to fetch user data from back-end and store the data in `state`. In react, never change `state` directly. If you do that, React will not update the page, because it doesn't know what has been changed. You should always use `setState()` to change `state` so that React can update all pages that related to this change.
 - `authenticationService` and `userService` are my self-defined services to do all of the API calls.
-- `componentDidMount` is a react build-in function that will be executed after the first render. I use it to get user data before page loading. You can check [here](https://www.tutorialspoint.com/reactjs/reactjs_component_life_cycle) for more information about React component life cycle.
+- `componentDidMount` is a react build-in function that will be executed after the first render. I use it to get user data before page loading. You can check [here](https://www.tutorialspoint.com/reactjs/reactjs_component_life_cycle) for more information about the React component life cycle.
 
-The `render` function defined how does our componment looks like. I have four children components here: `NavBar`, `HomePage`, `Login`, and `Signup`.
+The `render` function defined how does our component look like. I have four children components here: `NavBar`, `HomePage`, `Login`, and `Signup`.
 
 We use `react-router-dom` for redirecting. I have three pages in my route:
 
@@ -274,9 +274,9 @@ You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/blob/pa
 
 ### Containers
 
-A container is also a componment. It is also a holder for other componments. We have three containers: `HomePage`, `Login`, `Signup`.
+A container is also a component. It is also a holder for other components. We have three containers: `HomePage`, `Login`, `Signup`.
 
-Let's first creat a `containers` folder in `/src`.
+Let's first create a `containers` folder in `/src`.
 
 #### Login and Signup
 
@@ -409,7 +409,7 @@ class Login extends Component {
 export { Login };
 ```
 
-I have a input form to collect data from user and pass that data to back-end. After user hit the `Login` button, this `handleSubmit` function will be called.
+I have an input form to collect data from users and pass that data to back-end. After the user hit the `Login` button, this `handleSubmit` function will be called.
 
 ```jsx
 handleSubmit = e => {
@@ -436,13 +436,13 @@ handleSubmit = e => {
 };
 ```
 
-It basically validate all the user input and action. If everything looks good, it will pass user's email and password to back-end, otherwises, it will tell user there is something wrong.
+It basically validates all the user input and action. If everything looks good, it will pass the user's email and password to back-end, otherwise, it will tell the user there is something wrong.
 
-It also use `authenticationService` for login API call. We will talk about that later. The `Signup` page is almost the same. You can check my repo for more details.
+It also uses `authenticationService` for login API call. We will talk about that later. The `Signup` page is almost the same. You can check my repo for more details.
 
 ### HomePage
 
-After login, the user will be navigate to `HomePage`.
+After login, the user will be navigated to `HomePage`.
 
 ```jsx
 import React, { Component } from "react";
@@ -488,10 +488,10 @@ class HomePage extends Component {
 export { HomePage };
 ```
 
-We have two children componments in `HomePage`:
+We have two children components in `HomePage`:
 
 - `InitCharacter` to create a new character if this is the user's first time login.
-- `Display` to display user's character information, if the user already have one.
+- `Display` to display the user's character information, if the user already has one.
 
 ```jsx
 {
@@ -512,13 +512,13 @@ We have two children componments in `HomePage`:
 }
 ```
 
-We will store the user's information in the `state` of `App`. If user don't have a character name, we will show `Display` componment, otherwise, we will show `InitCharacter` componment.
+We will store the user's information in the `state` of `App`. If the user doesn't have a character name, we will show `Display` component, otherwise, we will show `InitCharacter` component.
 
 You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part6/firstgame-frontend/src/containers) for the code of `containers`.
 
-### Componments
+### Components
 
-Create a `componment` folder in `src`. We will put all re-useble componments here.
+Create a `component` folder in `src`. We will put all re-useable components here.
 
 #### InitCharacter
 
@@ -652,11 +652,11 @@ class InitCharacter extends Component {
 export { InitCharacter };
 ```
 
-I have three classes for user to choose. If user click one of the classes, the `handelClick` function will store that one in `state`. Then we call `userService.initCharacter` to create a new character.
+I have three classes for a user to choose from. If the user clicks one of the classes, the `handelClick` function will store that one in `state`. Then we call `userService.initCharacter` to create a new character.
 
 #### Display
 
-If the user have one character, we will jump to `Display` page to show all of user information.
+If the user has one character, we will jump to `Display` page to show all of the user information.
 
 ![display](/blog-assets/2019/08/building-online-game-pt6-display.jpg)
 
@@ -800,11 +800,11 @@ Then, in `Display`, we receive them by using `props`
 const { data, gear } = this.props;
 ```
 
-Here I use a library called `react-bootstrap` to decorate this componment. Feel free to use anything you like. That is an advantage of React. You can use almost any library you want with react.
+Here I use a library called `react-bootstrap` to decorate this component. Feel free to use anything you like. That is an advantage of React. You can use almost any library you want with React.
 
 ### Services
 
-Create `services` folder in `src`. Here is where all API calls happens.
+Create `services` folder in `src`. Here is where all API calls happen.
 
 #### `authenticationService`
 
@@ -884,11 +884,11 @@ axios
   });
 ```
 
-We store the token in `localStorage`. Then we jump to the `HomePage`. `self.props.history.push("/")` is how we navigate between different componments by using `react-router-dom`.
+We store the token in `localStorage`. Then we jump to the `HomePage`. `self.props.history.push("/")` is how we navigate between different components by using `react-router-dom`.
 
 #### `userService`
 
-`userService` hangles all API calls that related to user, like change name and fetch user data.
+`userService` handles all API calls that related to users, like change name and fetch user data.
 
 ```jsx
 import { authenticationService } from "./AuthServices";
