@@ -231,7 +231,7 @@ Then we have three functions:
 ```
 
 - `handelLogout` is a function to logout. It will remove our token from `localStorage` and user data from `state`.
-- `handelUserData` is a function to fetch user data from back-end and store the data in `state`.
+- `handelUserData` is a function to fetch user data from back-end and store the data in `state`. In react, never change `state` directly. If you do that, React will not update the page, because it doesn't know what has been changed. You should always use `setState()` to change `state`, so that React can update all pages that related to this change.
 - `authenticationService` and `userService` are my self-defined services to do all of the API calls.
 - `componentDidMount` is a react build-in function that will be executed after the first render. I use it to get user data before page loading. You can check [here](https://www.tutorialspoint.com/reactjs/reactjs_component_life_cycle) for more information about React component life cycle.
 
@@ -660,12 +660,354 @@ If the user have one character, we will jump to `Display` page to show all of us
 
 ![display](/blog-assets/2019/08/building-online-game-pt6-display.jpg)
 
+```jsx
+import React, { Component } from "react";
+import { DropdownButton, Dropdown, Table } from "react-bootstrap";
+import "./style.css";
+
+class Display extends Component {
+  render() {
+    const { data, gear } = this.props;
+    return (
+      <React.Fragment>
+        <Table striped bordered hover variant="dark">
+          <tbody>
+            <tr>
+              <th>EXP</th>
+              <th>
+                {data.currentExp}/{data.nextLevelExp}
+              </th>
+            </tr>
+            <tr>
+              <th>HP</th>
+              <th>
+                {data.currentHealth}/{data.maxHealth}
+              </th>
+            </tr>
+            <tr>
+              <th>MP</th>
+              <th>
+                {data.currentMana}/{data.maxMana}
+              </th>
+            </tr>
+            <tr>
+              <th>Attack</th>
+              <th>{data.attack}</th>
+            </tr>
+            <tr>
+              <th>defence</th>
+              <th>{data.defence}</th>
+            </tr>
+
+            <tr>
+              <th>
+                <DropdownButton
+                  title="weapon"
+                  variant="danger"
+                  id="weapon"
+                  key="weapon"
+                >
+                  {gear[0] === "no weapon" && (
+                    <Dropdown.Item eventKey="1"> {gear[0]}</Dropdown.Item>
+                  )}
+                  {gear[0] && gear[0] !== "no weapon" && (
+                    <Dropdown.Item eventKey="1">{gear[0].name} </Dropdown.Item>
+                  )}
+                  {gear[0] && gear[0] !== "no weapon" && (
+                    <Dropdown.Item eventKey="1">
+                      Attack: {gear[0].attack}{" "}
+                    </Dropdown.Item>
+                  )}
+                  {gear[0] && gear[0] !== "no weapon" && (
+                    <Dropdown.Item eventKey="1">
+                      Defence: {gear[0].defence}{" "}
+                    </Dropdown.Item>
+                  )}
+                </DropdownButton>
+              </th>
+
+              <th>
+                <DropdownButton
+                  title="armor"
+                  variant="primary"
+                  id="armor"
+                  key="armor"
+                >
+                  {gear[1] === "no armor" && (
+                    <Dropdown.Item eventKey="1"> {gear[1]}</Dropdown.Item>
+                  )}
+                  {gear[1] && gear[1] !== "no armor" && (
+                    <Dropdown.Item eventKey="1">{gear[1].name} </Dropdown.Item>
+                  )}
+                  {gear[1] && gear[1] !== "no armor" && (
+                    <Dropdown.Item eventKey="1">
+                      Attack: {gear[1].attack}{" "}
+                    </Dropdown.Item>
+                  )}
+                  {gear[1] && gear[1] !== "no armor" && (
+                    <Dropdown.Item eventKey="1">
+                      Defence: {gear[1].defence}{" "}
+                    </Dropdown.Item>
+                  )}
+                </DropdownButton>
+              </th>
+
+              <th>
+                <DropdownButton
+                  title="skill"
+                  variant="success"
+                  id="skill"
+                  key="skill"
+                >
+                  {gear[2] === "no skill" && (
+                    <Dropdown.Item eventKey="2"> {gear[2]}</Dropdown.Item>
+                  )}
+                  {gear[2] && gear[2] !== "no skill" && (
+                    <Dropdown.Item eventKey="1">{gear[2].name} </Dropdown.Item>
+                  )}
+                  {gear[2] && gear[2] !== "no skill" && (
+                    <Dropdown.Item eventKey="1">
+                      Attack: {gear[2].attack}{" "}
+                    </Dropdown.Item>
+                  )}
+                  {gear[2] && gear[2] !== "no skill" && (
+                    <Dropdown.Item eventKey="1">
+                      Cost: {gear[2].cost}{" "}
+                    </Dropdown.Item>
+                  )}
+                </DropdownButton>
+              </th>
+            </tr>
+          </tbody>
+        </Table>
+      </React.Fragment>
+    );
+  }
+}
+
+export { Display };
+```
+
+In `HomePage`, we passed `data` and `gear` to `Display` like this:
+
+```jsx
+<Display className="basic" data={data} gear={gear} />
+```
+
+Then, in `Display`, we receive them by using `props`
+
+```jsx
+const { data, gear } = this.props;
+```
+
+Here I use a library called `react-bootstrap` to decorate this componment. Feel free to use anything you like. That is an advantage of React. You can use any library with react.
+
+### Services
+
+Create `services` folder in `src`. Here is where all API calls happens.
+
+#### `authenticationService`
+
+`authenticationService` is for all authentication API calls.
+
+```jsx
+import { apiService } from "./APIServices";
+export const authenticationService = {
+  login,
+  signup,
+  logout
+};
+
+const axios = require("axios");
+
+function login(email, password, self) {
+  const data = {
+    email: email,
+    password: password
+  };
+  const header = {
+    "Content-Type": "application/json"
+  };
+  return axios
+    .post(apiService.login, data, header)
+    .then(function(response) {
+      localStorage.setItem("currentUser", response.data.token);
+      self.props.history.push("/");
+    })
+    .catch(function(error) {
+      if (!self.unmount) self.setState({ error });
+    });
+}
+
+function signup(email, password, self) {
+  const header = {
+    "Content-Type": "application/json"
+  };
+  const data = {
+    email: email,
+    password: password,
+    name: "nousername"
+  };
+  return axios
+    .post(apiService.character, data, header)
+    .then(function() {
+      self.props.history.push("/login");
+    })
+    .catch(function(error) {
+      if (!self.unmount) self.setState({ error });
+    });
+}
+
+function logout() {
+  console.log("logout");
+  localStorage.removeItem("currentUser");
+}
+```
+
+We are using a library called [axios](https://www.npmjs.com/package/axios) to do all API calls. The basic syntax is like this:
+
+```
+axios.get/post/put/patch(<Your_URL>,<Your_body>,<your_header>)
+```
+
+In the login function:
+
+```jsx
+axios
+  .post(apiService.login, data, header)
+  .then(function(response) {
+    localStorage.setItem("currentUser", response.data.token);
+    self.props.history.push("/");
+  })
+  .catch(function(error) {
+    if (!self.unmount) self.setState({ error });
+  });
+```
+
+We store the token in `localStorage`. Then we jump to the `HomePage`. `self.props.history.push("/")` is how we navigate between different componments by using `react-router-dom`.
+
+#### `userService`
+
+`userService` hangles all API calls that related to user, like change name and fetch user data.
+
+```jsx
+import { authenticationService } from "./AuthServices";
+import { apiService } from "./APIServices";
+
+export const userService = {
+  getUserData,
+  getGearData,
+  changeCharacterName,
+  initCharacter,
+  changeWeapon,
+  changeArmor,
+  changeSkill
+};
+
+const axios = require("axios");
+
+function getUserData(currentUser, self) {
+  axios
+    .get(apiService.character, {
+      headers: { Authorization: `Bearer ${currentUser}` }
+    })
+    .then(function(response) {
+      self.setState({ data: response.data });
+    })
+    .catch(function() {
+      authenticationService.logout();
+    });
+}
+
+function getGearData(currentUser, self) {
+  axios
+    .get(apiService.updatecharacter, {
+      headers: { Authorization: `Bearer ${currentUser}` }
+    })
+    .then(function(response) {
+      self.setState({ gear: response.data });
+    })
+    .catch(function() {
+      authenticationService.logout();
+    });
+}
+
+function changeCharacterName(currentUser, name, self) {
+  const data = {
+    name: name
+  };
+  axios
+    .patch(apiService.changename, data, {
+      headers: { Authorization: `Bearer ${currentUser}` }
+    })
+    .catch(function(error) {
+      if (error.response && error.response.data.error.statusCode === 401)
+        authenticationService.logout();
+      else if (!self.unmount) self.setState({ error });
+    });
+}
+
+function initCharacter(currentUser, name, gear, self) {
+  const data = {
+    name: name,
+    gear
+  };
+  return axios
+    .patch(apiService.initCharacter, data, {
+      headers: { Authorization: `Bearer ${currentUser}` }
+    })
+    .catch(function(error) {
+      if (error.response && error.response.data.error.statusCode === 401)
+        authenticationService.logout();
+      else if (!self.unmount) self.setState({ error });
+    });
+}
+
+function changeWeapon(currentUser, gear, self) {
+  axios
+    .patch(apiService.updateweapon, gear.weapon, {
+      headers: { Authorization: `Bearer ${currentUser}` }
+    })
+    .catch(function(error) {
+      if (error.response && error.response.data.error.statusCode === 401)
+        authenticationService.logout();
+      else if (!self.unmount) self.setState({ error });
+    });
+}
+
+function changeArmor(currentUser, gear, self) {
+  axios
+    .patch(apiService.updatearmor, gear.armor, {
+      headers: { Authorization: `Bearer ${currentUser}` }
+    })
+    .catch(function(error) {
+      if (error.response && error.response.data.error.statusCode === 401)
+        authenticationService.logout();
+      else if (!self.unmount) self.setState({ error });
+    });
+}
+
+function changeSkill(currentUser, gear, self) {
+  axios
+    .patch(apiService.updateskill, gear.skill, {
+      headers: { Authorization: `Bearer ${currentUser}` }
+    })
+    .catch(function(error) {
+      if (error.response && error.response.data.error.statusCode === 401)
+        authenticationService.logout();
+      else if (!self.unmount) self.setState({ error });
+    });
+}
+```
+
+You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/part6/firstgame-frontend/src/services) for the code of `Services`.
+
 ### Applying This to Your Own Project
 
-In this episode, we covered how to deploy our project with Docker and Kubernetes on IBM Cloud. Once you create a Docker image, you can run it almost everywhere. You can also push your own project image to other cloud like AWS, Azure, and Google Cloud. It should be very easy.
+In this episode, we covered how to create simple login, signup and home pages with React. We also learned how to connect front-end and back-end. It doesn't have to be React and LoopBack. The basic idea is similar. React is the most popular front-end framework today. You can easily use it to create your own front-end UI.
 
 ### What's Next?
 
-Next time, we will create a simply front-end UI for our project and do a quick demo.
+Next time, we will extend our project on back-end APIs. So we can actually have something to play as a game.
 
 In the meantime, learn more about LoopBack in [past blogs](https://strongloop.com/strongblog/tag_LoopBack.html).

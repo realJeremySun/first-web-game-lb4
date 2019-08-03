@@ -37,7 +37,7 @@ function signup(email, password, self) {
   };
   return axios
     .post(apiService.character, data, header)
-    .then(function(response) {
+    .then(function() {
       self.props.history.push("/login");
     })
     .catch(function(error) {
