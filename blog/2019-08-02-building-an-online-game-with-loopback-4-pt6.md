@@ -55,7 +55,7 @@ I will also use some other libraries.
 - [react-bootstrap](https://www.npmjs.com/package/react-bootstrap)
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 
-You don't have to fully understand how to use them before we start. I will show you how to use them step by step.
+You don't have to fully understand them before. I will show you how to use them step by step.
 
 ### Initializing React Project
 
@@ -268,13 +268,13 @@ We use `react-router-dom` for redirecting. I have three pages in my route:
 />
 ```
 
-If we can find token in `localStorage`, we will go to `HomePage`, otherwise, we will go to `Login`. We can also pass data to children.
+If we can find token in `localStorage`, we will go to `HomePage`, otherwise, we will go to `Login`.
 
 You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/blob/part6/firstgame-frontend/src/App.jsx) for my code of `App.jsx`.
 
 ### Containers
 
-A container is also a componment. It is alse a holder for other componments. We have three containers: `HomePage`, `Login`, `Signup`.
+A container is also a componment. It is also a holder for other componments. We have three containers: `HomePage`, `Login`, `Signup`.
 
 Let's first creat a `containers` folder in `/src`.
 
@@ -438,7 +438,7 @@ handleSubmit = e => {
 
 It basically validate all the user input and action. If everything looks good, it will pass user's email and password to back-end, otherwises, it will tell user there is something wrong.
 
-It also use `authenticationService` for login API call. We will talk about that later. The `Signup` page is almost the same. You can always check my repo for more details.
+It also use `authenticationService` for login API call. We will talk about that later. The `Signup` page is almost the same. You can check my repo for more details.
 
 ### HomePage
 
@@ -800,7 +800,7 @@ Then, in `Display`, we receive them by using `props`
 const { data, gear } = this.props;
 ```
 
-Here I use a library called `react-bootstrap` to decorate this componment. Feel free to use anything you like. That is an advantage of React. You can use any library with react.
+Here I use a library called `react-bootstrap` to decorate this componment. Feel free to use anything you like. That is an advantage of React. You can use almost any library you want with react.
 
 ### Services
 
@@ -1004,7 +1004,7 @@ You can check [here](https://github.com/gobackhuoxing/first-web-game-lb4/tree/pa
 
 ### Applying This to Your Own Project
 
-In this episode, we covered how to create simple login, signup and home pages with React. We also learned how to connect front-end and back-end. It doesn't have to be React and LoopBack. The basic idea is similar. React is the most popular front-end framework today. You can easily use it to create your own front-end UI.
+In this episode, we covered how to create simple login, signup and home pages with React. We also learned how to connect front-end and back-end. React is the most popular front-end framework today. You can easily use it to create your own front-end UI. It doesn't have to be React and LoopBack. The basic idea is similar.
 
 ### What's Next?
 
