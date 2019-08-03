@@ -206,7 +206,7 @@ this.state = {
 };
 ```
 
-This is the state of this componment. Because we are using `JWT` in back-end for loging. we need to store the token for future API calls. We alse need to store the basic user information, so we can display it somewhere.
+This is the state of this componment. Because we are using `JWT` in back-end for loging. we need to store the token for future API calls. We also need to store the basic user information, so we can display it somewhere.
 
 Then we have three functions:
 
