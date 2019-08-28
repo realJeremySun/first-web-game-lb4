@@ -57,10 +57,12 @@ class App extends Component {
                       />
                     ) : (
                       <Redirect
-                        to={{
+                        to={
+                        {
                           pathname: "/login",
                           state: { from: props.location }
-                        }}
+                        }
+                        }
                       />
                     )
                   }
