@@ -68,7 +68,7 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "@loopback/build": "^2.0.6",
+    "@loopback/build": "^9.0.6",
     "@loopback/testlab": "^1.7.2",
     "@loopback/tslint-config": "^2.1.0",
     "@types/node": "^10.14.14",
